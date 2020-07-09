@@ -1,12 +1,12 @@
 ---
-title: Hexo next主题设置
+title: Hexo NexT 主题设置一
 date: 2020-07-09 14:04:34
 tags: ['Hexo', 'NexT']
 categories: 'Hexo NexT配置'
 ---
 
 
-### 问题一：中文设置
+### 中文设置
 
 打开 hexo 配置文件 _config.yml 修改
 
@@ -14,7 +14,7 @@ categories: 'Hexo NexT配置'
 language: zh-CN
 ```
 <!--more-->
-### 问题二：tag标签设置
+### tag标签设置
 
 1. 打开主题设置 `_config.yml`,  打开想要的属性
 
@@ -58,7 +58,7 @@ type: "categories"
 
 
 
-### 问题三：read more 设置问题
+### read more 设置
 
 使用在Markdown文件中添加如下内容即可
 
@@ -133,6 +133,21 @@ valine:
 
 ### 开启阅读量
 
+在主题配置中搜索 `leancloud_visitors` ，更改如下配置：
+
+```yml
+leancloud_visitors:
+  enable: true
+  app_id: xXXXXXXXxx # <your app id>
+  app_key: xxxxxxx # <your app key>
+  # Required for apps from CN region
+  server_url: # <your server url>
+  # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
+  # If you don't care about security in leancloud counter and just want to use it directly
+  # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
+  security: true
+```
+参考文章：[Hexo Next主题 使用LeanCloud统计文章阅读次数、添加热度排行页面](https://blog.qust.cc/archives/48665.html)
 
 ### 开启博客本地搜索
 
@@ -154,7 +169,7 @@ local_search:
   unescape: false
 ```
 
-注意该搜索功能需要依赖 `hexo-generator-searchdb` 插件，依然还是使用命令 npm install `hexo-generator-searchdb --save` 来进行安装。然后 在 hexo 站点根目录配置文件 `_config.xml` 的末尾，加入以下代码即可。
+注意该搜索功能需要依赖 `hexo-generator-searchdb` 插件，依然还是使用命令 `npm install hexo-generator-searchdb --save` 来进行安装。然后 在 hexo 站点根目录配置文件 `_config.xml` 的末尾，加入以下代码即可。
 
 ```yml
 search:
@@ -172,3 +187,4 @@ search:
 1. [Hexo NexT 主题 7.x 版本的使用配置与美化](https://xian6ge.cn/posts/6d7ed114/)
 0. [Hexo博客+Next主题深度优化与定制](https://hasaik.com/posts/ab21860c.html)
 0. [Hexo Next主题 添加Valine评论系统 设置有新评论时自动发邮件提醒](https://lanlan2017.github.io/blog/de4f7be8/)
+0. [Hexo Next主题 使用LeanCloud统计文章阅读次数、添加热度排行页面](https://blog.qust.cc/archives/48665.html)
