@@ -69,6 +69,68 @@ type: "categories"
 
 ### 添加valine评论系统
 
+#### 注册LeanCloud
+
+我使用的是[国际版](https://leancloud.app), 中国版需要实名认证，有点麻烦。
+
+#### 创建应用
+
++ 点击创建应用按钮:
+![创建应用](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/1.png)
+
++ 选择开发版
+![选择开发版](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/2.png)
+
++ 进入设置 
+![进入设置](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/3.png)
+
+#### 配置应用
+
+##### 设置Web安全域名，填入自己的域名
+
+依次点击左侧边栏上的**设置**,**安全中心**,然后下拉页面,找到**Web 安全域名**,把你*站点的域名*填写进去。  
+服务开关中仅保留 **数据存储**。
+
+##### 获取APP ID 和 APP Key
+依次点击左侧边栏上的**设置**, **应用 Keys**,然后复制下**AppID**和**AppKey**:
+
+#### 修改Next主题配置文件
+
+打开博客目录的next主题配置文件 `_config.yml` ，找到`Valine`，将上图的`APP ID` 和`APP Key`复制到对应位置。
+```yml
+valine:
+  enable: true
+  appid: XXXXXXX-MdYXbMMI # Your leancloud application appid
+  appkey: XXXXXXXXX # Your leancloud application appkey
+  notify: false # Mail notifier
+  verify: false # Verification code
+  placeholder: Write something to me ... # Comment box placeholder
+  avatar: retro # Gravatar style
+  guest_info: nick,mail,link # Custom comment header
+  pageSize: 10 # Pagination size
+  language: zh-cn # Language, available values: en, zh-cn
+  visitor: false # Article reading statistic
+  comment_count: true # If false, comment count will only be displayed in post page, not in home page
+  recordIP: false # Whether to record the commenter IP
+  serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
+  #post_meta_order: 0
+```
+
+#### 如何删除评论
+
+依次点击左侧边栏上的**存储**, **数据化结构**, **Comment**, 直接删除表：
+![这样删除](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/20.png)
+
+#### To do ：在LeanCloud上部署云引擎
+
+可实现
++ 评论 邮件提醒功能
++ 登陆评论管理系统
+
+[别人写的引擎](https://github.com/zhaojun1998/Valine-Admin)
+[参考的博客](https://lanlan2017.github.io/blog/de4f7be8/)
+
+
 ### 开启阅读量
 
 
@@ -109,3 +171,4 @@ search:
 
 1. [Hexo NexT 主题 7.x 版本的使用配置与美化](https://xian6ge.cn/posts/6d7ed114/)
 0. [Hexo博客+Next主题深度优化与定制](https://hasaik.com/posts/ab21860c.html)
+0. [Hexo Next主题 添加Valine评论系统 设置有新评论时自动发邮件提醒](https://lanlan2017.github.io/blog/de4f7be8/)

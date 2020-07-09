@@ -600,13 +600,13 @@ changyan:
 # Valine
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
-  enable: false
-  appid: # Your leancloud application appid
-  appkey: # Your leancloud application appkey
+  enable: true
+  appid: 0HeenH1M6kEofmoCdXFMym4r-MdYXbMMI # Your leancloud application appid
+  appkey: pLAfLofofkawWDO8zuponHLq # Your leancloud application appkey
   notify: false # Mail notifier
   verify: false # Verification code
-  placeholder: xujing113221@gmail.com # Comment box placeholder
-  avatar: mm # Gravatar style
+  placeholder: Write something to me ... # Comment box placeholder
+  avatar: retro # Gravatar style
   guest_info: nick,mail,link # Custom comment header
   pageSize: 10 # Pagination size
   language: zh-cn # Language, available values: en, zh-cn
