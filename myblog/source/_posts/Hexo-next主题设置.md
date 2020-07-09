@@ -8,8 +8,6 @@ categories: 'Hexo NexT配置'
 
 ### 问题一：中文设置
 
-page : 612 
-
 打开 hexo 配置文件 _config.yml 修改
 
 ```yml
@@ -62,50 +60,52 @@ type: "categories"
 
 ### 问题三：read more 设置问题
 
+使用在Markdown文件中添加如下内容即可
+
 ```Markdown
 <!--more-->
 ```
 
 
+### 添加valine评论系统
 
-###  修改背景，颜色样式等
+### 开启阅读量
 
-转自 [Hexo NexT 主题 7.x 版本的使用配置与美化](https://xian6ge.cn/posts/6d7ed114/)
 
-1. 打开 `themes/next/_config.yml`，找到 `custom_file_path`，打开 style 处的注释
-2. 打开 `themes/hexo-theme-next/source/css/_data/style.styl`，添加如下代码。(没有_data 目录自行新建)
+### 开启博客本地搜索
 
-```css
-//添加背景图片
-body { background:url(/images/backGround.jpg)}
-//改掉题头颜色
-.site-meta {
-  background: #F0D784; //修改为自己喜欢的颜色
-}
-//主标题颜色
-.brand{
-  color: #2f9833
-  }
-//副标题颜色
-.site-subtitle{
-  color: #47b54a
-}
-//页脚统计文字颜色
-.footer{
-  color: #F0D784
-}
-//修改页脚备案链接颜色
-.footer a{
-  color: #F0D784
-}
-//修改页脚统计人数的颜色
-.footer .with-love{
-  color: #F0D784
-}
+提升读者用户体验，博客内肯定是需要一个全局搜索按钮的。当然hexo已经集成了几款开源的搜索插件，一般都使用的是 `local_search`.
+
+搜索 `local_search` , 设置代码如下：
+
+```yml
+# Local search
+# Dependencies: https://github.com/theme-next/hexo-generator-searchdb
+local_search:
+  enable: true
+  # if auto, trigger search by changing input
+  # if manual, trigger search by pressing enter key or search button
+  trigger: auto
+  # show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+  # unescape html strings to the readable one
+  unescape: false
 ```
 
-0. 如果出现编译出错，关闭 1. 中的 style，然后打开 'themes/next7/source/css/main.styl'，末尾添加
+注意该搜索功能需要依赖 `hexo-generator-searchdb` 插件，依然还是使用命令 npm install `hexo-generator-searchdb --save` 来进行安装。然后 在 hexo 站点根目录配置文件 `_config.xml` 的末尾，加入以下代码即可。
 
-``` css
-@import "_data/styles.styl";
+```yml
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 ```
+
+### 代码可复制
+
+
+### 参考文章
+
+1. [Hexo NexT 主题 7.x 版本的使用配置与美化](https://xian6ge.cn/posts/6d7ed114/)
+0. [Hexo博客+Next主题深度优化与定制](https://hasaik.com/posts/ab21860c.html)
