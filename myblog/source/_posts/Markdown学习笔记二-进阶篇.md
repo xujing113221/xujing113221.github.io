@@ -1,7 +1,8 @@
 ---
 title: 'Markdown学习笔记二 进阶篇'
 date: 2020-07-09 11:23:40
-tags:
+tags: 'Markdown'
+categories: 'Markdown学习笔记'
 mathjax: true
 katex: true
 ---
@@ -15,6 +16,8 @@ katex: true
 + 行内公式 : 使用一个$
 + 行外公式 : 使用 $$
 + 多行公式 : 使用引用 Latex 代码 
+
+<!--more-->
 
 ### 实现
 
@@ -83,4 +86,5 @@ st->op->cond
 cond(yes)->e
 cond(no)->op
 ```
-渲染问题无法实现
+
+*可能由于渲染问题无法实现*
