@@ -23,4 +23,4 @@ $ hexo g        # Generate static files
 $ hexo s        # Run server
 $ hexo d        # Deploy to remote sites
 ```
-[Start your blog](https://xujing113221.github.io/2020/07/09/hello-world/ "my blog hello world")
+[Start your blog](https://xujing113221.github.io/hello-world/ "my blog hello world")
