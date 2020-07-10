@@ -4,9 +4,18 @@ date: 2020-07-10 16:11:15
 tags: 
   - Hexo
   - Markdown
-categories: Hexo学习笔记
+categories: Hexo创建博客
 related_posts:
 ---
+
+本文记录Hexo相关书写技巧，使博客内容更加丰富界面更加美观，主要内容有以下几点：
++ 代码块进阶用法
++ note 标签
++ label 标签
++ button 按钮
++ tab 标签
+
+<!--more-->
 
 ## 代码块进阶用法
 
@@ -17,8 +26,6 @@ related_posts:
 code snippet
 ···
 ```
-
-<!--more-->
 
 其中，各参数意义如下：
 

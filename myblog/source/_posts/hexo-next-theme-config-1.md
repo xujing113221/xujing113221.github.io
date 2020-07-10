@@ -1,10 +1,21 @@
 ---
 title: Hexo NexT 主题设置一
 date: 2020-07-09 14:04:34
-tags: ['Hexo', 'NexT']
-categories: 'Hexo NexT配置'
+tags: 
+  - Hexo
+  - NexT
+categories: Hexo创建博客
 ---
 
+本文是我用Hexo配置NexT主题的笔记，主要内容有以下几点：
++ 中文设置
++ tag标签设置
++ read more 设置
++ tag标签设置
++ 添加valine评论系统
++ 开启博客本地搜索
+  
+<!--more-->
 
 ### 中文设置
 
@@ -13,7 +24,7 @@ categories: 'Hexo NexT配置'
 ```yml
 language: zh-CN
 ```
-<!--more-->
+
 ### tag标签设置
 
 1. 打开主题设置 `_config.yml`,  打开想要的属性
@@ -131,7 +142,7 @@ valine:
 [参考的博客](https://lanlan2017.github.io/blog/de4f7be8/)
 
 
-### 开启阅读量
+#### 开启阅读量
 
 在主题配置中搜索 `leancloud_visitors` ，更改如下配置：
 

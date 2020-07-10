@@ -2,14 +2,25 @@
 title: Hexo NexT 主题配置二
 date: 2020-07-09 22:29:36
 tags: ['Hexo', 'NexT']
-categories: 'Hexo NexT配置'
+categories: Hexo创建博客
 ---
+
+本文是我用Hexo配置NexT主题的第二篇笔记，主要内容有以下几点：
++ 回到顶部按钮设置
++ 添加打赏功能
++ 实现代码可复制
++ 开启相关文章推荐功能（to do）
++ 添加版权信息
++ 添加图片灯箱功能
++ 文章加密设置
+  
+<!--more-->
 
 ## 回到顶部按钮设置
 
 在主题配置文件中搜索`back2top`,进行修改
 
-```yml
+```yml themes\next\_config.yml
 back2top:
   enable: true
   # Back to top in sidebar.
@@ -17,12 +28,12 @@ back2top:
   # Scroll percent label in b2t button.
   scrollpercent: true   #显示百分比
   ```
-<!--more-->
+
 
 ## 添加打赏功能
 
 修改如下主题配置文件即可：
-```yml
+```yml themes\next\_config.yml
 # Reward (Donate)
 # Front-matter variable (unsupport animation).
 reward_settings:
@@ -38,7 +49,7 @@ reward:
   #bitcoin: /images/bitcoin.png
   ```
 
-## 代码可复制
+## 实现代码可复制
 
 过程有点复杂，参见：[Hexo NexT 代码块复制功能](https://www.jianshu.com/p/3e9d614c1e77) ，但是我没有成功。
 会有如下问题：
@@ -52,7 +63,7 @@ clipboard-use.js:8 Uncaught ReferenceError: $ is not defined
 我的解决方案：
   新版NexT的新功能吧，新版本[NexT](https://github.com/theme-next/hexo-theme-next)
   在主题配置文件中搜索 `copy_button` 修改如下内容：
-``` yml
+``` yml themes\next\_config.yml
  # Add copy button on codeblock
   copy_button:
     enable: true
@@ -63,7 +74,7 @@ clipboard-use.js:8 Uncaught ReferenceError: $ is not defined
 ```
 
 测试代码：
-```cpp
+```cpp hello.cpp
 #include<iostream>
 using namespace std;
 
@@ -97,7 +108,10 @@ related_posts:
     #isImage: false
     #isExcerpt: false
 ```
-> 当前`hexo-related-popular-posts`版本`4..0.0`有安全漏洞，总是安装失败，[等待更新](https://www.npmjs.com/package/hexo-related-popular-posts)
+{% note warning %}
+当前`hexo-related-popular-posts`版本`4..0.0`有安全漏洞，总是安装失败，[等待更新](https://www.npmjs.com/package/hexo-related-popular-posts)
+{% endnote %}
+
 
 ## 添加版权信息
 
@@ -123,7 +137,9 @@ fancybox: true
 
 ## 文章加密设置
 
-> 参考链接：https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md
+{%note info%}
+参考链接：https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md
+{%endnote%}
 
 1. 首先在博客目录下输入如下命令，安装`hexo-blog-encrypt`
 ```bash
