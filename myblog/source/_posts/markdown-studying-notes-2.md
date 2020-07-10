@@ -123,9 +123,3 @@ cond(no)->op
 *可能由于渲染问题无法实现*
 
 
-## 
-
-
-
-## 参考链接
-[Hexo 搭建个人博客系列：写作技巧篇](http://yearito.cn/posts/hexo-writing-skills.html)
