@@ -1,5 +1,5 @@
 ---
-title: 'Markdown学习笔记一: 入门篇'
+title: 'Markdown学习笔记一 入门篇'
 date: 2020-07-08 22:18:17
 tags: 'Markdown'
 categories: 'Markdown学习笔记'

@@ -87,4 +87,37 @@ cond(yes)->e
 cond(no)->op
 ```
 
+
+## 复选框列表
+
+```Markdown
+- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported;
+- [x] list syntax required (any unordered or ordered list supported);
+- [x] this is a complete item;
+- [ ] this is an incomplete item [test link](#);
+- [ ] this is an incomplete item;
+    - [ ] this is an incomplete item [test link](#);
+    - [ ] this is an incomplete item [test link](#);
+- [x] list syntax required (any unordered or ordered list supported);
+- [x] this is a complete item;
+- [ ] this is an incomplete item [test link](#);
+- [ ] this is an incomplete item;
+    - [ ] this is an incomplete item [test link](#);
+```
+
+- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported;
+- [x] list syntax required (any unordered or ordered list supported);
+- [x] this is a complete item;
+- [ ] this is an incomplete item [test link](#);
+- [ ] this is an incomplete item;
+    - [ ] this is an incomplete item [test link](#);
+    - [ ] this is an incomplete item [test link](#);
+- [x] list syntax required (any unordered or ordered list supported);
+- [x] this is a complete item;
+- [ ] this is an incomplete item [test link](#);
+- [ ] this is an incomplete item;
+    - [ ] this is an incomplete item [test link](#);
+
+参考链接 [Github Flavored Markdown task lists](http://editor.md.ipandao.com/examples/task-lists.html)
+
 *可能由于渲染问题无法实现*
