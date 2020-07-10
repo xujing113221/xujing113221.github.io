@@ -107,3 +107,8 @@ search:
   field: post
   format: html
   limit: 100
+
+  encrypt:
+    enable: true
+    default_abstract: 这是我的小秘密哦!
+    default_message: 你知道密码吗？

@@ -69,13 +69,13 @@ $$
 
 ## 绘制流程图
 
-#### 添加支持
+### 添加支持
 Hexo 默认是不支持流程图的 Markdown 语法的，需要添加支持：
 ```bash
  $ npm install --save hexo-filter-flowchart
  ```
 
-#### 绘制流程图
+### 绘制流程图
 ```flow
 st=>start: 用户登陆
 op=>operation: 登陆操作
@@ -121,3 +121,11 @@ cond(no)->op
 参考链接 [Github Flavored Markdown task lists](http://editor.md.ipandao.com/examples/task-lists.html)
 
 *可能由于渲染问题无法实现*
+
+
+## 
+
+
+
+## 参考链接
+[Hexo 搭建个人博客系列：写作技巧篇](http://yearito.cn/posts/hexo-writing-skills.html)
