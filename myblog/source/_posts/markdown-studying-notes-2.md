@@ -1,8 +1,9 @@
 ---
 title: 'Markdown学习笔记二 进阶篇'
 date: 2020-07-09 11:23:40
-tags: 'Markdown'
-categories: 'Markdown学习笔记'
+tags: Markdown
+categories: 
+    - [学习笔记, Markdown语法]
 mathjax: true
 katex: true
 ---

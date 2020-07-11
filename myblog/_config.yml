@@ -41,7 +41,7 @@ external_link:
   exclude: ""
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true #给每篇文章建一个文件夹
 relative_link: false
 future: true
 highlight:

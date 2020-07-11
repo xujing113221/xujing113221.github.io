@@ -1,8 +1,11 @@
 ---
 title: Hexo NexT 主题配置二
 date: 2020-07-09 22:29:36
-tags: ['Hexo', 'NexT']
-categories: Hexo创建博客
+tags: 
+    - Hexo
+    - NexT
+categories: 
+    - [学习笔记, Hexo创建博客]
 ---
 
 本文是我用Hexo配置NexT主题的第二篇笔记，主要内容有以下几点：

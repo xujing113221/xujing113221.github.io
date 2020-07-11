@@ -1,56 +1,91 @@
 ---
 title: Hexo NexT 主题配置三
 date: 2020-07-10 18:32:08
-tags: ['Hexo', 'NexT']
-categories: Hexo创建博客
+tags: 
+    - Hexo
+    - NexT
+categories: 
+    - [学习笔记, Hexo创建博客]
 ---
 
 本文继续配置 Hexo-Next，进一步对博客进行美化，主要包括:
 
-+ 修改博客字体
++ 添加热门文章排行榜
 + 添加结束标记
 + 添加动态特效
 + 显示近期文章(to do)
 
 <!--more-->
 
-## 修改博客字体
+## 添加热门文章排行榜
 
-在 [Google Fonts](https://fonts.google.com) 上找到心仪的字体，然后在主题配置文件中搜索`font:`为不同的应用场景配置字体：
-``` yml themes\next\_config.yml
- # Font options:
-  # `external: true` will load this font family from `host` above.
-  # `family: Times New Roman`. Without any quotes.
-  # `size: x.x`. Use `em` as unit. Default: 1 (16px)
-
-  # Global font settings used for all elements inside <body>.
-  global:
-    external: true
-    family: Noto Sans SC
-    size:
-
-  # Font settings for site title (.site-title).
-  title:
-    external: true
-    family: Cedarville Cursive
-    size:
-
-  # Font settings for headlines (<h1> to <h6>).
-  headings:
-    external: true
-    family: Noto Serif SC
-    size:
-
-  # Font settings for posts (.post-body).
-  posts:
-    external: true
-    family:
-
-  # Font settings for <code> and code blocks.
-  codes:
-    external: true
-    family: Courier
+1. 在终端中执行如下代码：
+```bash
+$ hexo new page top
 ```
+2. 在主题配置文件中添加如下代码：
+```diff themes\next_config.yml
+  menu:
+    home: / || home
++   top: /top/ || signal
+    tags: /tags/ || tags
+    categories: /categories/ || th
+    archives: /archives/ || archive
+    about: /about/ || user
+```
+3. 在语言包中新增菜单中文：
+```diff themes\next\languages\zh-CN.yml
+  menu:
+    home: 首页
+    archives: 归档
+    categories: 分类
+    tags: 标签
+    about: 关于
++   top: 排行榜
+```
+1. 然后在新增的排行榜页面内添加以下内容：
+```javascript /source/hot/index.md
+<div id="post-rank">
+  <p>This will be overwritten.</p>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js"></script>
+<script>
+  var APP_ID = '********'  //输入个人LeanCloud账号AppID
+  var APP_KEY = '*********'  //输入个人LeanCloud账号AppKey
+  AV.init({
+    appId: APP_ID,
+    appKey: APP_KEY
+  });
+
+  var query = new AV.Query('Counter'); //表名
+  query.descending('time');   //结果按阅读次数降序排序
+  query.limit(10);          //最终只返回10条结果
+  query.find().then( response => {
+    var content = response.reduce( (accum, {attributes}) => {
+      accum += `<p><div class="prefix">热度 ${attributes.time} ℃</div><div><a href="${attributes.url}">${attributes.title}</a></div></p>`
+      return accum;
+    },"")
+    document.querySelector("#post-rank").innerHTML = content;
+  })
+  .catch( error => {
+    console.log(error);
+  });
+</script>
+
+<style type="text/css">
+  #post-rank {
+    text-align: center;
+  }
+  #post-rank .prefix {
+    color: #ff4d4f;
+  }
+</style>
+```
+
+{% note warning %}
+在[LeanCloud | JavaScript SDK 安装指南](https://leancloud.cn/docs/sdk_setup-js.html#hash-99064366)中查找最新版`JavaScript JDK`,更改上面代码的JS源，避免出现问题。
+{% endnote %}
 
 ## 添加结束标记
 

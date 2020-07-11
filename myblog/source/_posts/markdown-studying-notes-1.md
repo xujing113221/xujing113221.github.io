@@ -1,8 +1,9 @@
 ---
 title: 'Markdown学习笔记一 入门篇'
 date: 2020-07-08 22:18:17
-tags: 'Markdown'
-categories: 'Markdown学习笔记'
+tags: Markdown
+categories: 
+    - [学习笔记, Markdown语法]
 ---
 Markdown是一种轻量级标记语言，创始人为約翰·格魯伯（英語：John Gruber）。它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。
 

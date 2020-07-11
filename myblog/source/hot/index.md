@@ -4,27 +4,39 @@ date: 2020-07-09 21:42:03
 comments: false
 ---
 
-<div id="hot"></div>
-<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-<script>AV.initialize("0HeenH1M6kEofmoCdXFMym4r-MdYXbMMI", "pLAfLofofkawWDO8zuponHLq");</script>
-<script type="text/javascript">
-  var time=0
-  var title=""
-  var url=""
-  var query = new AV.Query('Counter');
-  query.notEqualTo('id',0);
-  query.descending('time');
-  query.limit(1000);
-  query.find().then(function (todo) {
-    for (var i=0;i<1000;i++){
-      var result=todo[i].attributes;
-      time=result.time;
-      title=result.title;
-      url=result.url;
-      var content="<p>"+"<font color='#1C1C1C'>"+"【文章热度:"+time+"℃】"+"</font>"+"<a href='"+"https://xujing113221.github.io/"+url+"'>"+title+"</a>"+"</p>";
-      document.getElementById("hot").innerHTML+=content
-    }
-  }, function (error) {
-    console.log("error");
+<div id="post-rank">
+  <p>This will be overwritten.</p>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js"></script>
+<script>
+  var APP_ID = '0HeenH1M6kEofmoCdXFMym4r-MdYXbMMI'  //输入个人LeanCloud账号AppID
+  var APP_KEY = 'pLAfLofofkawWDO8zuponHLq'  //输入个人LeanCloud账号AppKey
+  AV.init({
+    appId: APP_ID,
+    appKey: APP_KEY
+  });
+
+  var query = new AV.Query('Counter'); //表名
+  query.descending('time');   //结果按阅读次数降序排序
+  query.limit(10);          //最终只返回10条结果
+  query.find().then( response => {
+    var content = response.reduce( (accum, {attributes}) => {
+      accum += `<p><div class="prefix">热度 ${attributes.time} ℃</div><div><a href="${attributes.url}">${attributes.title}</a></div></p>`
+      return accum;
+    },"")
+    document.querySelector("#post-rank").innerHTML = content;
+  })
+  .catch( error => {
+    console.log(error);
   });
 </script>
+
+<style type="text/css">
+  #post-rank {
+    text-align: center;
+  }
+  #post-rank .prefix {
+    color: #ff4d4f;
+  }
+</style>

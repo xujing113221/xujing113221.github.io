@@ -9,7 +9,7 @@ Questions：
 + 什么是RSS
 
 To do：
-+ 草稿 博客
 + 添加 关于 和 留言板 [例子](https://www.zhyong.cn/about/)
 + hexo 文章分类 分细类
-+ 
++ 添加相关文章推荐
++ 添加近期文章

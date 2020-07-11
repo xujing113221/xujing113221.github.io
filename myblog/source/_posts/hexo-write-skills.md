@@ -2,9 +2,10 @@
 title: Hexo 写作技巧
 date: 2020-07-10 16:11:15
 tags: 
-  - Hexo
-  - Markdown
-categories: Hexo创建博客
+    - Hexo
+    - NexT
+categories: 
+    - [学习笔记, Hexo创建博客]
 related_posts:
 ---
 

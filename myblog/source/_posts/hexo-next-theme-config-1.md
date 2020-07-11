@@ -2,9 +2,10 @@
 title: Hexo NexT 主题设置一
 date: 2020-07-09 14:04:34
 tags: 
-  - Hexo
-  - NexT
-categories: Hexo创建博客
+    - Hexo
+    - NexT
+categories: 
+    - [学习笔记, Hexo创建博客]
 ---
 
 本文是我用Hexo配置NexT主题的笔记，主要内容有以下几点：
@@ -13,6 +14,7 @@ categories: Hexo创建博客
 + read more 设置
 + tag标签设置
 + 添加valine评论系统
++ 不蒜子站点统计功能
 + 开启博客本地搜索
   
 <!--more-->
@@ -108,7 +110,7 @@ type: "categories"
 #### 修改Next主题配置文件
 
 打开博客目录的next主题配置文件 `_config.yml` ，找到`Valine`，将上图的`APP ID` 和`APP Key`复制到对应位置。
-```yml
+```yml theme/next/_config.yml 
 valine:
   enable: true
   appid: XXXXXXX-MdYXbMMI # Your leancloud application appid
@@ -146,7 +148,7 @@ valine:
 
 在主题配置中搜索 `leancloud_visitors` ，更改如下配置：
 
-```yml
+```yml theme/next/_config.yml 
 leancloud_visitors:
   enable: true
   app_id: xXXXXXXXxx # <your app id>
@@ -159,6 +161,25 @@ leancloud_visitors:
   security: true
 ```
 参考文章：[Hexo Next主题 使用LeanCloud统计文章阅读次数、添加热度排行页面](https://blog.qust.cc/archives/48665.html)
+
+### 不蒜子站点统计功能
+
+打开主题配置文件，搜索`busuanzi`,修改如下内容：
+```yml theme/next/_config.yml 
+busuanzi_count:
+  enable: true
+  total_visitors: true #站点访问量
+  total_visitors_icon: fa fa-user
+  total_views: true   # 站点阅读量
+  total_views_icon: fa fa-eye
+  post_views: false  # 文章阅读数
+  post_views_icon: fa fa-eye
+```
+{%note warning%}
+如果开启了LeanCloud统计阅读次数，就不要打开不蒜子的 `post_views`.
+{%endnote%}
+
+
 
 ### 开启博客本地搜索
 
@@ -197,3 +218,4 @@ search:
 0. [Hexo博客+Next主题深度优化与定制](https://hasaik.com/posts/ab21860c.html)
 0. [Hexo Next主题 添加Valine评论系统 设置有新评论时自动发邮件提醒](https://lanlan2017.github.io/blog/de4f7be8/)
 0. [Hexo Next主题 使用LeanCloud统计文章阅读次数、添加热度排行页面](https://blog.qust.cc/archives/48665.html)
+1. [Hexo博客搭建之在文章中插入图片](https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/)
