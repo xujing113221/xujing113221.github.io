@@ -135,7 +135,7 @@ live2d:
 
   # 选择看板娘模型
   model:
-    use: live2d-widget-model-epsilon2_1 #使用模型
+    use: live2d-widget-model-tororo #使用模型
     #live2d-widget-model-shizuku #live2d-widget-model-tororo #live2d-widget-model-epsilon2_1
     #live2d-widget-model-hibiki #live2d-widget-model-z16
   display:
