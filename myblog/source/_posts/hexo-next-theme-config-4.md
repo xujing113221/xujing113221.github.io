@@ -257,10 +257,34 @@ live2d:
 这个功能挺好玩的，操作也简单。但是我还是喜欢简洁点的网页，哈哈哈哈。
 {%endnote%}
 
+## 文章评论功能
+Next 主题中已经集成了[widgetpack](https://widgetpack.com/)的星级评分系统，用户无须再安装或引入插件脚本，只需在 widgetpack 中注册账号并修改主题配置即可，应用效果如下：
+
+```yml themes/next_config.yml
+# Star rating support to each article.
+# To get your ID visit https://widgetpack.com
+rating:
+  enable: true
+  id: #<app_id>
+  color: fadb14
+```
+在`widgetpack`左边栏中找到`Rating`的`Setting` 修改`Vote via`为除了`Social`以外其他两种方式，就可以开启匿名评分了
+![widgetpack设置](widgetpack.png)
+{%note info%}
+  不想再写了，这个功能很简单，看这个人的博客就好 [yearito's Blog | Hexo搭建个人博客系列：进阶设置篇](http://yearito.cn/posts/hexo-advanced-settings.html)
+{%endnote%}
+
+## 结束语
+
+自此关于Hexo写博客的主题就告一段落了，我对Next主题配置差不多了。这是我第一次写博客，就是记录一下这个我开始使用Hexo写博客的过程，在此期间我看到了很多优秀的博客，给予了我很多帮助，我也借鉴了很多内容，希望我都备注上了。谢谢大家！
+
+刚开始写博客，结构和内容有点乱，希望大家见谅，有什么问题希望大家给我写评论告诉我！后面我会慢慢写，写好每一篇博客！
+
+后面我会写一下我学习和生活中的知识和经验，分享给大家，同时也给自己留下笔记，整理一下我的知识。希望未来越来越好！
 
 ## 参考文章
 
-+ Hexo [搭建个人博客系列：进阶设置篇](http://yearito.cn/posts/hexo-advanced-settings.html)
++ [Hexo 搭建个人博客系列：进阶设置篇](http://yearito.cn/posts/hexo-advanced-settings.html)
 + [LeanCloud | JavaScript SDK 开发指南](https://leancloud.cn/docs/leanstorage_guide-js.html)
 + [LeanCloud | JavaScript SDK 安装指南](https://leancloud.cn/docs/sdk_setup-js.html#hash-99064366)
 
