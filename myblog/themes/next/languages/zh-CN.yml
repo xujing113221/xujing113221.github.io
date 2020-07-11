@@ -11,7 +11,7 @@ menu:
   categories: 分类
   tags: 标签
   about: 关于
-  hot: 热度
+  hot: 排行
   search: 搜索
   schedule: 日程表
   sitemap: 站点地图
@@ -33,6 +33,7 @@ post:
   views: 阅读次数
   Valine: 评论次数
   related_posts: 相关文章
+  copy_success: 复制成功
   copyright:
     title: 本文标题
     author: 本文作者

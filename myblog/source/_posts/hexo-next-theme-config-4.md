@@ -97,39 +97,107 @@ categories:
 ```
 ## 版权声明个性化设置
 
-我主要就想添加个文章标题在版权信息处，剩下的可以依据个人想法自行添加。
+{%note info%}
+本章参见[yearito's Blog | Hexo搭建个人博客系列：进阶设置篇](http://yearito.cn/posts/hexo-advanced-settings.html)
+{%endnote%}
 
 ![效果图](copyright.png "效果图")
 
 + 先找到 {%label success@themes/next/layout/_partials/post/post-copyright.swig %}  添加如下内容：
 ```diff themes/next/layout/_partials/post/post-copyright.swig 
+<!-- JS库 clipboard 拷贝内容到粘贴板-->
+<script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"></script>
+<!-- JS库 sweetalert 显示提示信息-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <div>
 <ul class="post-copyright">
-+  <li class="post-copyright-title">
-+   <strong>{{ __('post.copyright.title') + __('symbol.colon') }} </strong>
-+    {{page.title}}             // 只显示文章标题 
-+    <a href="{{page.permalink}}">{{page.title}}</a>  // 显示带链接的文章标题
-+  </li>
+  <li class="post-copyright-title">
+   <strong>{{ __('post.copyright.title') + __('symbol.colon') }} </strong>
+    {{page.title}}             // 只显示文章标题 
+    <a href="{{page.permalink}}">{{page.title}}</a>  // 显示带链接的文章标题
+  </li>
   <li class="post-copyright-author">
     <strong>{{ __('post.copyright.author') + __('symbol.colon') }} </strong>
     {{- page.author or author }}
   </li>
-
+  <!-- 引用链接 -->
+  <li class="post-copyright-link">
+    <strong>{{ __('post.copyright.link') + __('symbol.colon') }}</strong>
+    <a href="{{ post.url | default(post.permalink) }}" title="{{ post.title }}">
+      {{ post.url | default(post.permalink) }}
+    </a>
+    <span class="copy-path" title="点击复制引用链接">
+      <i
+        style="cursor: pointer"
+        class="fa fa-clipboard"
+        data-clipboard-text="[{{ post.author | default(author) }}'s Blog | {{ post.title }}]({{ post.permalink }})"
+        aria-label="{{ __('post.copy_success') }}">
+      </i>
+    </span>
+  </li>
       ....
 
 </ul>
 </div>
+      ....
+<script>
+  var clipboard = new ClipboardJS(".fa-clipboard");
+  clipboard.on("success", function(target) {
+    var message = document.createElement("div");
+    message.innerHTML =
+      '<i class="fa fa-check-circle message-icon"></i><span class="message-content">' +
+      target.trigger.getAttribute("aria-label") +
+      "</span>";
+    swal({
+      content: message,
+      className: "copy-success-message",
+      timer: 1000,
+      button: false
+    });
+  });
+</script>
 ```
 
 + 在主题语言配置文件中 添加如下内容：
 ```diff themes/next/languages/zh-CN.yml
- copyright:
++ copy_success: 复制成功
+  copyright:
 +   title: 本文标题
     author: 本文作者
     link: 本文链接
     license_title: 版权声明
     license_content: "本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"
 ```
++ 找到{%label info@themes/next/source/css/_common/components/post/post-copyright.styl%} 添加如下内容：
+```css
+.swal-overlay {
+  background-color: transparent;
+}
+
+.copy-success-message {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  width: auto;
+  margin: 16x 0px;
+  vertical-align: top;
+}
+
+.copy-success-message .swal-content {
+  margin: 0px 0px !important;
+  padding: 10px 16px;
+  line-height: 1em;
+}
+
+.copy-success-message .message-icon {
+  color: #52c41a;
+  margin-right: 8px;
+}
+
+.copy-success-message .message-content {
+  font-size: 14px;
+}
+```
+
 ## 添加看板娘功能
 
 {% note info %}
@@ -195,3 +263,4 @@ live2d:
 + Hexo [搭建个人博客系列：进阶设置篇](http://yearito.cn/posts/hexo-advanced-settings.html)
 + [LeanCloud | JavaScript SDK 开发指南](https://leancloud.cn/docs/leanstorage_guide-js.html)
 + [LeanCloud | JavaScript SDK 安装指南](https://leancloud.cn/docs/sdk_setup-js.html#hash-99064366)
+

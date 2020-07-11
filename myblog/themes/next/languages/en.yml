@@ -33,7 +33,9 @@ post:
   sticky: Sticky
   views: Views
   related_posts: Related Posts
+  copy_success: Copy Success
   copyright:
+    title: Post title
     author: Post author
     link: Post link
     license_title: Copyright Notice
