@@ -150,14 +150,13 @@ Bored
 ```
 {% button /path/to/url/, text, icon [class], title %}
 
-其中， 图标 ID 来源于 [FontAwesome](https://fontawesome.com/v4.7.0/icons/) 
-
 # eg.
 {% btn #, 文本 %}
 {% btn #, 文本 & 标题,, 标题 %}
 {% btn #, 文本 & 图标, home %}
 {% btn #, 文本 & 大图标 (固定宽度), home fa-fw fa-lg %}
 ```
+其中， 图标 ID 来源于 [FontAwesome](https://fontawesome.com/v4.7.0/icons/) 
 
 ## tab 标签
 

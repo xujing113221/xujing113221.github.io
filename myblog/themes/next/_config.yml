@@ -27,7 +27,7 @@ custom_file_path:
   #sidebar: source/_data/sidebar.swig
   #postMeta: source/_data/post-meta.swig
   #postBodyEnd: source/_data/post-body-end.swig
-  footer: source/_data/footer.swig
+  #footer: source/_data/footer.swig
   #bodyEnd: source/_data/body-end.swig
   #variable: source/_data/variables.styl
   #mixin: source/_data/mixins.styl
@@ -981,7 +981,10 @@ js: js
 images: images
 
 # 鼠标点击特效
-cursor_effect: false #fireworks
+cursor_effect: fireworks #fireworks #love #text #explosion #false
+
+# 背景粒子漂浮聚合特效
+canvas_nest: false
 
 # 近期文章
 recent_posts: false

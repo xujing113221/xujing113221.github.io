@@ -130,42 +130,38 @@ post_end_tag:
 ## 添加动态特效
 
 ### 粒子漂浮聚合
+{%note info%}
 需要安装 `theme-next-canvas-nest` 详见 [Theme NexT Canvas Nest](https://github.com/theme-next/theme-next-canvas-nest)
+{%endnote%}
 
 我说使用的这是这一款，介绍一下安装过程：
-1. 在文件夹`hexo/source/_data` 中创建 `footer.swig`，如果没有`_data` 自己创建一个， 在`footer.swig`中添加如下内容：
-```swig hexo/source/_data/footer.swig
-<script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+1. 在文件夹`themes/next/layout/_custom/` 中创建 `custom.swig`，如果没有`_custom` 自己创建一个， 在`custom.swig`中添加如下内容：
+```swig themes/next/layout/_custom/custom.swig
+{# 背景粒子漂浮聚合特效 #}
+{% if theme.canvas_nest %}
+    <script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+{% endif %}
 ```
-2. 在主题配置文件中搜索`custom_file_path:`修改如下内容：
-```diff
-# Define custom file paths.
-# Create your custom files in site directory `source/_data` and uncomment needed files below.
-custom_file_path:
-  #head: source/_data/head.swig
-  #header: source/_data/header.swig
-  #sidebar: source/_data/sidebar.swig
-  #postMeta: source/_data/post-meta.swig
-  #postBodyEnd: source/_data/post-body-end.swig
-- #footer: source/_data/footer.swig
-+ footer: source/_data/footer.swig
-  #bodyEnd: source/_data/body-end.swig
-  #variable: source/_data/variables.styl
-  #mixin: source/_data/mixins.styl
-  #style: source/_data/styles.styl
+2. 在主题配置文件后面添加如下内容：
+```swig
+# 背景粒子漂浮聚合特效
+canvas_nest: true
 ```
-
 这样就好了。
 
 ### Three 三维动效
+{%note info%}
 需要安装 `theme-next-three` 详见 [Theme NexT Three](https://github.com/theme-next/theme-next-three)
+{%endnote%}
 
 ### 随机三角丝带
+{%note info%}
 需要安装 `theme-next-canvas-ribbon` 详见 [Theme NexT Canvas Ribbon](https://github.com/theme-next/theme-next-canvas-ribbon)
-
+{%endnote%}
 ### 添加加载特效
+{%note info%}
 需要安装 `theme-next-pace` ，详见 [Theme NexT Pace](https://github.com/theme-next/theme-next-pace)
-
+{%endnote%}
 
 ### 鼠标点击特效
 

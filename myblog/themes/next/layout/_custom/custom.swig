@@ -10,3 +10,8 @@
 {% elseif theme.cursor_effect == "text" %}
   <script async src="/js/cursor/text.js"></script>
 {% endif %}
+
+{# 背景粒子漂浮聚合特效 #}
+{% if theme.canvas_nest %}
+    <script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+{% endif %}

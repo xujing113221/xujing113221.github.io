@@ -115,6 +115,5 @@ encrypt:
 
 post_end_tag:
   enabled: true # 是否开启文末的本文结束标记
-  icon: paw # 结束标记之间的图标
+  icon: paperclip # 结束标记之间的图标
 
-# mmdd_format: MM-DD
