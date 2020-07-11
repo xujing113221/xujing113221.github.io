@@ -52,6 +52,7 @@
   {% include '_third-party/math/index.swig' %}
   {% include '_third-party/quicklink.swig' %}
 
+  {# 用户自定义的文件 #}
   {% include '_custom/custom.swig' %}
   
   {{- next_inject('bodyEnd') }}

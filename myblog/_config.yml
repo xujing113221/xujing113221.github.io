@@ -117,3 +117,35 @@ post_end_tag:
   enabled: true # 是否开启文末的本文结束标记
   icon: paperclip # 结束标记之间的图标
 
+# Live2D
+# https://github.com/EYHN/hexo-helper-live2d
+live2d:
+  enable: true
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/ Relative)
+
+  # 脚本加载源
+  scriptFrom: local # 默认从本地加载脚本
+  # scriptFrom: jsdelivr # 从 jsdelivr CDN 加载脚本
+  # scriptFrom: unpkg # 从 unpkg CDN 加载脚本
+  # scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 从自定义地址加载脚本
+  tagMode: false # 只在有 {{ live2d() }} 标签的页面上加载 / 在所有页面上加载
+  log: false # 是否在控制台打印日志
+
+  # 选择看板娘模型
+  model:
+    use: live2d-widget-model-epsilon2_1 #使用模型
+    #live2d-widget-model-shizuku #live2d-widget-model-tororo #live2d-widget-model-epsilon2_1
+    #live2d-widget-model-hibiki #live2d-widget-model-z16
+  display:
+    position: right # 显示在左边还是右边
+    width: 150 # 宽度
+    height: 300 # 高度
+  mobile:
+    show: false
+  react:
+    opacityDefault: 0.7 # 默认透明度
+  dialog:
+    enable: false #添加对话框
+    hitokoto: true

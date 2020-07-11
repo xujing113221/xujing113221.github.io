@@ -14,6 +14,7 @@ categories:
 + 多级分类
 + 修改博客字体
 + 版权声明个性化设置
++ 添加看板娘功能
 
 <!--more-->
 
@@ -129,6 +130,64 @@ categories:
     license_title: 版权声明
     license_content: "本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"
 ```
+## 添加看板娘功能
+
+{% note info %}
+本章参考链接：
++ [live2d-widget-models](https://github.com/xiazeyu/live2d-widget-models)
++ [live2d模型用户配置](https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init)
++ [live2d模型中文说明](https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md)
++ [yearito's Blog | Hexo搭建个人博客系列：主题美化篇](http://yearito.cn/posts/hexo-theme-beautify.html)
++ [添加一个萌物](https://fjkang.github.io/2017/12/08/%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E8%90%8C%E7%89%A9/)
++ [Hexo添加Live2D看板娘+模型预览](https://blog.csdn.net/wang_123_zy/article/details/87181892)
+{% endnote %}
+
+在站点根目录下执行以下命令安装依赖：
+```bash
+$ npm install --save hexo-helper-live2d
+```
+在站点配置文件中添加以下下配置项
+```yml _config.yml
+# Live2D
+# https://github.com/EYHN/hexo-helper-live2d
+live2d:
+  enable: true
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/ Relative)
+
+  # 脚本加载源
+  scriptFrom: local # 默认从本地加载脚本
+  # scriptFrom: jsdelivr # 从 jsdelivr CDN 加载脚本
+  # scriptFrom: unpkg # 从 unpkg CDN 加载脚本
+  # scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 从自定义地址加载脚本
+  tagMode: false # 只在有 {{ live2d() }} 标签的页面上加载 / 在所有页面上加载
+  log: false # 是否在控制台打印日志
+
+  # 选择看板娘模型
+  model:
+    use: live2d-widget-model-z16 #使用模型
+    #live2d-widget-model-shizuku #live2d-widget-model-tororo #live2d-widget-model-epsilon2_1
+    #live2d-widget-model-hibiki #live2d-widget-model-z16
+  display:
+    position: right # 显示在左边还是右边
+    width: 200 # 宽度
+    height: 360 # 高度
+  mobile:
+    show: false
+  react:
+    opacityDefault: 0.7 # 默认透明度
+  dialog:
+    enable: true #添加对话框
+    hitokoto: true
+```
+这个时候还不会有看板娘的显示，在 [live2d-widget-models](https://github.com/xiazeyu/live2d-widget-models) 手动下载喜欢的样式。
+
+因为修改了站点配置文件，所以需要重启服务器才能预览模型效果。
+
+{%note success%}
+这个功能挺好玩的，操作也简单。但是我还是喜欢简洁点的网页，哈哈哈哈。
+{%endnote%}
 
 
 ## 参考文章
