@@ -3,6 +3,10 @@
 
 <div>
 <ul class="post-copyright">
+  <li class="post-copyright-title">
+    <strong>{{ __('post.copyright.title') + __('symbol.colon') }} </strong>
+    {{page.title}}
+  </li>
   <li class="post-copyright-author">
     <strong>{{ __('post.copyright.author') + __('symbol.colon') }} </strong>
     {{- page.author or author }}

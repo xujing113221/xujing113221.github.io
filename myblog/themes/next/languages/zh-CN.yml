@@ -34,6 +34,7 @@ post:
   Valine: 评论次数
   related_posts: 相关文章
   copyright:
+    title: 本文标题
     author: 本文作者
     link: 本文链接
     license_title: 版权声明

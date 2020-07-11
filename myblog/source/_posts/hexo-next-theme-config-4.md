@@ -8,11 +8,12 @@ categories:
     - [学习笔记, Hexo创建博客]
 ---
 
-本文主要介绍我在NexT主题配置中遇到的小问题，以及主题的进一步美化。
+本文主要介绍我在NexT主题配置中遇到的小问题，以及主题的进一步美化，深入Next代码进行个性化配置。
 
 + 页脚设置
 + 多级分类
-+ 添加热门文章排行榜
++ 修改博客字体
++ 版权声明个性化设置
 
 <!--more-->
 
@@ -93,6 +94,42 @@ categories:
     external: true
     family: Courier
 ```
+## 版权声明个性化设置
+
+我主要就想添加个文章标题在版权信息处，剩下的可以依据个人想法自行添加。
+
+![效果图](copyright.png "效果图")
+
++ 先找到 {%label success@themes/next/layout/_partials/post/post-copyright.swig %}  添加如下内容：
+```diff themes/next/layout/_partials/post/post-copyright.swig 
+<div>
+<ul class="post-copyright">
++  <li class="post-copyright-title">
++   <strong>{{ __('post.copyright.title') + __('symbol.colon') }} </strong>
++    {{page.title}}             // 只显示文章标题 
++    <a href="{{page.permalink}}">{{page.title}}</a>  // 显示带链接的文章标题
++  </li>
+  <li class="post-copyright-author">
+    <strong>{{ __('post.copyright.author') + __('symbol.colon') }} </strong>
+    {{- page.author or author }}
+  </li>
+
+      ....
+
+</ul>
+</div>
+```
+
++ 在主题语言配置文件中 添加如下内容：
+```diff themes/next/languages/zh-CN.yml
+ copyright:
++   title: 本文标题
+    author: 本文作者
+    link: 本文链接
+    license_title: 版权声明
+    license_content: "本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"
+```
+
 
 ## 参考文章
 
