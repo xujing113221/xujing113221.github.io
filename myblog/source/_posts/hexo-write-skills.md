@@ -14,6 +14,7 @@ related_posts:
 + label 标签
 + button 按钮
 + tab 标签
++ 草稿和发布
 
 <!--more-->
 
@@ -227,8 +228,28 @@ tab 标签用于快速创建 tab 选项卡，语法如下
   <!-- endtab -->
 {% endtabs %}
 
+## 草稿和发布
+
+{%note info%}
+本章内容参考自 [Hexo+NexT(v7.0+) 搭建博客：内容优化](https://www.chingow.cn/posts/bd723aed.html)
+{%endnote%}
+
+一般我们使用`hexo new <title>`来建立文章，这种建立方法会将新文章建立在 **source/_posts** 目录下，当使用 `hexo generate` 编译文件时，会将其 HTML 结果编译在 `public` 目录下，之后`hexo server`将会把 `public` 目录下所有文章发布。
+
+Hexo 提供 draft 机制，它的原理是新文章将建立在 **source/_drafts** 目录下，因此并不会将其编译到 **public** 目录下发布，而且提供了很友好的预览功能。
+```bash
+$ hexo new draft <title>	# 新建草稿文章
+$ hexo s --draft	        # 预览草稿文章
+```
+将草稿发布为正式文章：
+```bash
+$ hexo P <filename>
+```
+
+其中 <filename> 为不包含 md 后缀的文章名称。它的原理只是将文章从 **source/_drafts** 移动到 **source/_posts** 而已。
 
 ## 参考链接
 + [Hexo 搭建个人博客系列：写作技巧篇](http://yearito.cn/posts/hexo-writing-skills.html)
 + [Hexo建站日志 (6) - 添加文章书写样式](http://dinghongkai.com/2017/12/19/Blog-development-6-Customized-Style-of-Writing/)
 + [Hexo 博客美化配置](http://ylong.net.cn/hexo_conf.html)
++ [Hexo+NexT(v7.0+) 搭建博客：内容优化](https://www.chingow.cn/posts/bd723aed.html)

@@ -9,7 +9,7 @@
 # Useful if you want to comment some options from NexT `_config.yml` by `next.yml` without editing default config.
 override: false
 
-# Console reminder if new version released.
+# Console reminder if new released.
 reminder: false
 
 # Allow to cache content generation. Introduced in NexT v6.0.0.
@@ -982,3 +982,8 @@ images: images
 
 # 鼠标点击特效
 cursor_effect: false #fireworks
+
+# 近期文章
+recent_posts: false
+recent_posts_title: 近期文章
+recent_posts_layout: block

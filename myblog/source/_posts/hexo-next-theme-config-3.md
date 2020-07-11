@@ -10,6 +10,7 @@ categories: Hexo创建博客
 + 修改博客字体
 + 添加结束标记
 + 添加动态特效
++ 显示近期文章(to do)
 
 <!--more-->
 
@@ -170,5 +171,44 @@ custom_file_path:
 cursor_effect: fireworks
 ```
 
+## 显示近期文章 (未完成)
+{%note info%}
++ 本章参考来自 [Hexo+NexT(v7.0+) 搭建博客：主题美化](https://www.chingow.cn/posts/c7372a12.html)
++ [Hexo: 给博客添加近期文章板块](https://postgres.fun/20190116150800.html)
++ [swig安装搭建与测试](https://blog.csdn.net/chenglinhust/article/details/41206511?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase)
+{%endnote%}
+
+我没实现 总是有Bug， 看了看代码也不行。
+
+主要添加内容：
+```swig /next/layout/_partials/sidebar/site-overview.swig
+{# Blogroll #}
+{%- if theme.recent_posts %}
+  <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.recent_posts_layout  }}">
+  <div class="links-of-blogroll-title">
+    <!-- modify icon to fire by szw -->
+    <i class="fa fa-history fa-{{ theme.recent_posts_icon | lower }}" aria-hidden="true"></i>
+    {{ theme.recent_posts_title }}
+  </div>
+  <ul class="links-of-blogroll-list">
+    {%- set posts = site.posts.sort('-date') %}
+    {%- for post in posts.slice('0', '3') %}
+      <li class="links-of-blogroll-item">
+        <a href="{{ url_for(post.path) }}" title="{{ post.title }}" target="_blank">{{ post.title }}</a>
+      </li>
+    {%- endfor %}
+  </ul>
+  </div>
+{%- endif %}
+```
+
+``` yml /theme/next/_config.yml
+# 近期文章
+recent_posts_title: 近期文章
+recent_posts_layout: block
+recent_posts: true
+```
+
 ## 参考文章
-+ H[exo 搭建个人博客系列：主题美化篇](http://yearito.cn/posts/hexo-theme-beautify.html)
++ [Hexo 搭建个人博客系列：主题美化篇](http://yearito.cn/posts/hexo-theme-beautify.html)
++ [NexT 中文使用说明](https://theme-next.iissnan.com/getting-started.html)

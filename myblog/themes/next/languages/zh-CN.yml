@@ -19,6 +19,7 @@ menu:
 sidebar:
   overview: 站点概览
   toc: 文章目录
+  # recent_posts: 近期文章
 post:
   posted: 发表于
   edited: 更新于
