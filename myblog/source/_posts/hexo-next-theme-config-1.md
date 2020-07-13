@@ -165,6 +165,34 @@ leancloud_visitors:
 ```
 参考文章：[Hexo Next主题 使用LeanCloud统计文章阅读次数、添加热度排行页面](https://blog.qust.cc/archives/48665.html)
 
+#### 添加评论次数的中文
+在文章开头总是`Valine：`可以对`themes/next/scripts/filters/comment/valine.js `进行如下修改：
+```diff themes/next/scripts/filters/comment/valine.js
+  injects.postMeta.raw('valine', `
+  {% if post.comments and (is_post() or theme.valine.comment_count) %}
+  <span class="post-meta-item">
+-    ${iconText('far fa-comment', 'valine')}
++    <span class="post-meta-item-icon">
++    <i class="far fa-comment"></i>
++    </span> 
++    <span class="post-meta-item-text">{{ __('post.comments') + __('symbol.colon') }}</span>
+    <a title="valine" href="{{ url_for(post.path) }}#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
+    </a>
+  </span>
+  {% endif %}
+  `, {}, {}, theme.valine.post_meta_order);
+```
+然后在语言配置文件中添加
+```diff themes/next/languages/zh-CN.yml
+post: 
+  posted: 发表于
+  edited: 更新于
+  created: 创建时间
+  modified: 修改时间
+  views: 阅读次数
++  Valine: 评论次数
+```
 ### 不蒜子站点统计功能
 
 打开主题配置文件，搜索`busuanzi`,修改如下内容：

@@ -46,6 +46,16 @@
           {%- set time_diff = time(post.date) != time(post.updated) %}
           {%- set datetime_diff = date_diff or time_diff %}
 
+          {# 添加文章置顶 #}
+          {% if post.top %}
+          <span class="post-meta-item">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-tag"></i>
+            </span>
+            <span class="post-meta-item" style="color:#7D26CD">{{ __('post.top') }}</span>
+            </span>
+          {% endif %}
+
           {%- if theme.post_meta.created_at %}
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -95,6 +105,8 @@
               {%- endfor %}
             </span>
           {%- endif %}
+
+          <br />
 
           {# LeanCloud PageView #}
           {%- if theme.leancloud_visitors.enable or (theme.valine.enable and theme.valine.appid and theme.valine.appkey and theme.valine.visitor) %}

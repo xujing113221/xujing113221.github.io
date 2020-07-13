@@ -6,6 +6,7 @@ tags:
     - NexT
 categories: 
     - [学习笔记, Hexo创建博客]
+top: false
 ---
 
 {%note primary%}
@@ -16,8 +17,9 @@ categories:
 + 添加热门文章排行榜
 + 添加结束标记
 + 添加动态特效
-+ 显示近期文章(to do)
++ 显示近期文章
 + 添加RSS订阅
++ 添加文章置顶功能
 
 <!--more-->
 
@@ -245,7 +247,7 @@ recent_posts: true
 ```
 ## 添加RSS订阅
 {%note info%}
-本章参考：[Next -14- 为Hexo Next7.7.1 添加RSS （带按钮）]( https://www.zywvvd.com/2020/03/20/next/14_add_rss/next-add-rss/)
+本章参考：[Next -14- 为Hexo Next7.7.1 添加RSS （带按钮）](https://www.zywvvd.com/2020/03/20/next/14_add_rss/next-add-rss/)
 {%endnote%}
 
 本博客使用NexT v7.8 版本，该版本已经去掉了RSS边栏显示，所以要自己为RSS添加代码。添加到你想要的边栏地方就好了。其余步骤就是修改配置文件了。
@@ -268,9 +270,40 @@ recent_posts: true
   </div>
 {%- endif %}
 ```
+## 添加文章置顶功能
+{%note info%}
+本章内容参考：[小丁的个人博客 ｜ 本博客当前使用的插件总结](https://tding.top/archives/567debe0.html)
+{%endnote%}
 
++ 使用npm安装[相关插件](https://github.com/netcan/hexo-generator-index-pin-top)：
+```bash
+npm uninstall hexo-generator-index --save
+npm install hexo-generator-index-pin-top --save
+```
++ 写文章时候在文章头部添加`top`字样，如{%label success@top: 100%}，数字越大越在主页置顶。
++ 打开`/themes/next/layout/_macro/`目录下的`post.swig`文件，在`<div class="post-meta">`的第一个`<span>`标签下，插入如下代码：
+```swig /themes/next/layout/_macro/post.swig
+{# 添加文章置顶 #}
+{% if post.top %}
+<span class="post-meta-item">
+  <span class="post-meta-item-icon">
+    <i class="fa fa-tag"></i>
+  </span>
+  <span class="post-meta-item" style="color:#7D26CD">{{ __('post.top') }}</span>
+  </span>
+{% endif %}
+```
++ 在语言配置文件中添加`top`词条。
+``` diff themes/next/languages/zh-CN.yml 
+post:
++  top: 置顶
+  posted: 发表于
+  edited: 更新于
+  created: 创建时间
+```
 
 ## 参考文章
 + [Hexo 搭建个人博客系列：主题美化篇](http://yearito.cn/posts/hexo-theme-beautify.html)
 + [NexT 中文使用说明](https://theme-next.iissnan.com/getting-started.html)
-+ [Next -14- 为Hexo Next7.7.1 添加RSS （带按钮）]( https://www.zywvvd.com/2020/03/20/next/14_add_rss/next-add-rss/)
++ [Next -14- 为Hexo Next7.7.1 添加RSS （带按钮）](https://www.zywvvd.com/2020/03/20/next/14_add_rss/next-add-rss/)
++ [小丁的个人博客 ｜ Hexo 搭建个人博客文章汇总](https://tding.top/archives/aad98408.html#more)

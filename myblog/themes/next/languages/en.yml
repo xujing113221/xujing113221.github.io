@@ -22,6 +22,7 @@ sidebar:
   toc: Table of Contents
 
 post:
+  top: TOP
   posted: Posted on
   edited: Edited on
   created: Created
@@ -32,6 +33,7 @@ post:
   untitled: Untitled
   sticky: Sticky
   views: Views
+  comments: Comments
   related_posts: Related Posts
   copy_success: Copy Success
   copyright:

@@ -14,5 +14,8 @@ To do：
 + 添加近期文章
 
 
-[为Hexo添加RSS订阅](https://hasaik.com/posts/19c94341.html)
-[Next -14- 为Hexo Next7.7.1 添加RSS （带按钮）]( https://www.zywvvd.com/2020/03/20/next/14_add_rss/next-add-rss/)
+[Hexo -7- Github源七牛云CDN加速教程（详细)](https://www.zywvvd.com/2020/03/19/hexo/7_hexo_speed_up/hexo-speed-up/)
+
+[Hexo 搭建个人博客文章汇总](https://tding.top/archives/aad98408.html)
+
+[Hexo添加多语言支持「国际化i18n」](https://tstrs.me/1448.html)
