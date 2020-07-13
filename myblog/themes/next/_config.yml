@@ -274,7 +274,7 @@ follow_me:
   #Twitter: https://twitter.com/username || fab fa-twitter
   #Telegram: https://t.me/channel_name || fab fa-telegram
   #WeChat: /images/wechat_channel.jpg || fab fa-weixin
-  #RSS: /atom.xml || fa fa-rss
+  #RSS: atom.xml || fa fa-rss
 
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
@@ -986,7 +986,5 @@ cursor_effect: fireworks #fireworks #love #text #explosion #false
 # 背景粒子漂浮聚合特效
 canvas_nest: false
 
-# 近期文章
-recent_posts: false
-recent_posts_title: 近期文章
-recent_posts_layout: block
+# RSS
+rss: /atom.xml
