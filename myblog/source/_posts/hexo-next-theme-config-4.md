@@ -15,6 +15,7 @@ categories:
 + 修改博客字体
 + 版权声明个性化设置
 + 添加看板娘功能
++ 解决不蒜子显示问题
 
 <!--more-->
 
@@ -273,6 +274,21 @@ rating:
 {%note info%}
   不想再写了，这个功能很简单，看这个人的博客就好 [yearito's Blog | Hexo搭建个人博客系列：进阶设置篇](http://yearito.cn/posts/hexo-advanced-settings.html)
 {%endnote%}
+
+## 解决不蒜子显示问题
+{%note info%}
+本章内容参考:[解决live2d看板娘和busuanzi不蒜子计数冲突](http://boyinthesun.cn/post/error-live2d-busuanzi/)
+{%endnote%}
+
++ 下载[busuanzi.pure.mini.js](busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js)到本地存储在文件夹`themes/next/source/js/`中
++ 修改`busuanzi.pure.mini.js` 将`b.style.display="none"`中`none`去掉。
++ 修改如下代码：
+```diff themes/next/layout/_third-party/statistics/busuanzi-counter.swig
+{%- if theme.busuanzi_count.enable %}
+<div class="busuanzi-count">
+-  <script{{ pjax }} async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
++  <script async src="/js/busuanzi.pure.mini.js"></script>
+```
 
 ## 结束语
 
