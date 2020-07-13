@@ -149,3 +149,16 @@ live2d:
   dialog:
     enable: false #添加对话框
     hitokoto: true
+
+plugins: hexo-generate-feed
+
+# rss配置
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: " "
+  order_by: -date
