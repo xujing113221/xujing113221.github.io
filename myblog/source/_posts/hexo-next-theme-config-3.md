@@ -8,12 +8,16 @@ categories:
     - [学习笔记, Hexo创建博客]
 ---
 
+{%note primary%}
+本文提到的Hexo博客配置是基于：Hexo v4.2.1 和 NexT v7.8.0。请注意版本之间存在差异！
+{%endnote%}
 本文继续配置 Hexo-Next，进一步对博客进行美化，主要包括:
 
 + 添加热门文章排行榜
 + 添加结束标记
 + 添加动态特效
 + 显示近期文章(to do)
++ 添加RSS订阅
 
 <!--more-->
 
@@ -239,7 +243,34 @@ recent_posts_title: 近期文章
 recent_posts_layout: block
 recent_posts: true
 ```
+## 添加RSS订阅
+{%note info%}
+本章参考：[Next -14- 为Hexo Next7.7.1 添加RSS （带按钮）]( https://www.zywvvd.com/2020/03/20/next/14_add_rss/next-add-rss/)
+{%endnote%}
+
+本博客使用NexT v7.8 版本，该版本已经去掉了RSS边栏显示，所以要自己为RSS添加代码。添加到你想要的边栏地方就好了。其余步骤就是修改配置文件了。
+
+```swig xujing$ cd themes/next/layout/_partials/sidebar/site-overview.swig 
+{# RSS #}
+{% if theme.rss %}
+   <div class="feed-link motion-element">
+     <a href="{{ url_for(theme.rss) }}" rel="alternate">
+       <i class="fa fa-rss"></i>
+       RSS
+     </a>
+   </div>
+ {% endif %}
+
+{%- if theme.creative_commons.license and theme.creative_commons.sidebar %}
+  <div class="cc-license motion-element" itemprop="license">
+  {%- set ccImage = '<img src="' + url_for(theme.images + '/cc-' + theme.creative_commons.license + '.svg') + '" alt="Creative Commons">' %}
+    {{ next_url(ccURL, ccImage, {class: 'cc-opacity'}) }}
+  </div>
+{%- endif %}
+```
+
 
 ## 参考文章
 + [Hexo 搭建个人博客系列：主题美化篇](http://yearito.cn/posts/hexo-theme-beautify.html)
 + [NexT 中文使用说明](https://theme-next.iissnan.com/getting-started.html)
++ [Next -14- 为Hexo Next7.7.1 添加RSS （带按钮）]( https://www.zywvvd.com/2020/03/20/next/14_add_rss/next-add-rss/)

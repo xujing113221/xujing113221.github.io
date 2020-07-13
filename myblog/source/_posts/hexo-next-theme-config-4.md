@@ -8,6 +8,9 @@ categories:
     - [学习笔记, Hexo创建博客]
 ---
 
+{%note primary%}
+本文提到的Hexo博客配置是基于：Hexo v4.2.1 和 NexT v7.8.0。请注意版本之间存在差异！
+{%endnote%}
 本文主要介绍我在NexT主题配置中遇到的小问题，以及主题的进一步美化，深入Next代码进行个性化配置。
 
 + 页脚设置
