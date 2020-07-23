@@ -118,7 +118,7 @@ menu:
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
   hot: /hot/ || fa fa-signal
-  #about: /about/ || fa fa-user
+  about: /about/ || fa fa-user
   #schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
