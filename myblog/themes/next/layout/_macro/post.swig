@@ -106,7 +106,7 @@
             </span>
           {%- endif %}
 
-          <br />
+        
 
           {# LeanCloud PageView #}
           {%- if theme.leancloud_visitors.enable or (theme.valine.enable and theme.valine.appid and theme.valine.appkey and theme.valine.visitor) %}

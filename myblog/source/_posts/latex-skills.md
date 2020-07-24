@@ -3,8 +3,8 @@ title: LaTeX 学习笔记
 date: 2020-07-24 00:55:03
 top:
 tags: LaTeX
-categories: 学习笔记
-password:
+categories: [学习笔记, LaTeX排版]
+password: latex
 ---
 
 本文介绍我学习LaTeX的学习笔记。
@@ -51,3 +51,12 @@ password:
 
 [在 TeX 和 LaTeX2e 中定义新命令](https://liam.page/2017/07/30/define-a-new-command-with-different-amount-of-parameters-in-LaTeX/)
 
+
+[Configure Visual Stuido Code as LaTeX IDE](http://ddswhu.me/posts/2018-04/vs-code-for-latex/)
+
+http://texdoc.net/texmf-dist/doc/generic/pgf/pgfmanual.pdf
+https://njuwfang.github.io/2018/10/23/Latex-Tikz/
+
++ [latex 中的长度单位，尺寸](https://blog.csdn.net/robert_chen1988/article/details/52739825)
+
++ [LaTeX入门(三)——Hello world!](https://zhuanlan.zhihu.com/p/56016409)
