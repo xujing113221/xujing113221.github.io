@@ -4,7 +4,7 @@ date: {{ date }}
 top: 
 tags:
 categories: 
-related_posts: 
+permalink: 转链接
 password: 
 abstract: 这是我的小秘密哦
 message: 你知道密码吗？

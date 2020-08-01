@@ -5,6 +5,9 @@ top:
 tags: LaTeX
 categories: [学习笔记, LaTeX排版]
 password: latex
+abstract: 我还没写完不许看！
+message: 你知道密码吗？
+wrong_pass_message: 你果然不知道密码！
 ---
 
 本文介绍我学习LaTeX的学习笔记。

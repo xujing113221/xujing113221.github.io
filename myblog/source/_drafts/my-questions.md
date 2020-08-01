@@ -20,3 +20,8 @@ To do：
 
 [Hexo添加多语言支持「国际化i18n」](https://tstrs.me/1448.html)
 
+[新发现的博客](https://www.itrhx.com/)
+
+[新发现的主题](https://volantis.js.org/v3/theme-settings/)
+
+[新发现的简历主题](https://resume.js.org/)
