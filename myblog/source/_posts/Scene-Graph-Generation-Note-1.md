@@ -70,7 +70,12 @@ export PYTHONPATH=/home/xujing/Dokumente/neural-motifs/:/home/xujing/Dokumente/n
    pip install opencv-python
 3. pip install easydict
 
+```bash
 export PATH=/usr/local/cuda-10.0/bin:$PATH
+export PYTHONPATH=/home/xujing/Dokumente/DynSG/fasterrcnn/lib/:/home/xujing/Dokumente/DynSG/
+export PYTHONPATH=$PYTHONPATH:/home/xujing/miniconda3/envs/dynsg/lib/
+export LD_LIBRARY_PATH=/home/xujing/miniconda3/envs/dynsg/lib/
+```
 
 #### issues
 
@@ -79,11 +84,12 @@ export PATH=/usr/local/cuda-10.0/bin:$PATH
 
 2. https://ucasfl.github.io/2017/12/21/fix-the-problem-of-that-usr-lib-x86-64-linux-gnu-libstdc-so-6-version-GLIBCXX-3-4-22-not-found/
 
-
-export PYTHONPATH=/home/xujing/Dokumente/DynSG/fasterrcnn/lib/:/home/xujing/Dokumente/DynSG/
-
-export PYTHONPATH=$PYTHONPATH:/home/xujing/miniconda3/envs/dynsg/lib/
-
+3. 如何更换 GPU   
+   需要重新编译fasterrcnn
+   ```bash
+   cd fasterrcnn/lib
+   python setup.py build develop
+   ```
 
 ### cuda
 
