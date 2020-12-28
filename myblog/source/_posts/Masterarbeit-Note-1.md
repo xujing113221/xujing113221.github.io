@@ -12,7 +12,14 @@ categories: 毕业设计
 
 ## Transformer
 
-### Reference
-    + 
-    + [Transformer 的 PyTorch 实现](https://wmathor.com/index.php/archives/1455/)
-    + [Transformer 详解](https://wmathor.com/index.php/archives/1438/)
+ + [Transformer 的 PyTorch 实现](https://wmathor.com/index.php/archives/1455/)
+ + [Transformer 详解](https://wmathor.com/index.php/archives/1438/)
+
+
+## Question
+
+1. freq bias 需要梯度吗 
+```python
+   with torch.no_grad():
+        self.freq_bias = FrequencyBias(cfg.TRAIN.DATASETS[0])
+```
