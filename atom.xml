@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xujing113221.github.io/"/>
-  <updated>2021-01-03T01:13:17.790Z</updated>
+  <updated>2021-01-03T05:32:21.672Z</updated>
   <id>http://xujing113221.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How to install desktop on Linux</title>
+    <link href="https://phoenixnap.com/kb/how-to-install-a-gui-on-ubuntu/"/>
+    <id>https://phoenixnap.com/kb/how-to-install-a-gui-on-ubuntu/</id>
+    <published>2021-01-03T05:31:19.000Z</published>
+    <updated>2021-01-03T05:32:21.672Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="操作系统" scheme="http://xujing113221.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="Linux" scheme="http://xujing113221.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title> Mac M1 with Windows on Parallels</title>
