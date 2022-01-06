@@ -1,0 +1,1482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>How to install desktop on Linux</title>
+    <url>/https://phoenixnap.com/kb/how-to-install-a-gui-on-ubuntu/</url>
+    <content><![CDATA[<p>转载：如何安装linux 桌面GUI</p>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title> Mac M1 with Windows on Parallels</title>
+    <url>/https://zhuanlan.zhihu.com/p/338967674/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Masterarbeit Note-1</title>
+    <url>/Masterarbeit-Note-1/</url>
+    <content><![CDATA[<h2 id="Transformer">Transformer</h2>
+<ul>
+<li><a href="https://wmathor.com/index.php/archives/1455/" target="_blank" rel="noopener">Transformer 的 PyTorch 实现</a></li>
+<li><a href="https://wmathor.com/index.php/archives/1438/" target="_blank" rel="noopener">Transformer 详解</a></li>
+</ul>
+<h2 id="Question">Question</h2>
+<ol>
+<li>freq bias 需要梯度吗</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> torch.no_grad():</span><br><span class="line">     self.freq_bias = FrequencyBias(cfg.TRAIN.DATASETS[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>毕业设计</category>
+      </categories>
+      <tags>
+        <tag>Computer Vision</tag>
+        <tag>Deep Learning</tag>
+        <tag>Pytorch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IRT_Seminar_Note_1</title>
+    <url>/IRT-Seminar-Note-1/</url>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="你果然不知道密码！" data-whm="秘密你是看不了，给你看个大宝贝吧！">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">你知道密码吗？</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="6a75a36dd2cafdf1ff47b000da3fea5f481e9cebece5f6c37408ba60bf07a24d">c9506a114a0a60fc6e5c044673a5b3cab6065ad294e6996593fcfcfa23f860cca1282856b136190fb7920513487a817f80e2a7cc90aa9f83194a885cc3bf4328bc69d6ae300c31d1f07195f0b4bc3620103193eb82b12ba7011ffac7bf7d612984a0ae5459e4cfd62abafe1e006405ce6bd813747ba27a67bbd5bf4f15301d1d203604a9d09fdce3dbdfd18dccb2b8b99402c139ad5f9a9333ab1ad72b4c29c7f8b466647ff4155a46206a8586b40a134a2f9e9aaa64cfc7709832adda9bc9a50c0fa2d9e628875881b923fe3a9871c9a30ef81fbb1fa27e61cfa393f9c12c7d6c7803617427ef770d49ed2822475d87b35f8a927632dece8b382373572f3d5e2e1efc57bec0bd5b841ad08f7ef765c7527426c4ae681b9304af2060864d7bfd32d88cd0961b4fbdce6436d3e673212c50275339c1a0d4cf5a5537b38073aebf457f26e953faf778f0e06aeb5c97f062e23f04c68847313514580d680a65002a</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>小项目</category>
+      </categories>
+      <tags>
+        <tag>ROS</tag>
+        <tag>PCL</tag>
+        <tag>Robotic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Scene Graph Generation Note 1</title>
+    <url>/Scene-Graph-Generation-Note-1/</url>
+    <content><![CDATA[<p>本文记录一下Hiwi的相关笔记。</p>
+<a id="more"></a>
+<h3 id="how-to-make">how to make</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh ssh1</span><br><span class="line"></span><br><span class="line">ssh tntpc</span><br><span class="line"></span><br><span class="line">ssh persephone</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> ~/miniconda3/bin/activate</span><br><span class="line"> :<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> LANG=en_US.UTF-8</span><br></pre></td></tr></table></figure>
+<h3 id="neural-motifs">neural-motifs</h3>
+<ul>
+<li>
+<p>env</p>
+<ol>
+<li>conda</li>
+<li>conda install python=3.6</li>
+<li>conda install pytorch=0.3.0 torchvision=0.2.0 cuda90 -c pytorch</li>
+<li>conda install cython</li>
+<li>conda install h5py</li>
+<li>pycocotools:<br>
+<code>git clone https://github.com/pdollar/coco.git | make | python setup.py build_ext install</code></li>
+<li>conda install dill</li>
+<li>conda install pandas</li>
+<li>pip install overrides</li>
+</ol>
+</li>
+<li>
+<p>dataset:<br>
+/data/scene_understanding/Visual_Genome/</p>
+</li>
+<li>
+<p>pycharm:<br>
+sh ~/tmp/pycharm-community-2020.2.1/bin/pycharm.sh &amp;</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PYTHONPATH=/home/xujing/Dokumente/neural-motifs/:/home/xujing/Dokumente/neural-motifs/lib/</span><br></pre></td></tr></table></figure>
+<h3 id="DYNSG">DYNSG</h3>
+<h4 id="env">env</h4>
+<ol>
+<li>conda install pytorch=1.0.0 torchvision=0.2.1 cuda100 -c pytorch</li>
+<li>opencv<br>
+conda install -c <a href="https://conda.anaconda.org/menpo" target="_blank" rel="noopener">https://conda.anaconda.org/menpo</a> opencv<br>
+pip install opencv-python</li>
+<li>pip install easydict</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=/usr/<span class="built_in">local</span>/cuda-10.0/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> PYTHONPATH=/home/xujing/Dokumente/DynSG/fasterrcnn/lib/:/home/xujing/Dokumente/DynSG/</span><br><span class="line"><span class="built_in">export</span> PYTHONPATH=<span class="variable">$PYTHONPATH</span>:/home/xujing/miniconda3/envs/dynsg/lib/</span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/home/xujing/miniconda3/envs/dynsg/lib/</span><br></pre></td></tr></table></figure>
+<h4 id="issues">issues</h4>
+<ol>
+<li>
+<p>_C.cpython-36m-x86_64-linux-gnu.so<br>
+pip install -U torchvision==0.4.0</p>
+</li>
+<li>
+<p><a href="https://ucasfl.github.io/2017/12/21/fix-the-problem-of-that-usr-lib-x86-64-linux-gnu-libstdc-so-6-version-GLIBCXX-3-4-22-not-found/" target="_blank" rel="noopener">https://ucasfl.github.io/2017/12/21/fix-the-problem-of-that-usr-lib-x86-64-linux-gnu-libstdc-so-6-version-GLIBCXX-3-4-22-not-found/</a></p>
+</li>
+<li>
+<p>如何更换 GPU<br>
+需要重新编译fasterrcnn</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> fasterrcnn/lib</span><br><span class="line">python setup.py build develop</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="cuda">cuda</h3>
+<p>import torch</p>
+<p>torch.cuda.is_available()<br>
+print(torch.version.cuda)<br>
+torch.backends.cudnn.enabled</p>
+<p>python -c “import torch;print(torch.version.cuda)”</p>
+<p>CUDA_VISIBLE_DEVICES=3</p>
+<p>nvidia-smi</p>
+<h3 id="conda">conda</h3>
+<ul>
+<li>source activate $envname</li>
+<li>source deactivate</li>
+<li>conda list -e requeirment.txt</li>
+<li>conda install --yes --file requirements.txt</li>
+<li>conda env export &gt; environment.yaml</li>
+<li>conda env create -f environment.yaml</li>
+<li>conda create -n py36 python=3.6</li>
+</ul>
+<h3 id="software">software</h3>
+<p>intern net:<br>
+firefox <a href="http://tntintern/" target="_blank" rel="noopener">http://tntintern/</a></p>
+<p>emial:<br>
+thunderbird</p>
+<h3 id="linux-command">linux command</h3>
+<p>check the size of path:<br>
+du -h filepath</p>
+<p>screen:<br>
+screen -S $Name<br>
+screen -ls<br>
+screen -r $id<br>
+[detached] ctrl+a+d</p>
+<h3 id="conda-pip-env-transform">conda pip env transform</h3>
+<p><a href="https://www.jianshu.com/p/b86c17057da8?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation" target="_blank" rel="noopener">conda环境转移复制和pip包的转移复制</a></p>
+<h3 id="vnc">vnc</h3>
+<ol>
+<li>on servers (cp202-03)<br>
+vncserver -geometry 1920x1080 :8</li>
+<li>on local (mac)<br>
+ssh -fNCT -L 5902:cp202-03:5908 <a href="mailto:xujing@ssh1.tnt.uni-hannover.de">xujing@ssh1.tnt.uni-hannover.de</a></li>
+<li>on vnc view<br>
+connect: localhost:5902</li>
+<li>kill<br>
+vncserver -kill :8</li>
+</ol>
+<h3 id="ssh">ssh</h3>
+<ul>
+<li><a href="https://blog.csdn.net/dcz1994/article/details/103120254" target="_blank" rel="noopener">vscode通过跳板机(堡垒机)连接remote服务器</a></li>
+</ul>
+<p>LocalForward 5902 cp202-03:5908</p>
+<h3 id="reference">reference</h3>
+<ul>
+<li><a href="https://rowanzellers.com/neuralmotifs/" target="_blank" rel="noopener">https://rowanzellers.com/neuralmotifs/</a></li>
+<li><a href="https://rowanzellers.com/scenegraph2/" target="_blank" rel="noopener">https://rowanzellers.com/scenegraph2/</a></li>
+<li><a href="https://www.twblogs.net/a/5bbd3c892b71776bd30c2020/?lang=zh-cn" target="_blank" rel="noopener">scene graph(visual relation) 简述</a></li>
+<li><a href="https://www.telesens.co/2018/03/11/object-detection-and-classification-using-r-cnns/" target="_blank" rel="noopener">Object Detection and Classification using R-CNNs</a></li>
+<li><a href="https://www.pythonf.cn/read/82784" target="_blank" rel="noopener">Faster RCNN-PyTorch版本运行记录</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>计算机视觉</category>
+      </categories>
+      <tags>
+        <tag>Computer Vision</tag>
+        <tag>Deep Learning</tag>
+        <tag>Pytorch</tag>
+        <tag>CUDA</tag>
+        <tag>Motifs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Scene Graph Generation Note 2</title>
+    <url>/Scene-Graph-Generation-Note-2/</url>
+    <content><![CDATA[<p>本文记录一下Hiwi的相关笔记, 第二部分。</p>
+<a id="more"></a>
+<h3 id="调试工具">调试工具</h3>
+<p><a href="https://www.jiqizhixin.com/articles/2019-06-18-10" target="_blank" rel="noopener">PyTorch代码调试利器: 自动print每行代码的Tensor信息</a></p>
+<h3 id="tenserbroad">tenserbroad</h3>
+<ul>
+<li>
+<p>for pytorch=1.2<br>
+pip install tensorboard<br>
+pip install tensorflow</p>
+</li>
+<li>
+<p>for pytorch=0.4<br>
+pip install tensorboardX</p>
+</li>
+</ul>
+<h3 id="netron">netron</h3>
+<ul>
+<li><a href="https://lutzroeder.github.io/netron/" target="_blank" rel="noopener">https://lutzroeder.github.io/netron/</a></li>
+<li></li>
+</ul>
+<h3 id="VNC">VNC</h3>
+<p>ssh -fNCT -L 5902:cp202-03:5908 <a href="mailto:xujing@ssh1.tnt.uni-hannover.de">xujing@ssh1.tnt.uni-hannover.de</a></p>
+<h3 id="MSDN">MSDN</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PYTHONPATH=/home/xujing/Dokumente/MSDN/:/home/xujing/Dokumente/MSDN/faster_rcnn/</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH=/home/xujing/miniconda3/envs/msdn/bin:/home/xujing/miniconda3/condabin:/usr/<span class="built_in">local</span>/cuda-8.0/bin:/home/xujing/.vscode-server/bin/e790b931385d72cf5669fcefc51cdf65990efa5d/bin:/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin</span><br><span class="line"></span><br><span class="line">conda install cudnn=7.1.2</span><br></pre></td></tr></table></figure>
+<h3 id="install">install</h3>
+<p><a href="https://www.pythonf.cn/read/82784" target="_blank" rel="noopener">Faster RCNN-PyTorch版本运行记录</a></p>
+<p>git checkout pytorch1.0</p>
+<p>cd lib<br>
+python <a href="http://setup.py" target="_blank" rel="noopener">setup.py</a> build develop</p>
+<h3 id="Blog">Blog</h3>
+<p><a href="https://www.telesens.co/2018/03/11/object-detection-and-classification-using-r-cnns/" target="_blank" rel="noopener">https://www.telesens.co/2018/03/11/object-detection-and-classification-using-r-cnns/</a></p>
+<h3 id="reference">reference</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/skyfsm/p/6806246.html" target="_blank" rel="noopener">基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>计算机视觉</category>
+      </categories>
+      <tags>
+        <tag>Computer Vision</tag>
+        <tag>Deep Learning</tag>
+        <tag>Pytorch</tag>
+        <tag>CUDA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Scene Graph Generation Note 3</title>
+    <url>/Scene-Graph-Generation-Note-3/</url>
+    <content><![CDATA[<p>本文记录一下Hiwi的相关笔记, 第三部分。</p>
+<a id="more"></a>
+<p>conda install pytorch=1.0<br>
+pip install cython<br>
+pip install matplotlib numpy scipy pyyaml packaging pycocotools tensorboardX tqdm pillow scikit-image<br>
+conda install opencv</p>
+<h3 id="envriment">envriment</h3>
+<ul>
+<li>
+<p>PATH<br>
+export PATH=/home/xujing/miniconda3/envs/cl4vrd/bin:/home/xujing/miniconda3/condabin:/usr/local/cuda-10.0/bin:/home/xujing/.vscode-server/bin/58bb7b2331731bf72587010e943852e13e6fd3cf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin</p>
+</li>
+<li>
+<p>PYTHONPATH<br>
+export PYTHONPATH=/home/xujing/Dokumente/ContrastiveLosses4VRD</p>
+</li>
+</ul>
+<h3 id="GPSNet">GPSNet</h3>
+<p><a href="https://github.com/taksau/GPS-Net/tree/master/gpsnet-detectron" target="_blank" rel="noopener">https://github.com/taksau/GPS-Net/tree/master/gpsnet-detectron</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=/home/xujing/miniconda3/envs/gpsnet/bin:/home/xujing/miniconda3/condabin:/usr/<span class="built_in">local</span>/cuda-9.0/bin:/home/xujing/.vscode-server/bin/d2e414d9e4239a252d1ab117bd7067f125afd80a/bin:/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/<span class="built_in">local</span>/games:/snap/bin</span><br><span class="line"><span class="built_in">export</span> PYTHONPATH=~/Dokumente/GPS-Net/gpsnet-detectron/:~/Dokumente/GPS-Net/gpsnet-detectron/lib/:~/Dokumente/GPS-Net/gpsnet-detectron/Detectron.pytorch/lib/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如何解决  #error – unsupported GNU version! gcc versions later than 6 are not supported!<br>
+添加 --compiler-bindir /path/to/gcc-5 :<br>
+eg:<br>
+nvcc -c -o roi_crop_cuda_kernel.cu.o roi_crop_cuda_kernel.cu <br>
+-D GOOGLE_CUDA=1 --compiler-bindir /usr/bin/gcc-5 -x cu -Xcompiler -fPIC $CUDA_ARCH</li>
+</ul>
+<h3 id="isuss">isuss</h3>
+<ul>
+<li>
+<p>如何解决 /Usr/lib/x86_64-Linux-gnu/libstdc++.so.6 Version GLIBCXX_3.4.22’ Not Found</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/home/xujing/miniconda3/envs/dynsg/lib/</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Q: ImportError: torch.utils.ffi is deprecated. Please use cpp extensions instead.<br>
+A:</p>
+</li>
+</ul>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- from torch.utils.ffi import create_extension</span></span><br><span class="line"><span class="addition">+ from torch.utils.cpp_extension import BuildExtension as create_extension</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>Q: ValueError: numpy.ufunc size changed, may indicate binary incompatibility. Expected 216 from C header, got 192 from PyObject<br>
+A: conda install numpy=1.17.4</p>
+</li>
+<li>
+<p>解决软连接参数过长</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">find /data/scene_understanding/Visual_Genome/VG_100K/ -name <span class="string">"*.jpg"</span> | xargs -i ln -s &#123;&#125; VG_100K</span><br></pre></td></tr></table></figure>
+<h3 id="reference">reference</h3>
+<p><a href="https://zhuanlan.zhihu.com/p/61379965" target="_blank" rel="noopener">PyTorch 学习笔记（六）：PyTorch的十八个损失函数</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>计算机视觉</category>
+      </categories>
+      <tags>
+        <tag>Computer Vision</tag>
+        <tag>Deep Learning</tag>
+        <tag>Pytorch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Note TVM/VTA</title>
+    <url>/tvm-vta-note/</url>
+    <content><![CDATA[<p>I’ve been learning a lot about TVM this week and I visited the <a href="https://tvm.apache.org" target="_blank" rel="noopener">TVM website</a>. I also read a lot of <a href="https://tvm.apache.org/docs/" target="_blank" rel="noopener">tutorials</a> and code. I found it very interesting. It just so happens that I have Raspberry Pie 3b, so I tried the tutorial code on my ubuntu computer and it worked perfectly.</p>
+<a id="more"></a>
+<h2 id="What-is-TVM">What is TVM</h2>
+<p><a href="https://tvm.apache.org/about" target="_blank" rel="noopener">Apache(incubating) TVM</a> is an open deep learning compiler stack for CPUs, GPUs, and specialized accelerators. It aims to close the gap between the productivity-focused deep learning frameworks, and the performance- or efficiency-oriented hardware backends. TVM provides the following main features:</p>
+<ul>
+<li>Compilation of deep learning models in Keras, MXNet, PyTorch, Tensorflow, CoreML, DarkNet into minimum deployable modules on diverse hardware backends.</li>
+<li>Infrastructure to automatic generate and optimize tensor operators on more backend with better performance.</li>
+</ul>
+<p><img src="https://tvm.apache.org/images/main/tvm-stack.png" alt=""></p>
+<h2 id="Install-TVM-on-Ubuntu">Install TVM on Ubuntu</h2>
+<div class="note info">
+            <p>Reference article: <a href="https://tvm.apache.org/docs/install/from_source.html" target="_blank" rel="noopener">Docs » Installation » Install from Source</a></p>
+          </div>
+<p>I have <code>Ubuntu 18.04.2 LTS</code> on my PC.</p>
+<ul>
+<li>Get Source from Github</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --recursive https://github.com/apache/incubator-tvm tvm</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Build the Shared Library</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install -y python3 python3-dev python3-setuptools gcc libtinfo-dev zlib1g-dev build-essential cmake libedit-dev libxml2-dev</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Use cmake to build the library
+<ul>
+<li>copy the cmake/config.cmake to the directory<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir build</span><br><span class="line">cp cmake/config.cmake build</span><br></pre></td></tr></table></figure>
+</li>
+<li>Edit <code>build/config.cmake</code> to customize the compilation options<br>
+Because i have no NVIDA GPU on my pc,so don’t need to set <code>USE_CUDA ON</code><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span>(USE_GRAPH_RUNTIME ON) </span><br><span class="line"><span class="built_in">set</span>(USE_GRAPH_RUNTIME_DEBUG ON)</span><br><span class="line"><span class="built_in">set</span>(USE_LLVM ON)</span><br><span class="line"><span class="built_in">set</span>(USE_VTA_FSIM ON)  <span class="comment"># enable VTA Simulator</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>Build tvm and related libraries.  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">make -j4</span><br></pre></td></tr></table></figure>
+</li>
+<li>Set the environment variable for Python</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> TVM_HOME=~/tvm</span><br><span class="line"><span class="built_in">export</span> PYTHONPATH=<span class="variable">$TVM_HOME</span>/python:<span class="variable">$TVM_HOME</span>/python:<span class="variable">$TVM_HOME</span>/topi/python:<span class="variable">$&#123;TVM_HOME&#125;</span>/vta/python:<span class="variable">$&#123;PYTHONPATH&#125;</span></span><br><span class="line"><span class="built_in">export</span> VTA_HW_PATH=<span class="variable">$TVM_HOME</span>/3rdparty/vta-hw</span><br></pre></td></tr></table></figure>
+<ul>
+<li>To update the environment variables, execute <code>source ~/.bashrc</code>.</li>
+</ul>
+<h2 id="configuration-my-Raspberry-pi">configuration my Raspberry pi</h2>
+<p>My raspberry pi model is <code>Raspberry Pi 3 Model B Rev 1.2</code>.</p>
+<h3 id="Setup-my-Raspberry-pi-3b">Setup my Raspberry pi 3b</h3>
+<ol>
+<li>Prepare Raspberry pi 3 and an 8GB TF. and download <a href="https://www.raspberrypi.org/downloads/raspberry-pi-os/" target="_blank" rel="noopener">Raspberry Pi OS</a>, i choiced <code>Raspberry Pi OS (32-bit) with desktop</code>.</li>
+<li>Formatting TF ，write Pi images to TF using <code>Win32DiskImager</code>.</li>
+<li>No display start-up method
+<ol>
+<li>Create a new empty <code>ssh</code> file in the memory card boot disk, in order to turn on the ssh function.</li>
+<li>Create a new <code>wpa_supplicant.conf</code> text file in the memory card boot disk, write wifi configuration.</li>
+</ol>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">country&#x3D;DE</span><br><span class="line">ctrl_interface&#x3D;DIR&#x3D;&#x2F;var&#x2F;run&#x2F;wpa_supplicant GROUP&#x3D;netdev</span><br><span class="line">update_config&#x3D;1</span><br><span class="line"></span><br><span class="line">network&#x3D;&#123;</span><br><span class="line">    ssid&#x3D;&quot;my wifi name&quot;</span><br><span class="line">    psk&#x3D;&quot;my wifi password&quot;</span><br><span class="line">    key_mgmt&#x3D;WPA-PSK</span><br><span class="line">    priority&#x3D;1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>Find the IP adress of your respberry pi in rounter. contect your resperry pi via <code>ssh</code><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh pi@&lt;ip adress&gt; <span class="comment"># password: raspberry</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>Use VNC to connect raspberry pi. Command <code>sudo raspi-config</code> to configuration.</li>
+</ol>
+<h3 id="Install-TVM-on-Raspberry-pi">Install TVM on Raspberry pi</h3>
+<ul>
+<li>We only need to build tvm runtime on the remote device.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">git <span class="built_in">clone</span> --recursive https://github.com/apache/incubator-tvm tvm</span><br><span class="line"><span class="built_in">cd</span> tvm</span><br><span class="line">mkdir build</span><br><span class="line">cp cmake/config.cmake build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">make runtime -j4</span><br></pre></td></tr></table></figure>
+<ul>
+<li>set environment varibles in <code>~/.bashrc</code> file.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export PYTHONPATH&#x3D;$PYTHONPATH:~&#x2F;tvm&#x2F;python</span><br></pre></td></tr></table></figure>
+<ul>
+<li>To update the environment variables, execute <code>source ~/.bashrc</code>.</li>
+</ul>
+<h2 id="Environment-Building">Environment Building</h2>
+<h3 id="Ubuntu">Ubuntu</h3>
+<ol>
+<li><a href="http://llvm.org" target="_blank" rel="noopener">LLVM</a> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">wget https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz</span><br><span class="line">tar -xvf clang+llvm-10.0.0-armv7a-linux-gnueabihf.tar.xz</span><br><span class="line">rm clang+llvm-10.0.0-armv7a-linux-gnueabihf.tar.xz</span><br><span class="line">mv clang+llvm-10.0.0-armv7a-linux-gnueabihf clang_9.0.0</span><br><span class="line">sudo mv clang_10.0.0 /usr/<span class="built_in">local</span></span><br></pre></td></tr></table></figure>
+set environment varibles <figure class="highlight plain"><figcaption><span>~/.bashrc</span></figcaption><table><tr><td class="code"><pre><span class="line">export PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;clang_10.0.0&#x2F;bin:$PATH</span><br><span class="line">export LD_LIBRARY_PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;clang_10.0.0&#x2F;lib:$LD_LIBRARY_PATH</span><br></pre></td></tr></table></figure>
+</li>
+<li>Cross Compiler<br>
+we need <code>/usr/bin/arm-linux-gnueabihf-g++</code> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install g++-arm-linux-gnueabihf</span><br><span class="line">/usr/bin/arm-linux-gnueabihf-g++ -v</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="python">python</h3>
+<ol>
+<li>Pytorch <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pip3 install torch torchvision</span><br></pre></td></tr></table></figure>
+</li>
+<li>onnx<br>
+pytorch-&gt;onnx-&gt;tvm<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip3 install onnx</span><br></pre></td></tr></table></figure>
+</li>
+<li>python-opencv<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip3 install opencv-python </span><br><span class="line">pip3 install opencv-contrib-python</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="other-tool">other tool</h3>
+<ol>
+<li>Neron
+<ol>
+<li>online: <a href="https://lutzroeder.github.io/netron/" target="_blank" rel="noopener">https://lutzroeder.github.io/netron/</a></li>
+<li>download: <a href="https://github.com/lutzroeder/netron/find/main" target="_blank" rel="noopener">https://github.com/lutzroeder/netron/find/main</a></li>
+</ol>
+</li>
+<li>CUDA (i dont use it.because i have no NVIDA GPU)</li>
+<li><a href="https://docs.opencv.org/master/d9/df8/tutorial_root.html" target="_blank" rel="noopener">opencv</a>
+<ol>
+<li>download zip source form <a href="https://github.com/opencv/opencv/releases" target="_blank" rel="noopener">https://github.com/opencv/opencv/releases</a></li>
+<li>install contri</li>
+</ol>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install build-essential</span><br><span class="line">sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev</span><br><span class="line">sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev lib</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>cmake</li>
+</ol>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/opencv-3.4.3  </span><br><span class="line">mkdir build </span><br><span class="line"><span class="built_in">cd</span> build </span><br><span class="line">cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span> ..  </span><br><span class="line">make -j7 </span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Deploy-model-on-raspberry-pi">Deploy model on raspberry pi</h2>
+<div class="note info">
+            <p>Reference :<a href="https://tvm.apache.org/docs/tutorials/frontend/deploy_model_on_rasp.html" target="_blank" rel="noopener">Deploy the Pretrained Model on Raspberry Pi</a></p>
+          </div>
+<p>I run this <a href="https://tvm.apache.org/docs/_downloads/83dedc6352b4016772e17480ef01345d/deploy_model_on_rasp.py" target="_blank" rel="noopener">tutorials code</a> on Ubuntu</p>
+<ol>
+<li>Connect Raspberry pi via ssh<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh pi@192.168.2.105</span><br></pre></td></tr></table></figure>
+</li>
+<li>Start an RPC server on Raspberry pi<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python3 -m tvm.exec.rpc_server --host 0.0.0.0 --port=9090</span><br><span class="line">INFO:RPCServer:<span class="built_in">bind</span> to 0.0.0.0:9090 <span class="comment"># RPC server started successfully</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>Run code on Unbuntu<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python3 python3 deploy_model_on_rasp.py</span><br></pre></td></tr></table></figure>
+</li>
+<li>result
+<ol>
+<li>Raspberry pi</li>
+</ol>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">INFO:RPCServer:connection from (<span class="string">'192.168.2.108'</span>, 57062)</span><br><span class="line">INFO:RPCServer:load_module /tmp/tmppv_8msd5/net.tar</span><br><span class="line">INFO:RPCServer:Finish serving (<span class="string">'192.168.2.108'</span>, 57062)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>Ubuntu<br>
+<img src="https://github.com/dmlc/mxnet.js/blob/master/data/cat.png?raw=true" alt="" title="in_data x"><br>
+<img src="../image/tvm_plane.jpg" alt="" title="in_data y"><br>
+Model : MXNet <code>resnet18_v1</code></li>
+</ol>
+ <figure class="highlight bash"><figcaption><span>Run model on raspberry pi via RPC</span></figcaption><table><tr><td class="code"><pre><span class="line">Time <span class="keyword">for</span> model loading is 281.33s</span><br><span class="line">Time <span class="keyword">for</span> build graph  is 1.09s</span><br><span class="line">Time <span class="keyword">for</span> model running is 1.33s</span><br><span class="line">x TVM prediction top-1: tiger cat</span><br><span class="line">y TVM prediction top-1: airliner</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><figcaption><span>Run model on local pc</span></figcaption><table><tr><td class="code"><pre><span class="line">Time <span class="keyword">for</span> model loading is 0.90s</span><br><span class="line">Time <span class="keyword">for</span> bulid graph is 0.03s</span><br><span class="line">Time <span class="keyword">for</span> model running is 0.10s</span><br><span class="line">x TVM prediction top-1: tiger cat</span><br><span class="line">y TVM prediction top-1: airliner</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Running model on Raspberry Pi is significantly slower than running it on Ubuntu, mainly because it is too slow to load model through RPC. But it works.<br>
+Deploy model on raspberry pi through LLVM, deploy model on FPGA through VTA.</p>
+<h2 id="Reference">Reference</h2>
+<ul>
+<li><a href="https://tvm.apache.org" target="_blank" rel="noopener">Apache (incubating) TVM An End to End Deep Learning Compiler Stack</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/39635145" target="_blank" rel="noopener">VTA: 开源AI芯片栈</a></li>
+<li><a href="https://www.infoq.cn/article/vta-release-announcement/" target="_blank" rel="noopener">VTA：一个开放、高度可定制化的深度学习加速器平台</a></li>
+<li><a href="https://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">菜鸟驿站 - Docker 教程</a></li>
+<li><a href="https://wiki.jikexueyuan.com/project/docker-technology-and-combat/" target="_blank" rel="noopener">Docker —— 从入门到实践</a></li>
+<li><a href="https://oldpan.me/archives/the-first-step-towards-tvm-1" target="_blank" rel="noopener">一步一步解读神经网络编译器TVM(一)——一个简单的例子</a></li>
+<li><a href="https://oldpan.me/archives/the-first-step-towards-tvm-2" target="_blank" rel="noopener">一步一步解读神经网络编译器TVM(二)——利用TVM完成C++端的部署</a></li>
+<li><a href="https://blog.csdn.net/zhshh123/article/details/85051969" target="_blank" rel="noopener">树莓派入门（一） - 下载安装系统镜像，Raspbian和Centos</a></li>
+<li><a href="https://solarianprogrammer.com/2018/04/22/raspberry-pi-raspbian-install-clang-compile-cpp-17-programs/" target="_blank" rel="noopener">Raspberry Pi - Install Clang 9 and compile C++17 and C++20 programs</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>TVM</category>
+      </categories>
+      <tags>
+        <tag>TVM</tag>
+        <tag>VTA</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LaTeX 学习笔记</title>
+    <url>/latex-skills/</url>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="你果然不知道密码！" data-whm="秘密你是看不了，给你看个大宝贝吧！">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">你知道密码吗？</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="e15ea50bea1670bbdca391d184a974052d61a5c930c0195feca4ec011e433894">a58bed793ea64660c01664b01c6e05008eba3fd2db627606af9232dbaa8c1fc96112dee7d000dd498520f513925fcd47439a793febfd8849d80640cf9def2eec72b6226aa7c16d65d40c0bd27b07434b54a1163fc8078ce4d2b3b3d00c8ac456a5085e64d066c8fca4ed21e289cb534c6b017fbaea8fe685cf7dce068141a2580cf35845992af2713a716852e674d539a6e8a4e91d29f70aef2f9e3977f062d70e7a3ffdbaee342edc7f24773a278d9424a9f4cc96d8ef6ccaaa7d31365a5147fe3572c918911708c217f6d89eea6c5052ba0e58107ee2b0a5cd63ed113b93dd5d485dabde2e2e2f788302aeac388cd6d0ed380c1d5e90e5b8c7dde29cc5eea71437d13ce609e9bb0bc19a0ef69a1f8a2e155e36e96d2ba1edf1f1846e1073b3e802b2738e797980c9364c82b924ae5157f7bae86027a4c64958f9d76c2a5afc40db1f3674acdc733dccaa11ec7c640be1ef08ed1263ca98505e1e088251bb6cb8c5cef78a7144dc7b3bbc86e0623723d40d8e305decb2fdb2f134264d55ead3d5fa72207de37d0f358539b9af572e5ce31878a281ec19b833d2aef0b10bb242300e4e2d37ff0f34825f8dc87f7c63e8720f51d00c66a85dad5f4be63803af029e967dc4535d9e5bf530968f341942dc88a36a84788ee1241aa0fae74394d887dc2051db6f6408580f1b148a464e637ef39da37185e23fdf2721013c95fe808164990dd0df927575dea405e9b8e2bb0209e5375191ebc0bfdd06c824f909474cc43eff4db258195250bc3204cac40571bb369e5050fba3667c3077ab2e5cf4e223f731340ac0bc48e0bf7f9f538c3da0210e61348ab6950e516f3398c76284bbdcee3b9f3032b4f4b43a230caf670119db2a3be7ecee194824f63f4a04fb045c6f49d025c074d260334d16177a36547600aa0380874361993e8c4908223b3e466abbc6a96aeae30af1fdb1a2a14f4eaebd464d8fd21cfaea16cc95122f0acfe2542b7bcf0e877b12457a0d4d0e8a31f140b6492c0b94c63e308617e7681044c380f49a95f8401f0faf109f05f549b3a604e7504acd71783d8ac5ec51b3893b1d7939f13693ecc4311be3a05997245004df7381b246991dffea2ce339f112098bcccdc006051e5f992dc9876e8902a40c326e5b4d14b2b6656210ee28333f729069c27037cda1dbaa04e2fd5fe94ffcf8f9e8d00ace47d8e24e80b74ad817498d48eeaa2b50b627e27e50837cb34022ecdfdc1872eb8bebb09a8388c3706b45885a2fa6eafec8346f88ebb5a049de9463d2cf862b7d085d65bc0e792b2c44d95fb5d4b986a79178b3000044f08982635e2805f25f5e6bece7bfb9caa3db0618c94ac71fa989629745ad1e60d46512ec37d26380d8020457d2655eb2c8292031c0af22175ed3f50e5d0994c2bc9f66b75d502d1b273f1daaf000089f2f16b919898021602bdc8567dfebdc254cf318325042a7a74c1a58f071b720121de39baa7ab98071cdefd6b1762878c97341b62e4631ec141c132cef09460285523a78cd7e5b16c7115b5328e28ee615f9c4816d62ce23401b55c0b3bbe925061fc9189f808bae397cdbc1cfbb45f4ae34cec96f5558a1e56d817f737fd65f22d78113dcd20034bc36a5f420e66e983db8f022689642888e92b6142fcfa4055bb95a0bc8859f68b7fd008d1e485096aba3623c5abac28bb8c1afd10a056b8bc598f3f905354e05d99c9f38201191bb4252f981ba04696be059e0f03c2aa93c9a3673670155c3425f432ef7a46a3972f4e3fb85efa698677e87ed3fa20b6311cccb3003f33bbdc4f0b674fa772ff5b78bc406b407127e09ce00eb671485542983e7b27dcc6f9f813acbd2b962e858788c0791c8d5bdd20a4b7e9522081e052672909ccbbe78a81c795670c39185bb41b558c3ef596bff8d646a36c07cc7e12597c0b55d6dba6b976a576b67a4a16dcb7f53f60f97974341639df82a1805e55456deea354199debfb9ff8e8ee9867d5bb71f69ed4f09673977f196e3793d974aa9b3b1c41c93f73443ee69dd05f9f55171238591b7c9fc044671fe38c48400b9d3f6c8311bd2233bd54c430a2b39d0f20d2651224f180820a0458f1dea75bdc1671ad271faa9115ed96e34c00d42a898a3311cd9e0f82d8c616918d55cb66dc850a726fec4b4f544b9800e8ec7845691a8d52360010f9fd920c8ac2428a7144fa77c2e75b51fe28858e64fd7fa24ec907ba2cfa0884a1ab5b959af6d07a35651c6339ba6da4c77b1dfca3d706d18e048259aea6437171d93f1c015a7efbc3fdd23a11ca23494e26a6daa100782a5736718f28e66023398c859f8fe71aa17205e356bb6d280b952f766c95308492ed8809c14c0dfd4a93804bb259d8a2fee603b40075dc7afab02605e9c580ea6b029c514324dd9bfad316ba4da3503c0c3ed947ee027bc1c2fb04b0c3dd6d6732d5c75123edbae6bd9a5795a2cb043e07a314306e8dc22e557e5db5aa910955ef38aafe0ebe218df60543989fdeb8ff84c847aca0a5035e091325c7737c7c5f68b1c21c4078f52aca4f3f7cfa06ceff1b76f0df2050b74cf060b7afcb73bae269fb3e1d3c7443f0db444cea82cb77f120ebe18a892d8bdb8047ebd21a15b370ba05a829b8b171ccb97795648e8abe89819484159ca143ce00c4227d1a64de11d9423e5abfa846c50221259a5198185638e2c0022e26e63cb000b3c672016c2e2cc1749228a94d90c47c561e6961ad0c0f2c45901264a66f10e97e5d5a037a9eb863fc29d9405261d1074237539eae7a2d3ba5f790994456a05dbb548312f6699839face00df5661da13cac80394776617e90bf81b40f05a6d78bed1d961b401a4adcf463315a015704f59acab109eb4f1a001f579efeef59d81cca3bfb092f6147a5b7d24fa5200113cc007287b3e6558297397d221ea84d8faf69dc8d77c38630c34b231129bdb039cc10ffd8e8b18c446f3ed3245799e5327d86d38e31eadfb31a35c277310cafa6030f933ef20a5a250b9a7d48d5ace8b2f6368056a3ac6df17d367faf21ec86d044252c5c5638d4fa65742d860ca6273e88c13fbec2bc1bd6981d12bc0398b3c1d723e40104f7c47de704d2633cfc9078d6c58cd5ac7ac830f186d2321f22450f74ffec23c2e40fd898621d8afe6378620703b2c209bc5946f4f79ddbf538dda93b5bcf91a169bc8eff6fa6e86866451e4ccf18856563983ba5813177ffa7f40863ce0ed2a8527c430dbdee98fbed527b780411ea0ddd1c461140f8985d1eac756b5f9e72578e06936f3de66b760272bacbf0566173c67270cd23d99d2ec3f3807dbb8d79af2fd6742ffd452e3380b192cbde41c71ce323226dfce024deef9c01c0dcb4ca9d14430180916341ff3dbd417753437f7f14a0adf190cdf9f45ee3850316f7eba0d6ff8f4d4e4e28fe018b3ea968cb2b06f65e27822429585ea037039b710b3aee227746d91c79cde829a796686b6b538aae6ce4ee24f5a4eb14328ab31a1c20c4eb369850a58c27be73513d68cce70c9f81dd9ddff92f804d0c62bb08567f9dd97441bd1a3d166f94144fbe56d274f6935205cb72d7038341de331cdc054fc5ba39934f269030a928928299184abf09b6a28481d42bf97d10ae7a4e2b0e44745a13e859402a6e5b63866a0d939e2de333dce6ccbb8e84ca870d61e7486e050a9780bd2e41c4885e570ae6a54f202ed5857a40a4bab657635712b27bb1b776f8b117ad60d9f73e751496d937946c4641c5eea50265e839aa0b0875930a5eb10bba4d4fd16cedca80b198218efcf4d22f8789b0834d8de5fe5631b797991590466449fec6e4f27550b748c69aacf71cbdb840da3c33ed2dec018b88c06cc64b22f60b706497c588513debb5d4876f3da6af53232b6295a1f06d53a994dd2a3305137a3ff6f95df6105ccad88c698dceb4154be683b85d549bda56458f8af0c9ac3173500aaa83409c1fd4dafe2d2f98278e45fe7776d5c5b899129a68f1bda0e02a1abc00bd5f9e5f7ec9b3796cb1cd0651ee818acde64914de1c4704dfd1b8af567f1a3833773bc835b160699447b4ab59f5fd29f3fe57de5824544a9f24f7bce29596a2310665c2e49aa05f0c697ef10206da472c4ad5e7f02de76b95c49146e7d9816e83ac25c0baa7eb99afb8f6a86fa0836804f5fb248b252f65089b89297fec2a909a345d3bc308e698f639b92abd81f7d1fcd3e16ad062b402725896764e3c4b84591d4cb52ecc95c10f07db542358f193303a8f09cbaaf32a4fb75d3c5407d214fffba6d5dc7b1d201f3c32d472e211e4f6f223fdce2aa223f18df9387768ceecbef74f24bb3f5286be631e9e537ad1aa997d7688ea5c935e4e186de4d7b9ab556d01ca172bde9c603d9c211d13c7c2a1bcc12b2108f6f51619ccc31ef7bfc66fa7bf6cdc1767c11e920e0ae102c939ee91c22491ecf6041944d0ae8e95e77a88c72e1d5d271647d371e555718eeb306ae971614482e4d914ff1f863efb16a3e9653861c1408cf4c8009fa7b6a7a54e9d3d57ae486a1fb7d554ae397bf3701e7e413a38f6c0f3f5d7d7403eaeec49ad1589eaff54fd384bcdd84d4d075a78a0b4b463ece0fbb7dd53358e3a2a8a9fb7b97803069ce8852c9fbee7d5fd8c98c42bc5250e81732ba87ea1a044d8388e39e8317c9cd5d59c01678e9899273c7ef163218395e39365789497cd4bc6e036e20bf7f9e42404a8c5e10fca47374bb42af99d4f4759480038ea227901e226d43e2d20f310107f3aacaabffce2efcb28ad09c23e53a55226c161ab208daeae62e11d76fd9675a6a23ae86f2d24bb08ce8f48c47c9ee71807119ae79d3d1151937ea0a4f50c69f7722cb449d65b64f6f94e024a5e69ab87563eedf6fba52f45ef2cbfc9381b6c6e21afa96669f03c7babf4eed4ba51b585da0033a6fb1cb5e569d862a92bf4ea27e7257b9abc63e4e648fd66424d7caf1e5257e2b1d6ce22422b8d9fca8f5b4d06def5fd3fa5328f41d8b524bcde1f2abe26140b6c2525bd009f58db05a1203c4bea5b771f0b4e56b44d444da8b87e0ecbc2138bda8cea5ef0bca952dfec2dc3c0e5da2e1b8f7564b59c08e342f059fdfa388c74ba91894ad7aa6e198b34e7057d9c2dcc194f6ded7177e2fd368cfb926bf2b7c59e47860741320a06a74887b2a6e6b6b18bf27b9291aae9de67939dc68ff3da4ab3677ee88ae0cf7e3a1a23c8f03cb79200276076b6a29963980155cdb415e81c140b2a7473fd2c359ec14a3ba595f042670f6d09b39a70dfb3b3d17d3e0cf56281bab4a06a94d296d36940459aa7c8f3f917735e5e6d888b57ab22bb6851b359ac8295830fb826e452c04e73fbb725ef052caa3b86b61c91f58441f003340c3ee89ff327f10c5dd8fb57d41256a869a2fd7cabfd63cf3b216c4ee966d8fcb16d7cad66814b5c7c319218d17b74ab6e6b34dc072340c6280f5d171190270350b5544a1c66c0a6918d7aaafd32051e5e7da6491726145403a7c013edd2674a4f27777de097d33e96fe328e015c38db0227588da7890420d90785756d619088521646e4049614ccf591bdc3ec465e179076b17c643a843cbdfca7fbedfb904d50f4a7cfb5b9862c52b6dd6db58782af9712d195391a9325948b19bc0d0876460d00712ccad8598deecea3aa80e0646edca2f9aed0929558f265237f1f66823296f68f7623932613d0a41b77a78fccaba6e6ac8e8d6efced29d846cc4bd02ae6dc16217f9655b8f6d71000a4a1e82dffcacacb2e546338da29f4c39e3467928e7b63e43385a1798ac49ac8bcd4a38ac6722f47445a3de5061a3b4612c1c003aeef977e6b0cf4afbb4fafee995e90dfd19c8219b4d8f285b8078c0b9d7b56df1cf796</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>LaTeX排版</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何使用LaTeX写简历</title>
+    <url>/latex-resume/</url>
+    <content><![CDATA[<p>作者最近在找实习，需要制作简历，Latex是一个很好的排版工具，就使用了这个来重新写简历。经过几天时间我写完了简历，完成了使用shell脚本自动化生成简历和Makefile。本文记录一下如何使用我的LaTeX去生成简历已经简单的开发过程。</p>
+<a id="more"></a>
+<p>本人在德国留学，在外国找工作需要准备的文件很多，过程比国内要繁琐很多，尤其需要写推荐信。针对每一份工作申请，你要更改很多内容，比如信件的抬头，公司名称地址，申请职位等。如果在Word文件中更改，尤其大多数是复制粘贴，总会复制上原文字的格式，很麻烦。所以我写了一个shell脚本，在终端上进行复制输入，省去了很多不必要的麻烦，并且提高了效率。现在我修改一份简历只需要不到一分钟的时间。</p>
+<h2 id="准备工作">准备工作</h2>
+<h3 id="开发环境">开发环境</h3>
+<p>我使用的是<code>Mac OS</code>系统，由于模版要求使用的是<code>LuaTeX(Version 1.10.0)</code>。关于LaTex的下载安装可以参考这篇内容：<a href="https://www.jianshu.com/p/3e842d67ada2" target="_blank" rel="noopener">LaTeX零基础入门教程</a>。关于如何使用LaTeX可以参考:<a href="http://static.latexstudio.net/wp-content/uploads/2017/08/Note-by-LaTeX-cn.pdf" target="_blank" rel="noopener">简单粗暴 LATEX</a>。</p>
+<p>如果嫌麻烦的话你也可以在线修改你的LaTeX文件，省去了下载和配置的麻烦：<a href="https://www.overleaf.com/project" target="_blank" rel="noopener">Overleaf</a>就是很好的选择。</p>
+<h3 id="选择模版">选择模版</h3>
+<p>我为什么选择LaTeX制作简历，就是因为他有很多好看的模版。LaTeX不仅可以制作简历，现在很多论文都是使用LaTeX来排版的。</p>
+<p>可以在这里找到你喜欢的模版：<a href="https://www.overleaf.com/latex/templates" target="_blank" rel="noopener">Overleaf - Templates</a></p>
+<p>我选择的是这个模版：<a href="https://github.com/posquit0/Awesome-CV" target="_blank" rel="noopener">posquit0/Awesome-CV</a>。这个模版很简洁而且不光有简历，还有推荐信，省去了不少时间。然后我稍加更改，添加了一些小功能。你可以直接在<code>Overleaf</code>上修改,也可以通过git下载到本地进行修改。在终端输入下一命令即可：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/posquit0/Awesome-CV.git</span><br></pre></td></tr></table></figure>
+<h2 id="编写自己的简历">编写自己的简历</h2>
+<p>下载完喜欢的简历模版以后就是更改你自己内容了，以我选择的简历模版来说：在<code>resume.tex</code>修改你的简历内容，在<code>coverletter.tex</code>修改你的推荐信。<code>awesome-cv.cls</code>文件是模版文件，是控制你简历和推荐信的格式，对此文件修改就可以更改整体格式。</p>
+<h3 id="修改简历">修改简历</h3>
+<ol>
+<li>首先打开<code>resume.tex</code>文件我们看到的是第一句话就是：</li>
+</ol>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%!TEX TS-program = xelatex</span></span><br></pre></td></tr></table></figure>
+<p>他使用的是<code>XeTeX</code>程序对文件进行编译的，对<code>fontspec</code>库的支持不是很好，我在电脑端编译总是报错。所以我更改成<code>LuaLaTeX</code>，当然如果你没报错就不必要更改，这只是我的解决方法。</p>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- %!TEX TS-program = xelatex</span></span><br><span class="line"><span class="addition">+ %!TEX TS-program = luatex</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>修改你的基本信息</li>
+</ol>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% Available options: circle|rectangle,edge/noedge,left/right</span></span><br><span class="line"><span class="comment">% \photo[rectangle,edge,right]&#123;./examples/profile&#125;</span></span><br><span class="line"><span class="tag">\<span class="name">name</span><span class="string">&#123;Byungjin&#125;</span><span class="string">&#123;Park&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">position</span><span class="string">&#123;Software Architect&#123;\enskip\cdotp\enskip&#125;</span></span>Security Expert&#125;</span><br><span class="line"><span class="tag">\<span class="name">address</span><span class="string">&#123;42-8, Bangbae-ro 15-gil, Seocho-gu, Seoul, 00681, Rep. of KOREA&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">mobile</span><span class="string">&#123;(+82) 10-9030-1843&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">email</span><span class="string">&#123;posquit0.bj@gmail.com&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">homepage</span><span class="string">&#123;www.posquit0.com&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">github</span><span class="string">&#123;posquit0&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">linkedin</span><span class="string">&#123;posquit0&#125;</span></span></span><br><span class="line"><span class="comment">% \gitlab&#123;gitlab-id&#125;</span></span><br><span class="line"><span class="comment">% \stackoverflow&#123;SO-id&#125;&#123;SO-name&#125;</span></span><br><span class="line"><span class="comment">% \twitter&#123;@twit&#125;</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<p>在这里就可以修改你的个人信息。</p>
+<ol start="3">
+<li>修改你的内容</li>
+</ol>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%-------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">%	CV/RESUME CONTENT</span></span><br><span class="line"><span class="comment">%	Each section is imported separately, open each file in turn to modify content</span></span><br><span class="line"><span class="comment">%-------------------------------------------------------------------------------</span></span><br><span class="line"><span class="tag">\<span class="name">input</span><span class="string">&#123;resume/summary.tex&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">input</span><span class="string">&#123;resume/experience.tex&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">input</span><span class="string">&#123;resume/honors.tex&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">input</span><span class="string">&#123;resume/presentation.tex&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">input</span><span class="string">&#123;resume/writing.tex&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">input</span><span class="string">&#123;resume/committees.tex&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">input</span><span class="string">&#123;resume/education.tex&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">input</span><span class="string">&#123;resume/extracurricular.tex&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>在<code>resume</code>文件夹中找到相应的文件就可以修改你的内容了。注意<code>\input</code>的顺序决定你内容的顺序，你可以进行适当的修改。</p>
+<h3 id="修改推荐信">修改推荐信</h3>
+<ol>
+<li>修改你的个人信息，同简历一样。</li>
+<li>修改申请职位的信息和信件开头结尾格式</li>
+</ol>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% The company being applied to</span></span><br><span class="line"><span class="tag">\<span class="name">recipient</span></span></span><br><span class="line">  &#123;Company Recruitment Team&#125;</span><br><span class="line">  &#123;Google Inc.<span class="tag">\<span class="name">\</span></span>1600 Amphitheatre Parkway<span class="tag">\<span class="name">\</span></span>Mountain View, CA 94043&#125;</span><br><span class="line"><span class="comment">% The date on the letter, default is the date of compilation</span></span><br><span class="line"><span class="tag">\<span class="name">letterdate</span><span class="string">&#123;\today&#125;</span></span></span><br><span class="line"><span class="comment">% The title of the letter</span></span><br><span class="line"><span class="tag">\<span class="name">lettertitle</span><span class="string">&#123;Job Application for Software Engineer&#125;</span></span></span><br><span class="line"><span class="comment">% How the letter is opened</span></span><br><span class="line"><span class="tag">\<span class="name">letteropening</span><span class="string">&#123;Dear Mr./Ms./Dr. LastName,&#125;</span></span></span><br><span class="line"><span class="comment">% How the letter is closed</span></span><br><span class="line"><span class="tag">\<span class="name">letterclosing</span><span class="string">&#123;Sincerely,&#125;</span></span></span><br><span class="line"><span class="comment">% Any enclosures with the letter</span></span><br><span class="line"><span class="tag">\<span class="name">letterenclosure</span><span class="string">[Attached]</span><span class="string">&#123;Curriculum Vitae&#125;</span></span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>更改的内容<br>
+在<code>\begin{cvletter}</code>下面添加你的推荐信内容</li>
+</ol>
+<h3 id="修改简历格式添加个性化">修改简历格式添加个性化</h3>
+<p>我对模版进行了少量的修改，比如</p>
+<ul>
+<li>添加双排格式</li>
+<li>修改日期格式</li>
+<li>添加项目关键字</li>
+<li>更改推荐信格式</li>
+<li>添加个人电子签名</li>
+<li>德语英语简历和推荐信</li>
+</ul>
+<p>主要是对<code>awesome-cv.cls</code>文件进行修改，这章比较复杂我下一篇博客再说吧。</p>
+<h2 id="编写Makefile">编写Makefile</h2>
+<p>可以参考这篇文章：<a href="https://seisman.github.io/how-to-write-makefile/overview.html" target="_blank" rel="noopener">跟我一起写Makefile</a><br>
+LaTeX的Makefile文件很好写，主要使用的<code>LuaLaTeX</code>引擎进行编译，然后重命名输出的pdf文件。</p>
+<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line">lualatex -synctex=1 -interaction=nonstopmode <span class="variable">$(RESUMEDE_IN)</span>.tex</span><br><span class="line">mv <span class="variable">$(RESUMEDE_IN)</span>.pdf <span class="variable">$(OUTPUT)</span><span class="variable">$(RESUMEDE_OUT)</span>.pdf</span><br></pre></td></tr></table></figure>
+<p>需要注意的是在每次使用<code>make</code>命令之前，需要在tex文件中修改相关信息，如申请职位，介绍信中的信件抬头。</p>
+<h2 id="编写Shell脚本，实现自动化生成简历">编写Shell脚本，实现自动化生成简历</h2>
+<p>这一部分是实现自动填写简历和介绍信，自动生成德文版或英文版简历。如何编写Shell脚本可以在这里学习：<a href="https://www.runoob.com/linux/linux-shell-variable.html" target="_blank" rel="noopener">菜鸟教程 - Shell 教程</a></p>
+<p>使用方法很简单，但是我是在Mac OS上编写的所以不一定适合Windouw命令行。</p>
+<figure class="highlight bash"><figcaption><span>make.sh</span></figcaption><table><tr><td class="code"><pre><span class="line">$ ./make.sh</span><br></pre></td></tr></table></figure>
+<p>在终端中输入上面的命令，然后根据提示输入申请信息，如下</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="section">=== Please choice language:</span></span><br><span class="line"><span class="code">        1.English       2.German        3.Both</span></span><br><span class="line">1</span><br><span class="line"><span class="section">=== Please tell me the name of you applicated Job:</span></span><br><span class="line">System development for antenna measurement systems</span><br><span class="line"></span><br><span class="line"><span class="section">=== Please tell me the information of your applicated Company:</span></span><br><span class="line">Recipient:</span><br><span class="line">Company: Rohde &amp; Schwarz GmbH &amp; Co. KG</span><br><span class="line">Address: München</span><br><span class="line">Postcode, location:</span><br><span class="line"></span><br><span class="line"><span class="section">=== Please Choose the following options to tell me the Recipient:</span></span><br><span class="line"><span class="code">        1. Dear Sir or Madam,</span></span><br><span class="line"><span class="code">        2. Dear Mr. Family Name,</span></span><br><span class="line"><span class="code">        3. Dear Ms. Family Name,</span></span><br><span class="line">Input your choice nummber: 2</span><br><span class="line">Tell me the name: Jing Xu</span><br><span class="line"></span><br><span class="line"><span class="section">=== Please check your inputs!</span></span><br><span class="line">If wrong, input 1. If right, input any key:</span><br><span class="line"><span class="code">    ....</span></span><br></pre></td></tr></table></figure>
+<h2 id="我的简历模版">我的简历模版</h2>
+<div class="note info">
+            <p>最后可以在我的GitHub上找到我更改好的LaTeX模版：<a href="https://github.com/xujing113221/myRusume" target="_blank" rel="noopener">xujing113221/myRusume</a></p>
+          </div>
+<p><strong>我的简历：</strong><br>
+<img src="resume.png" alt="my resume"><br>
+<strong>我的推荐信：</strong><br>
+<img src="coverletter.png" alt="my cover letter"></p>
+<h2 id="参考文章">参考文章</h2>
+<ul>
+<li><a href="http://static.latexstudio.net/wp-content/uploads/2017/08/Note-by-LaTeX-cn.pdf" target="_blank" rel="noopener">简单粗暴 LATEX</a>。</li>
+<li><a href="https://seisman.github.io/how-to-write-makefile/overview.html" target="_blank" rel="noopener">跟我一起写Makefile</a></li>
+<li><a href="https://www.runoob.com/linux/linux-shell-variable.html" target="_blank" rel="noopener">菜鸟教程 - Shell 教程</a></li>
+<li><a href="https://blog.csdn.net/yf210yf/article/details/9207147" target="_blank" rel="noopener">shell脚本----if（数字条件，字符串条件，字符串为空）</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>制作简历</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>Makefile</tag>
+        <tag>Shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo NexT 主题配置四</title>
+    <url>/hexo-next-theme-config-4/</url>
+    <content><![CDATA[<div class="note primary">
+            <p>本文提到的Hexo博客配置是基于：Hexo v4.2.1 和 NexT v7.8.0。请注意版本之间存在差异！</p>
+          </div>
+<p>本文主要介绍我在NexT主题配置中遇到的小问题，以及主题的进一步美化，深入Next代码进行个性化配置。</p>
+<ul>
+<li>页脚设置</li>
+<li>多级分类</li>
+<li>修改博客字体</li>
+<li>版权声明个性化设置</li>
+<li>添加看板娘功能</li>
+<li>解决不蒜子显示问题</li>
+</ul>
+<a id="more"></a>
+<h2 id="页脚设置">页脚设置</h2>
+<h3 id="Mist主题-页脚居中问题">Mist主题 页脚居中问题</h3>
+<p>解决方案：</p>
+<figure class="highlight diff"><figcaption><span>themes/next/source/css/_schemes/Mist/_layout.styl</span></figcaption><table><tr><td class="code"><pre><span class="line">.footer-inner &#123;</span><br><span class="line"><span class="deletion">-  text-align: left;</span></span><br><span class="line"><span class="addition">+  text-align: center;</span></span><br><span class="line"></span><br><span class="line">  +mobile() &#123;</span><br><span class="line">    text-align: center;</span><br><span class="line">    width: auto;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="不蒜子访客统计-个性化">不蒜子访客统计 个性化</h3>
+<p>这里就不弄了，等我学会了html，我在搞。 默认的就挺简洁好看的。</p>
+<p>在 这个文件<span class="label primary">themes/next/layout/_third-party/statistics/busuanzi-counter.swig</span>修改就可以的实现个性化了.</p>
+<h2 id="多级分类">多级分类</h2>
+<div class="note info">
+            <p>详见 <a href="https://hexo.io/zh-cn/docs/front-matter.html" target="_blank" rel="noopener">Front-matter</a></p>
+          </div>
+<p>举例</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line"><span class="bullet">- </span>[Diary, PlayStation]</span><br><span class="line"><span class="bullet">- </span>[Diary, Games]</span><br><span class="line"><span class="bullet">- </span>[Life]</span><br></pre></td></tr></table></figure>
+<p>这篇文章同时包括三个分类： PlayStation 和 Games 分别都是父分类 Diary 的子分类，同时 Life 是一个没有子分类的分类。</p>
+<h2 id="修改博客字体">修改博客字体</h2>
+<p>在 <a href="https://fonts.google.com" target="_blank" rel="noopener">Google Fonts</a> 上找到心仪的字体，然后在主题配置文件中搜索<code>font:</code>为不同的应用场景配置字体：</p>
+<figure class="highlight yml"><figcaption><span>themes\next\_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Font options:</span></span><br><span class="line"> <span class="comment"># `external: true` will load this font family from `host` above.</span></span><br><span class="line"> <span class="comment"># `family: Times New Roman`. Without any quotes.</span></span><br><span class="line"> <span class="comment"># `size: x.x`. Use `em` as unit. Default: 1 (16px)</span></span><br><span class="line"></span><br><span class="line"> <span class="comment"># Global font settings used for all elements inside &lt;body&gt;.</span></span><br><span class="line"> <span class="attr">global:</span></span><br><span class="line">   <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">   <span class="attr">family:</span> <span class="string">Noto</span> <span class="string">Sans</span> <span class="string">SC</span></span><br><span class="line">   <span class="attr">size:</span></span><br><span class="line"></span><br><span class="line"> <span class="comment"># Font settings for site title (.site-title).</span></span><br><span class="line"> <span class="attr">title:</span></span><br><span class="line">   <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">   <span class="attr">family:</span> <span class="string">Cedarville</span> <span class="string">Cursive</span></span><br><span class="line">   <span class="attr">size:</span></span><br><span class="line"></span><br><span class="line"> <span class="comment"># Font settings for headlines (&lt;h1&gt; to &lt;h6&gt;).</span></span><br><span class="line"> <span class="attr">headings:</span></span><br><span class="line">   <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">   <span class="attr">family:</span> <span class="string">Noto</span> <span class="string">Serif</span> <span class="string">SC</span></span><br><span class="line">   <span class="attr">size:</span></span><br><span class="line"></span><br><span class="line"> <span class="comment"># Font settings for posts (.post-body).</span></span><br><span class="line"> <span class="attr">posts:</span></span><br><span class="line">   <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">   <span class="attr">family:</span></span><br><span class="line"></span><br><span class="line"> <span class="comment"># Font settings for &lt;code&gt; and code blocks.</span></span><br><span class="line"> <span class="attr">codes:</span></span><br><span class="line">   <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">   <span class="attr">family:</span> <span class="string">Courier</span></span><br></pre></td></tr></table></figure>
+<h2 id="版权声明个性化设置">版权声明个性化设置</h2>
+<div class="note info">
+            <p>本章参见<a href="http://yearito.cn/posts/hexo-advanced-settings.html" target="_blank" rel="noopener">yearito’s Blog | Hexo搭建个人博客系列：进阶设置篇</a></p>
+          </div>
+<p><img src="copyright.png" alt="效果图" title="效果图"></p>
+<ul>
+<li>先找到 <span class="label success">themes/next/layout/_partials/post/post-copyright.swig</span>  添加如下内容：</li>
+</ul>
+<figure class="highlight diff"><figcaption><span>themes/next/layout/_partials/post/post-copyright.swig </span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;!-- JS库 clipboard 拷贝内容到粘贴板--&gt;</span><br><span class="line">&lt;script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- JS库 sweetalert 显示提示信息--&gt;</span><br><span class="line">&lt;script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&lt;ul class="post-copyright"&gt;</span><br><span class="line">  &lt;li class="post-copyright-title"&gt;</span><br><span class="line">   &lt;strong&gt;&#123;&#123; __('post.copyright.title') + __('symbol.colon') &#125;&#125; &lt;/strong&gt;</span><br><span class="line">    &#123;&#123;page.title&#125;&#125;             // 只显示文章标题 </span><br><span class="line">    &lt;a href="&#123;&#123;page.permalink&#125;&#125;"&gt;&#123;&#123;page.title&#125;&#125;&lt;/a&gt;  // 显示带链接的文章标题</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">  &lt;li class="post-copyright-author"&gt;</span><br><span class="line">    &lt;strong&gt;&#123;&#123; __('post.copyright.author') + __('symbol.colon') &#125;&#125; &lt;/strong&gt;</span><br><span class="line">    &#123;&#123;- page.author or author &#125;&#125;</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">  &lt;!-- 引用链接 --&gt;</span><br><span class="line">  &lt;li class="post-copyright-link"&gt;</span><br><span class="line">    &lt;strong&gt;&#123;&#123; __('post.copyright.link') + __('symbol.colon') &#125;&#125;&lt;/strong&gt;</span><br><span class="line">    &lt;a href="&#123;&#123; post.url | default(post.permalink) &#125;&#125;" title="&#123;&#123; post.title &#125;&#125;"&gt;</span><br><span class="line">      &#123;&#123; post.url | default(post.permalink) &#125;&#125;</span><br><span class="line">    &lt;/a&gt;</span><br><span class="line">    &lt;span class="copy-path" title="点击复制引用链接"&gt;</span><br><span class="line">      &lt;i</span><br><span class="line">        style="cursor: pointer"</span><br><span class="line">        class="fa fa-clipboard"</span><br><span class="line">        data-clipboard-text="[&#123;&#123; post.author | default(author) &#125;&#125;'s Blog | &#123;&#123; post.title &#125;&#125;](&#123;&#123; post.permalink &#125;&#125;)"</span><br><span class="line">        aria-label="&#123;&#123; __('post.copy_success') &#125;&#125;"&gt;</span><br><span class="line">      &lt;/i&gt;</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">      ....</span><br><span class="line"></span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">      ....</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  var clipboard = new ClipboardJS(".fa-clipboard");</span><br><span class="line">  clipboard.on("success", function(target) &#123;</span><br><span class="line">    var message = document.createElement("div");</span><br><span class="line">    message.innerHTML =</span><br><span class="line">      '&lt;i class="fa fa-check-circle message-icon"&gt;&lt;/i&gt;&lt;span class="message-content"&gt;' +</span><br><span class="line">      target.trigger.getAttribute("aria-label") +</span><br><span class="line">      "&lt;/span&gt;";</span><br><span class="line">    swal(&#123;</span><br><span class="line">      content: message,</span><br><span class="line">      className: "copy-success-message",</span><br><span class="line">      timer: 1000,</span><br><span class="line">      button: false</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在主题语言配置文件中 添加如下内容：</li>
+</ul>
+<figure class="highlight diff"><figcaption><span>themes/next/languages/zh-CN.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="addition">+ copy_success: 复制成功</span></span><br><span class="line">  copyright:</span><br><span class="line"><span class="addition">+   title: 本文标题</span></span><br><span class="line">    author: 本文作者</span><br><span class="line">    link: 本文链接</span><br><span class="line">    license_title: 版权声明</span><br><span class="line">    license_content: "本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"</span><br></pre></td></tr></table></figure>
+<ul>
+<li>找到<span class="label info">themes/next/source/css/_common/components/post/post-copyright.styl</span> 添加如下内容：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.swal-overlay</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: transparent;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.copy-success-message</span> &#123;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">4px</span> <span class="number">12px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.15</span>);</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">width</span>: auto;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">16</span>x <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">vertical-align</span>: top;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.copy-success-message</span> <span class="selector-class">.swal-content</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">16px</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">1em</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.copy-success-message</span> <span class="selector-class">.message-icon</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#52c41a</span>;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">8px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.copy-success-message</span> <span class="selector-class">.message-content</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="添加看板娘功能">添加看板娘功能</h2>
+<div class="note info">
+            <p>本章参考链接：</p><ul><li><a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">live2d-widget-models</a></li><li><a href="https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init" target="_blank" rel="noopener">live2d模型用户配置</a></li><li><a href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md" target="_blank" rel="noopener">live2d模型中文说明</a></li><li><a href="http://yearito.cn/posts/hexo-theme-beautify.html" target="_blank" rel="noopener">yearito’s Blog | Hexo搭建个人博客系列：主题美化篇</a></li><li><a href="https://fjkang.github.io/2017/12/08/%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E8%90%8C%E7%89%A9/" target="_blank" rel="noopener">添加一个萌物</a></li><li><a href="https://blog.csdn.net/wang_123_zy/article/details/87181892" target="_blank" rel="noopener">Hexo添加Live2D看板娘+模型预览</a></li></ul>
+          </div>
+<p>在站点根目录下执行以下命令安装依赖：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
+<p>在站点配置文件中添加以下下配置项</p>
+<figure class="highlight yml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Live2D</span></span><br><span class="line"><span class="comment"># https://github.com/EYHN/hexo-helper-live2d</span></span><br><span class="line"><span class="attr">live2d:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">pluginRootPath:</span> <span class="string">live2dw/</span></span><br><span class="line">  <span class="attr">pluginJsPath:</span> <span class="string">lib/</span></span><br><span class="line">  <span class="attr">pluginModelPath:</span> <span class="string">assets/</span> <span class="string">Relative)</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 脚本加载源</span></span><br><span class="line">  <span class="attr">scriptFrom:</span> <span class="string">local</span> <span class="comment"># 默认从本地加载脚本</span></span><br><span class="line">  <span class="comment"># scriptFrom: jsdelivr # 从 jsdelivr CDN 加载脚本</span></span><br><span class="line">  <span class="comment"># scriptFrom: unpkg # 从 unpkg CDN 加载脚本</span></span><br><span class="line">  <span class="comment"># scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 从自定义地址加载脚本</span></span><br><span class="line">  <span class="attr">tagMode:</span> <span class="literal">false</span> <span class="comment"># 只在有 &#123;&#123; live2d() &#125;&#125; 标签的页面上加载 / 在所有页面上加载</span></span><br><span class="line">  <span class="attr">log:</span> <span class="literal">false</span> <span class="comment"># 是否在控制台打印日志</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 选择看板娘模型</span></span><br><span class="line">  <span class="attr">model:</span></span><br><span class="line">    <span class="attr">use:</span> <span class="string">live2d-widget-model-z16</span> <span class="comment">#使用模型</span></span><br><span class="line">    <span class="comment">#live2d-widget-model-shizuku #live2d-widget-model-tororo #live2d-widget-model-epsilon2_1</span></span><br><span class="line">    <span class="comment">#live2d-widget-model-hibiki #live2d-widget-model-z16</span></span><br><span class="line">  <span class="attr">display:</span></span><br><span class="line">    <span class="attr">position:</span> <span class="string">right</span> <span class="comment"># 显示在左边还是右边</span></span><br><span class="line">    <span class="attr">width:</span> <span class="number">200</span> <span class="comment"># 宽度</span></span><br><span class="line">    <span class="attr">height:</span> <span class="number">360</span> <span class="comment"># 高度</span></span><br><span class="line">  <span class="attr">mobile:</span></span><br><span class="line">    <span class="attr">show:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">react:</span></span><br><span class="line">    <span class="attr">opacityDefault:</span> <span class="number">0.7</span> <span class="comment"># 默认透明度</span></span><br><span class="line">  <span class="attr">dialog:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment">#添加对话框</span></span><br><span class="line">    <span class="attr">hitokoto:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>这个时候还不会有看板娘的显示，在 <a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">live2d-widget-models</a> 手动下载喜欢的样式。</p>
+<p>因为修改了站点配置文件，所以需要重启服务器才能预览模型效果。</p>
+<div class="note success">
+            <p>这个功能挺好玩的，操作也简单。但是我还是喜欢简洁点的网页，哈哈哈哈。</p>
+          </div>
+<h2 id="文章评论功能">文章评论功能</h2>
+<p>Next 主题中已经集成了<a href="https://widgetpack.com/" target="_blank" rel="noopener">widgetpack</a>的星级评分系统，用户无须再安装或引入插件脚本，只需在 widgetpack 中注册账号并修改主题配置即可，应用效果如下：</p>
+<figure class="highlight yml"><figcaption><span>themes/next_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Star rating support to each article.</span></span><br><span class="line"><span class="comment"># To get your ID visit https://widgetpack.com</span></span><br><span class="line"><span class="attr">rating:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">id:</span> <span class="comment">#&lt;app_id&gt;</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">fadb14</span></span><br></pre></td></tr></table></figure>
+<p>在<code>widgetpack</code>左边栏中找到<code>Rating</code>的<code>Setting</code> 修改<code>Vote via</code>为除了<code>Social</code>以外其他两种方式，就可以开启匿名评分了<br>
+<img src="widgetpack.png" alt="widgetpack设置"></p>
+<div class="note info">
+            <p>不想再写了，这个功能很简单，看这个人的博客就好 <a href="http://yearito.cn/posts/hexo-advanced-settings.html" target="_blank" rel="noopener">yearito’s Blog | Hexo搭建个人博客系列：进阶设置篇</a></p>
+          </div>
+<h2 id="解决不蒜子显示问题">解决不蒜子显示问题</h2>
+<div class="note info">
+            <p>本章内容参考:<a href="http://boyinthesun.cn/post/error-live2d-busuanzi/" target="_blank" rel="noopener">解决live2d看板娘和busuanzi不蒜子计数冲突</a></p>
+          </div>
+<ul>
+<li>下载<a href="busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">busuanzi.pure.mini.js</a>到本地存储在文件夹<code>themes/next/source/js/</code>中</li>
+<li>修改<code>busuanzi.pure.mini.js</code> 将<code>b.style.display=&quot;none&quot;</code>中<code>none</code>去掉。</li>
+<li>修改如下代码：</li>
+</ul>
+<figure class="highlight diff"><figcaption><span>themes/next/layout/_third-party/statistics/busuanzi-counter.swig</span></figcaption><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.busuanzi_count.enable %&#125;</span><br><span class="line">&lt;div class="busuanzi-count"&gt;</span><br><span class="line"><span class="deletion">-  &lt;script&#123;&#123; pjax &#125;&#125; async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="addition">+  &lt;script async src="/js/busuanzi.pure.mini.js"&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="结束语">结束语</h2>
+<p>自此关于Hexo写博客的主题就告一段落了，我对Next主题配置差不多了。这是我第一次写博客，就是记录一下这个我开始使用Hexo写博客的过程，在此期间我看到了很多优秀的博客，给予了我很多帮助，我也借鉴了很多内容，希望我都备注上了。谢谢大家！</p>
+<p>刚开始写博客，结构和内容有点乱，希望大家见谅，有什么问题希望大家给我写评论告诉我！后面我会慢慢写，写好每一篇博客！</p>
+<p>后面我会写一下我学习和生活中的知识和经验，分享给大家，同时也给自己留下笔记，整理一下我的知识。希望未来越来越好！</p>
+<h2 id="参考文章">参考文章</h2>
+<ul>
+<li><a href="http://yearito.cn/posts/hexo-advanced-settings.html" target="_blank" rel="noopener">Hexo 搭建个人博客系列：进阶设置篇</a></li>
+<li><a href="https://leancloud.cn/docs/leanstorage_guide-js.html" target="_blank" rel="noopener">LeanCloud | JavaScript SDK 开发指南</a></li>
+<li><a href="https://leancloud.cn/docs/sdk_setup-js.html#hash-99064366" target="_blank" rel="noopener">LeanCloud | JavaScript SDK 安装指南</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>Hexo创建博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo NexT 主题配置三</title>
+    <url>/hexo-next-theme-config-3/</url>
+    <content><![CDATA[<div class="note primary">
+            <p>本文提到的Hexo博客配置是基于：Hexo v4.2.1 和 NexT v7.8.0。请注意版本之间存在差异！</p>
+          </div>
+<p>本文继续配置 Hexo-Next，进一步对博客进行美化，主要包括:</p>
+<ul>
+<li>添加热门文章排行榜</li>
+<li>添加结束标记</li>
+<li>添加动态特效</li>
+<li>显示近期文章</li>
+<li>添加RSS订阅</li>
+<li>添加文章置顶功能</li>
+</ul>
+<a id="more"></a>
+<h2 id="添加热门文章排行榜">添加热门文章排行榜</h2>
+<ol>
+<li>在终端中执行如下代码：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page top</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在主题配置文件中添加如下代码：</li>
+</ol>
+<figure class="highlight diff"><figcaption><span>themes\next_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line">  menu:</span><br><span class="line">    home: / || home</span><br><span class="line"><span class="addition">+   top: /top/ || signal</span></span><br><span class="line">    tags: /tags/ || tags</span><br><span class="line">    categories: /categories/ || th</span><br><span class="line">    archives: /archives/ || archive</span><br><span class="line">    about: /about/ || user</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>在语言包中新增菜单中文：</li>
+</ol>
+<figure class="highlight diff"><figcaption><span>themes\next\languages\zh-CN.yml</span></figcaption><table><tr><td class="code"><pre><span class="line">  menu:</span><br><span class="line">    home: 首页</span><br><span class="line">    archives: 归档</span><br><span class="line">    categories: 分类</span><br><span class="line">    tags: 标签</span><br><span class="line">    about: 关于</span><br><span class="line"><span class="addition">+   top: 排行榜</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>然后在新增的排行榜页面内添加以下内容：</li>
+</ol>
+<figure class="highlight javascript"><figcaption><span>/source/hot/index.md</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;div id=<span class="string">"post-rank"</span>&gt;</span><br><span class="line">  &lt;p&gt;This will be overwritten.&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script src=<span class="string">"//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">  var APP_ID = '********'  /</span><span class="regexp">/输入个人LeanCloud账号AppID</span></span><br><span class="line"><span class="regexp">  var APP_KEY = '*********'  /</span><span class="regexp">/输入个人LeanCloud账号AppKey</span></span><br><span class="line"><span class="regexp">  AV.init(&#123;</span></span><br><span class="line"><span class="regexp">    appId: APP_ID,</span></span><br><span class="line"><span class="regexp">    appKey: APP_KEY</span></span><br><span class="line"><span class="regexp">  &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  var query = new AV.Query('Counter'); /</span><span class="regexp">/表名</span></span><br><span class="line"><span class="regexp">  query.descending('time');   /</span><span class="regexp">/结果按阅读次数降序排序</span></span><br><span class="line"><span class="regexp">  query.limit(10);          /</span><span class="regexp">/最终只返回10条结果</span></span><br><span class="line"><span class="regexp">  query.find().then( response =&gt; &#123;</span></span><br><span class="line"><span class="regexp">    var content = response.reduce( (accum, &#123;attributes&#125;) =&gt; &#123;</span></span><br><span class="line"><span class="regexp">      accum += `&lt;p&gt;&lt;div class="prefix"&gt;热度 $&#123;attributes.time&#125; ℃&lt;/</span>div&gt;<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"$&#123;attributes.url&#125;"</span>&gt;</span>$&#123;attributes.title&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>&lt;<span class="regexp">/p&gt;`</span></span><br><span class="line"><span class="regexp">      return accum;</span></span><br><span class="line"><span class="regexp">    &#125;,"")</span></span><br><span class="line"><span class="regexp">    document.querySelector("#post-rank").innerHTML = content;</span></span><br><span class="line"><span class="regexp">  &#125;)</span></span><br><span class="line"><span class="regexp">  .catch( error =&gt; &#123;</span></span><br><span class="line"><span class="regexp">    console.log(error);</span></span><br><span class="line"><span class="regexp">  &#125;);</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style type=<span class="string">"text/css"</span>&gt;</span><br><span class="line">  #post-rank &#123;</span><br><span class="line">    text-align: center;</span><br><span class="line">  &#125;</span><br><span class="line">  #post-rank .prefix &#123;</span><br><span class="line">    color: #ff4d4f;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br></pre></td></tr></table></figure>
+<div class="note warning">
+            <p>在<a href="https://leancloud.cn/docs/sdk_setup-js.html#hash-99064366" target="_blank" rel="noopener">LeanCloud | JavaScript SDK 安装指南</a>中查找最新版<code>JavaScript JDK</code>,更改上面代码的JS源，避免出现问题。</p>
+          </div>
+<h2 id="添加结束标记">添加结束标记</h2>
+<p>新建布局模板文件<code>post-end-tag.swig</code>，添加如下代码：</p>
+<figure class="highlight plain"><figcaption><span>themes\next\layout\_macro\post-end-tag.swig</span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &#123;% if not is_index %&#125;</span><br><span class="line">    &lt;div style&#x3D;&quot;text-align:center;color:#bfbfbf;font-size:16px;&quot;&gt;</span><br><span class="line">      &lt;span&gt;-------- 本文结束 &lt;&#x2F;span&gt;</span><br><span class="line">      &lt;i class&#x3D;&quot;fa fa-&#123;&#123; config.post_end_tag.icon &#125;&#125;&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">      &lt;span&gt; 感谢阅读 --------&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>在文章布局模板中添加如下代码：</p>
+<figure class="highlight diff"><figcaption><span>themes\next\layout\_macro\post.swig</span></figcaption><table><tr><td class="code"><pre><span class="line">&#123;#####################&#125;</span><br><span class="line">&#123;### END POST BODY ###&#125;</span><br><span class="line">&#123;#####################&#125;</span><br><span class="line"></span><br><span class="line"><span class="addition">+ &#123;% if config.post_end_tag.enabled and not is_index %&#125;</span></span><br><span class="line"><span class="addition">+   &lt;div&gt;</span></span><br><span class="line"><span class="addition">+     &#123;% include 'post-end-tag.swig' %&#125;</span></span><br><span class="line"><span class="addition">+   &lt;/div&gt;</span></span><br><span class="line"><span class="addition">+ &#123;% endif %&#125;</span></span><br><span class="line"></span><br><span class="line">&#123;% if theme.wechat_subscriber.enabled and not is_index %&#125;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &#123;% include 'wechat-subscriber.swig' %&#125;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>在站点配置文件末尾添加如下代码：</p>
+<figure class="highlight yml"><figcaption><span>hexo/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">post_end_tag:</span></span><br><span class="line">  <span class="attr">enabled:</span> <span class="literal">true</span>  <span class="comment"># 是否开启文末的本文结束标记</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">paw</span> <span class="comment"># 结束标记之间的图标</span></span><br></pre></td></tr></table></figure>
+<h2 id="添加动态特效">添加动态特效</h2>
+<h3 id="粒子漂浮聚合">粒子漂浮聚合</h3>
+<div class="note info">
+            <p>需要安装 <code>theme-next-canvas-nest</code> 详见 <a href="https://github.com/theme-next/theme-next-canvas-nest" target="_blank" rel="noopener">Theme NexT Canvas Nest</a></p>
+          </div>
+<p>我说使用的这是这一款，介绍一下安装过程：</p>
+<ol>
+<li>在文件夹<code>themes/next/layout/_custom/</code> 中创建 <code>custom.swig</code>，如果没有<code>_custom</code> 自己创建一个， 在<code>custom.swig</code>中添加如下内容：</li>
+</ol>
+<figure class="highlight plain"><figcaption><span>themes/next/layout/_custom/custom.swig</span></figcaption><table><tr><td class="code"><pre><span class="line">&#123;# 背景粒子漂浮聚合特效 #&#125;</span><br><span class="line">&#123;% if theme.canvas_nest %&#125;</span><br><span class="line">    &lt;script color&#x3D;&quot;0,0,255&quot; opacity&#x3D;&quot;0.5&quot; zIndex&#x3D;&quot;-1&quot; count&#x3D;&quot;99&quot; src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;canvas-nest.js@1&#x2F;dist&#x2F;canvas-nest.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在主题配置文件后面添加如下内容：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 背景粒子漂浮聚合特效</span><br><span class="line">canvas_nest: true</span><br></pre></td></tr></table></figure>
+<p>这样就好了。</p>
+<h3 id="Three-三维动效">Three 三维动效</h3>
+<div class="note info">
+            <p>需要安装 <code>theme-next-three</code> 详见 <a href="https://github.com/theme-next/theme-next-three" target="_blank" rel="noopener">Theme NexT Three</a></p>
+          </div>
+<h3 id="随机三角丝带">随机三角丝带</h3>
+<div class="note info">
+            <p>需要安装 <code>theme-next-canvas-ribbon</code> 详见 <a href="https://github.com/theme-next/theme-next-canvas-ribbon" target="_blank" rel="noopener">Theme NexT Canvas Ribbon</a></p>
+          </div>
+<h3 id="添加加载特效">添加加载特效</h3>
+<div class="note info">
+            <p>需要安装 <code>theme-next-pace</code> ，详见 <a href="https://github.com/theme-next/theme-next-pace" target="_blank" rel="noopener">Theme NexT Pace</a></p>
+          </div>
+<h3 id="鼠标点击特效">鼠标点击特效</h3>
+<ol>
+<li>
+<p>下载 <code>礼花特效</code> 保存在<code>themes/next/source/js/cursor/</code></p>
+</li>
+<li>
+<p>在主题自定义布局文件中添加以下代码：</p>
+</li>
+</ol>
+<figure class="highlight js"><figcaption><span>themes\next\layout\_custom\custom.swig</span></figcaption><table><tr><td class="code"><pre><span class="line">&#123;# 鼠标点击特效 #&#125;</span><br><span class="line">&#123;% <span class="keyword">if</span> theme.cursor_effect == <span class="string">"fireworks"</span> %&#125;</span><br><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"/js/cursor/fireworks.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&#123;% elseif theme.cursor_effect == "explosion" %&#125;</span></span><br><span class="line"><span class="regexp">&lt;canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" &gt;&lt;/</span>canvas&gt;</span><br><span class="line">&lt;script src=<span class="string">"//cdn.bootcss.com/animejs/2.2.0/anime.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script async src="/</span>js/cursor/explosion.min.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&#123;% elseif theme.cursor_effect == "</span>love<span class="string">" %&#125;</span></span><br><span class="line"><span class="string">&lt;script async src="</span>/js/cursor/love.min.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&#123;% elseif theme.cursor_effect == "</span>text<span class="string">" %&#125;</span></span><br><span class="line"><span class="string">&lt;script async src="</span>/js/cursor/text.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&#123;% endif %&#125;</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>如果 <code>custom.swig</code> 不存在，需要手动新建并在布局页面中 body 末尾引入：</li>
+</ol>
+<figure class="highlight diff"><figcaption><span>themes\next\_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line">    ...</span><br><span class="line">    &#123;% include '_third-party/exturl.swig' %&#125;</span><br><span class="line">    &#123;% include '_third-party/bookmark.swig' %&#125;</span><br><span class="line">    &#123;% include '_third-party/copy-code.swig' %&#125;</span><br><span class="line"></span><br><span class="line"><span class="addition">+     &#123;% include '_custom/custom.swig' %&#125;</span></span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>在主题配置文件中添加如下代码：</li>
+</ol>
+<figure class="highlight yml"><figcaption><span>themes\next\_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># mouse click effect: fireworks | explosion | love | text</span></span><br><span class="line"><span class="attr">cursor_effect:</span> <span class="string">fireworks</span></span><br></pre></td></tr></table></figure>
+<h2 id="显示近期文章-未完成">显示近期文章 (未完成)</h2>
+<div class="note info">
+            <ul><li>本章参考来自 <a href="https://www.chingow.cn/posts/c7372a12.html" target="_blank" rel="noopener">Hexo+NexT(v7.0+) 搭建博客：主题美化</a></li><li><a href="https://postgres.fun/20190116150800.html" target="_blank" rel="noopener">Hexo: 给博客添加近期文章板块</a></li><li><a href="https://blog.csdn.net/chenglinhust/article/details/41206511?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">swig安装搭建与测试</a></li></ul>
+          </div>
+<p>我没实现 总是有Bug， 看了看代码也不行。</p>
+<p>主要添加内容：</p>
+<figure class="highlight plain"><figcaption><span>/next/layout/_partials/sidebar/site-overview.swig</span></figcaption><table><tr><td class="code"><pre><span class="line">&#123;# Blogroll #&#125;</span><br><span class="line">&#123;%- if theme.recent_posts %&#125;</span><br><span class="line">  &lt;div class&#x3D;&quot;links-of-blogroll motion-element &#123;&#123; &quot;links-of-blogroll-&quot; + theme.recent_posts_layout  &#125;&#125;&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;links-of-blogroll-title&quot;&gt;</span><br><span class="line">    &lt;!-- modify icon to fire by szw --&gt;</span><br><span class="line">    &lt;i class&#x3D;&quot;fa fa-history fa-&#123;&#123; theme.recent_posts_icon | lower &#125;&#125;&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">    &#123;&#123; theme.recent_posts_title &#125;&#125;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;ul class&#x3D;&quot;links-of-blogroll-list&quot;&gt;</span><br><span class="line">    &#123;%- set posts &#x3D; site.posts.sort(&#39;-date&#39;) %&#125;</span><br><span class="line">    &#123;%- for post in posts.slice(&#39;0&#39;, &#39;3&#39;) %&#125;</span><br><span class="line">      &lt;li class&#x3D;&quot;links-of-blogroll-item&quot;&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;&#123;&#123; url_for(post.path) &#125;&#125;&quot; title&#x3D;&quot;&#123;&#123; post.title &#125;&#125;&quot; target&#x3D;&quot;_blank&quot;&gt;&#123;&#123; post.title &#125;&#125;&lt;&#x2F;a&gt;</span><br><span class="line">      &lt;&#x2F;li&gt;</span><br><span class="line">    &#123;%- endfor %&#125;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><figcaption><span>/theme/next/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># 近期文章</span></span><br><span class="line"><span class="attr">recent_posts_title:</span> <span class="string">近期文章</span></span><br><span class="line"><span class="attr">recent_posts_layout:</span> <span class="string">block</span></span><br><span class="line"><span class="attr">recent_posts:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h2 id="添加RSS订阅">添加RSS订阅</h2>
+<div class="note info">
+            <p>本章参考：<a href="https://www.zywvvd.com/2020/03/20/next/14_add_rss/next-add-rss/" target="_blank" rel="noopener">Next -14- 为Hexo Next7.7.1 添加RSS （带按钮）</a></p>
+          </div>
+<p>本博客使用NexT v7.8 版本，该版本已经去掉了RSS边栏显示，所以要自己为RSS添加代码。添加到你想要的边栏地方就好了。其余步骤就是修改配置文件了。</p>
+<figure class="highlight plain"><figcaption><span>xujing$ cd themes/next/layout/_partials/sidebar/site-overview.swig </span></figcaption><table><tr><td class="code"><pre><span class="line">&#123;# RSS #&#125;</span><br><span class="line">&#123;% if theme.rss %&#125;</span><br><span class="line">   &lt;div class&#x3D;&quot;feed-link motion-element&quot;&gt;</span><br><span class="line">     &lt;a href&#x3D;&quot;&#123;&#123; url_for(theme.rss) &#125;&#125;&quot; rel&#x3D;&quot;alternate&quot;&gt;</span><br><span class="line">       &lt;i class&#x3D;&quot;fa fa-rss&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">       RSS</span><br><span class="line">     &lt;&#x2F;a&gt;</span><br><span class="line">   &lt;&#x2F;div&gt;</span><br><span class="line"> &#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;%- if theme.creative_commons.license and theme.creative_commons.sidebar %&#125;</span><br><span class="line">  &lt;div class&#x3D;&quot;cc-license motion-element&quot; itemprop&#x3D;&quot;license&quot;&gt;</span><br><span class="line">  &#123;%- set ccImage &#x3D; &#39;&lt;img src&#x3D;&quot;&#39; + url_for(theme.images + &#39;&#x2F;cc-&#39; + theme.creative_commons.license + &#39;.svg&#39;) + &#39;&quot; alt&#x3D;&quot;Creative Commons&quot;&gt;&#39; %&#125;</span><br><span class="line">    &#123;&#123; next_url(ccURL, ccImage, &#123;class: &#39;cc-opacity&#39;&#125;) &#125;&#125;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="添加文章置顶功能">添加文章置顶功能</h2>
+<div class="note info">
+            <p>本章内容参考：<a href="https://tding.top/archives/567debe0.html" target="_blank" rel="noopener">小丁的个人博客 ｜ 本博客当前使用的插件总结</a></p>
+          </div>
+<ul>
+<li>使用npm安装<a href="https://github.com/netcan/hexo-generator-index-pin-top" target="_blank" rel="noopener">相关插件</a>：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure>
+<ul>
+<li>写文章时候在文章头部添加<code>top</code>字样，如<span class="label success">top: 100</span>，数字越大越在主页置顶。</li>
+<li>打开<code>/themes/next/layout/_macro/</code>目录下的<code>post.swig</code>文件，在<code>&lt;div class=&quot;post-meta&quot;&gt;</code>的第一个<code>&lt;span&gt;</code>标签下，插入如下代码：</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>/themes/next/layout/_macro/post.swig</span></figcaption><table><tr><td class="code"><pre><span class="line">&#123;# 添加文章置顶 #&#125;</span><br><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">&lt;span class&#x3D;&quot;post-meta-item&quot;&gt;</span><br><span class="line">  &lt;span class&#x3D;&quot;post-meta-item-icon&quot;&gt;</span><br><span class="line">    &lt;i class&#x3D;&quot;fa fa-tag&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">  &lt;&#x2F;span&gt;</span><br><span class="line">  &lt;span class&#x3D;&quot;post-meta-item&quot; style&#x3D;&quot;color:#7D26CD&quot;&gt;&#123;&#123; __(&#39;post.top&#39;) &#125;&#125;&lt;&#x2F;span&gt;</span><br><span class="line">  &lt;&#x2F;span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在语言配置文件中添加<code>top</code>词条。</li>
+</ul>
+<figure class="highlight diff"><figcaption><span>themes/next/languages/zh-CN.yml </span></figcaption><table><tr><td class="code"><pre><span class="line">post:</span><br><span class="line"><span class="addition">+  top: 置顶</span></span><br><span class="line">  posted: 发表于</span><br><span class="line">  edited: 更新于</span><br><span class="line">  created: 创建时间</span><br></pre></td></tr></table></figure>
+<h2 id="参考文章">参考文章</h2>
+<ul>
+<li><a href="http://yearito.cn/posts/hexo-theme-beautify.html" target="_blank" rel="noopener">Hexo 搭建个人博客系列：主题美化篇</a></li>
+<li><a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">NexT 中文使用说明</a></li>
+<li><a href="https://www.zywvvd.com/2020/03/20/next/14_add_rss/next-add-rss/" target="_blank" rel="noopener">Next -14- 为Hexo Next7.7.1 添加RSS （带按钮）</a></li>
+<li><a href="https://tding.top/archives/aad98408.html#more" target="_blank" rel="noopener">小丁的个人博客 ｜ Hexo 搭建个人博客文章汇总</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>Hexo创建博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 写作技巧</title>
+    <url>/hexo-write-skills/</url>
+    <content><![CDATA[<p>本文记录Hexo相关书写技巧，使博客内容更加丰富界面更加美观，主要内容有以下几点：</p>
+<ul>
+<li>代码块进阶用法</li>
+<li>note 标签</li>
+<li>label 标签</li>
+<li>button 按钮</li>
+<li>tab 标签</li>
+<li>草稿和发布</li>
+</ul>
+<a id="more"></a>
+<h2 id="代码块进阶用法">代码块进阶用法</h2>
+<p>语法规则</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">··· <span class="selector-attr">[language]</span> <span class="selector-attr">[title]</span> <span class="selector-attr">[url]</span> <span class="selector-attr">[link text]</span></span><br><span class="line"><span class="selector-tag">code</span> <span class="selector-tag">snippet</span></span><br><span class="line">···</span><br></pre></td></tr></table></figure>
+<p>其中，各参数意义如下：</p>
+<ul>
+<li>langugae：语言名称，引导渲染引擎正确解析并高亮显示关键字</li>
+<li>title：代码块标题，将会显示在左上角</li>
+<li>url：链接地址，如果没有指定 link text 则会在右上角显示 link</li>
+<li>link text：链接名称，指定 url 后有效，将会显示在右上角</li>
+<li>url 必须为有效链接地址才会以链接的形式显示在右上角，否则将作为标题显示在左上角。以 url 为分界，左侧除了第一个单词会被解析为 language，其他所有单词都会被解析为 title，而右侧的所有单词都会被解析为 link text。</li>
+</ul>
+<p>如果不想填写 title，可以在 language 和 url 之间添加至少三个空格。</p>
+<p>测试代码：</p>
+<figure class="highlight cpp"><figcaption><span>hello.cpp</span><a href="http://google.com" target="_blank" rel="noopener">this is google website</a></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"hello world!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以在站点配置文件中设置 highlight.auto_detect: true 来开启自动语言检测高亮。</p>
+<p>如果设置语言为 diff，可以在代码前添加 + 和 - 来使用如上所示的高亮增删行提示效果，在展示代码改动痕迹时比较实用。</p>
+<figure class="highlight diff"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"> highlight:</span><br><span class="line">   enable: true</span><br><span class="line">   line_number: false</span><br><span class="line"><span class="deletion">-  auto_detect: false</span></span><br><span class="line"><span class="addition">+  auto_detect: true</span></span><br><span class="line">   tab_replace:</span><br></pre></td></tr></table></figure>
+<h2 id="note-标签">note 标签</h2>
+<p>通过 note 标签可以为段落添加背景色，语法如下：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;% note [class] %&#125;</span><br><span class="line">文本内容 (支持行内标签)</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">or</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"note warning"</span>&gt;</span>文本内容 (支持行内标签)<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>支持的 class 种类包括 <code>default</code> <code>primary</code> <code>success</code> <code>info</code> <code>warning</code> <code>danger</code>，也可以不指定class。</p>
+<p>各种 class 种类的效果如下:</p>
+<div class="note default">
+            <p>default note tag</p>
+          </div>
+<div class="note primary">
+            <p>primary note tag</p>
+          </div>
+<div class="note success">
+            <p>success note tag</p>
+          </div>
+<div class="note info">
+            <p>info note tag</p>
+          </div>
+<p class="note warning">warning note tag</p>
+<div class="note danger">
+            <p>danger note tag</p>
+          </div>
+<p>更多配置可在主题配置文件中设置</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">note:</span></span><br><span class="line">  <span class="comment"># Note 标签样式预设</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">modern</span>  <span class="comment"># simple | modern | flat | disabled</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">false</span>  <span class="comment"># 是否显示图标</span></span><br><span class="line">  <span class="attr">border_radius:</span> <span class="number">3</span>  <span class="comment"># 圆角半径</span></span><br><span class="line">  <span class="attr">light_bg_offset:</span> <span class="number">0</span>  <span class="comment"># 默认背景减淡效果，以百分比计算</span></span><br></pre></td></tr></table></figure>
+<h2 id="label-标签">label 标签</h2>
+<p>通过 label 标签可以为文字添加背景色，语法如下：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% label [class]@text  %&#125;</span><br></pre></td></tr></table></figure>
+<p>支持的 class 种类包括 default primary success info warning danger，默认使用 default 作为缺省。</p>
+<p>使用示例如下：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">I heard the echo, &#123;% label default@from the valleys and the heart %&#125;</span><br><span class="line">Open to the lonely soul of &#123;% label info@sickle harvesting %&#125;</span><br><span class="line">Repeat outrightly, but also repeat the well-being of</span><br><span class="line">Eventually &#123;% label warning@swaying in the desert oasis %&#125;</span><br><span class="line">&#123;% label success@I believe %&#125; I am</span><br><span class="line">&#123;% label primary@Born as the bright summer flowers %&#125;</span><br><span class="line">Do not withered undefeated fiery demon rule</span><br><span class="line">Heart rate and breathing to bear &#123;% label danger@the load of the cumbersome %&#125;</span><br><span class="line">Bored</span><br></pre></td></tr></table></figure>
+<p>I heard the echo, <span class="label default">from the valleys and the heart</span><br>
+Open to the lonely soul of <span class="label info">sickle harvesting</span><br>
+Repeat outrightly, but also repeat the well-being of<br>
+Eventually <span class="label warning">swaying in the desert oasis</span></p>
+<span class="label success">I believe</span> I am
+<span class="label primary">Born as the bright summer flowers</span>
+<p>Do not withered undefeated fiery demon rule<br>
+Heart rate and breathing to bear <span class="label danger">the load of the cumbersome</span><br>
+Bored</p>
+<h2 id="button-按钮">button 按钮</h2>
+<figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">button</span> /path/to/url/, text, icon [class], title %&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="xml"># eg.</span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">btn</span> #, 文本 %&#125;</span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">btn</span> #, 文本 &amp; 标题,, 标题 %&#125;</span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">btn</span> #, 文本 &amp; 图标, home %&#125;</span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">btn</span> #, 文本 &amp; 大图标 (固定宽度), home fa-fw fa-lg %&#125;</span></span><br></pre></td></tr></table></figure>
+<p>其中， 图标 ID 来源于 <a href="https://fontawesome.com/v4.7.0/icons/" target="_blank" rel="noopener">FontAwesome</a></p>
+<h2 id="tab-标签">tab 标签</h2>
+<p>tab 标签用于快速创建 tab 选项卡，语法如下</p>
+<figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">tabs</span> [Unique name], [index] %&#125;</span></span><br><span class="line"><span class="xml">  <span class="comment">&lt;!-- tab [Tab caption]@[icon] --&gt;</span></span></span><br><span class="line"><span class="xml">  标签页内容（支持行内标签）</span></span><br><span class="line"><span class="xml">  <span class="comment">&lt;!-- endtab --&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">endtabs</span> %&#125;</span></span><br></pre></td></tr></table></figure>
+<a class="btn" href="#" title="回到顶部">
+            <i class="fa fa-home fa-fw"></i>小按钮
+          </a>
+<p>其中，各参数意义如下：</p>
+<ul>
+<li>Unique name: 全局唯一的 Tab 名称，将作为各个标签页的 id 属性前缀</li>
+<li>index: 当前激活的标签页索引，如果未定义则默认选中显示第一个标签页，如果设为 - 1 则默认隐藏所有标签页</li>
+<li>Tab caption: 当前标签页的标题，如果不指定则会以 Unique name 加上索引作为标题</li>
+<li>icon: 在标签页标题中添加 Font awesome 图标</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tabs Tab标签列表 %&#125;</span><br><span class="line">  <span class="xml"><span class="comment">&lt;!-- tab 标签页1 --&gt;</span></span></span><br><span class="line"><span class="code">    标签页1文本内容</span></span><br><span class="line">  <span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span></span><br><span class="line">  <span class="xml"><span class="comment">&lt;!-- tab 标签页2 --&gt;</span></span></span><br><span class="line"><span class="code">    标签页2文本内容</span></span><br><span class="line">  <span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span></span><br><span class="line">  <span class="xml"><span class="comment">&lt;!-- tab 标签页3 --&gt;</span></span></span><br><span class="line"><span class="code">    标签页3文本内容</span></span><br><span class="line">  <span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<div class="tabs" id="编程语言"><ul class="nav-tabs"><li class="tab active"><a href="#编程语言-1">Cpp</a></li><li class="tab"><a href="#编程语言-2">C</a></li><li class="tab"><a href="#编程语言-3">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="编程语言-1"><figure class="highlight cpp"><figcaption><span>hello.cpp</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"hello world!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="编程语言-2"><figure class="highlight c"><figcaption><span>hello.c</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello world!\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="编程语言-3"><figure class="highlight java"><figcaption><span>hello.java</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="class"><span class="keyword">class</span> <span class="title">hello</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello world!"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+<h2 id="草稿和发布">草稿和发布</h2>
+<div class="note info">
+            <p>本章内容参考自 <a href="https://www.chingow.cn/posts/bd723aed.html" target="_blank" rel="noopener">Hexo+NexT(v7.0+) 搭建博客：内容优化</a></p>
+          </div>
+<p>一般我们使用<code>hexo new &lt;title&gt;</code>来建立文章，这种建立方法会将新文章建立在 <strong>source/_posts</strong> 目录下，当使用 <code>hexo generate</code> 编译文件时，会将其 HTML 结果编译在 <code>public</code> 目录下，之后<code>hexo server</code>将会把 <code>public</code> 目录下所有文章发布。</p>
+<p>Hexo 提供 draft 机制，它的原理是新文章将建立在 <strong>source/_drafts</strong> 目录下，因此并不会将其编译到 <strong>public</strong> 目录下发布，而且提供了很友好的预览功能。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new draft &lt;title&gt;	<span class="comment"># 新建草稿文章</span></span><br><span class="line">$ hexo s --draft	        <span class="comment"># 预览草稿文章</span></span><br></pre></td></tr></table></figure>
+<p>将草稿发布为正式文章：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo P &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+<p>其中 <filename> 为不包含 md 后缀的文章名称。它的原理只是将文章从 <strong>source/_drafts</strong> 移动到 <strong>source/_posts</strong> 而已。</p>
+<h2 id="参考链接">参考链接</h2>
+<ul>
+<li><a href="http://yearito.cn/posts/hexo-writing-skills.html" target="_blank" rel="noopener">Hexo 搭建个人博客系列：写作技巧篇</a></li>
+<li><a href="http://dinghongkai.com/2017/12/19/Blog-development-6-Customized-Style-of-Writing/" target="_blank" rel="noopener">Hexo建站日志 (6) - 添加文章书写样式</a></li>
+<li><a href="http://ylong.net.cn/hexo_conf.html" target="_blank" rel="noopener">Hexo 博客美化配置</a></li>
+<li><a href="https://www.chingow.cn/posts/bd723aed.html" target="_blank" rel="noopener">Hexo+NexT(v7.0+) 搭建博客：内容优化</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>Hexo创建博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>加密测试博客</title>
+    <url>/encrypt-test/</url>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="你果然不知道密码！" data-whm="秘密你是看不了，给你看个大宝贝吧！">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">你知道密码吗？</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="735665659caee5a999e76f57de2e6e62381b92f524f8997e5404481358d71a34">bb680315a4d0a5763114356d6130bd60d5d8c611c46143919c81d6b4ca2c19d19e681fd6e3fc0451833f0f74a84ef29c24f05b19210be99d798c7dc5b473767b151fbb2a385f91711da9619bc73bd96c1eaa76989d9aed57cd36323d170dcb6809d00a0c4b506a55491a6730074973f79b804df131649f0e9d149ce078eb2dc53495e187b07a243b598c3484aa21c91c</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo NexT 主题配置二</title>
+    <url>/hexo-next-theme-config-2/</url>
+    <content><![CDATA[<div class="note primary">
+            <p>本文提到的Hexo博客配置是基于：Hexo v4.2.1 和 NexT v7.8.0。请注意版本之间存在差异！</p>
+          </div>
+<p>本文是我用Hexo配置NexT主题的第二篇笔记，主要内容有以下几点：</p>
+<ul>
+<li>回到顶部按钮设置</li>
+<li>添加打赏功能</li>
+<li>实现代码可复制</li>
+<li>开启相关文章推荐功能（to do）</li>
+<li>添加版权信息</li>
+<li>添加图片灯箱功能</li>
+<li>文章加密设置</li>
+</ul>
+<a id="more"></a>
+<h2 id="回到顶部按钮设置">回到顶部按钮设置</h2>
+<p>在主题配置文件中搜索<code>back2top</code>,进行修改</p>
+<figure class="highlight yml"><figcaption><span>themes\next\_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">back2top:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Back to top in sidebar.</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">false</span>  <span class="comment"># 是否在侧边栏显示</span></span><br><span class="line">  <span class="comment"># Scroll percent label in b2t button.</span></span><br><span class="line">  <span class="attr">scrollpercent:</span> <span class="literal">true</span>   <span class="comment">#显示百分比</span></span><br></pre></td></tr></table></figure>
+<h2 id="添加打赏功能">添加打赏功能</h2>
+<p>修改如下主题配置文件即可：</p>
+<figure class="highlight yml"><figcaption><span>themes\next\_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Reward (Donate)</span></span><br><span class="line"><span class="comment"># Front-matter variable (unsupport animation).</span></span><br><span class="line"><span class="attr">reward_settings:</span></span><br><span class="line">  <span class="comment"># If true, reward will be displayed in every article by default.</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">animation:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">comment:</span> <span class="string">也不知道下面这个按钮有没有用.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">reward:</span></span><br><span class="line">  <span class="attr">wechatpay:</span> <span class="string">/images/wechatpay.png</span></span><br><span class="line">  <span class="attr">alipay:</span> <span class="string">/images/alipay.png</span></span><br><span class="line">  <span class="comment">#paypal: /images/paypal.png</span></span><br><span class="line">  <span class="comment">#bitcoin: /images/bitcoin.png</span></span><br></pre></td></tr></table></figure>
+<h2 id="实现代码可复制">实现代码可复制</h2>
+<p>过程有点复杂，参见：<a href="https://www.jianshu.com/p/3e9d614c1e77" target="_blank" rel="noopener">Hexo NexT 代码块复制功能</a> ，但是我没有成功。<br>
+会有如下问题：</p>
+<figure class="highlight console"><table><tr><td class="code"><pre><span class="line">clipboard-use.js:8 Uncaught ReferenceError: $ is not defined</span><br><span class="line">    at initCopyCode (clipboard-use.js:8)</span><br><span class="line">    at clipboard-use.js:15</span><br><span class="line">    at clipboard-use.js:16</span><br></pre></td></tr></table></figure>
+<p>我的解决方案：<br>
+新版NexT的新功能吧，新版本<a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">NexT</a><br>
+在主题配置文件中搜索 <code>copy_button</code> 修改如下内容：</p>
+<figure class="highlight yml"><figcaption><span>themes\next\_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Add copy button on codeblock</span></span><br><span class="line"> <span class="attr">copy_button:</span></span><br><span class="line">   <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">   <span class="comment"># Show text copy result.</span></span><br><span class="line">   <span class="attr">show_result:</span> <span class="literal">true</span></span><br><span class="line">   <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">   <span class="attr">style:</span> <span class="string">flat</span></span><br></pre></td></tr></table></figure>
+<p>测试代码：</p>
+<figure class="highlight cpp"><figcaption><span>hello.cpp</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"hello world!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原来这么简单，害我搞了那么半天，这样子也蛮好看的！</p>
+<h2 id="开启相关文章推荐功能">开启相关文章推荐功能</h2>
+<p>开启相关文章推荐需要安装<code>hexo-related-popular-posts</code>模块，在站点根目录下使用如下命令安装模块，</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-related-popular-posts --save</span><br></pre></td></tr></table></figure>
+<p>然后在主题配置文件中修改如下内容：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Related popular posts</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/tea3/hexo-related-popular-posts</span></span><br><span class="line"><span class="attr">related_posts:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">相关文章推荐</span> <span class="comment">#Custom header, leave empty to use the default one</span></span><br><span class="line">  <span class="attr">display_in_home:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">params:</span></span><br><span class="line">    <span class="attr">maxCount:</span> <span class="number">5</span></span><br><span class="line">    <span class="comment">#PPMixingRate: 0.0</span></span><br><span class="line">    <span class="comment">#isDate: false</span></span><br><span class="line">    <span class="comment">#isImage: false</span></span><br><span class="line">    <span class="comment">#isExcerpt: false</span></span><br></pre></td></tr></table></figure>
+<div class="note warning">
+            <p>当前<code>hexo-related-popular-posts</code>版本<code>4..0.0</code>有安全漏洞，总是安装失败，<a href="https://www.npmjs.com/package/hexo-related-popular-posts" target="_blank" rel="noopener">等待更新</a></p>
+          </div>
+<h2 id="添加版权信息">添加版权信息</h2>
+<p>打开主题配置文件，搜索<code>creative_commons</code>修改如下内容:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">creative_commons:</span></span><br><span class="line">  <span class="attr">license:</span> <span class="string">by-nc-sa</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">deed.zh</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考文章 ： <a href="http://blog.amdoing.com/the-post-copyright-in-hexo-next/" target="_blank" rel="noopener">使用Hexo的next主题，配置POST文章文末的版权信息</a></p>
+</blockquote>
+<h2 id="添加图片灯箱功能">添加图片灯箱功能</h2>
+<p>添加灯箱功能，实现点击图片后放大聚焦图片，并支持幻灯片播放、全屏播放、缩略图、快速分享到社交媒体等，该功能由<code>fancyBox</code>提供，效果如下:<br>
+<img src="https://cdn.pixabay.com/photo/2017/08/02/14/26/winter-landscape-2571788__480.jpg" alt="随便一张图" title="随便一张图"></p>
+<p>打开主题配置文件修改如下内容：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">fancybox:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h2 id="文章加密设置">文章加密设置</h2>
+<div class="note info">
+            <p>参考链接：<a href="https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md" target="_blank" rel="noopener">https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md</a></p>
+          </div>
+<ol>
+<li>首先在博客目录下输入如下命令，安装<code>hexo-blog-encrypt</code></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-blog-encrypt</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在<strong>站点</strong>配置文件中添加如下内容：</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">encrypt:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">default_abstract:</span> <span class="string">这是我的小秘密哦!</span></span><br><span class="line">  <span class="attr">default_message:</span> <span class="string">你知道密码吗？</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>在文章开头添加如下内容</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">- </span>作为日记加密</span><br><span class="line">date: 2016-03-30 21:12:21</span><br><span class="line">password: mikemessi</span><br><span class="line">abstract: 有东西被加密了, 请输入密码查看.</span><br><span class="line">message: 您好, 这里需要密码.</span><br><span class="line">wrong<span class="emphasis">_pass_</span>message: 抱歉, 这个密码看着不太对, 请再试试.</span><br><span class="line">wrong<span class="emphasis">_hash_</span>message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p><a href="http://xujing113221.github.io/encrypt-test/">我的加密测试博客</a></p>
+<h2 id="参考文章">参考文章</h2>
+<ul>
+<li><a href="http://yearito.cn/posts/hexo-advanced-settings.html" target="_blank" rel="noopener">Hexo 搭建个人博客系列：进阶设置篇</a></li>
+<li><a href="https://juejin.im/post/5e71b0b3e51d4526f363c83b#heading-32" target="_blank" rel="noopener">Hexo 入门与进阶</a></li>
+<li><a href="https://www.chingow.cn/posts/e0970dc8.html" target="_blank" rel="noopener">Hexo+NexT(v7.0+) 搭建博客：功能强化</a></li>
+<li><a href="https://www.npmjs.cn/getting-started/what-is-npm/" target="_blank" rel="noopener">npm 是什么？</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>Hexo创建博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo NexT 主题设置一</title>
+    <url>/hexo-next-theme-config-1/</url>
+    <content><![CDATA[<div class="note primary">
+            <p>本文提到的Hexo博客配置是基于：Hexo v4.2.1 和 NexT v7.8.0。请注意版本之间存在差异！</p>
+          </div>
+<p>本文是我用Hexo配置NexT主题的笔记，主要内容有以下几点：</p>
+<ul>
+<li>中文设置</li>
+<li>tag标签设置</li>
+<li>read more 设置</li>
+<li>tag标签设置</li>
+<li>添加valine评论系统</li>
+<li>不蒜子站点统计功能</li>
+<li>开启博客本地搜索</li>
+</ul>
+<a id="more"></a>
+<h3 id="中文设置">中文设置</h3>
+<p>打开 hexo 配置文件 _config.yml 修改</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br></pre></td></tr></table></figure>
+<h3 id="tag标签设置">tag标签设置</h3>
+<ol>
+<li>打开主题设置 <code>_config.yml</code>,  打开想要的属性</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="comment">#about: /about/ || fa fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>打开terminal 输入如下内容, 例子： 给文章添加“categories”属性</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br><span class="line">INFO  Created: ~/Desktop/xujing113221.github.io/myblog/<span class="built_in">source</span>/categor</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>打开主题下的 <code>/source/categories/index.md</code></li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2020-07-09 15:05:00</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>添加如下内容</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2020-07-09 15:05:00</span><br><span class="line">type: "categories"</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="read-more-设置">read more 设置</h3>
+<p>使用在Markdown文件中添加如下内容即可</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!--more--&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="添加valine评论系统">添加valine评论系统</h3>
+<h4 id="注册LeanCloud">注册LeanCloud</h4>
+<p>我使用的是<a href="https://leancloud.app" target="_blank" rel="noopener">国际版</a>, 中国版需要实名认证，有点麻烦。</p>
+<h4 id="创建应用">创建应用</h4>
+<ul>
+<li>
+<p>点击创建应用按钮:<br>
+<img src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/1.png" alt="创建应用"></p>
+</li>
+<li>
+<p>选择开发版<br>
+<img src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/2.png" alt="选择开发版"></p>
+</li>
+<li>
+<p>进入设置<br>
+<img src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/3.png" alt="进入设置"></p>
+</li>
+</ul>
+<h4 id="配置应用">配置应用</h4>
+<h5 id="设置Web安全域名，填入自己的域名">设置Web安全域名，填入自己的域名</h5>
+<p>依次点击左侧边栏上的<strong>设置</strong>,<strong>安全中心</strong>,然后下拉页面,找到<strong>Web 安全域名</strong>,把你<em>站点的域名</em>填写进去。<br>
+服务开关中仅保留 <strong>数据存储</strong>。</p>
+<h5 id="获取APP-ID-和-APP-Key">获取APP ID 和 APP Key</h5>
+<p>依次点击左侧边栏上的<strong>设置</strong>, <strong>应用 Keys</strong>,然后复制下<strong>AppID</strong>和<strong>AppKey</strong>:</p>
+<h4 id="修改Next主题配置文件">修改Next主题配置文件</h4>
+<p>打开博客目录的next主题配置文件 <code>_config.yml</code> ，找到<code>Valine</code>，将上图的<code>APP ID</code> 和<code>APP Key</code>复制到对应位置。</p>
+<figure class="highlight yml"><figcaption><span>theme/next/_config.yml </span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">appid:</span> <span class="string">XXXXXXX-MdYXbMMI</span> <span class="comment"># Your leancloud application appid</span></span><br><span class="line">  <span class="attr">appkey:</span> <span class="string">XXXXXXXXX</span> <span class="comment"># Your leancloud application appkey</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">false</span> <span class="comment"># Mail notifier</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># Verification code</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">Write</span> <span class="string">something</span> <span class="string">to</span> <span class="string">me</span> <span class="string">...</span> <span class="comment"># Comment box placeholder</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">retro</span> <span class="comment"># Gravatar style</span></span><br><span class="line">  <span class="attr">guest_info:</span> <span class="string">nick,mail,link</span> <span class="comment"># Custom comment header</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># Pagination size</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">zh-cn</span> <span class="comment"># Language, available values: en, zh-cn</span></span><br><span class="line">  <span class="attr">visitor:</span> <span class="literal">false</span> <span class="comment"># Article reading statistic</span></span><br><span class="line">  <span class="attr">comment_count:</span> <span class="literal">true</span> <span class="comment"># If false, comment count will only be displayed in post page, not in home page</span></span><br><span class="line">  <span class="attr">recordIP:</span> <span class="literal">false</span> <span class="comment"># Whether to record the commenter IP</span></span><br><span class="line">  <span class="attr">serverURLs:</span> <span class="comment"># When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)</span></span><br><span class="line">  <span class="comment">#post_meta_order: 0</span></span><br></pre></td></tr></table></figure>
+<h4 id="如何删除评论">如何删除评论</h4>
+<p>依次点击左侧边栏上的<strong>存储</strong>, <strong>数据化结构</strong>, <strong>Comment</strong>, 直接删除表：<br>
+<img src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/20.png" alt="这样删除"></p>
+<h4 id="To-do-：在LeanCloud上部署云引擎">To do ：在LeanCloud上部署云引擎</h4>
+<p>可实现</p>
+<ul>
+<li>评论 邮件提醒功能</li>
+<li>登陆评论管理系统</li>
+</ul>
+<p><a href="https://github.com/zhaojun1998/Valine-Admin" target="_blank" rel="noopener">别人写的引擎</a><br>
+<a href="https://lanlan2017.github.io/blog/de4f7be8/" target="_blank" rel="noopener">参考的博客</a></p>
+<h4 id="开启阅读量">开启阅读量</h4>
+<p>在主题配置中搜索 <code>leancloud_visitors</code> ，更改如下配置：</p>
+<figure class="highlight yml"><figcaption><span>theme/next/_config.yml </span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">leancloud_visitors:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">app_id:</span> <span class="string">xXXXXXXXxx</span> <span class="comment"># &lt;your app id&gt;</span></span><br><span class="line">  <span class="attr">app_key:</span> <span class="string">xxxxxxx</span> <span class="comment"># &lt;your app key&gt;</span></span><br><span class="line">  <span class="comment"># Required for apps from CN region</span></span><br><span class="line">  <span class="attr">server_url:</span> <span class="comment"># &lt;your server url&gt;</span></span><br><span class="line">  <span class="comment"># Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security</span></span><br><span class="line">  <span class="comment"># If you don't care about security in leancloud counter and just want to use it directly</span></span><br><span class="line">  <span class="comment"># (without hexo-leancloud-counter-security plugin), set `security` to `false`.</span></span><br><span class="line">  <span class="attr">security:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>参考文章：<a href="https://blog.qust.cc/archives/48665.html" target="_blank" rel="noopener">Hexo Next主题 使用LeanCloud统计文章阅读次数、添加热度排行页面</a></p>
+<h4 id="添加评论次数的中文">添加评论次数的中文</h4>
+<p>在文章开头总是<code>Valine：</code>可以对<code>themes/next/scripts/filters/comment/valine.js </code>进行如下修改：</p>
+<figure class="highlight diff"><figcaption><span>themes/next/scripts/filters/comment/valine.js</span></figcaption><table><tr><td class="code"><pre><span class="line">  injects.postMeta.raw('valine', `</span><br><span class="line">  &#123;% if post.comments and (is_post() or theme.valine.comment_count) %&#125;</span><br><span class="line">  &lt;span class="post-meta-item"&gt;</span><br><span class="line"><span class="deletion">-    $&#123;iconText('far fa-comment', 'valine')&#125;</span></span><br><span class="line"><span class="addition">+    &lt;span class="post-meta-item-icon"&gt;</span></span><br><span class="line"><span class="addition">+    &lt;i class="far fa-comment"&gt;&lt;/i&gt;</span></span><br><span class="line"><span class="addition">+    &lt;/span&gt; </span></span><br><span class="line"><span class="addition">+    &lt;span class="post-meta-item-text"&gt;&#123;&#123; __('post.comments') + __('symbol.colon') &#125;&#125;&lt;/span&gt;</span></span><br><span class="line">    &lt;a title="valine" href="&#123;&#123; url_for(post.path) &#125;&#125;#valine-comments" itemprop="discussionUrl"&gt;</span><br><span class="line">      &lt;span class="post-comments-count valine-comment-count" data-xid="&#123;&#123; url_for(post.path) &#125;&#125;" itemprop="commentCount"&gt;&lt;/span&gt;</span><br><span class="line">    &lt;/a&gt;</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">  `, &#123;&#125;, &#123;&#125;, theme.valine.post_meta_order);</span><br></pre></td></tr></table></figure>
+<p>然后在语言配置文件中添加</p>
+<figure class="highlight diff"><figcaption><span>themes/next/languages/zh-CN.yml</span></figcaption><table><tr><td class="code"><pre><span class="line">post: </span><br><span class="line">  posted: 发表于</span><br><span class="line">  edited: 更新于</span><br><span class="line">  created: 创建时间</span><br><span class="line">  modified: 修改时间</span><br><span class="line">  views: 阅读次数</span><br><span class="line"><span class="addition">+  Valine: 评论次数</span></span><br></pre></td></tr></table></figure>
+<h3 id="不蒜子站点统计功能">不蒜子站点统计功能</h3>
+<p>打开主题配置文件，搜索<code>busuanzi</code>,修改如下内容：</p>
+<figure class="highlight yml"><figcaption><span>theme/next/_config.yml </span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors:</span> <span class="literal">true</span> <span class="comment">#站点访问量</span></span><br><span class="line">  <span class="attr">total_visitors_icon:</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">total_views:</span> <span class="literal">true</span>   <span class="comment"># 站点阅读量</span></span><br><span class="line">  <span class="attr">total_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br><span class="line">  <span class="attr">post_views:</span> <span class="literal">false</span>  <span class="comment"># 文章阅读数</span></span><br><span class="line">  <span class="attr">post_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br></pre></td></tr></table></figure>
+<div class="note warning">
+            <p>如果开启了LeanCloud统计阅读次数，就不要打开不蒜子的 <code>post_views</code>.</p>
+          </div>
+<h3 id="开启博客本地搜索">开启博客本地搜索</h3>
+<p>提升读者用户体验，博客内肯定是需要一个全局搜索按钮的。当然hexo已经集成了几款开源的搜索插件，一般都使用的是 <code>local_search</code>.</p>
+<p>搜索 <code>local_search</code> , 设置代码如下：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">  <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br><span class="line">  <span class="comment"># unescape html strings to the readable one</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>注意该搜索功能需要依赖 <code>hexo-generator-searchdb</code> 插件，依然还是使用命令 <code>npm install hexo-generator-searchdb --save</code> 来进行安装。然后 在 hexo 站点根目录配置文件 <code>_config.xml</code> 的末尾，加入以下代码即可。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<h3 id="参考文章">参考文章</h3>
+<ol>
+<li><a href="https://xian6ge.cn/posts/6d7ed114/" target="_blank" rel="noopener">Hexo NexT 主题 7.x 版本的使用配置与美化</a></li>
+<li><a href="https://hasaik.com/posts/ab21860c.html" target="_blank" rel="noopener">Hexo博客+Next主题深度优化与定制</a></li>
+<li><a href="https://lanlan2017.github.io/blog/de4f7be8/" target="_blank" rel="noopener">Hexo Next主题 添加Valine评论系统 设置有新评论时自动发邮件提醒</a></li>
+<li><a href="https://blog.qust.cc/archives/48665.html" target="_blank" rel="noopener">Hexo Next主题 使用LeanCloud统计文章阅读次数、添加热度排行页面</a></li>
+<li><a href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/" target="_blank" rel="noopener">Hexo博客搭建之在文章中插入图片</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>Hexo创建博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown学习笔记二 进阶篇</title>
+    <url>/markdown-studying-notes-2/</url>
+    <content><![CDATA[<p>本文记录我学习Markdown的进阶笔记，主要有一下内容：</p>
+<ul>
+<li>数学公式的使用</li>
+<li>绘制流程图</li>
+<li>复选框列表</li>
+</ul>
+<a id="more"></a>
+<h2 id="数学公式的使用">数学公式的使用</h2>
+<h3 id="方法">方法</h3>
+<p>使用Latex格式 <a href="https://www.latexlive.com/" target="_blank" rel="noopener">LaTeX公式编辑器</a></p>
+<ul>
+<li>行内公式 : 使用一个$</li>
+<li>行外公式 : 使用 $$</li>
+<li>多行公式 : 使用引用 Latex 代码</li>
+</ul>
+<h3 id="实现">实现</h3>
+<h4 id="行内公式">行内公式 :</h4>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">这是一个行内公式:  <span class="formula">$ <span class="tag">\<span class="name">int</span></span> <span class="tag">\<span class="name">frac</span><span class="string">&#123;1&#125;</span><span class="string">&#123;1+x^&#123;2&#125;</span></span>&#125;<span class="tag">\<span class="name">mathrm</span><span class="string">&#123;d&#125;</span></span>x= <span class="tag">\<span class="name">arctan</span></span> x +C $</span></span><br></pre></td></tr></table></figure>
+<p>这是一个行内公式:  $ \int \frac{1}{1+x^{2}}\mathrm{d}x= \arctan x +C $</p>
+<h4 id="行外公式">行外公式 :</h4>
+<figure class="highlight gams"><table><tr><td class="code"><pre><span class="line">这是一个行外公式举例：<span class="symbol">$</span><span class="symbol">$</span>y = x \<span class="built-in">cos</span> \alpha + \<span class="built-in">cos</span> \<span class="built-in">beta</span> =<span class="number">2</span> \<span class="built-in">cos</span> \<span class="built-in">frac</span>&#123;\alpha + \<span class="built-in">beta</span>&#125;&#123;<span class="number">2</span>&#125;\<span class="built-in">cos</span> \<span class="built-in">frac</span>&#123;\alpha - \<span class="built-in">beta</span>&#125;&#123;<span class="number">2</span>&#125; <span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
+<p>这是一个行外公式举例：$$y = x \cos \alpha + \cos \beta =2 \cos \frac{\alpha + \beta}{2}\cos \frac{\alpha - \beta}{2} $$</p>
+<h4 id="多行公式-使用引用-Latex-代码">多行公式 : 使用引用 Latex 代码</h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\displaystyle</span><br><span class="line">\left( \sum\_&#123;k&#x3D;1&#125;^n a\_k b\_k \right)^2</span><br><span class="line">\leq</span><br><span class="line">\left( \sum\_&#123;k&#x3D;1&#125;^n a\_k^2 \right)</span><br><span class="line">\left( \sum\_&#123;k&#x3D;1&#125;^n b\_k^2 \right)</span><br></pre></td></tr></table></figure>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">f(x) = <span class="symbol">\i</span>nt_&#123;-<span class="symbol">\i</span>nfty&#125;^<span class="symbol">\i</span>nfty</span><br><span class="line">    <span class="symbol">\h</span>at f(<span class="symbol">\x</span>i)<span class="symbol">\,</span>e^&#123;2 <span class="symbol">\p</span>i i <span class="symbol">\x</span>i x&#125;</span><br><span class="line">    <span class="symbol">\,</span>d<span class="symbol">\x</span>i</span><br></pre></td></tr></table></figure>
+<p>$$<br>
+\displaystyle<br>
+\left( \sum_{k=1}^n a_k b_k \right)^2<br>
+\leq<br>
+\left( \sum_{k=1}^n a_k^2 \right)<br>
+\left( \sum_{k=1}^n b_k^2 \right)<br>
+$$</p>
+<p>$$<br>
+f(x) = \int_{-\infty}^\infty<br>
+\hat f(\xi),e^{2 \pi i \xi x}<br>
+,d\xi<br>
+$$</p>
+<h2 id="绘制流程图">绘制流程图</h2>
+<h3 id="添加支持">添加支持</h3>
+<p>Hexo 默认是不支持流程图的 Markdown 语法的，需要添加支持：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save hexo-filter-flowchart</span><br></pre></td></tr></table></figure>
+<h3 id="绘制流程图-2">绘制流程图</h3>
+<div id="flowchart-0" class="flow-chart"></div>
+<h2 id="复选框列表">复选框列表</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">- </span>[<span class="string">x</span>] @mentions, #refs, [<span class="string">links</span>](<span class="link"></span>), <span class="strong">**formatting**</span>, and <span class="xml"><span class="tag">&lt;<span class="name">del</span>&gt;</span></span>tags<span class="xml"><span class="tag">&lt;/<span class="name">del</span>&gt;</span></span> supported;</span><br><span class="line"><span class="bullet">- </span>[x] list syntax required (any unordered or ordered list supported);</span><br><span class="line"><span class="bullet">- </span>[x] this is a complete item;</span><br><span class="line"><span class="bullet">- </span>[<span class="string"> </span>] this is an incomplete item [<span class="string">test link</span>](<span class="link">#</span>);</span><br><span class="line"><span class="bullet">- </span>[ ] this is an incomplete item;</span><br><span class="line"><span class="bullet">    - </span>[<span class="string"> </span>] this is an incomplete item [<span class="string">test link</span>](<span class="link">#</span>);</span><br><span class="line"><span class="bullet">    - </span>[<span class="string"> </span>] this is an incomplete item [<span class="string">test link</span>](<span class="link">#</span>);</span><br><span class="line"><span class="bullet">- </span>[x] list syntax required (any unordered or ordered list supported);</span><br><span class="line"><span class="bullet">- </span>[x] this is a complete item;</span><br><span class="line"><span class="bullet">- </span>[<span class="string"> </span>] this is an incomplete item [<span class="string">test link</span>](<span class="link">#</span>);</span><br><span class="line"><span class="bullet">- </span>[ ] this is an incomplete item;</span><br><span class="line"><span class="bullet">    - </span>[<span class="string"> </span>] this is an incomplete item [<span class="string">test link</span>](<span class="link">#</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>[x] @mentions, #refs, <a href="">links</a>, <strong>formatting</strong>, and <del>tags</del> supported;</li>
+<li>[x] list syntax required (any unordered or ordered list supported);</li>
+<li>[x] this is a complete item;</li>
+<li>[ ] this is an incomplete item <a href="#">test link</a>;</li>
+<li>[ ] this is an incomplete item;
+<ul>
+<li>[ ] this is an incomplete item <a href="#">test link</a>;</li>
+<li>[ ] this is an incomplete item <a href="#">test link</a>;</li>
+</ul>
+</li>
+<li>[x] list syntax required (any unordered or ordered list supported);</li>
+<li>[x] this is a complete item;</li>
+<li>[ ] this is an incomplete item <a href="#">test link</a>;</li>
+<li>[ ] this is an incomplete item;
+<ul>
+<li>[ ] this is an incomplete item <a href="#">test link</a>;</li>
+</ul>
+</li>
+</ul>
+<p>参考链接 <a href="http://editor.md.ipandao.com/examples/task-lists.html" target="_blank" rel="noopener">Github Flavored Markdown task lists</a></p>
+<p><em>可能由于渲染问题无法实现</em></p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: 用户登陆
+op=>operation: 登陆操作
+cond=>condition: 登陆成功 Yes or No?
+e=>end: 进入后台
+
+st->op->cond
+cond(yes)->e
+cond(no)->op</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script>]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>Markdown语法</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown学习笔记一 入门篇</title>
+    <url>/markdown-studying-notes-1/</url>
+    <content><![CDATA[<p>Markdown是一种轻量级标记语言，创始人为約翰·格魯伯（英語：John Gruber）。它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。</p>
+<p>本文是我学习Markdown的笔记，主要记录Markdown基本语法。</p>
+<a id="more"></a>
+<h2 id="标题使用方法">标题使用方法</h2>
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">#h1标题</span><br><span class="line">##h2标题</span><br><span class="line">###h3标题</span><br><span class="line">####h4标题</span><br><span class="line">#####h5标题</span><br><span class="line">######h6标题</span><br></pre></td></tr></table></figure>
+<p>#h1标题<br>
+##h2标题<br>
+###h3标题<br>
+####h4标题<br>
+#####h5标题<br>
+######h6标题</p>
+<h3 id="特例">特例</h3>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line">h1标题</span><br><span class="line">===</span><br><span class="line">h2标题</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="自然段改行-br">自然段改行 <code>&lt;br&gt;</code></h2>
+<h3 id="方法一">方法一</h3>
+<p>这是第一自然段</p>
+<p>这是第二自然段</p>
+<h3 id="方法二">方法二</h3>
+<p>这是第一自然段第一部分<br>
+这是第一自然段第二部分</p>
+<h3 id="总结">总结</h3>
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">### 方法一</span><br><span class="line">这是第一自然段</span><br><span class="line">(回车两下)</span><br><span class="line">这是第二自然段</span><br><span class="line">### 方法二</span><br><span class="line">这是第一自然段第一部分  （空格两下）</span><br><span class="line">这是第一自然段第二部分</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="引用表现">引用表现</h2>
+<blockquote>
+<p>添加 <code>&gt;</code> 即可引用</p>
+</blockquote>
+<hr>
+<h2 id="为文章添加分割线-hr">为文章添加分割线<code>&lt;hr&gt;</code></h2>
+<h3 id="四种方法">四种方法</h3>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="string">***</span></span><br><span class="line"><span class="string">___</span></span><br><span class="line"><span class="bullet">-</span> <span class="bullet">-</span> <span class="bullet">-</span></span><br></pre></td></tr></table></figure>
+<p>*<em>注意与h2的区别</em></p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line">这是第一自然段</span><br><span class="line">(这里必须有个换行)</span><br><span class="line">---</span><br><span class="line">这是第二自然段</span><br><span class="line">**<span class="strong">*</span></span><br><span class="line"><span class="strong">这是第三自然段</span></span><br><span class="line"><span class="strong">___</span></span><br><span class="line"><span class="strong">这是第四自然段</span></span><br><span class="line"><span class="strong">- - -</span></span><br></pre></td></tr></table></figure>
+<p>这是第一自然段</p>
+<hr>
+<p>这是第二自然段</p>
+<hr>
+<p>这是第三自然段</p>
+<hr>
+<p>这是第四自然段</p>
+<hr>
+<h2 id="文字处理">文字处理</h2>
+<h3 id="方法">方法</h3>
+<p>斜体：<code>*XXX*</code>， <code>_XXX_</code><br>
+粗体：<code>**XXX**</code>, <code>__XXX__</code><br>
+删除：<code>~~XXX~~</code><br>
+下划线: <code>&lt;u&gt;XXX&lt;/u&gt;</code></p>
+<p>###实现</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">这是一个*斜体举例*  </span><br><span class="line">这是一个**粗体举例**</span><br><span class="line">这是一个~~删除举例~~</span><br><span class="line">这是一个<span class="tag">&lt;<span class="name">u</span>&gt;</span>下划线举例<span class="tag">&lt;/<span class="name">u</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这是一个<em>斜体举例</em><br>
+这是一个<strong>粗体举例</strong><br>
+这是一个<s>删除举例</s><br>
+这是一个<u>下划线举例</u></p>
+<hr>
+<h2 id="列表表示">列表表示</h2>
+<h3 id="方法-2">方法</h3>
+<ul>
+<li>列表符号：-</li>
+<li>列表符号：*</li>
+<li>列表符号：+</li>
+<li>列表符号：数字（有序）</li>
+</ul>
+<h3 id="举例">举例</h3>
+<ul>
+<li><strong>无序列表</strong></li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">* </span>第一大项</span><br><span class="line"><span class="bullet">* </span>第二大项</span><br><span class="line"><span class="bullet">    * </span>第三小项</span><br><span class="line"><span class="bullet">    * </span>第四小项</span><br><span class="line"><span class="bullet">* </span>第五项</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第一大项</li>
+<li>第二大项
+<ul>
+<li>第三小项</li>
+<li>第四小项</li>
+</ul>
+</li>
+<li>第五项</li>
+</ul>
+<hr>
+<ul>
+<li><strong>有序列表</strong></li>
+</ul>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 数字项一</span><br><span class="line"><span class="number">0.</span> 数字项二</span><br><span class="line"><span class="number">0.</span> 数字项三</span><br><span class="line"><span class="number">0.</span> 数字项四</span><br><span class="line"><span class="number">0.</span> 数字项五</span><br></pre></td></tr></table></figure>
+<p><em>注意：数字与顺序无关</em></p>
+<ol>
+<li>数字项一</li>
+<li>数字项二</li>
+<li>数字项三</li>
+<li>数字项四</li>
+<li>数字项五</li>
+</ol>
+<hr>
+<h2 id="超链接">超链接</h2>
+<h3 id="方法-3">方法</h3>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">http://www.google.com</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">http:</span>//<span class="attr">www.google.com</span>&gt;</span></span></span><br><span class="line">[<span class="string">google</span>](<span class="link">http://www.google.com</span>)</span><br><span class="line">[<span class="string">google</span>](<span class="link">http://www.google.com "google wedsite"</span>) (推荐使用)</span><br></pre></td></tr></table></figure>
+<h3 id="实现">实现</h3>
+<p><a href="http://www.google.com" target="_blank" rel="noopener">http://www.google.com</a><br>
+<a href="http://www.google.com" target="_blank" rel="noopener">http://www.google.com</a><br>
+<a href="http://www.google.com" target="_blank" rel="noopener">google</a><br>
+<a href="http://www.google.com" target="_blank" rel="noopener" title="google wedsite">google</a></p>
+<hr>
+<h2 id="代码高亮显示">代码高亮显示</h2>
+<h3 id="方法-4">方法</h3>
+<p>代码高亮显示符号： ```（推荐使用反单引号）<br>
+代码高亮显示符号：~~~</p>
+<h3 id="实现-2">实现</h3>
+<ul>
+<li>c语言例子 (三个’实现)</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello world!\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>python 例子（三个～实现）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"hello world"</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>还有一种实现方法 <code>print(&quot;hello world&quot;)</code> 就是在这样：一个`</li>
+</ul>
+<hr>
+<h2 id="图片显示">图片显示</h2>
+<h3 id="方法-5">方法</h3>
+<p>图片的引用与显示： <code>![alt文字说明](图片url 图片tittle)</code></p>
+<h3 id="实现-3">实现</h3>
+<ul>
+<li>纯图片显示</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">LUH image</span>](<span class="link">https://www.uni-hannover.de/typo3conf/ext/luh_website/Resources/Public/Images/Logo/luh_logo.svg "uni hannver png"</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://www.uni-hannover.de/typo3conf/ext/luh_website/Resources/Public/Images/Logo/luh_logo.svg" alt="LUH image" title="uni hannver png"></p>
+<ul>
+<li>图片加超链接</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">![LUH image</span>](<span class="link">https://www.uni-hannover.de/typo3conf/ext/luh_website/Resources/Public/Images/Logo/luh_logo.svg "uni hannver png"</span>)](<span class="link">https://www.uni-hannover.de "uni hannover"</span>)</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.uni-hannover.de" target="_blank" rel="noopener" title="uni hannover"><img src="https://www.uni-hannover.de/typo3conf/ext/luh_website/Resources/Public/Images/Logo/luh_logo.svg" alt="LUH image" title="uni hannver png"></a></p>
+<hr>
+<h2 id="表格显示">表格显示</h2>
+<h3 id="方法-6">方法</h3>
+<ul>
+<li>使用 <code>-</code> 和 <code>|</code> 实现</li>
+<li>使用 <code>：</code> 实现 居左 居中 居右</li>
+</ul>
+<h3 id="实现-4">实现</h3>
+<ul>
+<li>普通表格</li>
+</ul>
+<figure class="highlight gherkin"><table><tr><td class="code"><pre><span class="line">|<span class="string"> th1 </span>|<span class="string"> th2 </span>|<span class="string"> th3 </span>|</span><br><span class="line">|<span class="string"> --- </span>|<span class="string"> --- </span>|<span class="string"> --- </span>|</span><br><span class="line">|<span class="string"> td1 </span>|<span class="string"> td2 </span>|<span class="string"> td3 </span>|</span><br><span class="line">|<span class="string"> td4 </span>|<span class="string"> td5 </span>|<span class="string"> td6 </span>|</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>th1</th>
+<th>th2</th>
+<th>th3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>td1</td>
+<td>td2</td>
+<td>td3</td>
+</tr>
+<tr>
+<td>td4</td>
+<td>td5</td>
+<td>td6</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>表格对齐</li>
+</ul>
+<figure class="highlight gherkin"><table><tr><td class="code"><pre><span class="line">|<span class="string"> 居左 </span>|<span class="string"> 居中  </span>|<span class="string"> 居右 </span>|</span><br><span class="line">|<span class="string"> :--- </span>|<span class="string"> :---: </span>|<span class="string"> ---: </span>|</span><br><span class="line">|<span class="string"> td1  </span>|<span class="string">  td2  </span>|<span class="string">  td3 </span>|</span><br><span class="line">|<span class="string"> td4  </span>|<span class="string">  td5  </span>|<span class="string">  td6 </span>|</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">居左</th>
+<th style="text-align:center">居中</th>
+<th style="text-align:right">居右</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">td1</td>
+<td style="text-align:center">td2</td>
+<td style="text-align:right">td3</td>
+</tr>
+<tr>
+<td style="text-align:left">td4</td>
+<td style="text-align:center">td5</td>
+<td style="text-align:right">td6</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>Markdown语法</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<a id="more"></a>
+<h2 id="Quick-Start">Quick Start</h2>
+<h3 id="Create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h3 id="学习教程">学习教程</h3>
+<p><a href="https://blog.bestzuo.cn/posts/blog-establish.html" target="_blank" rel="noopener">Hexo博客+Next主题深度优化与定制</a><br>
+<a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">开始使用- NexT 使用文档</a><br>
+<a href="http://www.zhaojun.im/script/" target="_blank" rel="noopener">hexo next 模版</a></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>Hexo创建博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+</search>

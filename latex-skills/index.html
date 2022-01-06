@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans SC:300,300italic,400,400italic,700,700italic|Cedarville Cursive:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Courier:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-simple.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"xujing113221.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="我还没写完不许看！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LaTeX 学习笔记">
+<meta property="og:url" content="http://xujing113221.github.io/latex-skills/index.html">
+<meta property="og:site_name" content="XuJing&#39;s Blog">
+<meta property="og:description" content="我还没写完不许看！">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-23T16:55:03.000Z">
+<meta property="article:modified_time" content="2022-01-06T03:57:50.428Z">
+<meta property="article:author" content="Jing Xu">
+<meta property="article:tag" content="LaTeX">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://xujing113221.github.io/latex-skills/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>LaTeX 学习笔记 | XuJing's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="XuJing's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">XuJing's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-hot">
+
+    <a href="/hot/" rel="section"><i class="fa fa-signal fa-fw"></i>Hot</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://xujing113221.github.io/latex-skills/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jing Xu">
+      <meta itemprop="description" content="Welcome to my blogs">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XuJing's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LaTeX 学习笔记
+        </h1>
+
+        <div class="post-meta">
+
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-24 00:55:03" itemprop="dateCreated datePublished" datetime="2020-07-24T00:55:03+08:00">2020-07-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-06 11:57:50" itemprop="dateModified" datetime="2022-01-06T11:57:50+08:00">2022-01-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/LaTeX%E6%8E%92%E7%89%88/" itemprop="url" rel="index"><span itemprop="name">LaTeX排版</span></a>
+                </span>
+            </span>
+
+        
+
+          
+            <span id="/latex-skills/" class="post-meta-item leancloud_visitors" data-flag-title="LaTeX 学习笔记" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+    <i class="far fa-comment"></i>
+    </span> 
+    <span class="post-meta-item-text">Comments: </span>
+    <a title="valine" href="/latex-skills/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/latex-skills/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div id="hexo-blog-encrypt" data-wpm="你果然不知道密码！" data-whm="秘密你是看不了，给你看个大宝贝吧！">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">你知道密码吗？</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="e15ea50bea1670bbdca391d184a974052d61a5c930c0195feca4ec011e433894">a58bed793ea64660c01664b01c6e05008eba3fd2db627606af9232dbaa8c1fc96112dee7d000dd498520f513925fcd47439a793febfd8849d80640cf9def2eec72b6226aa7c16d65d40c0bd27b07434b54a1163fc8078ce4d2b3b3d00c8ac456a5085e64d066c8fca4ed21e289cb534c6b017fbaea8fe685cf7dce068141a2580cf35845992af2713a716852e674d539a6e8a4e91d29f70aef2f9e3977f062d70e7a3ffdbaee342edc7f24773a278d9424a9f4cc96d8ef6ccaaa7d31365a5147fe3572c918911708c217f6d89eea6c5052ba0e58107ee2b0a5cd63ed113b93dd5d485dabde2e2e2f788302aeac388cd6d0ed380c1d5e90e5b8c7dde29cc5eea71437d13ce609e9bb0bc19a0ef69a1f8a2e155e36e96d2ba1edf1f1846e1073b3e802b2738e797980c9364c82b924ae5157f7bae86027a4c64958f9d76c2a5afc40db1f3674acdc733dccaa11ec7c640be1ef08ed1263ca98505e1e088251bb6cb8c5cef78a7144dc7b3bbc86e0623723d40d8e305decb2fdb2f134264d55ead3d5fa72207de37d0f358539b9af572e5ce31878a281ec19b833d2aef0b10bb242300e4e2d37ff0f34825f8dc87f7c63e8720f51d00c66a85dad5f4be63803af029e967dc4535d9e5bf530968f341942dc88a36a84788ee1241aa0fae74394d887dc2051db6f6408580f1b148a464e637ef39da37185e23fdf2721013c95fe808164990dd0df927575dea405e9b8e2bb0209e5375191ebc0bfdd06c824f909474cc43eff4db258195250bc3204cac40571bb369e5050fba3667c3077ab2e5cf4e223f731340ac0bc48e0bf7f9f538c3da0210e61348ab6950e516f3398c76284bbdcee3b9f3032b4f4b43a230caf670119db2a3be7ecee194824f63f4a04fb045c6f49d025c074d260334d16177a36547600aa0380874361993e8c4908223b3e466abbc6a96aeae30af1fdb1a2a14f4eaebd464d8fd21cfaea16cc95122f0acfe2542b7bcf0e877b12457a0d4d0e8a31f140b6492c0b94c63e308617e7681044c380f49a95f8401f0faf109f05f549b3a604e7504acd71783d8ac5ec51b3893b1d7939f13693ecc4311be3a05997245004df7381b246991dffea2ce339f112098bcccdc006051e5f992dc9876e8902a40c326e5b4d14b2b6656210ee28333f729069c27037cda1dbaa04e2fd5fe94ffcf8f9e8d00ace47d8e24e80b74ad817498d48eeaa2b50b627e27e50837cb34022ecdfdc1872eb8bebb09a8388c3706b45885a2fa6eafec8346f88ebb5a049de9463d2cf862b7d085d65bc0e792b2c44d95fb5d4b986a79178b3000044f08982635e2805f25f5e6bece7bfb9caa3db0618c94ac71fa989629745ad1e60d46512ec37d26380d8020457d2655eb2c8292031c0af22175ed3f50e5d0994c2bc9f66b75d502d1b273f1daaf000089f2f16b919898021602bdc8567dfebdc254cf318325042a7a74c1a58f071b720121de39baa7ab98071cdefd6b1762878c97341b62e4631ec141c132cef09460285523a78cd7e5b16c7115b5328e28ee615f9c4816d62ce23401b55c0b3bbe925061fc9189f808bae397cdbc1cfbb45f4ae34cec96f5558a1e56d817f737fd65f22d78113dcd20034bc36a5f420e66e983db8f022689642888e92b6142fcfa4055bb95a0bc8859f68b7fd008d1e485096aba3623c5abac28bb8c1afd10a056b8bc598f3f905354e05d99c9f38201191bb4252f981ba04696be059e0f03c2aa93c9a3673670155c3425f432ef7a46a3972f4e3fb85efa698677e87ed3fa20b6311cccb3003f33bbdc4f0b674fa772ff5b78bc406b407127e09ce00eb671485542983e7b27dcc6f9f813acbd2b962e858788c0791c8d5bdd20a4b7e9522081e052672909ccbbe78a81c795670c39185bb41b558c3ef596bff8d646a36c07cc7e12597c0b55d6dba6b976a576b67a4a16dcb7f53f60f97974341639df82a1805e55456deea354199debfb9ff8e8ee9867d5bb71f69ed4f09673977f196e3793d974aa9b3b1c41c93f73443ee69dd05f9f55171238591b7c9fc044671fe38c48400b9d3f6c8311bd2233bd54c430a2b39d0f20d2651224f180820a0458f1dea75bdc1671ad271faa9115ed96e34c00d42a898a3311cd9e0f82d8c616918d55cb66dc850a726fec4b4f544b9800e8ec7845691a8d52360010f9fd920c8ac2428a7144fa77c2e75b51fe28858e64fd7fa24ec907ba2cfa0884a1ab5b959af6d07a35651c6339ba6da4c77b1dfca3d706d18e048259aea6437171d93f1c015a7efbc3fdd23a11ca23494e26a6daa100782a5736718f28e66023398c859f8fe71aa17205e356bb6d280b952f766c95308492ed8809c14c0dfd4a93804bb259d8a2fee603b40075dc7afab02605e9c580ea6b029c514324dd9bfad316ba4da3503c0c3ed947ee027bc1c2fb04b0c3dd6d6732d5c75123edbae6bd9a5795a2cb043e07a314306e8dc22e557e5db5aa910955ef38aafe0ebe218df60543989fdeb8ff84c847aca0a5035e091325c7737c7c5f68b1c21c4078f52aca4f3f7cfa06ceff1b76f0df2050b74cf060b7afcb73bae269fb3e1d3c7443f0db444cea82cb77f120ebe18a892d8bdb8047ebd21a15b370ba05a829b8b171ccb97795648e8abe89819484159ca143ce00c4227d1a64de11d9423e5abfa846c50221259a5198185638e2c0022e26e63cb000b3c672016c2e2cc1749228a94d90c47c561e6961ad0c0f2c45901264a66f10e97e5d5a037a9eb863fc29d9405261d1074237539eae7a2d3ba5f790994456a05dbb548312f6699839face00df5661da13cac80394776617e90bf81b40f05a6d78bed1d961b401a4adcf463315a015704f59acab109eb4f1a001f579efeef59d81cca3bfb092f6147a5b7d24fa5200113cc007287b3e6558297397d221ea84d8faf69dc8d77c38630c34b231129bdb039cc10ffd8e8b18c446f3ed3245799e5327d86d38e31eadfb31a35c277310cafa6030f933ef20a5a250b9a7d48d5ace8b2f6368056a3ac6df17d367faf21ec86d044252c5c5638d4fa65742d860ca6273e88c13fbec2bc1bd6981d12bc0398b3c1d723e40104f7c47de704d2633cfc9078d6c58cd5ac7ac830f186d2321f22450f74ffec23c2e40fd898621d8afe6378620703b2c209bc5946f4f79ddbf538dda93b5bcf91a169bc8eff6fa6e86866451e4ccf18856563983ba5813177ffa7f40863ce0ed2a8527c430dbdee98fbed527b780411ea0ddd1c461140f8985d1eac756b5f9e72578e06936f3de66b760272bacbf0566173c67270cd23d99d2ec3f3807dbb8d79af2fd6742ffd452e3380b192cbde41c71ce323226dfce024deef9c01c0dcb4ca9d14430180916341ff3dbd417753437f7f14a0adf190cdf9f45ee3850316f7eba0d6ff8f4d4e4e28fe018b3ea968cb2b06f65e27822429585ea037039b710b3aee227746d91c79cde829a796686b6b538aae6ce4ee24f5a4eb14328ab31a1c20c4eb369850a58c27be73513d68cce70c9f81dd9ddff92f804d0c62bb08567f9dd97441bd1a3d166f94144fbe56d274f6935205cb72d7038341de331cdc054fc5ba39934f269030a928928299184abf09b6a28481d42bf97d10ae7a4e2b0e44745a13e859402a6e5b63866a0d939e2de333dce6ccbb8e84ca870d61e7486e050a9780bd2e41c4885e570ae6a54f202ed5857a40a4bab657635712b27bb1b776f8b117ad60d9f73e751496d937946c4641c5eea50265e839aa0b0875930a5eb10bba4d4fd16cedca80b198218efcf4d22f8789b0834d8de5fe5631b797991590466449fec6e4f27550b748c69aacf71cbdb840da3c33ed2dec018b88c06cc64b22f60b706497c588513debb5d4876f3da6af53232b6295a1f06d53a994dd2a3305137a3ff6f95df6105ccad88c698dceb4154be683b85d549bda56458f8af0c9ac3173500aaa83409c1fd4dafe2d2f98278e45fe7776d5c5b899129a68f1bda0e02a1abc00bd5f9e5f7ec9b3796cb1cd0651ee818acde64914de1c4704dfd1b8af567f1a3833773bc835b160699447b4ab59f5fd29f3fe57de5824544a9f24f7bce29596a2310665c2e49aa05f0c697ef10206da472c4ad5e7f02de76b95c49146e7d9816e83ac25c0baa7eb99afb8f6a86fa0836804f5fb248b252f65089b89297fec2a909a345d3bc308e698f639b92abd81f7d1fcd3e16ad062b402725896764e3c4b84591d4cb52ecc95c10f07db542358f193303a8f09cbaaf32a4fb75d3c5407d214fffba6d5dc7b1d201f3c32d472e211e4f6f223fdce2aa223f18df9387768ceecbef74f24bb3f5286be631e9e537ad1aa997d7688ea5c935e4e186de4d7b9ab556d01ca172bde9c603d9c211d13c7c2a1bcc12b2108f6f51619ccc31ef7bfc66fa7bf6cdc1767c11e920e0ae102c939ee91c22491ecf6041944d0ae8e95e77a88c72e1d5d271647d371e555718eeb306ae971614482e4d914ff1f863efb16a3e9653861c1408cf4c8009fa7b6a7a54e9d3d57ae486a1fb7d554ae397bf3701e7e413a38f6c0f3f5d7d7403eaeec49ad1589eaff54fd384bcdd84d4d075a78a0b4b463ece0fbb7dd53358e3a2a8a9fb7b97803069ce8852c9fbee7d5fd8c98c42bc5250e81732ba87ea1a044d8388e39e8317c9cd5d59c01678e9899273c7ef163218395e39365789497cd4bc6e036e20bf7f9e42404a8c5e10fca47374bb42af99d4f4759480038ea227901e226d43e2d20f310107f3aacaabffce2efcb28ad09c23e53a55226c161ab208daeae62e11d76fd9675a6a23ae86f2d24bb08ce8f48c47c9ee71807119ae79d3d1151937ea0a4f50c69f7722cb449d65b64f6f94e024a5e69ab87563eedf6fba52f45ef2cbfc9381b6c6e21afa96669f03c7babf4eed4ba51b585da0033a6fb1cb5e569d862a92bf4ea27e7257b9abc63e4e648fd66424d7caf1e5257e2b1d6ce22422b8d9fca8f5b4d06def5fd3fa5328f41d8b524bcde1f2abe26140b6c2525bd009f58db05a1203c4bea5b771f0b4e56b44d444da8b87e0ecbc2138bda8cea5ef0bca952dfec2dc3c0e5da2e1b8f7564b59c08e342f059fdfa388c74ba91894ad7aa6e198b34e7057d9c2dcc194f6ded7177e2fd368cfb926bf2b7c59e47860741320a06a74887b2a6e6b6b18bf27b9291aae9de67939dc68ff3da4ab3677ee88ae0cf7e3a1a23c8f03cb79200276076b6a29963980155cdb415e81c140b2a7473fd2c359ec14a3ba595f042670f6d09b39a70dfb3b3d17d3e0cf56281bab4a06a94d296d36940459aa7c8f3f917735e5e6d888b57ab22bb6851b359ac8295830fb826e452c04e73fbb725ef052caa3b86b61c91f58441f003340c3ee89ff327f10c5dd8fb57d41256a869a2fd7cabfd63cf3b216c4ee966d8fcb16d7cad66814b5c7c319218d17b74ab6e6b34dc072340c6280f5d171190270350b5544a1c66c0a6918d7aaafd32051e5e7da6491726145403a7c013edd2674a4f27777de097d33e96fe328e015c38db0227588da7890420d90785756d619088521646e4049614ccf591bdc3ec465e179076b17c643a843cbdfca7fbedfb904d50f4a7cfb5b9862c52b6dd6db58782af9712d195391a9325948b19bc0d0876460d00712ccad8598deecea3aa80e0646edca2f9aed0929558f265237f1f66823296f68f7623932613d0a41b77a78fccaba6e6ac8e8d6efced29d846cc4bd02ae6dc16217f9655b8f6d71000a4a1e82dffcacacb2e546338da29f4c39e3467928e7b63e43385a1798ac49ac8bcd4a38ac6722f47445a3de5061a3b4612c1c003aeef977e6b0cf4afbb4fafee995e90dfd19c8219b4d8f285b8078c0b9d7b56df1cf796</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+    <div>
+  
+    <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+      <span>-------- 本文结束 </span>
+      <i class="fa fa-paperclip"></i>
+      <span> 感谢阅读 --------</span>
+    </div>
+  
+</div>
+    </div>
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Jing Xu WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Jing Xu Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<!-- JS库 clipboard 拷贝内容到粘贴板-->
+<script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"></script>
+
+<!-- JS库 sweetalert 显示提示信息-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-title">
+    <strong>Post title:  </strong>
+    LaTeX 学习笔记
+  </li>
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Jing Xu
+  </li>
+  <!-- 引用链接 -->
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://xujing113221.github.io/latex-skills/" title="LaTeX 学习笔记">
+      http://xujing113221.github.io/latex-skills/
+    </a>
+    <span class="copy-path" title="点击复制引用链接">
+      <i
+        style="cursor: pointer"
+        class="fa fa-clipboard"
+        data-clipboard-text="[XuJing's Blog | LaTeX 学习笔记](http://xujing113221.github.io/latex-skills/)"
+        aria-label="Copy Success">
+      </i>
+    </span>
+  </li>
+
+
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+<script>
+  var clipboard = new ClipboardJS(".fa-clipboard");
+  clipboard.on("success", function(target) {
+    var message = document.createElement("div");
+    message.innerHTML =
+      '<i class="fa fa-check-circle message-icon"></i><span class="message-content">' +
+      target.trigger.getAttribute("aria-label") +
+      "</span>";
+    swal({
+      content: message,
+      className: "copy-success-message",
+      timer: 1000,
+      button: false
+    });
+  });
+</script>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/latex-resume/" rel="prev" title="如何使用LaTeX写简历">
+      <i class="fa fa-chevron-left"></i> 如何使用LaTeX写简历
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/tvm-vta-note/" rel="next" title="Note TVM/VTA">
+      Note TVM/VTA <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Jing Xu</p>
+  <div class="site-description" itemprop="description">Welcome to my blogs</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xujing113221" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xujing113221" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xujing113221@gmail.com" title="E-Mail → mailto:xujing113221@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+   <div class="feed-link motion-element">
+     <a href="/atom.xml" rel="alternate">
+       <i class="fa fa-rss"></i>
+       RSS
+     </a>
+   </div>
+ 
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.google.com/" title="http:&#x2F;&#x2F;www.google.com" rel="noopener" target="_blank">Google-website</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jing Xu</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  
+  <script async src="/js/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: inline;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+
+</div>
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"0HeenH1M6kEofmoCdXFMym4r-MdYXbMMI","app_key":"pLAfLofofkawWDO8zuponHLq","server_url":null,"security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 26189,
+      el    : 'wpac-rating',
+      color : 'fadb14'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '0HeenH1M6kEofmoCdXFMym4r-MdYXbMMI',
+      appKey     : 'pLAfLofofkawWDO8zuponHLq',
+      placeholder: "Write something to me ...",
+      avatar     : 'retro',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/ Relative)","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacityDefault":0.7},"dialog":{"enable":false,"hitokoto":true}});</script></body>
+</html>
