@@ -23,24 +23,23 @@
     var CONFIG = {"hostname":"xujing113221.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="本文记录一下Hiwi的相关笔记。">
+  <meta name="description" content="写在前面随着AI技术的迅猛发展，越来越多的创作者开始关注如何在本地部署AI模型。本文将以目前最流行的人像生成模型为例，手把手教你如何在自己的电脑上搭建AI创作环境。不管你是完全的新手，还是已经有一些经验的开发者，这篇文章都能帮你快速入门。 为什么要本地部署AI模型？在开始动手之前，我们先来聊聊为什么要在本地部署AI模型：  更好的隐私保护：所有数据都在本地处理，不用担心隐私泄露 更低的使用成本：无">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Scene Graph Generation Note 1">
-<meta property="og:url" content="http://xujing113221.github.io/2020/10/21/Scene-Graph-Generation-Note-1/index.html">
+<meta property="og:title" content="零基础教程：如何在本地搭建AI人像生成模型">
+<meta property="og:url" content="http://xujing113221.github.io/2024/01/18/local-ai-model-setup-guide/index.html">
 <meta property="og:site_name" content="XuJing&#39;s Blog">
-<meta property="og:description" content="本文记录一下Hiwi的相关笔记。">
+<meta property="og:description" content="写在前面随着AI技术的迅猛发展，越来越多的创作者开始关注如何在本地部署AI模型。本文将以目前最流行的人像生成模型为例，手把手教你如何在自己的电脑上搭建AI创作环境。不管你是完全的新手，还是已经有一些经验的开发者，这篇文章都能帮你快速入门。 为什么要本地部署AI模型？在开始动手之前，我们先来聊聊为什么要在本地部署AI模型：  更好的隐私保护：所有数据都在本地处理，不用担心隐私泄露 更低的使用成本：无">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-21T14:31:57.000Z">
-<meta property="article:modified_time" content="2025-01-18T13:30:20.283Z">
+<meta property="article:published_time" content="2024-01-18T08:30:00.000Z">
+<meta property="article:modified_time" content="2025-01-18T16:17:41.040Z">
 <meta property="article:author" content="XuJing">
-<meta property="article:tag" content="Computer Vision">
-<meta property="article:tag" content="Deep Learning">
-<meta property="article:tag" content="Pytorch">
-<meta property="article:tag" content="CUDA">
-<meta property="article:tag" content="Motifs">
+<meta property="article:tag" content="Stable Diffusion">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="AI模型部署">
+<meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://xujing113221.github.io/2020/10/21/Scene-Graph-Generation-Note-1/">
+<link rel="canonical" href="http://xujing113221.github.io/2024/01/18/local-ai-model-setup-guide/">
 
 
 <script id="page-configurations">
@@ -53,7 +52,7 @@
   };
 </script>
 
-  <title>Scene Graph Generation Note 1 | XuJing's Blog</title>
+  <title>零基础教程：如何在本地搭建AI人像生成模型 | XuJing's Blog</title>
   
 
 
@@ -210,7 +209,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://xujing113221.github.io/2020/10/21/Scene-Graph-Generation-Note-1/">
+    <link itemprop="mainEntityOfPage" href="http://xujing113221.github.io/2024/01/18/local-ai-model-setup-guide/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -223,7 +222,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Scene Graph Generation Note 1
+          零基础教程：如何在本地搭建AI人像生成模型
         </h1>
 
         <div class="post-meta">
@@ -236,14 +235,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-10-21 22:31:57" itemprop="dateCreated datePublished" datetime="2020-10-21T22:31:57+08:00">2020-10-21</time>
+              <time title="创建时间：2024-01-18 16:30:00" itemprop="dateCreated datePublished" datetime="2024-01-18T16:30:00+08:00">2024-01-18</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-01-18 21:30:20" itemprop="dateModified" datetime="2025-01-18T21:30:20+08:00">2025-01-18</time>
+                <time title="修改时间：2025-01-19 00:17:41" itemprop="dateModified" datetime="2025-01-19T00:17:41+08:00">2025-01-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,18 +250,14 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" itemprop="url" rel="index"><span itemprop="name">计算机视觉</span></a>
+                  <a href="/categories/AI%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">AI技术</span></a>
                 </span>
             </span>
 
         
 
           
-            <span id="/2020/10/21/Scene-Graph-Generation-Note-1/" class="post-meta-item leancloud_visitors" data-flag-title="Scene Graph Generation Note 1" title="阅读次数">
+            <span id="/2024/01/18/local-ai-model-setup-guide/" class="post-meta-item leancloud_visitors" data-flag-title="零基础教程：如何在本地搭建AI人像生成模型" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -275,8 +270,8 @@
     <i class="far fa-comment"></i>
     </span> 
     <span class="post-meta-item-text">评论次数：</span>
-    <a title="valine" href="/2020/10/21/Scene-Graph-Generation-Note-1/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/21/Scene-Graph-Generation-Note-1/" itemprop="commentCount"></span>
+    <a title="valine" href="/2024/01/18/local-ai-model-setup-guide/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2024/01/18/local-ai-model-setup-guide/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -291,83 +286,107 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>本文记录一下Hiwi的相关笔记。</p>
-<a id="more"></a>
-
-<h3 id="how-to-make"><a href="#how-to-make" class="headerlink" title="how to make"></a>how to make</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ssh ssh1</span><br><span class="line"></span><br><span class="line">ssh tntpc</span><br><span class="line"></span><br><span class="line">ssh persephone</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> ~/miniconda3/bin/activate</span><br><span class="line"> :<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> LANG=en_US.UTF-8</span><br></pre></td></tr></table></figure>
-
-<h3 id="neural-motifs"><a href="#neural-motifs" class="headerlink" title="neural-motifs"></a>neural-motifs</h3><ul>
-<li><p>env</p>
+        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>随着AI技术的迅猛发展，越来越多的创作者开始关注如何在本地部署AI模型。本文将以目前最流行的人像生成模型为例，手把手教你如何在自己的电脑上搭建AI创作环境。不管你是完全的新手，还是已经有一些经验的开发者，这篇文章都能帮你快速入门。</p>
+<h2 id="为什么要本地部署AI模型？"><a href="#为什么要本地部署AI模型？" class="headerlink" title="为什么要本地部署AI模型？"></a>为什么要本地部署AI模型？</h2><p>在开始动手之前，我们先来聊聊为什么要在本地部署AI模型：</p>
 <ol>
-<li>conda</li>
-<li>conda install python&#x3D;3.6</li>
-<li>conda install pytorch&#x3D;0.3.0 torchvision&#x3D;0.2.0 cuda90 -c pytorch</li>
-<li>conda install cython</li>
-<li>conda install h5py</li>
-<li>pycocotools:<br> <code>git clone https://github.com/pdollar/coco.git | make | python setup.py build_ext install</code></li>
-<li>conda install dill</li>
-<li>conda install pandas</li>
-<li>pip install overrides</li>
+<li><strong>更好的隐私保护</strong>：所有数据都在本地处理，不用担心隐私泄露</li>
+<li><strong>更低的使用成本</strong>：无需支付在线服务费用</li>
+<li><strong>更灵活的定制空间</strong>：可以自由调整模型参数和训练方式</li>
+<li><strong>更快的处理速度</strong>：本地GPU直接计算，无需等待在线队列</li>
 </ol>
-</li>
-<li><p>dataset:<br>&#x2F;data&#x2F;scene_understanding&#x2F;Visual_Genome&#x2F;</p>
-</li>
-<li><p>pycharm:<br>sh ~&#x2F;tmp&#x2F;pycharm-community-2020.2.1&#x2F;bin&#x2F;pycharm.sh &amp;</p>
-</li>
+<h2 id="基本概念解析"><a href="#基本概念解析" class="headerlink" title="基本概念解析"></a>基本概念解析</h2><p>在开始动手之前，先来了解几个关键概念：</p>
+<h3 id="什么是大模型？"><a href="#什么是大模型？" class="headerlink" title="什么是大模型？"></a>什么是大模型？</h3><p>大模型（Large Language Model，简称LLM）指的是具有海量参数的人工智能模型。比如目前流行的Stable Diffusion就是一个典型的图像生成大模型，它包含了数十亿个参数。</p>
+<h3 id="什么是人像生成模型？"><a href="#什么是人像生成模型？" class="headerlink" title="什么是人像生成模型？"></a>什么是人像生成模型？</h3><p>人像生成模型是专门用于生成人物图像的AI模型。它通过学习大量人物照片的特征，能够根据文字描述生成逼真的人像。</p>
+<h3 id="什么是CUDA和cuDNN？"><a href="#什么是CUDA和cuDNN？" class="headerlink" title="什么是CUDA和cuDNN？"></a>什么是CUDA和cuDNN？</h3><ul>
+<li><strong>CUDA</strong>：NVIDIA开发的并行计算平台，让GPU能够进行通用计算</li>
+<li><strong>cuDNN</strong>：深度神经网络加速库，专门优化深度学习运算</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PYTHONPATH=/home/xujing/Dokumente/neural-motifs/:/home/xujing/Dokumente/neural-motifs/lib/</span><br></pre></td></tr></table></figure>
+<h2 id="硬件要求"><a href="#硬件要求" class="headerlink" title="硬件要求"></a>硬件要求</h2><p>在开始搭建之前，请确保你的电脑满足以下基本要求：</p>
+<h3 id="必需配置"><a href="#必需配置" class="headerlink" title="必需配置"></a>必需配置</h3><ul>
+<li><strong>GPU</strong>：NVIDIA显卡（最低GTX 1660 6GB）</li>
+<li><strong>内存</strong>：至少16GB RAM</li>
+<li><strong>存储</strong>：至少500GB可用空间（SSD推荐）</li>
+<li><strong>CPU</strong>：建议Intel i5&#x2F;AMD Ryzen 5以上</li>
+</ul>
+<h3 id="推荐配置"><a href="#推荐配置" class="headerlink" title="推荐配置"></a>推荐配置</h3><ul>
+<li><strong>GPU</strong>：RTX 3060 12GB或以上</li>
+<li><strong>内存</strong>：32GB RAM</li>
+<li><strong>存储</strong>：1TB NVMe SSD</li>
+<li><strong>CPU</strong>：Intel i7&#x2F;AMD Ryzen 7以上</li>
+</ul>
+<h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><h3 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1. 环境准备"></a>1. 环境准备</h3><p>首先需要安装以下基础软件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装Python（建议3.8或以上版本）</span></span><br><span class="line"><span class="comment"># 安装CUDA Toolkit</span></span><br><span class="line"><span class="comment"># 安装cuDNN</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="DYNSG"><a href="#DYNSG" class="headerlink" title="DYNSG"></a>DYNSG</h3><h4 id="env"><a href="#env" class="headerlink" title="env"></a>env</h4><ol>
-<li>conda install pytorch&#x3D;1.0.0 torchvision&#x3D;0.2.1 cuda100 -c pytorch</li>
-<li>opencv<br>conda install -c <a href="https://conda.anaconda.org/menpo" target="_blank" rel="noopener">https://conda.anaconda.org/menpo</a> opencv<br>pip install opencv-python</li>
-<li>pip install easydict</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=/usr/<span class="built_in">local</span>/cuda-10.0/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> PYTHONPATH=/home/xujing/Dokumente/DynSG/fasterrcnn/lib/:/home/xujing/Dokumente/DynSG/</span><br><span class="line"><span class="built_in">export</span> PYTHONPATH=<span class="variable">$PYTHONPATH</span>:/home/xujing/miniconda3/envs/dynsg/lib/</span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/home/xujing/miniconda3/envs/dynsg/lib/</span><br></pre></td></tr></table></figure>
+<h3 id="2-安装依赖库"><a href="#2-安装依赖库" class="headerlink" title="2. 安装依赖库"></a>2. 安装依赖库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建虚拟环境</span></span><br><span class="line">python -m venv sd-env</span><br><span class="line"><span class="built_in">source</span> sd-env/bin/activate  <span class="comment"># Linux/Mac</span></span><br><span class="line">sd-env\Scripts\activate     <span class="comment"># Windows</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装必要的Python库</span></span><br><span class="line">pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118</span><br><span class="line">pip install transformers diffusers accelerate</span><br></pre></td></tr></table></figure>
 
-<h4 id="issues"><a href="#issues" class="headerlink" title="issues"></a>issues</h4><ol>
-<li><p>_C.cpython-36m-x86_64-linux-gnu.so<br>pip install -U torchvision&#x3D;&#x3D;0.4.0</p>
+<h3 id="3-下载模型"><a href="#3-下载模型" class="headerlink" title="3. 下载模型"></a>3. 下载模型</h3><p>主流的人像生成模型可以从以下平台下载：</p>
+<ol>
+<li><p><strong>Hugging Face</strong></p>
+<ul>
+<li><a href="https://huggingface.co/CompVis/stable-diffusion-v1-4" target="_blank" rel="noopener">Stable Diffusion</a></li>
+<li><a href="https://huggingface.co/dalle-mini/dalle-mini" target="_blank" rel="noopener">DALL-E Mini</a></li>
+</ul>
 </li>
-<li><p><a href="https://ucasfl.github.io/2017/12/21/fix-the-problem-of-that-usr-lib-x86-64-linux-gnu-libstdc-so-6-version-GLIBCXX-3-4-22-not-found/" target="_blank" rel="noopener">https://ucasfl.github.io/2017/12/21/fix-the-problem-of-that-usr-lib-x86-64-linux-gnu-libstdc-so-6-version-GLIBCXX-3-4-22-not-found/</a></p>
+<li><p><strong>Civitai</strong></p>
+<ul>
+<li><a href="https://civitai.com/models/4201/realistic-vision-v51" target="_blank" rel="noopener">Realistic Vision</a></li>
+<li><a href="https://civitai.com/models/43331/majicmix-realistic" target="_blank" rel="noopener">majicMIX realistic</a></li>
+</ul>
 </li>
-<li><p>如何更换 GPU<br>需要重新编译fasterrcnn</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> fasterrcnn/lib</span><br><span class="line">python setup.py build develop</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h3 id="cuda"><a href="#cuda" class="headerlink" title="cuda"></a>cuda</h3><p>import torch</p>
-<p>torch.cuda.is_available()<br>print(torch.version.cuda)<br>torch.backends.cudnn.enabled</p>
-<p>python -c “import torch;print(torch.version.cuda)”</p>
-<p>CUDA_VISIBLE_DEVICES&#x3D;3</p>
-<p>nvidia-smi</p>
-<h3 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h3><ul>
-<li>source activate $envname</li>
-<li>source deactivate</li>
-<li>conda list -e requeirment.txt</li>
-<li>conda install –yes –file requirements.txt</li>
-<li>conda env export &gt; environment.yaml</li>
-<li>conda env create -f environment.yaml</li>
-<li>conda create -n py36 python&#x3D;3.6</li>
+<h3 id="4-运行模型"><a href="#4-运行模型" class="headerlink" title="4. 运行模型"></a>4. 运行模型</h3><p>以Stable Diffusion为例，这是一个基本的运行示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> diffusers <span class="keyword">import</span> StableDiffusionPipeline</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载模型</span></span><br><span class="line">model_id = <span class="string">"CompVis/stable-diffusion-v1-4"</span></span><br><span class="line">pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)</span><br><span class="line">pipe = pipe.to(<span class="string">"cuda"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成图像</span></span><br><span class="line">prompt = <span class="string">"a portrait of a young woman with blue eyes, photorealistic, highly detailed"</span></span><br><span class="line">image = pipe(prompt).images[<span class="number">0</span>]</span><br><span class="line">image.save(<span class="string">"portrait.png"</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="常见问题解决"><a href="#常见问题解决" class="headerlink" title="常见问题解决"></a>常见问题解决</h2><h3 id="1-CUDA相关错误"><a href="#1-CUDA相关错误" class="headerlink" title="1. CUDA相关错误"></a>1. CUDA相关错误</h3><ul>
+<li>确保NVIDIA驱动是最新版本</li>
+<li>检查CUDA版本与PyTorch版本是否匹配</li>
+<li>使用<code>nvidia-smi</code>命令检查GPU状态</li>
 </ul>
-<h3 id="software"><a href="#software" class="headerlink" title="software"></a>software</h3><p>intern net:<br>    firefox <a href="http://tntintern/" target="_blank" rel="noopener">http://tntintern/</a></p>
-<p>emial:<br>thunderbird</p>
-<h3 id="linux-command"><a href="#linux-command" class="headerlink" title="linux command"></a>linux command</h3><p>check the size of path:<br>    du -h filepath  </p>
-<p>screen:<br>    screen -S $Name<br>    screen -ls<br>    screen -r $id<br>    [detached] ctrl+a+d</p>
-<h3 id="conda-pip-env-transform"><a href="#conda-pip-env-transform" class="headerlink" title="conda pip env transform"></a>conda pip env transform</h3><p><a href="https://www.jianshu.com/p/b86c17057da8?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation" target="_blank" rel="noopener">conda环境转移复制和pip包的转移复制</a></p>
-<h3 id="vnc"><a href="#vnc" class="headerlink" title="vnc"></a>vnc</h3><ol>
-<li>on servers (cp202-03)<br>vncserver -geometry 1920x1080 :8</li>
-<li>on local (mac)<br> ssh -fNCT -L 5902:cp202-03:5908 <a href="mailto:&#x78;&#117;&#x6a;&#x69;&#x6e;&#x67;&#64;&#x73;&#x73;&#104;&#x31;&#46;&#x74;&#110;&#x74;&#46;&#117;&#x6e;&#105;&#45;&#104;&#97;&#110;&#x6e;&#111;&#118;&#x65;&#x72;&#x2e;&#x64;&#x65;">xujing@ssh1.tnt.uni-hannover.de</a></li>
-<li>on vnc view<br>connect: localhost:5902</li>
-<li>kill<br>vncserver -kill :8</li>
+<h3 id="2-内存不足"><a href="#2-内存不足" class="headerlink" title="2. 内存不足"></a>2. 内存不足</h3><ul>
+<li>使用<code>torch.float16</code>代替<code>torch.float32</code>减少内存占用</li>
+<li>降低生成图像的分辨率</li>
+<li>关闭不必要的后台程序</li>
+</ul>
+<h3 id="3-生成质量问题"><a href="#3-生成质量问题" class="headerlink" title="3. 生成质量问题"></a>3. 生成质量问题</h3><ul>
+<li>优化提示词</li>
+<li>调整采样步数和方法</li>
+<li>使用更好的基础模型</li>
+</ul>
+<h2 id="进阶优化"><a href="#进阶优化" class="headerlink" title="进阶优化"></a>进阶优化</h2><h3 id="1-提高生成速度"><a href="#1-提高生成速度" class="headerlink" title="1. 提高生成速度"></a>1. 提高生成速度</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启用注意力优化</span></span><br><span class="line">pipe.enable_attention_slicing()</span><br><span class="line"><span class="comment"># 启用VAE切片</span></span><br><span class="line">pipe.enable_vae_slicing()</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-降低显存占用"><a href="#2-降低显存占用" class="headerlink" title="2. 降低显存占用"></a>2. 降低显存占用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用xformers优化</span></span><br><span class="line">pip install xformers</span><br><span class="line">pipe.enable_xformers_memory_efficient_attention()</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ol>
+<li><p><strong>官方文档</strong></p>
+<ul>
+<li><a href="https://huggingface.co/docs" target="_blank" rel="noopener">Hugging Face文档</a></li>
+<li><a href="https://pytorch.org/tutorials/" target="_blank" rel="noopener">PyTorch官方教程</a></li>
+<li><a href="https://docs.nvidia.com/cuda/" target="_blank" rel="noopener">NVIDIA CUDA文档</a></li>
+</ul>
+</li>
+<li><p><strong>社区资源</strong></p>
+<ul>
+<li><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" target="_blank" rel="noopener">Stable Diffusion WebUI</a></li>
+<li><a href="https://www.reddit.com/r/StableDiffusion/" target="_blank" rel="noopener">r&#x2F;StableDiffusion</a></li>
+</ul>
+</li>
+<li><p><strong>模型下载</strong></p>
+<ul>
+<li><a href="https://civitai.com/" target="_blank" rel="noopener">Civitai</a></li>
+<li><a href="https://huggingface.co/models" target="_blank" rel="noopener">Hugging Face Models</a></li>
+</ul>
+</li>
 </ol>
-<h3 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h3><ul>
-<li><a href="https://blog.csdn.net/dcz1994/article/details/103120254" target="_blank" rel="noopener">vscode通过跳板机(堡垒机)连接remote服务器</a></li>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本地部署AI模型虽然需要一定的硬件投入和技术基础，但带来的好处是显而易见的。通过本文的指导，相信你已经对如何搭建本地AI环境有了基本的认识。记住，实践是最好的学习方式，动手尝试才能发现更多的可能性。</p>
+<h2 id="未来展望"><a href="#未来展望" class="headerlink" title="未来展望"></a>未来展望</h2><p>随着硬件性能的提升和模型优化技术的发展，在本地运行AI模型将变得越来越容易。我们可以期待：</p>
+<ul>
+<li>更低的硬件门槛</li>
+<li>更快的处理速度</li>
+<li>更好的生成质量</li>
+<li>更多的应用场景</li>
 </ul>
-<p>LocalForward 5902 cp202-03:5908</p>
-<h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><ul>
-<li><a href="https://rowanzellers.com/neuralmotifs/" target="_blank" rel="noopener">https://rowanzellers.com/neuralmotifs/</a></li>
-<li><a href="https://rowanzellers.com/scenegraph2/" target="_blank" rel="noopener">https://rowanzellers.com/scenegraph2/</a></li>
-<li><a href="https://www.twblogs.net/a/5bbd3c892b71776bd30c2020/?lang=zh-cn" target="_blank" rel="noopener">scene graph(visual relation) 简述</a></li>
-<li><a href="https://www.telesens.co/2018/03/11/object-detection-and-classification-using-r-cnns/" target="_blank" rel="noopener">Object Detection and Classification using R-CNNs</a></li>
-<li><a href="https://www.pythonf.cn/read/82784" target="_blank" rel="noopener">Faster RCNN-PyTorch版本运行记录</a></li>
-</ul>
+<hr>
+<p>欢迎在评论区分享你的搭建经验！如果遇到问题，也可以留言讨论。如果这篇文章对你有帮助，别忘了点赞收藏哦～ </p>
 
     </div>
 
@@ -420,7 +439,7 @@
 <ul class="post-copyright">
   <li class="post-copyright-title">
     <strong>本文标题： </strong>
-    Scene Graph Generation Note 1
+    零基础教程：如何在本地搭建AI人像生成模型
   </li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>XuJing
@@ -428,14 +447,14 @@
   <!-- 引用链接 -->
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://xujing113221.github.io/2020/10/21/Scene-Graph-Generation-Note-1/" title="Scene Graph Generation Note 1">
-      http://xujing113221.github.io/2020/10/21/Scene-Graph-Generation-Note-1/
+    <a href="http://xujing113221.github.io/2024/01/18/local-ai-model-setup-guide/" title="零基础教程：如何在本地搭建AI人像生成模型">
+      http://xujing113221.github.io/2024/01/18/local-ai-model-setup-guide/
     </a>
     <span class="copy-path" title="点击复制引用链接">
       <i
         style="cursor: pointer"
         class="fa fa-clipboard"
-        data-clipboard-text="[XuJing's Blog | Scene Graph Generation Note 1](http://xujing113221.github.io/2020/10/21/Scene-Graph-Generation-Note-1/)"
+        data-clipboard-text="[XuJing's Blog | 零基础教程：如何在本地搭建AI人像生成模型](http://xujing113221.github.io/2024/01/18/local-ai-model-setup-guide/)"
         aria-label="复制成功">
       </i>
     </span>
@@ -467,11 +486,10 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Computer-Vision/" rel="tag"># Computer Vision</a>
-              <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
-              <a href="/tags/Pytorch/" rel="tag"># Pytorch</a>
-              <a href="/tags/CUDA/" rel="tag"># CUDA</a>
-              <a href="/tags/Motifs/" rel="tag"># Motifs</a>
+              <a href="/tags/Stable-Diffusion/" rel="tag"># Stable Diffusion</a>
+              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag"># 深度学习</a>
+              <a href="/tags/AI%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2/" rel="tag"># AI模型部署</a>
+              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"># 教程</a>
           </div>
 
         
@@ -485,12 +503,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/10/21/Scene-Graph-Generation-Note-3/" rel="prev" title="Scene Graph Generation Note 3">
-      <i class="fa fa-chevron-left"></i> Scene Graph Generation Note 3
+    <a href="/2024/01/18/ai-portrait-models-guide/" rel="prev" title="小白必看：2024年最新AI人像模型完全指南">
+      <i class="fa fa-chevron-left"></i> 小白必看：2024年最新AI人像模型完全指南
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/10/23/IRT-Seminar-Note-1/" rel="next" title="IRT_Seminar_Note_1">
-      IRT_Seminar_Note_1 <i class="fa fa-chevron-right"></i>
+    <a href="/2024/03/21/ai-portrait-study/" rel="next" title="AI人像生成模型学习笔记">
+      AI人像生成模型学习笔记 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -551,7 +569,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#how-to-make"><span class="nav-number">1.</span> <span class="nav-text">how to make</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#neural-motifs"><span class="nav-number">2.</span> <span class="nav-text">neural-motifs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DYNSG"><span class="nav-number">3.</span> <span class="nav-text">DYNSG</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#env"><span class="nav-number">3.1.</span> <span class="nav-text">env</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#issues"><span class="nav-number">3.2.</span> <span class="nav-text">issues</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cuda"><span class="nav-number">4.</span> <span class="nav-text">cuda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#conda"><span class="nav-number">5.</span> <span class="nav-text">conda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#software"><span class="nav-number">6.</span> <span class="nav-text">software</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-command"><span class="nav-number">7.</span> <span class="nav-text">linux command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#conda-pip-env-transform"><span class="nav-number">8.</span> <span class="nav-text">conda pip env transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vnc"><span class="nav-number">9.</span> <span class="nav-text">vnc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh"><span class="nav-number">10.</span> <span class="nav-text">ssh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reference"><span class="nav-number">11.</span> <span class="nav-text">reference</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要本地部署AI模型？"><span class="nav-number">2.</span> <span class="nav-text">为什么要本地部署AI模型？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念解析"><span class="nav-number">3.</span> <span class="nav-text">基本概念解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是大模型？"><span class="nav-number">3.1.</span> <span class="nav-text">什么是大模型？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是人像生成模型？"><span class="nav-number">3.2.</span> <span class="nav-text">什么是人像生成模型？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是CUDA和cuDNN？"><span class="nav-number">3.3.</span> <span class="nav-text">什么是CUDA和cuDNN？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#硬件要求"><span class="nav-number">4.</span> <span class="nav-text">硬件要求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#必需配置"><span class="nav-number">4.1.</span> <span class="nav-text">必需配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推荐配置"><span class="nav-number">4.2.</span> <span class="nav-text">推荐配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建步骤"><span class="nav-number">5.</span> <span class="nav-text">搭建步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-环境准备"><span class="nav-number">5.1.</span> <span class="nav-text">1. 环境准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装依赖库"><span class="nav-number">5.2.</span> <span class="nav-text">2. 安装依赖库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-下载模型"><span class="nav-number">5.3.</span> <span class="nav-text">3. 下载模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-运行模型"><span class="nav-number">5.4.</span> <span class="nav-text">4. 运行模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题解决"><span class="nav-number">6.</span> <span class="nav-text">常见问题解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CUDA相关错误"><span class="nav-number">6.1.</span> <span class="nav-text">1. CUDA相关错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-内存不足"><span class="nav-number">6.2.</span> <span class="nav-text">2. 内存不足</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-生成质量问题"><span class="nav-number">6.3.</span> <span class="nav-text">3. 生成质量问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进阶优化"><span class="nav-number">7.</span> <span class="nav-text">进阶优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-提高生成速度"><span class="nav-number">7.1.</span> <span class="nav-text">1. 提高生成速度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-降低显存占用"><span class="nav-number">7.2.</span> <span class="nav-text">2. 降低显存占用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资源"><span class="nav-number">8.</span> <span class="nav-text">参考资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">9.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未来展望"><span class="nav-number">10.</span> <span class="nav-text">未来展望</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
