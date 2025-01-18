@@ -101,7 +101,7 @@ theme: next
 deploy:
   type: git
   repo: https://github.com/xujing113221/xujing113221.github.io.git
-  branch: master  # 或者 master，取决于您的默认分支
+  branch: master
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
 
 search:
