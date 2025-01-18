@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans SC:300,300italic,400,400italic,700,700italic|Cedarville Cursive:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Courier:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-simple.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="I’ve been learning a lot about TVM this week and I visited the TVM website. I also read a lot of tutorials and code. I found it very interesting. It just so happens that I have Raspberry Pie 3b, so I">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Note TVM&#x2F;VTA">
+<meta property="og:url" content="http://yoursite.com/2020/07/27/tvm-vta-note/index.html">
+<meta property="og:site_name" content="XuJing&#39;s Blog">
+<meta property="og:description" content="I’ve been learning a lot about TVM this week and I visited the TVM website. I also read a lot of tutorials and code. I found it very interesting. It just so happens that I have Raspberry Pie 3b, so I">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tvm.apache.org/images/main/tvm-stack.png">
+<meta property="og:image" content="https://github.com/dmlc/mxnet.js/blob/master/data/cat.png?raw=true">
+<meta property="og:image" content="http://yoursite.com/image/tvm_plane.jpg">
+<meta property="article:published_time" content="2020-07-27T08:11:15.000Z">
+<meta property="article:modified_time" content="2025-01-18T13:30:20.299Z">
+<meta property="article:author" content="XuJing">
+<meta property="article:tag" content="TVM">
+<meta property="article:tag" content="VTA">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tvm.apache.org/images/main/tvm-stack.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/07/27/tvm-vta-note/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Note TVM/VTA | XuJing's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="XuJing's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">XuJing's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">AI & Technology</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-hot">
+
+    <a href="/hot/" rel="section"><i class="fa fa-signal fa-fw"></i>排行</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/27/tvm-vta-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XuJing">
+      <meta itemprop="description" content="记录AI学习与技术探索的心得">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XuJing's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Note TVM/VTA
+        </h1>
+
+        <div class="post-meta">
+
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-27 16:11:15" itemprop="dateCreated datePublished" datetime="2020-07-27T16:11:15+08:00">2020-07-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-01-18 21:30:20" itemprop="dateModified" datetime="2025-01-18T21:30:20+08:00">2025-01-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/TVM/" itemprop="url" rel="index"><span itemprop="name">TVM</span></a>
+                </span>
+            </span>
+
+        
+
+          
+            <span id="/2020/07/27/tvm-vta-note/" class="post-meta-item leancloud_visitors" data-flag-title="Note TVM/VTA" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+    <i class="far fa-comment"></i>
+    </span> 
+    <span class="post-meta-item-text">评论次数：</span>
+    <a title="valine" href="/2020/07/27/tvm-vta-note/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/27/tvm-vta-note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>I’ve been learning a lot about TVM this week and I visited the <a href="https://tvm.apache.org/" target="_blank" rel="noopener">TVM website</a>. I also read a lot of <a href="https://tvm.apache.org/docs/" target="_blank" rel="noopener">tutorials</a> and code. I found it very interesting. It just so happens that I have Raspberry Pie 3b, so I tried the tutorial code on my ubuntu computer and it worked perfectly.</p>
+<a id="more"></a>
+
+<h2 id="What-is-TVM"><a href="#What-is-TVM" class="headerlink" title="What is TVM"></a>What is TVM</h2><p><a href="https://tvm.apache.org/about" target="_blank" rel="noopener">Apache(incubating) TVM</a> is an open deep learning compiler stack for CPUs, GPUs, and specialized accelerators. It aims to close the gap between the productivity-focused deep learning frameworks, and the performance- or efficiency-oriented hardware backends. TVM provides the following main features:</p>
+<ul>
+<li>Compilation of deep learning models in Keras, MXNet, PyTorch, Tensorflow, CoreML, DarkNet into minimum deployable modules on diverse hardware backends.</li>
+<li>Infrastructure to automatic generate and optimize tensor operators on more backend with better performance.</li>
+</ul>
+<p><img src="https://tvm.apache.org/images/main/tvm-stack.png"></p>
+<h2 id="Install-TVM-on-Ubuntu"><a href="#Install-TVM-on-Ubuntu" class="headerlink" title="Install TVM on Ubuntu"></a>Install TVM on Ubuntu</h2><div class="note info">
+            <p>Reference article: <a href="https://tvm.apache.org/docs/install/from_source.html" target="_blank" rel="noopener">Docs » Installation » Install from Source</a></p>
+          </div>
+
+<p>I have <code>Ubuntu 18.04.2 LTS</code> on my PC.</p>
+<ul>
+<li>Get Source from Github</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --recursive https://github.com/apache/incubator-tvm tvm</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Build the Shared Library</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install -y python3 python3-dev python3-setuptools gcc libtinfo-dev zlib1g-dev build-essential cmake libedit-dev libxml2-dev</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Use cmake to build the library<ul>
+<li>copy the cmake&#x2F;config.cmake to the directory<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir build</span><br><span class="line">cp cmake/config.cmake build</span><br></pre></td></tr></table></figure></li>
+<li>Edit <code>build/config.cmake</code> to customize the compilation options<br>Because i have no NVIDA GPU on my pc,so don’t need to set <code>USE_CUDA ON</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>(USE_GRAPH_RUNTIME ON) </span><br><span class="line"><span class="built_in">set</span>(USE_GRAPH_RUNTIME_DEBUG ON)</span><br><span class="line"><span class="built_in">set</span>(USE_LLVM ON)</span><br><span class="line"><span class="built_in">set</span>(USE_VTA_FSIM ON)  <span class="comment"># enable VTA Simulator</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>Build tvm and related libraries.  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">make -j4</span><br></pre></td></tr></table></figure></li>
+<li>Set the environment variable for Python</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> TVM_HOME=~/tvm</span><br><span class="line"><span class="built_in">export</span> PYTHONPATH=<span class="variable">$TVM_HOME</span>/python:<span class="variable">$TVM_HOME</span>/python:<span class="variable">$TVM_HOME</span>/topi/python:<span class="variable">$&#123;TVM_HOME&#125;</span>/vta/python:<span class="variable">$&#123;PYTHONPATH&#125;</span></span><br><span class="line"><span class="built_in">export</span> VTA_HW_PATH=<span class="variable">$TVM_HOME</span>/3rdparty/vta-hw</span><br></pre></td></tr></table></figure>
+<ul>
+<li>To update the environment variables, execute <code>source ~/.bashrc</code>.</li>
+</ul>
+<h2 id="configuration-my-Raspberry-pi"><a href="#configuration-my-Raspberry-pi" class="headerlink" title="configuration my Raspberry pi"></a>configuration my Raspberry pi</h2><p>My raspberry pi model is <code>Raspberry Pi 3 Model B Rev 1.2</code>.</p>
+<h3 id="Setup-my-Raspberry-pi-3b"><a href="#Setup-my-Raspberry-pi-3b" class="headerlink" title="Setup my Raspberry pi 3b"></a>Setup my Raspberry pi 3b</h3><ol>
+<li>Prepare Raspberry pi 3 and an 8GB TF. and download <a href="https://www.raspberrypi.org/downloads/raspberry-pi-os/" target="_blank" rel="noopener">Raspberry Pi OS</a>, i choiced <code>Raspberry Pi OS (32-bit) with desktop</code>.</li>
+<li>Formatting TF ，write Pi images to TF using <code>Win32DiskImager</code>.</li>
+<li>No display start-up method<ol>
+<li>Create a new empty <code>ssh</code> file in the memory card boot disk, in order to turn on the ssh function.</li>
+<li>Create a new <code>wpa_supplicant.conf</code> text file in the memory card boot disk, write wifi configuration.</li>
+</ol>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">country&#x3D;DE</span><br><span class="line">ctrl_interface&#x3D;DIR&#x3D;&#x2F;var&#x2F;run&#x2F;wpa_supplicant GROUP&#x3D;netdev</span><br><span class="line">update_config&#x3D;1</span><br><span class="line"></span><br><span class="line">network&#x3D;&#123;</span><br><span class="line">    ssid&#x3D;&quot;my wifi name&quot;</span><br><span class="line">    psk&#x3D;&quot;my wifi password&quot;</span><br><span class="line">    key_mgmt&#x3D;WPA-PSK</span><br><span class="line">    priority&#x3D;1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Find the IP adress of your respberry pi in rounter. contect your resperry pi via <code>ssh</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh pi@&lt;ip adress&gt; <span class="comment"># password: raspberry</span></span><br></pre></td></tr></table></figure></li>
+<li>Use VNC to connect raspberry pi. Command <code>sudo raspi-config</code> to configuration.</li>
+</ol>
+<h3 id="Install-TVM-on-Raspberry-pi"><a href="#Install-TVM-on-Raspberry-pi" class="headerlink" title="Install TVM on Raspberry pi"></a>Install TVM on Raspberry pi</h3><ul>
+<li>We only need to build tvm runtime on the remote device.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">git <span class="built_in">clone</span> --recursive https://github.com/apache/incubator-tvm tvm</span><br><span class="line"><span class="built_in">cd</span> tvm</span><br><span class="line">mkdir build</span><br><span class="line">cp cmake/config.cmake build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">make runtime -j4</span><br></pre></td></tr></table></figure>
+<ul>
+<li>set environment varibles in <code>~/.bashrc</code> file.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PYTHONPATH&#x3D;$PYTHONPATH:~&#x2F;tvm&#x2F;python</span><br></pre></td></tr></table></figure>
+<ul>
+<li>To update the environment variables, execute <code>source ~/.bashrc</code>.</li>
+</ul>
+<h2 id="Environment-Building"><a href="#Environment-Building" class="headerlink" title="Environment Building"></a>Environment Building</h2><h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><ol>
+<li><a href="http://llvm.org/" target="_blank" rel="noopener">LLVM</a> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">wget https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz</span><br><span class="line">tar -xvf clang+llvm-10.0.0-armv7a-linux-gnueabihf.tar.xz</span><br><span class="line">rm clang+llvm-10.0.0-armv7a-linux-gnueabihf.tar.xz</span><br><span class="line">mv clang+llvm-10.0.0-armv7a-linux-gnueabihf clang_9.0.0</span><br><span class="line">sudo mv clang_10.0.0 /usr/<span class="built_in">local</span></span><br></pre></td></tr></table></figure>
+ set environment varibles <figure class="highlight plain"><figcaption><span>~/.bashrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;clang_10.0.0&#x2F;bin:$PATH</span><br><span class="line">export LD_LIBRARY_PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;clang_10.0.0&#x2F;lib:$LD_LIBRARY_PATH</span><br></pre></td></tr></table></figure></li>
+<li>Cross Compiler<br>we need <code>/usr/bin/arm-linux-gnueabihf-g++</code> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install g++-arm-linux-gnueabihf</span><br><span class="line">/usr/bin/arm-linux-gnueabihf-g++ -v</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><ol>
+<li>Pytorch <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip3 install torch torchvision</span><br></pre></td></tr></table></figure></li>
+<li>onnx<br>pytorch-&gt;onnx-&gt;tvm<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install onnx</span><br></pre></td></tr></table></figure></li>
+<li>python-opencv<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip3 install opencv-python </span><br><span class="line">pip3 install opencv-contrib-python</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="other-tool"><a href="#other-tool" class="headerlink" title="other tool"></a>other tool</h3><ol>
+<li>Neron<ol>
+<li>online: <a href="https://lutzroeder.github.io/netron/" target="_blank" rel="noopener">https://lutzroeder.github.io/netron/</a></li>
+<li>download: <a href="https://github.com/lutzroeder/netron/find/main" target="_blank" rel="noopener">https://github.com/lutzroeder/netron/find/main</a></li>
+</ol>
+</li>
+<li>CUDA (i dont use it.because i have no NVIDA GPU)</li>
+<li><a href="https://docs.opencv.org/master/d9/df8/tutorial_root.html" target="_blank" rel="noopener">opencv</a> <ol>
+<li>download zip source form <a href="https://github.com/opencv/opencv/releases" target="_blank" rel="noopener">https://github.com/opencv/opencv/releases</a></li>
+<li>install contri</li>
+</ol>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install build-essential</span><br><span class="line">sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev</span><br><span class="line">sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev lib</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>cmake</li>
+</ol>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/opencv-3.4.3  </span><br><span class="line">mkdir build </span><br><span class="line"><span class="built_in">cd</span> build </span><br><span class="line">cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span> ..  </span><br><span class="line">make -j7 </span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Deploy-model-on-raspberry-pi"><a href="#Deploy-model-on-raspberry-pi" class="headerlink" title="Deploy model on raspberry pi"></a>Deploy model on raspberry pi</h2><div class="note info">
+            <p>Reference :<a href="https://tvm.apache.org/docs/tutorials/frontend/deploy_model_on_rasp.html" target="_blank" rel="noopener">Deploy the Pretrained Model on Raspberry Pi</a></p>
+          </div>
+<p>I run this <a href="https://tvm.apache.org/docs/_downloads/83dedc6352b4016772e17480ef01345d/deploy_model_on_rasp.py" target="_blank" rel="noopener">tutorials code</a> on Ubuntu </p>
+<ol>
+<li>Connect Raspberry pi via ssh<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh pi@192.168.2.105</span><br></pre></td></tr></table></figure></li>
+<li>Start an RPC server on Raspberry pi<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python3 -m tvm.exec.rpc_server --host 0.0.0.0 --port=9090</span><br><span class="line">INFO:RPCServer:<span class="built_in">bind</span> to 0.0.0.0:9090 <span class="comment"># RPC server started successfully</span></span><br></pre></td></tr></table></figure></li>
+<li>Run code on Unbuntu<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 python3 deploy_model_on_rasp.py</span><br></pre></td></tr></table></figure></li>
+<li>result<ol>
+<li>Raspberry pi</li>
+</ol>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INFO:RPCServer:connection from (<span class="string">'192.168.2.108'</span>, 57062)</span><br><span class="line">INFO:RPCServer:load_module /tmp/tmppv_8msd5/net.tar</span><br><span class="line">INFO:RPCServer:Finish serving (<span class="string">'192.168.2.108'</span>, 57062)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>Ubuntu<br> <img src="https://github.com/dmlc/mxnet.js/blob/master/data/cat.png?raw=true" title="in_data x"><br> <img src="/../image/tvm_plane.jpg" title="in_data y"><br> Model : MXNet <code>resnet18_v1</code></li>
+</ol>
+ <figure class="highlight bash"><figcaption><span>Run model on raspberry pi via RPC</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Time <span class="keyword">for</span> model loading is 281.33s</span><br><span class="line">Time <span class="keyword">for</span> build graph  is 1.09s</span><br><span class="line">Time <span class="keyword">for</span> model running is 1.33s</span><br><span class="line">x TVM prediction top-1: tiger cat</span><br><span class="line">y TVM prediction top-1: airliner</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><figcaption><span>Run model on local pc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Time <span class="keyword">for</span> model loading is 0.90s</span><br><span class="line">Time <span class="keyword">for</span> bulid graph is 0.03s</span><br><span class="line">Time <span class="keyword">for</span> model running is 0.10s</span><br><span class="line">x TVM prediction top-1: tiger cat</span><br><span class="line">y TVM prediction top-1: airliner</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>Running model on Raspberry Pi is significantly slower than running it on Ubuntu, mainly because it is too slow to load model through RPC. But it works.<br>Deploy model on raspberry pi through LLVM, deploy model on FPGA through VTA. </p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://tvm.apache.org/" target="_blank" rel="noopener">Apache (incubating) TVM An End to End Deep Learning Compiler Stack</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/39635145" target="_blank" rel="noopener">VTA: 开源AI芯片栈</a></li>
+<li><a href="https://www.infoq.cn/article/vta-release-announcement/" target="_blank" rel="noopener">VTA：一个开放、高度可定制化的深度学习加速器平台</a></li>
+<li><a href="https://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">菜鸟驿站 - Docker 教程</a></li>
+<li><a href="https://wiki.jikexueyuan.com/project/docker-technology-and-combat/" target="_blank" rel="noopener">Docker —— 从入门到实践</a></li>
+<li><a href="https://oldpan.me/archives/the-first-step-towards-tvm-1" target="_blank" rel="noopener">一步一步解读神经网络编译器TVM(一)——一个简单的例子</a></li>
+<li><a href="https://oldpan.me/archives/the-first-step-towards-tvm-2" target="_blank" rel="noopener">一步一步解读神经网络编译器TVM(二)——利用TVM完成C++端的部署</a></li>
+<li><a href="https://blog.csdn.net/zhshh123/article/details/85051969" target="_blank" rel="noopener">树莓派入门（一） - 下载安装系统镜像，Raspbian和Centos</a></li>
+<li><a href="https://solarianprogrammer.com/2018/04/22/raspberry-pi-raspbian-install-clang-compile-cpp-17-programs/" target="_blank" rel="noopener">Raspberry Pi - Install Clang 9 and compile C++17 and C++20 programs</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+    <div>
+  
+    <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+      <span>-------- 本文结束 </span>
+      <i class="fa fa-paperclip"></i>
+      <span> 感谢阅读 --------</span>
+    </div>
+  
+</div>
+    </div>
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="XuJing 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="XuJing 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<!-- JS库 clipboard 拷贝内容到粘贴板-->
+<script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"></script>
+
+<!-- JS库 sweetalert 显示提示信息-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-title">
+    <strong>本文标题： </strong>
+    Note TVM/VTA
+  </li>
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>XuJing
+  </li>
+  <!-- 引用链接 -->
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2020/07/27/tvm-vta-note/" title="Note TVM/VTA">
+      http://yoursite.com/2020/07/27/tvm-vta-note/
+    </a>
+    <span class="copy-path" title="点击复制引用链接">
+      <i
+        style="cursor: pointer"
+        class="fa fa-clipboard"
+        data-clipboard-text="[XuJing's Blog | Note TVM/VTA](http://yoursite.com/2020/07/27/tvm-vta-note/)"
+        aria-label="复制成功">
+      </i>
+    </span>
+  </li>
+
+
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+<script>
+  var clipboard = new ClipboardJS(".fa-clipboard");
+  clipboard.on("success", function(target) {
+    var message = document.createElement("div");
+    message.innerHTML =
+      '<i class="fa fa-check-circle message-icon"></i><span class="message-content">' +
+      target.trigger.getAttribute("aria-label") +
+      "</span>";
+    swal({
+      content: message,
+      className: "copy-success-message",
+      timer: 1000,
+      button: false
+    });
+  });
+</script>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TVM/" rel="tag"># TVM</a>
+              <a href="/tags/VTA/" rel="tag"># VTA</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/24/latex-skills/" rel="prev" title="LaTeX 学习笔记">
+      <i class="fa fa-chevron-left"></i> LaTeX 学习笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/10/21/Scene-Graph-Generation-Note-1/" rel="next" title="Scene Graph Generation Note 1">
+      Scene Graph Generation Note 1 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-TVM"><span class="nav-number">1.</span> <span class="nav-text">What is TVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-TVM-on-Ubuntu"><span class="nav-number">2.</span> <span class="nav-text">Install TVM on Ubuntu</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#configuration-my-Raspberry-pi"><span class="nav-number">3.</span> <span class="nav-text">configuration my Raspberry pi</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Setup-my-Raspberry-pi-3b"><span class="nav-number">3.1.</span> <span class="nav-text">Setup my Raspberry pi 3b</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-TVM-on-Raspberry-pi"><span class="nav-number">3.2.</span> <span class="nav-text">Install TVM on Raspberry pi</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Environment-Building"><span class="nav-number">4.</span> <span class="nav-text">Environment Building</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu"><span class="nav-number">4.1.</span> <span class="nav-text">Ubuntu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python"><span class="nav-number">4.2.</span> <span class="nav-text">python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#other-tool"><span class="nav-number">4.3.</span> <span class="nav-text">other tool</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deploy-model-on-raspberry-pi"><span class="nav-number">5.</span> <span class="nav-text">Deploy model on raspberry pi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">6.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">XuJing</p>
+  <div class="site-description" itemprop="description">记录AI学习与技术探索的心得</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xujing113221" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xujing113221" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xujing113221@gmail.com" title="E-Mail → mailto:xujing113221@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+   <div class="feed-link motion-element">
+     <a href="/atom.xml" rel="alternate">
+       <i class="fa fa-rss"></i>
+       RSS
+     </a>
+   </div>
+ 
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.google.com/" title="http:&#x2F;&#x2F;www.google.com" rel="noopener" target="_blank">Google-website</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XuJing</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  
+  <script async src="/js/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: inline;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+
+</div>
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"0HeenH1M6kEofmoCdXFMym4r-MdYXbMMI","app_key":"pLAfLofofkawWDO8zuponHLq","server_url":null,"security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 26189,
+      el    : 'wpac-rating',
+      color : 'fadb14'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '0HeenH1M6kEofmoCdXFMym4r-MdYXbMMI',
+      appKey     : 'pLAfLofofkawWDO8zuponHLq',
+      placeholder: "Write something to me ...",
+      avatar     : 'retro',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/ Relative)","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacityDefault":0.7},"dialog":{"enable":false,"hitokoto":true}});</script></body>
+</html>

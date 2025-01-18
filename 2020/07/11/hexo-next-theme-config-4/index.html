@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans SC:300,300italic,400,400italic,700,700italic|Cedarville Cursive:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Courier:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-simple.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本文提到的Hexo博客配置是基于：Hexo v4.2.1 和 NexT v7.8.0。请注意版本之间存在差异！            本文主要介绍我在NexT主题配置中遇到的小问题，以及主题的进一步美化，深入Next代码进行个性化配置。  页脚设置 多级分类 修改博客字体 版权声明个性化设置 添加看板娘功能 解决不蒜子显示问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo NexT 主题配置四">
+<meta property="og:url" content="http://yoursite.com/2020/07/11/hexo-next-theme-config-4/index.html">
+<meta property="og:site_name" content="XuJing&#39;s Blog">
+<meta property="og:description" content="本文提到的Hexo博客配置是基于：Hexo v4.2.1 和 NexT v7.8.0。请注意版本之间存在差异！            本文主要介绍我在NexT主题配置中遇到的小问题，以及主题的进一步美化，深入Next代码进行个性化配置。  页脚设置 多级分类 修改博客字体 版权声明个性化设置 添加看板娘功能 解决不蒜子显示问题">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/copyright.png">
+<meta property="og:image" content="http://yoursite.com/widgetpack.png">
+<meta property="article:published_time" content="2020-07-11T05:32:00.000Z">
+<meta property="article:modified_time" content="2025-01-18T13:30:20.291Z">
+<meta property="article:author" content="XuJing">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="NexT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/copyright.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/07/11/hexo-next-theme-config-4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Hexo NexT 主题配置四 | XuJing's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="XuJing's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">XuJing's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">AI & Technology</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-hot">
+
+    <a href="/hot/" rel="section"><i class="fa fa-signal fa-fw"></i>排行</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/11/hexo-next-theme-config-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XuJing">
+      <meta itemprop="description" content="记录AI学习与技术探索的心得">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XuJing's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo NexT 主题配置四
+        </h1>
+
+        <div class="post-meta">
+
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-11 13:32:00" itemprop="dateCreated datePublished" datetime="2020-07-11T13:32:00+08:00">2020-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-01-18 21:30:20" itemprop="dateModified" datetime="2025-01-18T21:30:20+08:00">2025-01-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">Hexo创建博客</span></a>
+                </span>
+            </span>
+
+        
+
+          
+            <span id="/2020/07/11/hexo-next-theme-config-4/" class="post-meta-item leancloud_visitors" data-flag-title="Hexo NexT 主题配置四" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+    <i class="far fa-comment"></i>
+    </span> 
+    <span class="post-meta-item-text">评论次数：</span>
+    <a title="valine" href="/2020/07/11/hexo-next-theme-config-4/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/11/hexo-next-theme-config-4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="note primary">
+            <p>本文提到的Hexo博客配置是基于：Hexo v4.2.1 和 NexT v7.8.0。请注意版本之间存在差异！</p>
+          </div>
+<p>本文主要介绍我在NexT主题配置中遇到的小问题，以及主题的进一步美化，深入Next代码进行个性化配置。</p>
+<ul>
+<li>页脚设置</li>
+<li>多级分类</li>
+<li>修改博客字体</li>
+<li>版权声明个性化设置</li>
+<li>添加看板娘功能</li>
+<li>解决不蒜子显示问题</li>
+</ul>
+<a id="more"></a>
+
+<h2 id="页脚设置"><a href="#页脚设置" class="headerlink" title="页脚设置"></a>页脚设置</h2><h3 id="Mist主题-页脚居中问题"><a href="#Mist主题-页脚居中问题" class="headerlink" title="Mist主题 页脚居中问题"></a>Mist主题 页脚居中问题</h3><p>解决方案：</p>
+<figure class="highlight diff"><figcaption><span>themes/next/source/css/_schemes/Mist/_layout.styl</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.footer-inner &#123;</span><br><span class="line"><span class="deletion">-  text-align: left;</span></span><br><span class="line"><span class="addition">+  text-align: center;</span></span><br><span class="line"></span><br><span class="line">  +mobile() &#123;</span><br><span class="line">    text-align: center;</span><br><span class="line">    width: auto;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="不蒜子访客统计-个性化"><a href="#不蒜子访客统计-个性化" class="headerlink" title="不蒜子访客统计 个性化"></a>不蒜子访客统计 个性化</h3><p>这里就不弄了，等我学会了html，我在搞。 默认的就挺简洁好看的。</p>
+<p>在 这个文件<span class="label primary">themes/next/layout/_third-party/statistics/busuanzi-counter.swig</span>修改就可以的实现个性化了.</p>
+<h2 id="多级分类"><a href="#多级分类" class="headerlink" title="多级分类"></a>多级分类</h2><div class="note info">
+            <p>详见 <a href="https://hexo.io/zh-cn/docs/front-matter.html" target="_blank" rel="noopener">Front-matter</a></p>
+          </div>
+
+<p>举例</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line"><span class="bullet">- </span>[Diary, PlayStation]</span><br><span class="line"><span class="bullet">- </span>[Diary, Games]</span><br><span class="line"><span class="bullet">- </span>[Life]</span><br></pre></td></tr></table></figure>
+<p>这篇文章同时包括三个分类： PlayStation 和 Games 分别都是父分类 Diary 的子分类，同时 Life 是一个没有子分类的分类。</p>
+<h2 id="修改博客字体"><a href="#修改博客字体" class="headerlink" title="修改博客字体"></a>修改博客字体</h2><p>在 <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> 上找到心仪的字体，然后在主题配置文件中搜索<code>font:</code>为不同的应用场景配置字体：</p>
+<figure class="highlight yml"><figcaption><span>themes\next\_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Font options:</span></span><br><span class="line"> <span class="comment"># `external: true` will load this font family from `host` above.</span></span><br><span class="line"> <span class="comment"># `family: Times New Roman`. Without any quotes.</span></span><br><span class="line"> <span class="comment"># `size: x.x`. Use `em` as unit. Default: 1 (16px)</span></span><br><span class="line"></span><br><span class="line"> <span class="comment"># Global font settings used for all elements inside &lt;body&gt;.</span></span><br><span class="line"> <span class="attr">global:</span></span><br><span class="line">   <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">   <span class="attr">family:</span> <span class="string">Noto</span> <span class="string">Sans</span> <span class="string">SC</span></span><br><span class="line">   <span class="attr">size:</span></span><br><span class="line"></span><br><span class="line"> <span class="comment"># Font settings for site title (.site-title).</span></span><br><span class="line"> <span class="attr">title:</span></span><br><span class="line">   <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">   <span class="attr">family:</span> <span class="string">Cedarville</span> <span class="string">Cursive</span></span><br><span class="line">   <span class="attr">size:</span></span><br><span class="line"></span><br><span class="line"> <span class="comment"># Font settings for headlines (&lt;h1&gt; to &lt;h6&gt;).</span></span><br><span class="line"> <span class="attr">headings:</span></span><br><span class="line">   <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">   <span class="attr">family:</span> <span class="string">Noto</span> <span class="string">Serif</span> <span class="string">SC</span></span><br><span class="line">   <span class="attr">size:</span></span><br><span class="line"></span><br><span class="line"> <span class="comment"># Font settings for posts (.post-body).</span></span><br><span class="line"> <span class="attr">posts:</span></span><br><span class="line">   <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">   <span class="attr">family:</span></span><br><span class="line"></span><br><span class="line"> <span class="comment"># Font settings for &lt;code&gt; and code blocks.</span></span><br><span class="line"> <span class="attr">codes:</span></span><br><span class="line">   <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">   <span class="attr">family:</span> <span class="string">Courier</span></span><br></pre></td></tr></table></figure>
+<h2 id="版权声明个性化设置"><a href="#版权声明个性化设置" class="headerlink" title="版权声明个性化设置"></a>版权声明个性化设置</h2><div class="note info">
+            <p>本章参见<a href="http://yearito.cn/posts/hexo-advanced-settings.html" target="_blank" rel="noopener">yearito’s Blog | Hexo搭建个人博客系列：进阶设置篇</a></p>
+          </div>
+
+<p><img src="/copyright.png" alt="效果图" title="效果图"></p>
+<ul>
+<li>先找到 <span class="label success">themes/next/layout/_partials/post/post-copyright.swig</span>  添加如下内容：</li>
+</ul>
+<figure class="highlight diff"><figcaption><span>themes/next/layout/_partials/post/post-copyright.swig </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- JS库 clipboard 拷贝内容到粘贴板--&gt;</span><br><span class="line">&lt;script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- JS库 sweetalert 显示提示信息--&gt;</span><br><span class="line">&lt;script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&lt;ul class="post-copyright"&gt;</span><br><span class="line">  &lt;li class="post-copyright-title"&gt;</span><br><span class="line">   &lt;strong&gt;&#123;&#123; __('post.copyright.title') + __('symbol.colon') &#125;&#125; &lt;/strong&gt;</span><br><span class="line">    &#123;&#123;page.title&#125;&#125;             // 只显示文章标题 </span><br><span class="line">    &lt;a href="&#123;&#123;page.permalink&#125;&#125;"&gt;&#123;&#123;page.title&#125;&#125;&lt;/a&gt;  // 显示带链接的文章标题</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">  &lt;li class="post-copyright-author"&gt;</span><br><span class="line">    &lt;strong&gt;&#123;&#123; __('post.copyright.author') + __('symbol.colon') &#125;&#125; &lt;/strong&gt;</span><br><span class="line">    &#123;&#123;- page.author or author &#125;&#125;</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">  &lt;!-- 引用链接 --&gt;</span><br><span class="line">  &lt;li class="post-copyright-link"&gt;</span><br><span class="line">    &lt;strong&gt;&#123;&#123; __('post.copyright.link') + __('symbol.colon') &#125;&#125;&lt;/strong&gt;</span><br><span class="line">    &lt;a href="&#123;&#123; post.url | default(post.permalink) &#125;&#125;" title="&#123;&#123; post.title &#125;&#125;"&gt;</span><br><span class="line">      &#123;&#123; post.url | default(post.permalink) &#125;&#125;</span><br><span class="line">    &lt;/a&gt;</span><br><span class="line">    &lt;span class="copy-path" title="点击复制引用链接"&gt;</span><br><span class="line">      &lt;i</span><br><span class="line">        style="cursor: pointer"</span><br><span class="line">        class="fa fa-clipboard"</span><br><span class="line">        data-clipboard-text="[&#123;&#123; post.author | default(author) &#125;&#125;'s Blog | &#123;&#123; post.title &#125;&#125;](&#123;&#123; post.permalink &#125;&#125;)"</span><br><span class="line">        aria-label="&#123;&#123; __('post.copy_success') &#125;&#125;"&gt;</span><br><span class="line">      &lt;/i&gt;</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">      ....</span><br><span class="line"></span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">      ....</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  var clipboard = new ClipboardJS(".fa-clipboard");</span><br><span class="line">  clipboard.on("success", function(target) &#123;</span><br><span class="line">    var message = document.createElement("div");</span><br><span class="line">    message.innerHTML =</span><br><span class="line">      '&lt;i class="fa fa-check-circle message-icon"&gt;&lt;/i&gt;&lt;span class="message-content"&gt;' +</span><br><span class="line">      target.trigger.getAttribute("aria-label") +</span><br><span class="line">      "&lt;/span&gt;";</span><br><span class="line">    swal(&#123;</span><br><span class="line">      content: message,</span><br><span class="line">      className: "copy-success-message",</span><br><span class="line">      timer: 1000,</span><br><span class="line">      button: false</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在主题语言配置文件中 添加如下内容：</li>
+</ul>
+<figure class="highlight diff"><figcaption><span>themes/next/languages/zh-CN.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ copy_success: 复制成功</span></span><br><span class="line">  copyright:</span><br><span class="line"><span class="addition">+   title: 本文标题</span></span><br><span class="line">    author: 本文作者</span><br><span class="line">    link: 本文链接</span><br><span class="line">    license_title: 版权声明</span><br><span class="line">    license_content: "本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"</span><br></pre></td></tr></table></figure>
+<ul>
+<li>找到<span class="label info">themes/next/source/css/_common/components/post/post-copyright.styl</span> 添加如下内容：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.swal-overlay</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: transparent;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.copy-success-message</span> &#123;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">4px</span> <span class="number">12px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.15</span>);</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">width</span>: auto;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">16</span>x <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">vertical-align</span>: top;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.copy-success-message</span> <span class="selector-class">.swal-content</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">16px</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">1em</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.copy-success-message</span> <span class="selector-class">.message-icon</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#52c41a</span>;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">8px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.copy-success-message</span> <span class="selector-class">.message-content</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加看板娘功能"><a href="#添加看板娘功能" class="headerlink" title="添加看板娘功能"></a>添加看板娘功能</h2><div class="note info">
+            <p>本章参考链接：</p><ul><li><a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">live2d-widget-models</a></li><li><a href="https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init" target="_blank" rel="noopener">live2d模型用户配置</a></li><li><a href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md" target="_blank" rel="noopener">live2d模型中文说明</a></li><li><a href="http://yearito.cn/posts/hexo-theme-beautify.html" target="_blank" rel="noopener">yearito’s Blog | Hexo搭建个人博客系列：主题美化篇</a></li><li><a href="https://fjkang.github.io/2017/12/08/%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E8%90%8C%E7%89%A9/" target="_blank" rel="noopener">添加一个萌物</a></li><li><a href="https://blog.csdn.net/wang_123_zy/article/details/87181892" target="_blank" rel="noopener">Hexo添加Live2D看板娘+模型预览</a></li></ul>
+          </div>
+
+<p>在站点根目录下执行以下命令安装依赖：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
+<p>在站点配置文件中添加以下下配置项</p>
+<figure class="highlight yml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Live2D</span></span><br><span class="line"><span class="comment"># https://github.com/EYHN/hexo-helper-live2d</span></span><br><span class="line"><span class="attr">live2d:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">pluginRootPath:</span> <span class="string">live2dw/</span></span><br><span class="line">  <span class="attr">pluginJsPath:</span> <span class="string">lib/</span></span><br><span class="line">  <span class="attr">pluginModelPath:</span> <span class="string">assets/</span> <span class="string">Relative)</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 脚本加载源</span></span><br><span class="line">  <span class="attr">scriptFrom:</span> <span class="string">local</span> <span class="comment"># 默认从本地加载脚本</span></span><br><span class="line">  <span class="comment"># scriptFrom: jsdelivr # 从 jsdelivr CDN 加载脚本</span></span><br><span class="line">  <span class="comment"># scriptFrom: unpkg # 从 unpkg CDN 加载脚本</span></span><br><span class="line">  <span class="comment"># scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 从自定义地址加载脚本</span></span><br><span class="line">  <span class="attr">tagMode:</span> <span class="literal">false</span> <span class="comment"># 只在有 &#123;&#123; live2d() &#125;&#125; 标签的页面上加载 / 在所有页面上加载</span></span><br><span class="line">  <span class="attr">log:</span> <span class="literal">false</span> <span class="comment"># 是否在控制台打印日志</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 选择看板娘模型</span></span><br><span class="line">  <span class="attr">model:</span></span><br><span class="line">    <span class="attr">use:</span> <span class="string">live2d-widget-model-z16</span> <span class="comment">#使用模型</span></span><br><span class="line">    <span class="comment">#live2d-widget-model-shizuku #live2d-widget-model-tororo #live2d-widget-model-epsilon2_1</span></span><br><span class="line">    <span class="comment">#live2d-widget-model-hibiki #live2d-widget-model-z16</span></span><br><span class="line">  <span class="attr">display:</span></span><br><span class="line">    <span class="attr">position:</span> <span class="string">right</span> <span class="comment"># 显示在左边还是右边</span></span><br><span class="line">    <span class="attr">width:</span> <span class="number">200</span> <span class="comment"># 宽度</span></span><br><span class="line">    <span class="attr">height:</span> <span class="number">360</span> <span class="comment"># 高度</span></span><br><span class="line">  <span class="attr">mobile:</span></span><br><span class="line">    <span class="attr">show:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">react:</span></span><br><span class="line">    <span class="attr">opacityDefault:</span> <span class="number">0.7</span> <span class="comment"># 默认透明度</span></span><br><span class="line">  <span class="attr">dialog:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment">#添加对话框</span></span><br><span class="line">    <span class="attr">hitokoto:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>这个时候还不会有看板娘的显示，在 <a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">live2d-widget-models</a> 手动下载喜欢的样式。</p>
+<p>因为修改了站点配置文件，所以需要重启服务器才能预览模型效果。</p>
+<div class="note success">
+            <p>这个功能挺好玩的，操作也简单。但是我还是喜欢简洁点的网页，哈哈哈哈。</p>
+          </div>
+
+<h2 id="文章评论功能"><a href="#文章评论功能" class="headerlink" title="文章评论功能"></a>文章评论功能</h2><p>Next 主题中已经集成了<a href="https://widgetpack.com/" target="_blank" rel="noopener">widgetpack</a>的星级评分系统，用户无须再安装或引入插件脚本，只需在 widgetpack 中注册账号并修改主题配置即可，应用效果如下：</p>
+<figure class="highlight yml"><figcaption><span>themes/next_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Star rating support to each article.</span></span><br><span class="line"><span class="comment"># To get your ID visit https://widgetpack.com</span></span><br><span class="line"><span class="attr">rating:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">id:</span> <span class="comment">#&lt;app_id&gt;</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">fadb14</span></span><br></pre></td></tr></table></figure>
+<p>在<code>widgetpack</code>左边栏中找到<code>Rating</code>的<code>Setting</code> 修改<code>Vote via</code>为除了<code>Social</code>以外其他两种方式，就可以开启匿名评分了<br><img src="/widgetpack.png" alt="widgetpack设置"></p>
+<div class="note info">
+            <p>不想再写了，这个功能很简单，看这个人的博客就好 <a href="http://yearito.cn/posts/hexo-advanced-settings.html" target="_blank" rel="noopener">yearito’s Blog | Hexo搭建个人博客系列：进阶设置篇</a></p>
+          </div>
+
+<h2 id="解决不蒜子显示问题"><a href="#解决不蒜子显示问题" class="headerlink" title="解决不蒜子显示问题"></a>解决不蒜子显示问题</h2><div class="note info">
+            <p>本章内容参考:<a href="http://boyinthesun.cn/post/error-live2d-busuanzi/" target="_blank" rel="noopener">解决live2d看板娘和busuanzi不蒜子计数冲突</a></p>
+          </div>
+
+<ul>
+<li>下载<a href="busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">busuanzi.pure.mini.js</a>到本地存储在文件夹<code>themes/next/source/js/</code>中</li>
+<li>修改<code>busuanzi.pure.mini.js</code> 将<code>b.style.display=&quot;none&quot;</code>中<code>none</code>去掉。</li>
+<li>修改如下代码：</li>
+</ul>
+<figure class="highlight diff"><figcaption><span>themes/next/layout/_third-party/statistics/busuanzi-counter.swig</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if theme.busuanzi_count.enable %&#125;</span><br><span class="line">&lt;div class="busuanzi-count"&gt;</span><br><span class="line"><span class="deletion">-  &lt;script&#123;&#123; pjax &#125;&#125; async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="addition">+  &lt;script async src="/js/busuanzi.pure.mini.js"&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>自此关于Hexo写博客的主题就告一段落了，我对Next主题配置差不多了。这是我第一次写博客，就是记录一下这个我开始使用Hexo写博客的过程，在此期间我看到了很多优秀的博客，给予了我很多帮助，我也借鉴了很多内容，希望我都备注上了。谢谢大家！</p>
+<p>刚开始写博客，结构和内容有点乱，希望大家见谅，有什么问题希望大家给我写评论告诉我！后面我会慢慢写，写好每一篇博客！</p>
+<p>后面我会写一下我学习和生活中的知识和经验，分享给大家，同时也给自己留下笔记，整理一下我的知识。希望未来越来越好！</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="http://yearito.cn/posts/hexo-advanced-settings.html" target="_blank" rel="noopener">Hexo 搭建个人博客系列：进阶设置篇</a></li>
+<li><a href="https://leancloud.cn/docs/leanstorage_guide-js.html" target="_blank" rel="noopener">LeanCloud | JavaScript SDK 开发指南</a></li>
+<li><a href="https://leancloud.cn/docs/sdk_setup-js.html#hash-99064366" target="_blank" rel="noopener">LeanCloud | JavaScript SDK 安装指南</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+    <div>
+  
+    <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+      <span>-------- 本文结束 </span>
+      <i class="fa fa-paperclip"></i>
+      <span> 感谢阅读 --------</span>
+    </div>
+  
+</div>
+    </div>
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="XuJing 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="XuJing 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<!-- JS库 clipboard 拷贝内容到粘贴板-->
+<script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"></script>
+
+<!-- JS库 sweetalert 显示提示信息-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-title">
+    <strong>本文标题： </strong>
+    Hexo NexT 主题配置四
+  </li>
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>XuJing
+  </li>
+  <!-- 引用链接 -->
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2020/07/11/hexo-next-theme-config-4/" title="Hexo NexT 主题配置四">
+      http://yoursite.com/2020/07/11/hexo-next-theme-config-4/
+    </a>
+    <span class="copy-path" title="点击复制引用链接">
+      <i
+        style="cursor: pointer"
+        class="fa fa-clipboard"
+        data-clipboard-text="[XuJing's Blog | Hexo NexT 主题配置四](http://yoursite.com/2020/07/11/hexo-next-theme-config-4/)"
+        aria-label="复制成功">
+      </i>
+    </span>
+  </li>
+
+
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+<script>
+  var clipboard = new ClipboardJS(".fa-clipboard");
+  clipboard.on("success", function(target) {
+    var message = document.createElement("div");
+    message.innerHTML =
+      '<i class="fa fa-check-circle message-icon"></i><span class="message-content">' +
+      target.trigger.getAttribute("aria-label") +
+      "</span>";
+    swal({
+      content: message,
+      className: "copy-success-message",
+      timer: 1000,
+      button: false
+    });
+  });
+</script>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/NexT/" rel="tag"># NexT</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/10/hexo-next-theme-config-3/" rel="prev" title="Hexo NexT 主题配置三">
+      <i class="fa fa-chevron-left"></i> Hexo NexT 主题配置三
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/18/latex-resume/" rel="next" title="如何使用LaTeX写简历">
+      如何使用LaTeX写简历 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#页脚设置"><span class="nav-number">1.</span> <span class="nav-text">页脚设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mist主题-页脚居中问题"><span class="nav-number">1.1.</span> <span class="nav-text">Mist主题 页脚居中问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不蒜子访客统计-个性化"><span class="nav-number">1.2.</span> <span class="nav-text">不蒜子访客统计 个性化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多级分类"><span class="nav-number">2.</span> <span class="nav-text">多级分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改博客字体"><span class="nav-number">3.</span> <span class="nav-text">修改博客字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版权声明个性化设置"><span class="nav-number">4.</span> <span class="nav-text">版权声明个性化设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加看板娘功能"><span class="nav-number">5.</span> <span class="nav-text">添加看板娘功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章评论功能"><span class="nav-number">6.</span> <span class="nav-text">文章评论功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决不蒜子显示问题"><span class="nav-number">7.</span> <span class="nav-text">解决不蒜子显示问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结束语"><span class="nav-number">8.</span> <span class="nav-text">结束语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">9.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">XuJing</p>
+  <div class="site-description" itemprop="description">记录AI学习与技术探索的心得</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xujing113221" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xujing113221" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xujing113221@gmail.com" title="E-Mail → mailto:xujing113221@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+   <div class="feed-link motion-element">
+     <a href="/atom.xml" rel="alternate">
+       <i class="fa fa-rss"></i>
+       RSS
+     </a>
+   </div>
+ 
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.google.com/" title="http:&#x2F;&#x2F;www.google.com" rel="noopener" target="_blank">Google-website</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XuJing</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  
+  <script async src="/js/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: inline;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+
+</div>
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"0HeenH1M6kEofmoCdXFMym4r-MdYXbMMI","app_key":"pLAfLofofkawWDO8zuponHLq","server_url":null,"security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 26189,
+      el    : 'wpac-rating',
+      color : 'fadb14'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '0HeenH1M6kEofmoCdXFMym4r-MdYXbMMI',
+      appKey     : 'pLAfLofofkawWDO8zuponHLq',
+      placeholder: "Write something to me ...",
+      avatar     : 'retro',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/ Relative)","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacityDefault":0.7},"dialog":{"enable":false,"hitokoto":true}});</script></body>
+</html>
