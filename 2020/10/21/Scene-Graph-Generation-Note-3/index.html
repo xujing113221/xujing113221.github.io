@@ -291,55 +291,37 @@
       
         <p>本文记录一下Hiwi的相关笔记, 第三部分。</p>
 <a id="more"></a>
-<p>conda install pytorch=1.0<br>
-pip install cython<br>
-pip install matplotlib numpy scipy pyyaml packaging pycocotools tensorboardX tqdm pillow scikit-image<br>
-conda install opencv</p>
-<h3 id="envriment">envriment</h3>
-<ul>
-<li>
-<p>PATH<br>
-export PATH=/home/xujing/miniconda3/envs/cl4vrd/bin:/home/xujing/miniconda3/condabin:/usr/local/cuda-10.0/bin:/home/xujing/.vscode-server/bin/58bb7b2331731bf72587010e943852e13e6fd3cf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin</p>
+
+<p>conda install pytorch&#x3D;1.0<br>pip install cython<br>pip install matplotlib numpy scipy pyyaml packaging pycocotools tensorboardX tqdm pillow scikit-image<br>conda install opencv</p>
+<h3 id="envriment"><a href="#envriment" class="headerlink" title="envriment"></a>envriment</h3><ul>
+<li><p>PATH<br>export PATH&#x3D;&#x2F;home&#x2F;xujing&#x2F;miniconda3&#x2F;envs&#x2F;cl4vrd&#x2F;bin:&#x2F;home&#x2F;xujing&#x2F;miniconda3&#x2F;condabin:&#x2F;usr&#x2F;local&#x2F;cuda-10.0&#x2F;bin:&#x2F;home&#x2F;xujing&#x2F;.vscode-server&#x2F;bin&#x2F;58bb7b2331731bf72587010e943852e13e6fd3cf&#x2F;bin:&#x2F;usr&#x2F;local&#x2F;sbin:&#x2F;usr&#x2F;local&#x2F;bin:&#x2F;usr&#x2F;sbin:&#x2F;usr&#x2F;bin:&#x2F;sbin:&#x2F;bin:&#x2F;usr&#x2F;games:&#x2F;snap&#x2F;bin</p>
 </li>
-<li>
-<p>PYTHONPATH<br>
-export PYTHONPATH=/home/xujing/Dokumente/ContrastiveLosses4VRD</p>
+<li><p>PYTHONPATH<br>export PYTHONPATH&#x3D;&#x2F;home&#x2F;xujing&#x2F;Dokumente&#x2F;ContrastiveLosses4VRD</p>
 </li>
 </ul>
-<h3 id="GPSNet">GPSNet</h3>
-<p><a href="https://github.com/taksau/GPS-Net/tree/master/gpsnet-detectron" target="_blank" rel="noopener">https://github.com/taksau/GPS-Net/tree/master/gpsnet-detectron</a></p>
+<h3 id="GPSNet"><a href="#GPSNet" class="headerlink" title="GPSNet"></a>GPSNet</h3><p><a href="https://github.com/taksau/GPS-Net/tree/master/gpsnet-detectron" target="_blank" rel="noopener">https://github.com/taksau/GPS-Net/tree/master/gpsnet-detectron</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=/home/xujing/miniconda3/envs/gpsnet/bin:/home/xujing/miniconda3/condabin:/usr/<span class="built_in">local</span>/cuda-9.0/bin:/home/xujing/.vscode-server/bin/d2e414d9e4239a252d1ab117bd7067f125afd80a/bin:/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/<span class="built_in">local</span>/games:/snap/bin</span><br><span class="line"><span class="built_in">export</span> PYTHONPATH=~/Dokumente/GPS-Net/gpsnet-detectron/:~/Dokumente/GPS-Net/gpsnet-detectron/lib/:~/Dokumente/GPS-Net/gpsnet-detectron/Detectron.pytorch/lib/</span><br></pre></td></tr></table></figure>
 <ul>
-<li>如何解决  #error – unsupported GNU version! gcc versions later than 6 are not supported!<br>
-添加 --compiler-bindir /path/to/gcc-5 :<br>
-eg:<br>
-nvcc -c -o roi_crop_cuda_kernel.cu.o roi_crop_cuda_kernel.cu <br>
--D GOOGLE_CUDA=1 --compiler-bindir /usr/bin/gcc-5 -x cu -Xcompiler -fPIC $CUDA_ARCH</li>
+<li>如何解决  #error – unsupported GNU version! gcc versions later than 6 are not supported!<br>添加 –compiler-bindir &#x2F;path&#x2F;to&#x2F;gcc-5 :<br>eg:<br>  nvcc -c -o roi_crop_cuda_kernel.cu.o roi_crop_cuda_kernel.cu <br>  -D GOOGLE_CUDA&#x3D;1 –compiler-bindir &#x2F;usr&#x2F;bin&#x2F;gcc-5 -x cu -Xcompiler -fPIC $CUDA_ARCH</li>
 </ul>
-<h3 id="isuss">isuss</h3>
-<ul>
-<li>
-<p>如何解决 /Usr/lib/x86_64-Linux-gnu/libstdc++.so.6 Version GLIBCXX_3.4.22’ Not Found</p>
+<h3 id="isuss"><a href="#isuss" class="headerlink" title="isuss"></a>isuss</h3><ul>
+<li><p>如何解决 &#x2F;Usr&#x2F;lib&#x2F;x86_64-Linux-gnu&#x2F;libstdc++.so.6 Version GLIBCXX_3.4.22’ Not Found</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/home/xujing/miniconda3/envs/dynsg/lib/</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>Q: ImportError: torch.utils.ffi is deprecated. Please use cpp extensions instead.<br>
-A:</p>
+<li><p>Q: ImportError: torch.utils.ffi is deprecated. Please use cpp extensions instead.<br>A:</p>
 </li>
 </ul>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">- from torch.utils.ffi import create_extension</span></span><br><span class="line"><span class="addition">+ from torch.utils.cpp_extension import BuildExtension as create_extension</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>
-<p>Q: ValueError: numpy.ufunc size changed, may indicate binary incompatibility. Expected 216 from C header, got 192 from PyObject<br>
-A: conda install numpy=1.17.4</p>
+<li><p>Q: ValueError: numpy.ufunc size changed, may indicate binary incompatibility. Expected 216 from C header, got 192 from PyObject<br>A: conda install numpy&#x3D;1.17.4</p>
 </li>
-<li>
-<p>解决软连接参数过长</p>
+<li><p>解决软连接参数过长</p>
 </li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /data/scene_understanding/Visual_Genome/VG_100K/ -name <span class="string">"*.jpg"</span> | xargs -i ln -s &#123;&#125; VG_100K</span><br></pre></td></tr></table></figure>
-<h3 id="reference">reference</h3>
-<p><a href="https://zhuanlan.zhihu.com/p/61379965" target="_blank" rel="noopener">PyTorch 学习笔记（六）：PyTorch的十八个损失函数</a></p>
+
+<h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><p><a href="https://zhuanlan.zhihu.com/p/61379965" target="_blank" rel="noopener">PyTorch 学习笔记（六）：PyTorch的十八个损失函数</a></p>
 
     </div>
 

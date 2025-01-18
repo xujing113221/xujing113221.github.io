@@ -301,8 +301,8 @@
 <li>添加文章置顶功能</li>
 </ul>
 <a id="more"></a>
-<h2 id="添加热门文章排行榜">添加热门文章排行榜</h2>
-<ol>
+
+<h2 id="添加热门文章排行榜"><a href="#添加热门文章排行榜" class="headerlink" title="添加热门文章排行榜"></a>添加热门文章排行榜</h2><ol>
 <li>在终端中执行如下代码：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page top</span><br></pre></td></tr></table></figure>
@@ -318,21 +318,23 @@
 <li>然后在新增的排行榜页面内添加以下内容：</li>
 </ol>
 <figure class="highlight javascript"><figcaption><span>/source/hot/index.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"post-rank"</span>&gt;</span><br><span class="line">  &lt;p&gt;This will be overwritten.&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script src=<span class="string">"//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">  var APP_ID = '********'  /</span><span class="regexp">/输入个人LeanCloud账号AppID</span></span><br><span class="line"><span class="regexp">  var APP_KEY = '*********'  /</span><span class="regexp">/输入个人LeanCloud账号AppKey</span></span><br><span class="line"><span class="regexp">  AV.init(&#123;</span></span><br><span class="line"><span class="regexp">    appId: APP_ID,</span></span><br><span class="line"><span class="regexp">    appKey: APP_KEY</span></span><br><span class="line"><span class="regexp">  &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  var query = new AV.Query('Counter'); /</span><span class="regexp">/表名</span></span><br><span class="line"><span class="regexp">  query.descending('time');   /</span><span class="regexp">/结果按阅读次数降序排序</span></span><br><span class="line"><span class="regexp">  query.limit(10);          /</span><span class="regexp">/最终只返回10条结果</span></span><br><span class="line"><span class="regexp">  query.find().then( response =&gt; &#123;</span></span><br><span class="line"><span class="regexp">    var content = response.reduce( (accum, &#123;attributes&#125;) =&gt; &#123;</span></span><br><span class="line"><span class="regexp">      accum += `&lt;p&gt;&lt;div class="prefix"&gt;热度 $&#123;attributes.time&#125; ℃&lt;/</span>div&gt;<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"$&#123;attributes.url&#125;"</span>&gt;</span>$&#123;attributes.title&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>&lt;<span class="regexp">/p&gt;`</span></span><br><span class="line"><span class="regexp">      return accum;</span></span><br><span class="line"><span class="regexp">    &#125;,"")</span></span><br><span class="line"><span class="regexp">    document.querySelector("#post-rank").innerHTML = content;</span></span><br><span class="line"><span class="regexp">  &#125;)</span></span><br><span class="line"><span class="regexp">  .catch( error =&gt; &#123;</span></span><br><span class="line"><span class="regexp">    console.log(error);</span></span><br><span class="line"><span class="regexp">  &#125;);</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style type=<span class="string">"text/css"</span>&gt;</span><br><span class="line">  #post-rank &#123;</span><br><span class="line">    text-align: center;</span><br><span class="line">  &#125;</span><br><span class="line">  #post-rank .prefix &#123;</span><br><span class="line">    color: #ff4d4f;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br></pre></td></tr></table></figure>
+
 <div class="note warning">
             <p>在<a href="https://leancloud.cn/docs/sdk_setup-js.html#hash-99064366" target="_blank" rel="noopener">LeanCloud | JavaScript SDK 安装指南</a>中查找最新版<code>JavaScript JDK</code>,更改上面代码的JS源，避免出现问题。</p>
           </div>
-<h2 id="添加结束标记">添加结束标记</h2>
-<p>新建布局模板文件<code>post-end-tag.swig</code>，添加如下代码：</p>
+
+<h2 id="添加结束标记"><a href="#添加结束标记" class="headerlink" title="添加结束标记"></a>添加结束标记</h2><p>新建布局模板文件<code>post-end-tag.swig</code>，添加如下代码：</p>
 <figure class="highlight plain"><figcaption><span>themes\next\layout\_macro\post-end-tag.swig</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &#123;% if not is_index %&#125;</span><br><span class="line">    &lt;div style&#x3D;&quot;text-align:center;color:#bfbfbf;font-size:16px;&quot;&gt;</span><br><span class="line">      &lt;span&gt;-------- 本文结束 &lt;&#x2F;span&gt;</span><br><span class="line">      &lt;i class&#x3D;&quot;fa fa-&#123;&#123; config.post_end_tag.icon &#125;&#125;&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">      &lt;span&gt; 感谢阅读 --------&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
 <p>在文章布局模板中添加如下代码：</p>
 <figure class="highlight diff"><figcaption><span>themes\next\layout\_macro\post.swig</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;#####################&#125;</span><br><span class="line">&#123;### END POST BODY ###&#125;</span><br><span class="line">&#123;#####################&#125;</span><br><span class="line"></span><br><span class="line"><span class="addition">+ &#123;% if config.post_end_tag.enabled and not is_index %&#125;</span></span><br><span class="line"><span class="addition">+   &lt;div&gt;</span></span><br><span class="line"><span class="addition">+     &#123;% include 'post-end-tag.swig' %&#125;</span></span><br><span class="line"><span class="addition">+   &lt;/div&gt;</span></span><br><span class="line"><span class="addition">+ &#123;% endif %&#125;</span></span><br><span class="line"></span><br><span class="line">&#123;% if theme.wechat_subscriber.enabled and not is_index %&#125;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &#123;% include 'wechat-subscriber.swig' %&#125;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
 <p>在站点配置文件末尾添加如下代码：</p>
 <figure class="highlight yml"><figcaption><span>hexo/_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_end_tag:</span></span><br><span class="line">  <span class="attr">enabled:</span> <span class="literal">true</span>  <span class="comment"># 是否开启文末的本文结束标记</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">paw</span> <span class="comment"># 结束标记之间的图标</span></span><br></pre></td></tr></table></figure>
-<h2 id="添加动态特效">添加动态特效</h2>
-<h3 id="粒子漂浮聚合">粒子漂浮聚合</h3>
-<div class="note info">
+
+<h2 id="添加动态特效"><a href="#添加动态特效" class="headerlink" title="添加动态特效"></a>添加动态特效</h2><h3 id="粒子漂浮聚合"><a href="#粒子漂浮聚合" class="headerlink" title="粒子漂浮聚合"></a>粒子漂浮聚合</h3><div class="note info">
             <p>需要安装 <code>theme-next-canvas-nest</code> 详见 <a href="https://github.com/theme-next/theme-next-canvas-nest" target="_blank" rel="noopener">Theme NexT Canvas Nest</a></p>
           </div>
+
 <p>我说使用的这是这一款，介绍一下安装过程：</p>
 <ol>
 <li>在文件夹<code>themes/next/layout/_custom/</code> 中创建 <code>custom.swig</code>，如果没有<code>_custom</code> 自己创建一个， 在<code>custom.swig</code>中添加如下内容：</li>
@@ -343,54 +345,54 @@
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 背景粒子漂浮聚合特效</span><br><span class="line">canvas_nest: true</span><br></pre></td></tr></table></figure>
 <p>这样就好了。</p>
-<h3 id="Three-三维动效">Three 三维动效</h3>
-<div class="note info">
+<h3 id="Three-三维动效"><a href="#Three-三维动效" class="headerlink" title="Three 三维动效"></a>Three 三维动效</h3><div class="note info">
             <p>需要安装 <code>theme-next-three</code> 详见 <a href="https://github.com/theme-next/theme-next-three" target="_blank" rel="noopener">Theme NexT Three</a></p>
           </div>
-<h3 id="随机三角丝带">随机三角丝带</h3>
-<div class="note info">
+
+<h3 id="随机三角丝带"><a href="#随机三角丝带" class="headerlink" title="随机三角丝带"></a>随机三角丝带</h3><div class="note info">
             <p>需要安装 <code>theme-next-canvas-ribbon</code> 详见 <a href="https://github.com/theme-next/theme-next-canvas-ribbon" target="_blank" rel="noopener">Theme NexT Canvas Ribbon</a></p>
           </div>
-<h3 id="添加加载特效">添加加载特效</h3>
-<div class="note info">
+<h3 id="添加加载特效"><a href="#添加加载特效" class="headerlink" title="添加加载特效"></a>添加加载特效</h3><div class="note info">
             <p>需要安装 <code>theme-next-pace</code> ，详见 <a href="https://github.com/theme-next/theme-next-pace" target="_blank" rel="noopener">Theme NexT Pace</a></p>
           </div>
-<h3 id="鼠标点击特效">鼠标点击特效</h3>
-<ol>
-<li>
-<p>下载 <code>礼花特效</code> 保存在<code>themes/next/source/js/cursor/</code></p>
+
+<h3 id="鼠标点击特效"><a href="#鼠标点击特效" class="headerlink" title="鼠标点击特效"></a>鼠标点击特效</h3><ol>
+<li><p>下载 <code>礼花特效</code> 保存在<code>themes/next/source/js/cursor/</code> </p>
 </li>
-<li>
-<p>在主题自定义布局文件中添加以下代码：</p>
+<li><p>在主题自定义布局文件中添加以下代码：</p>
 </li>
 </ol>
 <figure class="highlight js"><figcaption><span>themes\next\layout\_custom\custom.swig</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;# 鼠标点击特效 #&#125;</span><br><span class="line">&#123;% <span class="keyword">if</span> theme.cursor_effect == <span class="string">"fireworks"</span> %&#125;</span><br><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"/js/cursor/fireworks.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&#123;% elseif theme.cursor_effect == "explosion" %&#125;</span></span><br><span class="line"><span class="regexp">&lt;canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" &gt;&lt;/</span>canvas&gt;</span><br><span class="line">&lt;script src=<span class="string">"//cdn.bootcss.com/animejs/2.2.0/anime.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script async src="/</span>js/cursor/explosion.min.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&#123;% elseif theme.cursor_effect == "</span>love<span class="string">" %&#125;</span></span><br><span class="line"><span class="string">&lt;script async src="</span>/js/cursor/love.min.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&#123;% elseif theme.cursor_effect == "</span>text<span class="string">" %&#125;</span></span><br><span class="line"><span class="string">&lt;script async src="</span>/js/cursor/text.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&#123;% endif %&#125;</span></span><br></pre></td></tr></table></figure>
+
 <ol start="3">
 <li>如果 <code>custom.swig</code> 不存在，需要手动新建并在布局页面中 body 末尾引入：</li>
 </ol>
 <figure class="highlight diff"><figcaption><span>themes\next\_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    ...</span><br><span class="line">    &#123;% include '_third-party/exturl.swig' %&#125;</span><br><span class="line">    &#123;% include '_third-party/bookmark.swig' %&#125;</span><br><span class="line">    &#123;% include '_third-party/copy-code.swig' %&#125;</span><br><span class="line"></span><br><span class="line"><span class="addition">+     &#123;% include '_custom/custom.swig' %&#125;</span></span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
 <ol start="4">
 <li>在主题配置文件中添加如下代码：</li>
 </ol>
 <figure class="highlight yml"><figcaption><span>themes\next\_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mouse click effect: fireworks | explosion | love | text</span></span><br><span class="line"><span class="attr">cursor_effect:</span> <span class="string">fireworks</span></span><br></pre></td></tr></table></figure>
-<h2 id="显示近期文章-未完成">显示近期文章 (未完成)</h2>
-<div class="note info">
-            <ul><li>本章参考来自 <a href="https://www.chingow.cn/posts/c7372a12.html" target="_blank" rel="noopener">Hexo+NexT(v7.0+) 搭建博客：主题美化</a></li><li><a href="https://postgres.fun/20190116150800.html" target="_blank" rel="noopener">Hexo: 给博客添加近期文章板块</a></li><li><a href="https://blog.csdn.net/chenglinhust/article/details/41206511?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">swig安装搭建与测试</a></li></ul>
+
+<h2 id="显示近期文章-未完成"><a href="#显示近期文章-未完成" class="headerlink" title="显示近期文章 (未完成)"></a>显示近期文章 (未完成)</h2><div class="note info">
+            <ul><li>本章参考来自 <a href="https://www.chingow.cn/posts/c7372a12.html" target="_blank" rel="noopener">Hexo+NexT(v7.0+) 搭建博客：主题美化</a></li><li><a href="https://postgres.fun/20190116150800.html" target="_blank" rel="noopener">Hexo: 给博客添加近期文章板块</a></li><li><a href="https://blog.csdn.net/chenglinhust/article/details/41206511?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">swig安装搭建与测试</a></li></ul>
           </div>
+
 <p>我没实现 总是有Bug， 看了看代码也不行。</p>
 <p>主要添加内容：</p>
 <figure class="highlight plain"><figcaption><span>/next/layout/_partials/sidebar/site-overview.swig</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;# Blogroll #&#125;</span><br><span class="line">&#123;%- if theme.recent_posts %&#125;</span><br><span class="line">  &lt;div class&#x3D;&quot;links-of-blogroll motion-element &#123;&#123; &quot;links-of-blogroll-&quot; + theme.recent_posts_layout  &#125;&#125;&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;links-of-blogroll-title&quot;&gt;</span><br><span class="line">    &lt;!-- modify icon to fire by szw --&gt;</span><br><span class="line">    &lt;i class&#x3D;&quot;fa fa-history fa-&#123;&#123; theme.recent_posts_icon | lower &#125;&#125;&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">    &#123;&#123; theme.recent_posts_title &#125;&#125;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;ul class&#x3D;&quot;links-of-blogroll-list&quot;&gt;</span><br><span class="line">    &#123;%- set posts &#x3D; site.posts.sort(&#39;-date&#39;) %&#125;</span><br><span class="line">    &#123;%- for post in posts.slice(&#39;0&#39;, &#39;3&#39;) %&#125;</span><br><span class="line">      &lt;li class&#x3D;&quot;links-of-blogroll-item&quot;&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;&#123;&#123; url_for(post.path) &#125;&#125;&quot; title&#x3D;&quot;&#123;&#123; post.title &#125;&#125;&quot; target&#x3D;&quot;_blank&quot;&gt;&#123;&#123; post.title &#125;&#125;&lt;&#x2F;a&gt;</span><br><span class="line">      &lt;&#x2F;li&gt;</span><br><span class="line">    &#123;%- endfor %&#125;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight yml"><figcaption><span>/theme/next/_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 近期文章</span></span><br><span class="line"><span class="attr">recent_posts_title:</span> <span class="string">近期文章</span></span><br><span class="line"><span class="attr">recent_posts_layout:</span> <span class="string">block</span></span><br><span class="line"><span class="attr">recent_posts:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h2 id="添加RSS订阅">添加RSS订阅</h2>
-<div class="note info">
+<h2 id="添加RSS订阅"><a href="#添加RSS订阅" class="headerlink" title="添加RSS订阅"></a>添加RSS订阅</h2><div class="note info">
             <p>本章参考：<a href="https://www.zywvvd.com/2020/03/20/next/14_add_rss/next-add-rss/" target="_blank" rel="noopener">Next -14- 为Hexo Next7.7.1 添加RSS （带按钮）</a></p>
           </div>
+
 <p>本博客使用NexT v7.8 版本，该版本已经去掉了RSS边栏显示，所以要自己为RSS添加代码。添加到你想要的边栏地方就好了。其余步骤就是修改配置文件了。</p>
 <figure class="highlight plain"><figcaption><span>xujing$ cd themes/next/layout/_partials/sidebar/site-overview.swig </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;# RSS #&#125;</span><br><span class="line">&#123;% if theme.rss %&#125;</span><br><span class="line">   &lt;div class&#x3D;&quot;feed-link motion-element&quot;&gt;</span><br><span class="line">     &lt;a href&#x3D;&quot;&#123;&#123; url_for(theme.rss) &#125;&#125;&quot; rel&#x3D;&quot;alternate&quot;&gt;</span><br><span class="line">       &lt;i class&#x3D;&quot;fa fa-rss&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">       RSS</span><br><span class="line">     &lt;&#x2F;a&gt;</span><br><span class="line">   &lt;&#x2F;div&gt;</span><br><span class="line"> &#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;%- if theme.creative_commons.license and theme.creative_commons.sidebar %&#125;</span><br><span class="line">  &lt;div class&#x3D;&quot;cc-license motion-element&quot; itemprop&#x3D;&quot;license&quot;&gt;</span><br><span class="line">  &#123;%- set ccImage &#x3D; &#39;&lt;img src&#x3D;&quot;&#39; + url_for(theme.images + &#39;&#x2F;cc-&#39; + theme.creative_commons.license + &#39;.svg&#39;) + &#39;&quot; alt&#x3D;&quot;Creative Commons&quot;&gt;&#39; %&#125;</span><br><span class="line">    &#123;&#123; next_url(ccURL, ccImage, &#123;class: &#39;cc-opacity&#39;&#125;) &#125;&#125;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="添加文章置顶功能">添加文章置顶功能</h2>
-<div class="note info">
+<h2 id="添加文章置顶功能"><a href="#添加文章置顶功能" class="headerlink" title="添加文章置顶功能"></a>添加文章置顶功能</h2><div class="note info">
             <p>本章内容参考：<a href="https://tding.top/archives/567debe0.html" target="_blank" rel="noopener">小丁的个人博客 ｜ 本博客当前使用的插件总结</a></p>
           </div>
+
 <ul>
 <li>使用npm安装<a href="https://github.com/netcan/hexo-generator-index-pin-top" target="_blank" rel="noopener">相关插件</a>：</li>
 </ul>
@@ -404,8 +406,8 @@
 <li>在语言配置文件中添加<code>top</code>词条。</li>
 </ul>
 <figure class="highlight diff"><figcaption><span>themes/next/languages/zh-CN.yml </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">post:</span><br><span class="line"><span class="addition">+  top: 置顶</span></span><br><span class="line">  posted: 发表于</span><br><span class="line">  edited: 更新于</span><br><span class="line">  created: 创建时间</span><br></pre></td></tr></table></figure>
-<h2 id="参考文章">参考文章</h2>
-<ul>
+
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
 <li><a href="http://yearito.cn/posts/hexo-theme-beautify.html" target="_blank" rel="noopener">Hexo 搭建个人博客系列：主题美化篇</a></li>
 <li><a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">NexT 中文使用说明</a></li>
 <li><a href="https://www.zywvvd.com/2020/03/20/next/14_add_rss/next-add-rss/" target="_blank" rel="noopener">Next -14- 为Hexo Next7.7.1 添加RSS （带按钮）</a></li>

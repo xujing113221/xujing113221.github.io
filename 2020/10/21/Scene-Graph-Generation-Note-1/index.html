@@ -293,111 +293,75 @@
       
         <p>本文记录一下Hiwi的相关笔记。</p>
 <a id="more"></a>
-<h3 id="how-to-make">how to make</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ssh ssh1</span><br><span class="line"></span><br><span class="line">ssh tntpc</span><br><span class="line"></span><br><span class="line">ssh persephone</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> ~/miniconda3/bin/activate</span><br><span class="line"> :<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> LANG=en_US.UTF-8</span><br></pre></td></tr></table></figure>
-<h3 id="neural-motifs">neural-motifs</h3>
-<ul>
-<li>
-<p>env</p>
+
+<h3 id="how-to-make"><a href="#how-to-make" class="headerlink" title="how to make"></a>how to make</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ssh ssh1</span><br><span class="line"></span><br><span class="line">ssh tntpc</span><br><span class="line"></span><br><span class="line">ssh persephone</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> ~/miniconda3/bin/activate</span><br><span class="line"> :<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> LANG=en_US.UTF-8</span><br></pre></td></tr></table></figure>
+
+<h3 id="neural-motifs"><a href="#neural-motifs" class="headerlink" title="neural-motifs"></a>neural-motifs</h3><ul>
+<li><p>env</p>
 <ol>
 <li>conda</li>
-<li>conda install python=3.6</li>
-<li>conda install pytorch=0.3.0 torchvision=0.2.0 cuda90 -c pytorch</li>
+<li>conda install python&#x3D;3.6</li>
+<li>conda install pytorch&#x3D;0.3.0 torchvision&#x3D;0.2.0 cuda90 -c pytorch</li>
 <li>conda install cython</li>
 <li>conda install h5py</li>
-<li>pycocotools:<br>
-<code>git clone https://github.com/pdollar/coco.git | make | python setup.py build_ext install</code></li>
+<li>pycocotools:<br> <code>git clone https://github.com/pdollar/coco.git | make | python setup.py build_ext install</code></li>
 <li>conda install dill</li>
 <li>conda install pandas</li>
 <li>pip install overrides</li>
 </ol>
 </li>
-<li>
-<p>dataset:<br>
-/data/scene_understanding/Visual_Genome/</p>
+<li><p>dataset:<br>&#x2F;data&#x2F;scene_understanding&#x2F;Visual_Genome&#x2F;</p>
 </li>
-<li>
-<p>pycharm:<br>
-sh ~/tmp/pycharm-community-2020.2.1/bin/pycharm.sh &amp;</p>
+<li><p>pycharm:<br>sh ~&#x2F;tmp&#x2F;pycharm-community-2020.2.1&#x2F;bin&#x2F;pycharm.sh &amp;</p>
 </li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PYTHONPATH=/home/xujing/Dokumente/neural-motifs/:/home/xujing/Dokumente/neural-motifs/lib/</span><br></pre></td></tr></table></figure>
-<h3 id="DYNSG">DYNSG</h3>
-<h4 id="env">env</h4>
-<ol>
-<li>conda install pytorch=1.0.0 torchvision=0.2.1 cuda100 -c pytorch</li>
-<li>opencv<br>
-conda install -c <a href="https://conda.anaconda.org/menpo" target="_blank" rel="noopener">https://conda.anaconda.org/menpo</a> opencv<br>
-pip install opencv-python</li>
+
+<h3 id="DYNSG"><a href="#DYNSG" class="headerlink" title="DYNSG"></a>DYNSG</h3><h4 id="env"><a href="#env" class="headerlink" title="env"></a>env</h4><ol>
+<li>conda install pytorch&#x3D;1.0.0 torchvision&#x3D;0.2.1 cuda100 -c pytorch</li>
+<li>opencv<br>conda install -c <a href="https://conda.anaconda.org/menpo" target="_blank" rel="noopener">https://conda.anaconda.org/menpo</a> opencv<br>pip install opencv-python</li>
 <li>pip install easydict</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=/usr/<span class="built_in">local</span>/cuda-10.0/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> PYTHONPATH=/home/xujing/Dokumente/DynSG/fasterrcnn/lib/:/home/xujing/Dokumente/DynSG/</span><br><span class="line"><span class="built_in">export</span> PYTHONPATH=<span class="variable">$PYTHONPATH</span>:/home/xujing/miniconda3/envs/dynsg/lib/</span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/home/xujing/miniconda3/envs/dynsg/lib/</span><br></pre></td></tr></table></figure>
-<h4 id="issues">issues</h4>
-<ol>
-<li>
-<p>_C.cpython-36m-x86_64-linux-gnu.so<br>
-pip install -U torchvision==0.4.0</p>
+
+<h4 id="issues"><a href="#issues" class="headerlink" title="issues"></a>issues</h4><ol>
+<li><p>_C.cpython-36m-x86_64-linux-gnu.so<br>pip install -U torchvision&#x3D;&#x3D;0.4.0</p>
 </li>
-<li>
-<p><a href="https://ucasfl.github.io/2017/12/21/fix-the-problem-of-that-usr-lib-x86-64-linux-gnu-libstdc-so-6-version-GLIBCXX-3-4-22-not-found/" target="_blank" rel="noopener">https://ucasfl.github.io/2017/12/21/fix-the-problem-of-that-usr-lib-x86-64-linux-gnu-libstdc-so-6-version-GLIBCXX-3-4-22-not-found/</a></p>
+<li><p><a href="https://ucasfl.github.io/2017/12/21/fix-the-problem-of-that-usr-lib-x86-64-linux-gnu-libstdc-so-6-version-GLIBCXX-3-4-22-not-found/" target="_blank" rel="noopener">https://ucasfl.github.io/2017/12/21/fix-the-problem-of-that-usr-lib-x86-64-linux-gnu-libstdc-so-6-version-GLIBCXX-3-4-22-not-found/</a></p>
 </li>
-<li>
-<p>如何更换 GPU<br>
-需要重新编译fasterrcnn</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> fasterrcnn/lib</span><br><span class="line">python setup.py build develop</span><br></pre></td></tr></table></figure>
-</li>
+<li><p>如何更换 GPU<br>需要重新编译fasterrcnn</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> fasterrcnn/lib</span><br><span class="line">python setup.py build develop</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h3 id="cuda">cuda</h3>
-<p>import torch</p>
-<p>torch.cuda.is_available()<br>
-print(torch.version.cuda)<br>
-torch.backends.cudnn.enabled</p>
+<h3 id="cuda"><a href="#cuda" class="headerlink" title="cuda"></a>cuda</h3><p>import torch</p>
+<p>torch.cuda.is_available()<br>print(torch.version.cuda)<br>torch.backends.cudnn.enabled</p>
 <p>python -c “import torch;print(torch.version.cuda)”</p>
-<p>CUDA_VISIBLE_DEVICES=3</p>
+<p>CUDA_VISIBLE_DEVICES&#x3D;3</p>
 <p>nvidia-smi</p>
-<h3 id="conda">conda</h3>
-<ul>
+<h3 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h3><ul>
 <li>source activate $envname</li>
 <li>source deactivate</li>
 <li>conda list -e requeirment.txt</li>
-<li>conda install --yes --file requirements.txt</li>
+<li>conda install –yes –file requirements.txt</li>
 <li>conda env export &gt; environment.yaml</li>
 <li>conda env create -f environment.yaml</li>
-<li>conda create -n py36 python=3.6</li>
+<li>conda create -n py36 python&#x3D;3.6</li>
 </ul>
-<h3 id="software">software</h3>
-<p>intern net:<br>
-firefox <a href="http://tntintern/" target="_blank" rel="noopener">http://tntintern/</a></p>
-<p>emial:<br>
-thunderbird</p>
-<h3 id="linux-command">linux command</h3>
-<p>check the size of path:<br>
-du -h filepath</p>
-<p>screen:<br>
-screen -S $Name<br>
-screen -ls<br>
-screen -r $id<br>
-[detached] ctrl+a+d</p>
-<h3 id="conda-pip-env-transform">conda pip env transform</h3>
-<p><a href="https://www.jianshu.com/p/b86c17057da8?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation" target="_blank" rel="noopener">conda环境转移复制和pip包的转移复制</a></p>
-<h3 id="vnc">vnc</h3>
-<ol>
-<li>on servers (cp202-03)<br>
-vncserver -geometry 1920x1080 :8</li>
-<li>on local (mac)<br>
-ssh -fNCT -L 5902:cp202-03:5908 <a href="mailto:xujing@ssh1.tnt.uni-hannover.de">xujing@ssh1.tnt.uni-hannover.de</a></li>
-<li>on vnc view<br>
-connect: localhost:5902</li>
-<li>kill<br>
-vncserver -kill :8</li>
+<h3 id="software"><a href="#software" class="headerlink" title="software"></a>software</h3><p>intern net:<br>    firefox <a href="http://tntintern/" target="_blank" rel="noopener">http://tntintern/</a></p>
+<p>emial:<br>thunderbird</p>
+<h3 id="linux-command"><a href="#linux-command" class="headerlink" title="linux command"></a>linux command</h3><p>check the size of path:<br>    du -h filepath  </p>
+<p>screen:<br>    screen -S $Name<br>    screen -ls<br>    screen -r $id<br>    [detached] ctrl+a+d</p>
+<h3 id="conda-pip-env-transform"><a href="#conda-pip-env-transform" class="headerlink" title="conda pip env transform"></a>conda pip env transform</h3><p><a href="https://www.jianshu.com/p/b86c17057da8?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation" target="_blank" rel="noopener">conda环境转移复制和pip包的转移复制</a></p>
+<h3 id="vnc"><a href="#vnc" class="headerlink" title="vnc"></a>vnc</h3><ol>
+<li>on servers (cp202-03)<br>vncserver -geometry 1920x1080 :8</li>
+<li>on local (mac)<br> ssh -fNCT -L 5902:cp202-03:5908 <a href="mailto:&#x78;&#x75;&#106;&#105;&#x6e;&#103;&#x40;&#x73;&#x73;&#x68;&#x31;&#46;&#116;&#110;&#x74;&#x2e;&#117;&#x6e;&#x69;&#45;&#x68;&#x61;&#x6e;&#x6e;&#111;&#x76;&#101;&#114;&#x2e;&#x64;&#101;">xujing@ssh1.tnt.uni-hannover.de</a></li>
+<li>on vnc view<br>connect: localhost:5902</li>
+<li>kill<br>vncserver -kill :8</li>
 </ol>
-<h3 id="ssh">ssh</h3>
-<ul>
+<h3 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h3><ul>
 <li><a href="https://blog.csdn.net/dcz1994/article/details/103120254" target="_blank" rel="noopener">vscode通过跳板机(堡垒机)连接remote服务器</a></li>
 </ul>
 <p>LocalForward 5902 cp202-03:5908</p>
-<h3 id="reference">reference</h3>
-<ul>
+<h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><ul>
 <li><a href="https://rowanzellers.com/neuralmotifs/" target="_blank" rel="noopener">https://rowanzellers.com/neuralmotifs/</a></li>
 <li><a href="https://rowanzellers.com/scenegraph2/" target="_blank" rel="noopener">https://rowanzellers.com/scenegraph2/</a></li>
 <li><a href="https://www.twblogs.net/a/5bbd3c892b71776bd30c2020/?lang=zh-cn" target="_blank" rel="noopener">scene graph(visual relation) 简述</a></li>
