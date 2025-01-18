@@ -20,13 +20,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"xujing113221.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="Markdown是一种轻量级标记语言，创始人为約翰·格魯伯（英語：John Gruber）。它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。 本文是我学习Markdown的笔记，主要记录Markdown基本语法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Markdown学习笔记一 入门篇">
-<meta property="og:url" content="http://yoursite.com/2020/07/08/markdown-studying-notes-1/index.html">
+<meta property="og:url" content="http://xujing113221.github.io/2020/07/08/markdown-studying-notes-1/index.html">
 <meta property="og:site_name" content="XuJing&#39;s Blog">
 <meta property="og:description" content="Markdown是一种轻量级标记语言，创始人为約翰·格魯伯（英語：John Gruber）。它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。 本文是我学习Markdown的笔记，主要记录Markdown基本语法。">
 <meta property="og:locale" content="zh_CN">
@@ -39,7 +39,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.uni-hannover.de/typo3conf/ext/luh_website/Resources/Public/Images/Logo/luh_logo.svg">
 
-<link rel="canonical" href="http://yoursite.com/2020/07/08/markdown-studying-notes-1/">
+<link rel="canonical" href="http://xujing113221.github.io/2020/07/08/markdown-studying-notes-1/">
 
 
 <script id="page-configurations">
@@ -209,7 +209,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/08/markdown-studying-notes-1/">
+    <link itemprop="mainEntityOfPage" href="http://xujing113221.github.io/2020/07/08/markdown-studying-notes-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -293,25 +293,35 @@
         <p>Markdown是一种轻量级标记语言，创始人为約翰·格魯伯（英語：John Gruber）。它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。</p>
 <p>本文是我学习Markdown的笔记，主要记录Markdown基本语法。</p>
 <a id="more"></a>
-
-<h2 id="标题使用方法"><a href="#标题使用方法" class="headerlink" title="标题使用方法"></a>标题使用方法</h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#h1标题</span><br><span class="line">##h2标题</span><br><span class="line">###h3标题</span><br><span class="line">####h4标题</span><br><span class="line">#####h5标题</span><br><span class="line">######h6标题</span><br></pre></td></tr></table></figure>
-
-
-<p>#h1标题<br>##h2标题<br>###h3标题<br>####h4标题<br>#####h5标题<br>######h6标题</p>
-<h3 id="特例"><a href="#特例" class="headerlink" title="特例"></a>特例</h3><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">h1标题</span><br><span class="line">===</span><br><span class="line">h2标题</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h2 id="标题使用方法">标题使用方法</h2>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#h1标题</span><br><span class="line">##h2标题</span><br><span class="line">###h3标题</span><br><span class="line">####h4标题</span><br><span class="line">#####h5标题</span><br><span class="line">######h6标题</span><br></pre></td></tr></table></figure>
+<p>#h1标题<br>
+##h2标题<br>
+###h3标题<br>
+####h4标题<br>
+#####h5标题<br>
+######h6标题</p>
+<h3 id="特例">特例</h3>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">h1标题</span><br><span class="line">===</span><br><span class="line">h2标题</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="自然段改行"><a href="#自然段改行" class="headerlink" title="自然段改行 &lt;br&gt;"></a>自然段改行 <code>&lt;br&gt;</code></h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>这是第一自然段</p>
+<h2 id="自然段改行-br">自然段改行 <code>&lt;br&gt;</code></h2>
+<h3 id="方法一">方法一</h3>
+<p>这是第一自然段</p>
 <p>这是第二自然段</p>
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>这是第一自然段第一部分<br>这是第一自然段第二部分</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">### 方法一</span><br><span class="line">这是第一自然段</span><br><span class="line">(回车两下)</span><br><span class="line">这是第二自然段</span><br><span class="line">### 方法二</span><br><span class="line">这是第一自然段第一部分  （空格两下）</span><br><span class="line">这是第一自然段第二部分</span><br></pre></td></tr></table></figure>
-
+<h3 id="方法二">方法二</h3>
+<p>这是第一自然段第一部分<br>
+这是第一自然段第二部分</p>
+<h3 id="总结">总结</h3>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">### 方法一</span><br><span class="line">这是第一自然段</span><br><span class="line">(回车两下)</span><br><span class="line">这是第二自然段</span><br><span class="line">### 方法二</span><br><span class="line">这是第一自然段第一部分  （空格两下）</span><br><span class="line">这是第一自然段第二部分</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="引用表现"><a href="#引用表现" class="headerlink" title="引用表现"></a>引用表现</h2><blockquote>
+<h2 id="引用表现">引用表现</h2>
+<blockquote>
 <p>添加 <code>&gt;</code> 即可引用</p>
 </blockquote>
 <hr>
-<h2 id="为文章添加分割线"><a href="#为文章添加分割线" class="headerlink" title="为文章添加分割线&lt;hr&gt;"></a>为文章添加分割线<code>&lt;hr&gt;</code></h2><h3 id="四种方法"><a href="#四种方法" class="headerlink" title="四种方法"></a>四种方法</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="string">***</span></span><br><span class="line"><span class="string">___</span></span><br><span class="line"><span class="bullet">-</span> <span class="bullet">-</span> <span class="bullet">-</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="为文章添加分割线-hr">为文章添加分割线<code>&lt;hr&gt;</code></h2>
+<h3 id="四种方法">四种方法</h3>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="string">***</span></span><br><span class="line"><span class="string">___</span></span><br><span class="line"><span class="bullet">-</span> <span class="bullet">-</span> <span class="bullet">-</span></span><br></pre></td></tr></table></figure>
 <p>*<em>注意与h2的区别</em></p>
 <figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">这是第一自然段</span><br><span class="line">(这里必须有个换行)</span><br><span class="line">---</span><br><span class="line">这是第二自然段</span><br><span class="line">**<span class="strong">*</span></span><br><span class="line"><span class="strong">这是第三自然段</span></span><br><span class="line"><span class="strong">___</span></span><br><span class="line"><span class="strong">这是第四自然段</span></span><br><span class="line"><span class="strong">- - -</span></span><br></pre></td></tr></table></figure>
 <p>这是第一自然段</p>
@@ -322,24 +332,36 @@
 <hr>
 <p>这是第四自然段</p>
 <hr>
-<h2 id="文字处理"><a href="#文字处理" class="headerlink" title="文字处理"></a>文字处理</h2><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>斜体：<code>*XXX*</code>， <code>_XXX_</code><br>粗体：<code>**XXX**</code>, <code>__XXX__</code><br>删除：<code>~~XXX~~</code><br>下划线: <code>&lt;u&gt;XXX&lt;/u&gt;</code></p>
+<h2 id="文字处理">文字处理</h2>
+<h3 id="方法">方法</h3>
+<p>斜体：<code>*XXX*</code>， <code>_XXX_</code><br>
+粗体：<code>**XXX**</code>, <code>__XXX__</code><br>
+删除：<code>~~XXX~~</code><br>
+下划线: <code>&lt;u&gt;XXX&lt;/u&gt;</code></p>
 <p>###实现</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这是一个*斜体举例*  </span><br><span class="line">这是一个**粗体举例**</span><br><span class="line">这是一个~~删除举例~~</span><br><span class="line">这是一个<span class="tag">&lt;<span class="name">u</span>&gt;</span>下划线举例<span class="tag">&lt;/<span class="name">u</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这是一个<em>斜体举例</em><br>这是一个<strong>粗体举例</strong><br>这是一个<del>删除举例</del><br>这是一个<u>下划线举例</u></p>
+<p>这是一个<em>斜体举例</em><br>
+这是一个<strong>粗体举例</strong><br>
+这是一个<s>删除举例</s><br>
+这是一个<u>下划线举例</u></p>
 <hr>
-<h2 id="列表表示"><a href="#列表表示" class="headerlink" title="列表表示"></a>列表表示</h2><h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><ul>
+<h2 id="列表表示">列表表示</h2>
+<h3 id="方法-2">方法</h3>
+<ul>
 <li>列表符号：-</li>
 <li>列表符号：*</li>
 <li>列表符号：+</li>
 <li>列表符号：数字（有序）</li>
 </ul>
-<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><ul>
+<h3 id="举例">举例</h3>
+<ul>
 <li><strong>无序列表</strong></li>
 </ul>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>第一大项</span><br><span class="line"><span class="bullet">* </span>第二大项</span><br><span class="line"><span class="bullet">    * </span>第三小项</span><br><span class="line"><span class="bullet">    * </span>第四小项</span><br><span class="line"><span class="bullet">* </span>第五项</span><br></pre></td></tr></table></figure>
 <ul>
 <li>第一大项</li>
-<li>第二大项<ul>
+<li>第二大项
+<ul>
 <li>第三小项</li>
 <li>第四小项</li>
 </ul>
@@ -351,7 +373,6 @@
 <li><strong>有序列表</strong></li>
 </ul>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 数字项一</span><br><span class="line"><span class="number">0.</span> 数字项二</span><br><span class="line"><span class="number">0.</span> 数字项三</span><br><span class="line"><span class="number">0.</span> 数字项四</span><br><span class="line"><span class="number">0.</span> 数字项五</span><br></pre></td></tr></table></figure>
-
 <p><em>注意：数字与顺序无关</em></p>
 <ol>
 <li>数字项一</li>
@@ -361,12 +382,21 @@
 <li>数字项五</li>
 </ol>
 <hr>
-<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><h3 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http://www.google.com</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">http:</span>//<span class="attr">www.google.com</span>&gt;</span></span></span><br><span class="line">[<span class="string">google</span>](<span class="link">http://www.google.com</span>)</span><br><span class="line">[<span class="string">google</span>](<span class="link">http://www.google.com "google wedsite"</span>) (推荐使用)</span><br></pre></td></tr></table></figure>
-
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p><a href="http://www.google.com/" target="_blank" rel="noopener">http://www.google.com</a><br><a href="http://www.google.com/" target="_blank" rel="noopener">http://www.google.com</a><br><a href="http://www.google.com/" target="_blank" rel="noopener">google</a><br><a href="http://www.google.com/" target="_blank" rel="noopener" title="google wedsite">google</a></p>
+<h2 id="超链接">超链接</h2>
+<h3 id="方法-3">方法</h3>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http://www.google.com</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">http:</span>//<span class="attr">www.google.com</span>&gt;</span></span></span><br><span class="line">[<span class="string">google</span>](<span class="link">http://www.google.com</span>)</span><br><span class="line">[<span class="string">google</span>](<span class="link">http://www.google.com "google wedsite"</span>) (推荐使用)</span><br></pre></td></tr></table></figure>
+<h3 id="实现">实现</h3>
+<p><a href="http://www.google.com" target="_blank" rel="noopener">http://www.google.com</a><br>
+<a href="http://www.google.com" target="_blank" rel="noopener">http://www.google.com</a><br>
+<a href="http://www.google.com" target="_blank" rel="noopener">google</a><br>
+<a href="http://www.google.com" target="_blank" rel="noopener" title="google wedsite">google</a></p>
 <hr>
-<h2 id="代码高亮显示"><a href="#代码高亮显示" class="headerlink" title="代码高亮显示"></a>代码高亮显示</h2><h3 id="方法-3"><a href="#方法-3" class="headerlink" title="方法"></a>方法</h3><p>代码高亮显示符号： &#96;&#96;&#96;（推荐使用反单引号）<br>代码高亮显示符号：~~~</p>
-<h3 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h3><ul>
+<h2 id="代码高亮显示">代码高亮显示</h2>
+<h3 id="方法-4">方法</h3>
+<p>代码高亮显示符号： ```（推荐使用反单引号）<br>
+代码高亮显示符号：~~~</p>
+<h3 id="实现-2">实现</h3>
+<ul>
 <li>c语言例子 (三个’实现)</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello world!\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -374,13 +404,15 @@
 <li>python 例子（三个～实现）</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"hello world"</span>)</span><br></pre></td></tr></table></figure>
-
 <ul>
-<li>还有一种实现方法 <code>print(&quot;hello world&quot;)</code> 就是在这样：一个&#96;</li>
+<li>还有一种实现方法 <code>print(&quot;hello world&quot;)</code> 就是在这样：一个`</li>
 </ul>
 <hr>
-<h2 id="图片显示"><a href="#图片显示" class="headerlink" title="图片显示"></a>图片显示</h2><h3 id="方法-4"><a href="#方法-4" class="headerlink" title="方法"></a>方法</h3><p>图片的引用与显示： <code>![alt文字说明](图片url 图片tittle)</code></p>
-<h3 id="实现-2"><a href="#实现-2" class="headerlink" title="实现"></a>实现</h3><ul>
+<h2 id="图片显示">图片显示</h2>
+<h3 id="方法-5">方法</h3>
+<p>图片的引用与显示： <code>![alt文字说明](图片url 图片tittle)</code></p>
+<h3 id="实现-3">实现</h3>
+<ul>
 <li>纯图片显示</li>
 </ul>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">LUH image</span>](<span class="link">https://www.uni-hannover.de/typo3conf/ext/luh_website/Resources/Public/Images/Logo/luh_logo.svg "uni hannver png"</span>)</span><br></pre></td></tr></table></figure>
@@ -389,17 +421,19 @@
 <li>图片加超链接</li>
 </ul>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">![LUH image</span>](<span class="link">https://www.uni-hannover.de/typo3conf/ext/luh_website/Resources/Public/Images/Logo/luh_logo.svg "uni hannver png"</span>)](<span class="link">https://www.uni-hannover.de "uni hannover"</span>)</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.uni-hannover.de/" target="_blank" rel="noopener" title="uni hannover"><img src="https://www.uni-hannover.de/typo3conf/ext/luh_website/Resources/Public/Images/Logo/luh_logo.svg" alt="LUH image" title="uni hannver png"></a></p>
+<p><a href="https://www.uni-hannover.de" target="_blank" rel="noopener" title="uni hannover"><img src="https://www.uni-hannover.de/typo3conf/ext/luh_website/Resources/Public/Images/Logo/luh_logo.svg" alt="LUH image" title="uni hannver png"></a></p>
 <hr>
-<h2 id="表格显示"><a href="#表格显示" class="headerlink" title="表格显示"></a>表格显示</h2><h3 id="方法-5"><a href="#方法-5" class="headerlink" title="方法"></a>方法</h3><ul>
+<h2 id="表格显示">表格显示</h2>
+<h3 id="方法-6">方法</h3>
+<ul>
 <li>使用 <code>-</code> 和 <code>|</code> 实现</li>
 <li>使用 <code>：</code> 实现 居左 居中 居右</li>
 </ul>
-<h3 id="实现-3"><a href="#实现-3" class="headerlink" title="实现"></a>实现</h3><ul>
+<h3 id="实现-4">实现</h3>
+<ul>
 <li>普通表格</li>
 </ul>
 <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|<span class="string"> th1 </span>|<span class="string"> th2 </span>|<span class="string"> th3 </span>|</span><br><span class="line">|<span class="string"> --- </span>|<span class="string"> --- </span>|<span class="string"> --- </span>|</span><br><span class="line">|<span class="string"> td1 </span>|<span class="string"> td2 </span>|<span class="string"> td3 </span>|</span><br><span class="line">|<span class="string"> td4 </span>|<span class="string"> td5 </span>|<span class="string"> td6 </span>|</span><br></pre></td></tr></table></figure>
-
 <table>
 <thead>
 <tr>
@@ -408,7 +442,8 @@
 <th>th3</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>td1</td>
 <td>td2</td>
 <td>td3</td>
@@ -418,31 +453,33 @@
 <td>td5</td>
 <td>td6</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
 <li>表格对齐</li>
 </ul>
 <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|<span class="string"> 居左 </span>|<span class="string"> 居中  </span>|<span class="string"> 居右 </span>|</span><br><span class="line">|<span class="string"> :--- </span>|<span class="string"> :---: </span>|<span class="string"> ---: </span>|</span><br><span class="line">|<span class="string"> td1  </span>|<span class="string">  td2  </span>|<span class="string">  td3 </span>|</span><br><span class="line">|<span class="string"> td4  </span>|<span class="string">  td5  </span>|<span class="string">  td6 </span>|</span><br></pre></td></tr></table></figure>
-
 <table>
 <thead>
 <tr>
-<th align="left">居左</th>
-<th align="center">居中</th>
-<th align="right">居右</th>
+<th style="text-align:left">居左</th>
+<th style="text-align:center">居中</th>
+<th style="text-align:right">居右</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">td1</td>
-<td align="center">td2</td>
-<td align="right">td3</td>
+<tbody>
+<tr>
+<td style="text-align:left">td1</td>
+<td style="text-align:center">td2</td>
+<td style="text-align:right">td3</td>
 </tr>
 <tr>
-<td align="left">td4</td>
-<td align="center">td5</td>
-<td align="right">td6</td>
+<td style="text-align:left">td4</td>
+<td style="text-align:center">td5</td>
+<td style="text-align:right">td6</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
     </div>
 
@@ -503,14 +540,14 @@
   <!-- 引用链接 -->
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2020/07/08/markdown-studying-notes-1/" title="Markdown学习笔记一 入门篇">
-      http://yoursite.com/2020/07/08/markdown-studying-notes-1/
+    <a href="http://xujing113221.github.io/2020/07/08/markdown-studying-notes-1/" title="Markdown学习笔记一 入门篇">
+      http://xujing113221.github.io/2020/07/08/markdown-studying-notes-1/
     </a>
     <span class="copy-path" title="点击复制引用链接">
       <i
         style="cursor: pointer"
         class="fa fa-clipboard"
-        data-clipboard-text="[XuJing's Blog | Markdown学习笔记一 入门篇](http://yoursite.com/2020/07/08/markdown-studying-notes-1/)"
+        data-clipboard-text="[XuJing's Blog | Markdown学习笔记一 入门篇](http://xujing113221.github.io/2020/07/08/markdown-studying-notes-1/)"
         aria-label="复制成功">
       </i>
     </span>
@@ -622,7 +659,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标题使用方法"><span class="nav-number">1.</span> <span class="nav-text">标题使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特例"><span class="nav-number">1.1.</span> <span class="nav-text">特例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自然段改行"><span class="nav-number">2.</span> <span class="nav-text">自然段改行 &lt;br&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一"><span class="nav-number">2.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">2.2.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用表现"><span class="nav-number">3.</span> <span class="nav-text">引用表现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为文章添加分割线"><span class="nav-number">4.</span> <span class="nav-text">为文章添加分割线&lt;hr&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#四种方法"><span class="nav-number">4.1.</span> <span class="nav-text">四种方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文字处理"><span class="nav-number">5.</span> <span class="nav-text">文字处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">5.1.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表表示"><span class="nav-number">6.</span> <span class="nav-text">列表表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-1"><span class="nav-number">6.1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举例"><span class="nav-number">6.2.</span> <span class="nav-text">举例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超链接"><span class="nav-number">7.</span> <span class="nav-text">超链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-2"><span class="nav-number">7.1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">7.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码高亮显示"><span class="nav-number">8.</span> <span class="nav-text">代码高亮显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-3"><span class="nav-number">8.1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现-1"><span class="nav-number">8.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片显示"><span class="nav-number">9.</span> <span class="nav-text">图片显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-4"><span class="nav-number">9.1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现-2"><span class="nav-number">9.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格显示"><span class="nav-number">10.</span> <span class="nav-text">表格显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-5"><span class="nav-number">10.1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现-3"><span class="nav-number">10.2.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标题使用方法"><span class="nav-number">1.</span> <span class="nav-text">标题使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特例"><span class="nav-number">1.1.</span> <span class="nav-text">特例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自然段改行-br"><span class="nav-number">2.</span> <span class="nav-text">自然段改行 &lt;br&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一"><span class="nav-number">2.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">2.2.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用表现"><span class="nav-number">3.</span> <span class="nav-text">引用表现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为文章添加分割线-hr"><span class="nav-number">4.</span> <span class="nav-text">为文章添加分割线&lt;hr&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#四种方法"><span class="nav-number">4.1.</span> <span class="nav-text">四种方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文字处理"><span class="nav-number">5.</span> <span class="nav-text">文字处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">5.1.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表表示"><span class="nav-number">6.</span> <span class="nav-text">列表表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-2"><span class="nav-number">6.1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举例"><span class="nav-number">6.2.</span> <span class="nav-text">举例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超链接"><span class="nav-number">7.</span> <span class="nav-text">超链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-3"><span class="nav-number">7.1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">7.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码高亮显示"><span class="nav-number">8.</span> <span class="nav-text">代码高亮显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-4"><span class="nav-number">8.1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现-2"><span class="nav-number">8.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片显示"><span class="nav-number">9.</span> <span class="nav-text">图片显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-5"><span class="nav-number">9.1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现-3"><span class="nav-number">9.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格显示"><span class="nav-number">10.</span> <span class="nav-text">表格显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-6"><span class="nav-number">10.1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现-4"><span class="nav-number">10.2.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

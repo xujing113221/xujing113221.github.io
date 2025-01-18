@@ -20,13 +20,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"xujing113221.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="本文记录Hexo相关书写技巧，使博客内容更加丰富界面更加美观，主要内容有以下几点：  代码块进阶用法 note 标签 label 标签 button 按钮 tab 标签 草稿和发布">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 写作技巧">
-<meta property="og:url" content="http://yoursite.com/2020/07/10/hexo-write-skills/index.html">
+<meta property="og:url" content="http://xujing113221.github.io/2020/07/10/hexo-write-skills/index.html">
 <meta property="og:site_name" content="XuJing&#39;s Blog">
 <meta property="og:description" content="本文记录Hexo相关书写技巧，使博客内容更加丰富界面更加美观，主要内容有以下几点：  代码块进阶用法 note 标签 label 标签 button 按钮 tab 标签 草稿和发布">
 <meta property="og:locale" content="zh_CN">
@@ -37,7 +37,7 @@
 <meta property="article:tag" content="NexT">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/07/10/hexo-write-skills/">
+<link rel="canonical" href="http://xujing113221.github.io/2020/07/10/hexo-write-skills/">
 
 
 <script id="page-configurations">
@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/10/hexo-write-skills/">
+    <link itemprop="mainEntityOfPage" href="http://xujing113221.github.io/2020/07/10/hexo-write-skills/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -298,10 +298,9 @@
 <li>草稿和发布</li>
 </ul>
 <a id="more"></a>
-
-<h2 id="代码块进阶用法"><a href="#代码块进阶用法" class="headerlink" title="代码块进阶用法"></a>代码块进阶用法</h2><p>语法规则</p>
+<h2 id="代码块进阶用法">代码块进阶用法</h2>
+<p>语法规则</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">··· <span class="selector-attr">[language]</span> <span class="selector-attr">[title]</span> <span class="selector-attr">[url]</span> <span class="selector-attr">[link text]</span></span><br><span class="line"><span class="selector-tag">code</span> <span class="selector-tag">snippet</span></span><br><span class="line">···</span><br></pre></td></tr></table></figure>
-
 <p>其中，各参数意义如下：</p>
 <ul>
 <li>langugae：语言名称，引导渲染引擎正确解析并高亮显示关键字</li>
@@ -313,62 +312,56 @@
 <p>如果不想填写 title，可以在 language 和 url 之间添加至少三个空格。</p>
 <p>测试代码：</p>
 <figure class="highlight cpp"><figcaption><span>hello.cpp</span><a href="http://google.com" target="_blank" rel="noopener">this is google website</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"hello world!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>可以在站点配置文件中设置 highlight.auto_detect: true 来开启自动语言检测高亮。</p>
 <p>如果设置语言为 diff，可以在代码前添加 + 和 - 来使用如上所示的高亮增删行提示效果，在展示代码改动痕迹时比较实用。</p>
 <figure class="highlight diff"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> highlight:</span><br><span class="line">   enable: true</span><br><span class="line">   line_number: false</span><br><span class="line"><span class="deletion">-  auto_detect: false</span></span><br><span class="line"><span class="addition">+  auto_detect: true</span></span><br><span class="line">   tab_replace:</span><br></pre></td></tr></table></figure>
-
-<h2 id="note-标签"><a href="#note-标签" class="headerlink" title="note 标签"></a>note 标签</h2><p>通过 note 标签可以为段落添加背景色，语法如下：</p>
+<h2 id="note-标签">note 标签</h2>
+<p>通过 note 标签可以为段落添加背景色，语法如下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note [class] %&#125;</span><br><span class="line">文本内容 (支持行内标签)</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">or</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"note warning"</span>&gt;</span>文本内容 (支持行内标签)<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>支持的 class 种类包括 <code>default</code> <code>primary</code> <code>success</code> <code>info</code> <code>warning</code> <code>danger</code>，也可以不指定class。</p>
 <p>各种 class 种类的效果如下:</p>
 <div class="note default">
             <p>default note tag</p>
           </div>
-
 <div class="note primary">
             <p>primary note tag</p>
           </div>
-
 <div class="note success">
             <p>success note tag</p>
           </div>
-
 <div class="note info">
             <p>info note tag</p>
           </div>
-
-
 <p class="note warning">warning note tag</p>
-
 <div class="note danger">
             <p>danger note tag</p>
           </div>
-
-
 <p>更多配置可在主题配置文件中设置</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">note:</span></span><br><span class="line">  <span class="comment"># Note 标签样式预设</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">modern</span>  <span class="comment"># simple | modern | flat | disabled</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">false</span>  <span class="comment"># 是否显示图标</span></span><br><span class="line">  <span class="attr">border_radius:</span> <span class="number">3</span>  <span class="comment"># 圆角半径</span></span><br><span class="line">  <span class="attr">light_bg_offset:</span> <span class="number">0</span>  <span class="comment"># 默认背景减淡效果，以百分比计算</span></span><br></pre></td></tr></table></figure>
-
-
-<h2 id="label-标签"><a href="#label-标签" class="headerlink" title="label 标签"></a>label 标签</h2><p>通过 label 标签可以为文字添加背景色，语法如下：</p>
+<h2 id="label-标签">label 标签</h2>
+<p>通过 label 标签可以为文字添加背景色，语法如下：</p>
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label [class]@text  %&#125;</span><br></pre></td></tr></table></figure>
-
 <p>支持的 class 种类包括 default primary success info warning danger，默认使用 default 作为缺省。</p>
 <p>使用示例如下：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">I heard the echo, &#123;% label default@from the valleys and the heart %&#125;</span><br><span class="line">Open to the lonely soul of &#123;% label info@sickle harvesting %&#125;</span><br><span class="line">Repeat outrightly, but also repeat the well-being of</span><br><span class="line">Eventually &#123;% label warning@swaying in the desert oasis %&#125;</span><br><span class="line">&#123;% label success@I believe %&#125; I am</span><br><span class="line">&#123;% label primary@Born as the bright summer flowers %&#125;</span><br><span class="line">Do not withered undefeated fiery demon rule</span><br><span class="line">Heart rate and breathing to bear &#123;% label danger@the load of the cumbersome %&#125;</span><br><span class="line">Bored</span><br></pre></td></tr></table></figure>
-<p>I heard the echo, <span class="label default">from the valleys and the heart</span><br>Open to the lonely soul of <span class="label info">sickle harvesting</span><br>Repeat outrightly, but also repeat the well-being of<br>Eventually <span class="label warning">swaying in the desert oasis</span></p>
+<p>I heard the echo, <span class="label default">from the valleys and the heart</span><br>
+Open to the lonely soul of <span class="label info">sickle harvesting</span><br>
+Repeat outrightly, but also repeat the well-being of<br>
+Eventually <span class="label warning">swaying in the desert oasis</span></p>
 <span class="label success">I believe</span> I am
 <span class="label primary">Born as the bright summer flowers</span>
-<p>Do not withered undefeated fiery demon rule<br>Heart rate and breathing to bear <span class="label danger">the load of the cumbersome</span><br>Bored</p>
-<h2 id="button-按钮"><a href="#button-按钮" class="headerlink" title="button 按钮"></a>button 按钮</h2><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">button</span> /path/to/url/, text, icon [class], title %&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="xml"># eg.</span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">btn</span> #, 文本 %&#125;</span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">btn</span> #, 文本 &amp; 标题,, 标题 %&#125;</span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">btn</span> #, 文本 &amp; 图标, home %&#125;</span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">btn</span> #, 文本 &amp; 大图标 (固定宽度), home fa-fw fa-lg %&#125;</span></span><br></pre></td></tr></table></figure>
-<p>其中， 图标 ID 来源于 <a href="https://fontawesome.com/v4.7.0/icons/" target="_blank" rel="noopener">FontAwesome</a> </p>
-<h2 id="tab-标签"><a href="#tab-标签" class="headerlink" title="tab 标签"></a>tab 标签</h2><p>tab 标签用于快速创建 tab 选项卡，语法如下</p>
+<p>Do not withered undefeated fiery demon rule<br>
+Heart rate and breathing to bear <span class="label danger">the load of the cumbersome</span><br>
+Bored</p>
+<h2 id="button-按钮">button 按钮</h2>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">button</span> /path/to/url/, text, icon [class], title %&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="xml"># eg.</span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">btn</span> #, 文本 %&#125;</span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">btn</span> #, 文本 &amp; 标题,, 标题 %&#125;</span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">btn</span> #, 文本 &amp; 图标, home %&#125;</span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">btn</span> #, 文本 &amp; 大图标 (固定宽度), home fa-fw fa-lg %&#125;</span></span><br></pre></td></tr></table></figure>
+<p>其中， 图标 ID 来源于 <a href="https://fontawesome.com/v4.7.0/icons/" target="_blank" rel="noopener">FontAwesome</a></p>
+<h2 id="tab-标签">tab 标签</h2>
+<p>tab 标签用于快速创建 tab 选项卡，语法如下</p>
 <figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">tabs</span> [Unique name], [index] %&#125;</span></span><br><span class="line"><span class="xml">  <span class="comment">&lt;!-- tab [Tab caption]@[icon] --&gt;</span></span></span><br><span class="line"><span class="xml">  标签页内容（支持行内标签）</span></span><br><span class="line"><span class="xml">  <span class="comment">&lt;!-- endtab --&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name">endtabs</span> %&#125;</span></span><br></pre></td></tr></table></figure>
-
 <a class="btn" href="#" title="回到顶部">
             <i class="fa fa-home fa-fw"></i>小按钮
           </a>
-
 <p>其中，各参数意义如下：</p>
 <ul>
 <li>Unique name: 全局唯一的 Tab 名称，将作为各个标签页的 id 属性前缀</li>
@@ -377,21 +370,19 @@
 <li>icon: 在标签页标题中添加 Font awesome 图标</li>
 </ul>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% tabs Tab标签列表 %&#125;</span><br><span class="line">  <span class="xml"><span class="comment">&lt;!-- tab 标签页1 --&gt;</span></span></span><br><span class="line"><span class="code">    标签页1文本内容</span></span><br><span class="line">  <span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span></span><br><span class="line">  <span class="xml"><span class="comment">&lt;!-- tab 标签页2 --&gt;</span></span></span><br><span class="line"><span class="code">    标签页2文本内容</span></span><br><span class="line">  <span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span></span><br><span class="line">  <span class="xml"><span class="comment">&lt;!-- tab 标签页3 --&gt;</span></span></span><br><span class="line"><span class="code">    标签页3文本内容</span></span><br><span class="line">  <span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
-
 <div class="tabs" id="编程语言"><ul class="nav-tabs"><li class="tab active"><a href="#编程语言-1">Cpp</a></li><li class="tab"><a href="#编程语言-2">C</a></li><li class="tab"><a href="#编程语言-3">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="编程语言-1"><figure class="highlight cpp"><figcaption><span>hello.cpp</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"hello world!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="编程语言-2"><figure class="highlight c"><figcaption><span>hello.c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello world!\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="编程语言-3"><figure class="highlight java"><figcaption><span>hello.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="class"><span class="keyword">class</span> <span class="title">hello</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello world!"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
-
-<h2 id="草稿和发布"><a href="#草稿和发布" class="headerlink" title="草稿和发布"></a>草稿和发布</h2><div class="note info">
+<h2 id="草稿和发布">草稿和发布</h2>
+<div class="note info">
             <p>本章内容参考自 <a href="https://www.chingow.cn/posts/bd723aed.html" target="_blank" rel="noopener">Hexo+NexT(v7.0+) 搭建博客：内容优化</a></p>
           </div>
-
-<p>一般我们使用<code>hexo new &lt;title&gt;</code>来建立文章，这种建立方法会将新文章建立在 <strong>source&#x2F;_posts</strong> 目录下，当使用 <code>hexo generate</code> 编译文件时，会将其 HTML 结果编译在 <code>public</code> 目录下，之后<code>hexo server</code>将会把 <code>public</code> 目录下所有文章发布。</p>
-<p>Hexo 提供 draft 机制，它的原理是新文章将建立在 <strong>source&#x2F;_drafts</strong> 目录下，因此并不会将其编译到 <strong>public</strong> 目录下发布，而且提供了很友好的预览功能。</p>
+<p>一般我们使用<code>hexo new &lt;title&gt;</code>来建立文章，这种建立方法会将新文章建立在 <strong>source/_posts</strong> 目录下，当使用 <code>hexo generate</code> 编译文件时，会将其 HTML 结果编译在 <code>public</code> 目录下，之后<code>hexo server</code>将会把 <code>public</code> 目录下所有文章发布。</p>
+<p>Hexo 提供 draft 机制，它的原理是新文章将建立在 <strong>source/_drafts</strong> 目录下，因此并不会将其编译到 <strong>public</strong> 目录下发布，而且提供了很友好的预览功能。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new draft &lt;title&gt;	<span class="comment"># 新建草稿文章</span></span><br><span class="line">$ hexo s --draft	        <span class="comment"># 预览草稿文章</span></span><br></pre></td></tr></table></figure>
 <p>将草稿发布为正式文章：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo P &lt;filename&gt;</span><br></pre></td></tr></table></figure>
-
-<p>其中 <filename> 为不包含 md 后缀的文章名称。它的原理只是将文章从 <strong>source&#x2F;_drafts</strong> 移动到 <strong>source&#x2F;_posts</strong> 而已。</p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<p>其中 <filename> 为不包含 md 后缀的文章名称。它的原理只是将文章从 <strong>source/_drafts</strong> 移动到 <strong>source/_posts</strong> 而已。</p>
+<h2 id="参考链接">参考链接</h2>
+<ul>
 <li><a href="http://yearito.cn/posts/hexo-writing-skills.html" target="_blank" rel="noopener">Hexo 搭建个人博客系列：写作技巧篇</a></li>
 <li><a href="http://dinghongkai.com/2017/12/19/Blog-development-6-Customized-Style-of-Writing/" target="_blank" rel="noopener">Hexo建站日志 (6) - 添加文章书写样式</a></li>
 <li><a href="http://ylong.net.cn/hexo_conf.html" target="_blank" rel="noopener">Hexo 博客美化配置</a></li>
@@ -457,14 +448,14 @@
   <!-- 引用链接 -->
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2020/07/10/hexo-write-skills/" title="Hexo 写作技巧">
-      http://yoursite.com/2020/07/10/hexo-write-skills/
+    <a href="http://xujing113221.github.io/2020/07/10/hexo-write-skills/" title="Hexo 写作技巧">
+      http://xujing113221.github.io/2020/07/10/hexo-write-skills/
     </a>
     <span class="copy-path" title="点击复制引用链接">
       <i
         style="cursor: pointer"
         class="fa fa-clipboard"
-        data-clipboard-text="[XuJing's Blog | Hexo 写作技巧](http://yoursite.com/2020/07/10/hexo-write-skills/)"
+        data-clipboard-text="[XuJing's Blog | Hexo 写作技巧](http://xujing113221.github.io/2020/07/10/hexo-write-skills/)"
         aria-label="复制成功">
       </i>
     </span>

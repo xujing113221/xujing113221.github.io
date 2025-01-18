@@ -20,13 +20,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"xujing113221.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="本文记录一下Hiwi的相关笔记, 第二部分。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Scene Graph Generation Note 2">
-<meta property="og:url" content="http://yoursite.com/2020/10/21/Scene-Graph-Generation-Note-2/index.html">
+<meta property="og:url" content="http://xujing113221.github.io/2020/10/21/Scene-Graph-Generation-Note-2/index.html">
 <meta property="og:site_name" content="XuJing&#39;s Blog">
 <meta property="og:description" content="本文记录一下Hiwi的相关笔记, 第二部分。">
 <meta property="og:locale" content="zh_CN">
@@ -39,7 +39,7 @@
 <meta property="article:tag" content="CUDA">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/10/21/Scene-Graph-Generation-Note-2/">
+<link rel="canonical" href="http://xujing113221.github.io/2020/10/21/Scene-Graph-Generation-Note-2/">
 
 
 <script id="page-configurations">
@@ -209,7 +209,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/21/Scene-Graph-Generation-Note-2/">
+    <link itemprop="mainEntityOfPage" href="http://xujing113221.github.io/2020/10/21/Scene-Graph-Generation-Note-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -292,27 +292,38 @@
       
         <p>本文记录一下Hiwi的相关笔记, 第二部分。</p>
 <a id="more"></a>
-
-<h3 id="调试工具"><a href="#调试工具" class="headerlink" title="调试工具"></a>调试工具</h3><p><a href="https://www.jiqizhixin.com/articles/2019-06-18-10" target="_blank" rel="noopener">PyTorch代码调试利器: 自动print每行代码的Tensor信息</a></p>
-<h3 id="tenserbroad"><a href="#tenserbroad" class="headerlink" title="tenserbroad"></a>tenserbroad</h3><ul>
-<li><p>for pytorch&#x3D;1.2<br>pip install tensorboard<br>pip install tensorflow</p>
+<h3 id="调试工具">调试工具</h3>
+<p><a href="https://www.jiqizhixin.com/articles/2019-06-18-10" target="_blank" rel="noopener">PyTorch代码调试利器: 自动print每行代码的Tensor信息</a></p>
+<h3 id="tenserbroad">tenserbroad</h3>
+<ul>
+<li>
+<p>for pytorch=1.2<br>
+pip install tensorboard<br>
+pip install tensorflow</p>
 </li>
-<li><p>for pytorch&#x3D;0.4<br>pip install tensorboardX</p>
+<li>
+<p>for pytorch=0.4<br>
+pip install tensorboardX</p>
 </li>
 </ul>
-<h3 id="netron"><a href="#netron" class="headerlink" title="netron"></a>netron</h3><ul>
+<h3 id="netron">netron</h3>
+<ul>
 <li><a href="https://lutzroeder.github.io/netron/" target="_blank" rel="noopener">https://lutzroeder.github.io/netron/</a></li>
 <li></li>
 </ul>
-<h3 id="VNC"><a href="#VNC" class="headerlink" title="VNC"></a>VNC</h3><p>ssh -fNCT -L 5902:cp202-03:5908 <a href="mailto:&#120;&#x75;&#x6a;&#105;&#110;&#103;&#x40;&#x73;&#x73;&#x68;&#49;&#46;&#x74;&#110;&#x74;&#46;&#117;&#110;&#x69;&#45;&#x68;&#97;&#110;&#x6e;&#x6f;&#x76;&#x65;&#x72;&#46;&#100;&#101;">xujing@ssh1.tnt.uni-hannover.de</a></p>
-<h3 id="MSDN"><a href="#MSDN" class="headerlink" title="MSDN"></a>MSDN</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PYTHONPATH=/home/xujing/Dokumente/MSDN/:/home/xujing/Dokumente/MSDN/faster_rcnn/</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH=/home/xujing/miniconda3/envs/msdn/bin:/home/xujing/miniconda3/condabin:/usr/<span class="built_in">local</span>/cuda-8.0/bin:/home/xujing/.vscode-server/bin/e790b931385d72cf5669fcefc51cdf65990efa5d/bin:/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin</span><br><span class="line"></span><br><span class="line">conda install cudnn=7.1.2</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="install"><a href="#install" class="headerlink" title="install"></a>install</h3><p><a href="https://www.pythonf.cn/read/82784" target="_blank" rel="noopener">Faster RCNN-PyTorch版本运行记录</a></p>
+<h3 id="VNC">VNC</h3>
+<p>ssh -fNCT -L 5902:cp202-03:5908 <a href="mailto:xujing@ssh1.tnt.uni-hannover.de">xujing@ssh1.tnt.uni-hannover.de</a></p>
+<h3 id="MSDN">MSDN</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PYTHONPATH=/home/xujing/Dokumente/MSDN/:/home/xujing/Dokumente/MSDN/faster_rcnn/</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH=/home/xujing/miniconda3/envs/msdn/bin:/home/xujing/miniconda3/condabin:/usr/<span class="built_in">local</span>/cuda-8.0/bin:/home/xujing/.vscode-server/bin/e790b931385d72cf5669fcefc51cdf65990efa5d/bin:/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin</span><br><span class="line"></span><br><span class="line">conda install cudnn=7.1.2</span><br></pre></td></tr></table></figure>
+<h3 id="install">install</h3>
+<p><a href="https://www.pythonf.cn/read/82784" target="_blank" rel="noopener">Faster RCNN-PyTorch版本运行记录</a></p>
 <p>git checkout pytorch1.0</p>
-<p>cd lib<br>python setup.py build develop</p>
-<h3 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h3><p><a href="https://www.telesens.co/2018/03/11/object-detection-and-classification-using-r-cnns/" target="_blank" rel="noopener">https://www.telesens.co/2018/03/11/object-detection-and-classification-using-r-cnns/</a></p>
-<h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><ul>
+<p>cd lib<br>
+python <a href="http://setup.py" target="_blank" rel="noopener">setup.py</a> build develop</p>
+<h3 id="Blog">Blog</h3>
+<p><a href="https://www.telesens.co/2018/03/11/object-detection-and-classification-using-r-cnns/" target="_blank" rel="noopener">https://www.telesens.co/2018/03/11/object-detection-and-classification-using-r-cnns/</a></p>
+<h3 id="reference">reference</h3>
+<ul>
 <li><a href="https://www.cnblogs.com/skyfsm/p/6806246.html" target="_blank" rel="noopener">基于深度学习的目标检测技术演进：R-CNN、Fast R-CNN、Faster R-CNN</a></li>
 </ul>
 
@@ -375,14 +386,14 @@
   <!-- 引用链接 -->
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2020/10/21/Scene-Graph-Generation-Note-2/" title="Scene Graph Generation Note 2">
-      http://yoursite.com/2020/10/21/Scene-Graph-Generation-Note-2/
+    <a href="http://xujing113221.github.io/2020/10/21/Scene-Graph-Generation-Note-2/" title="Scene Graph Generation Note 2">
+      http://xujing113221.github.io/2020/10/21/Scene-Graph-Generation-Note-2/
     </a>
     <span class="copy-path" title="点击复制引用链接">
       <i
         style="cursor: pointer"
         class="fa fa-clipboard"
-        data-clipboard-text="[XuJing's Blog | Scene Graph Generation Note 2](http://yoursite.com/2020/10/21/Scene-Graph-Generation-Note-2/)"
+        data-clipboard-text="[XuJing's Blog | Scene Graph Generation Note 2](http://xujing113221.github.io/2020/10/21/Scene-Graph-Generation-Note-2/)"
         aria-label="复制成功">
       </i>
     </span>
@@ -431,12 +442,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/10/21/Scene-Graph-Generation-Note-1/" rel="prev" title="Scene Graph Generation Note 1">
-      <i class="fa fa-chevron-left"></i> Scene Graph Generation Note 1
+    <a href="/2020/10/21/Scene-Graph-Generation-Note-3/" rel="prev" title="Scene Graph Generation Note 3">
+      <i class="fa fa-chevron-left"></i> Scene Graph Generation Note 3
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/10/21/Scene-Graph-Generation-Note-3/" rel="next" title="Scene Graph Generation Note 3">
-      Scene Graph Generation Note 3 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/10/21/Scene-Graph-Generation-Note-1/" rel="next" title="Scene Graph Generation Note 1">
+      Scene Graph Generation Note 1 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>

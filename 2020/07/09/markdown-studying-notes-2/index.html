@@ -20,13 +20,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"xujing113221.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="本文记录我学习Markdown的进阶笔记，主要有一下内容：  数学公式的使用 绘制流程图 复选框列表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Markdown学习笔记二 进阶篇">
-<meta property="og:url" content="http://yoursite.com/2020/07/09/markdown-studying-notes-2/index.html">
+<meta property="og:url" content="http://xujing113221.github.io/2020/07/09/markdown-studying-notes-2/index.html">
 <meta property="og:site_name" content="XuJing&#39;s Blog">
 <meta property="og:description" content="本文记录我学习Markdown的进阶笔记，主要有一下内容：  数学公式的使用 绘制流程图 复选框列表">
 <meta property="og:locale" content="zh_CN">
@@ -36,7 +36,7 @@
 <meta property="article:tag" content="Markdown">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/07/09/markdown-studying-notes-2/">
+<link rel="canonical" href="http://xujing113221.github.io/2020/07/09/markdown-studying-notes-2/">
 
 
 <script id="page-configurations">
@@ -206,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/09/markdown-studying-notes-2/">
+    <link itemprop="mainEntityOfPage" href="http://xujing113221.github.io/2020/07/09/markdown-studying-notes-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -294,47 +294,61 @@
 <li>复选框列表</li>
 </ul>
 <a id="more"></a>
-
-<h2 id="数学公式的使用"><a href="#数学公式的使用" class="headerlink" title="数学公式的使用"></a>数学公式的使用</h2><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>使用Latex格式 <a href="https://www.latexlive.com/" target="_blank" rel="noopener">LaTeX公式编辑器</a></p>
+<h2 id="数学公式的使用">数学公式的使用</h2>
+<h3 id="方法">方法</h3>
+<p>使用Latex格式 <a href="https://www.latexlive.com/" target="_blank" rel="noopener">LaTeX公式编辑器</a></p>
 <ul>
 <li>行内公式 : 使用一个$</li>
 <li>行外公式 : 使用 $$</li>
 <li>多行公式 : 使用引用 Latex 代码</li>
 </ul>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><h4 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式 :"></a>行内公式 :</h4><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个行内公式:  <span class="formula">$ <span class="tag">\<span class="name">int</span></span> <span class="tag">\<span class="name">frac</span><span class="string">&#123;1&#125;</span><span class="string">&#123;1+x^&#123;2&#125;</span></span>&#125;<span class="tag">\<span class="name">mathrm</span><span class="string">&#123;d&#125;</span></span>x= <span class="tag">\<span class="name">arctan</span></span> x +C $</span></span><br></pre></td></tr></table></figure>
-<p>这是一个行内公式:  $ \int \frac{1}{1+x^{2}}\mathrm{d}x&#x3D; \arctan x +C $ </p>
-<h4 id="行外公式"><a href="#行外公式" class="headerlink" title="行外公式 :"></a>行外公式 :</h4><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个行外公式举例：<span class="symbol">$</span><span class="symbol">$</span>y = x \<span class="built-in">cos</span> \alpha + \<span class="built-in">cos</span> \<span class="built-in">beta</span> =<span class="number">2</span> \<span class="built-in">cos</span> \<span class="built-in">frac</span>&#123;\alpha + \<span class="built-in">beta</span>&#125;&#123;<span class="number">2</span>&#125;\<span class="built-in">cos</span> \<span class="built-in">frac</span>&#123;\alpha - \<span class="built-in">beta</span>&#125;&#123;<span class="number">2</span>&#125; <span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
-
-<p>这是一个行外公式举例：$$y &#x3D; x \cos \alpha + \cos \beta &#x3D;2 \cos \frac{\alpha + \beta}{2}\cos \frac{\alpha - \beta}{2} $$</p>
-<h4 id="多行公式-使用引用-Latex-代码"><a href="#多行公式-使用引用-Latex-代码" class="headerlink" title="多行公式 : 使用引用 Latex 代码"></a>多行公式 : 使用引用 Latex 代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\displaystyle</span><br><span class="line">\left( \sum\_&#123;k&#x3D;1&#125;^n a\_k b\_k \right)^2</span><br><span class="line">\leq</span><br><span class="line">\left( \sum\_&#123;k&#x3D;1&#125;^n a\_k^2 \right)</span><br><span class="line">\left( \sum\_&#123;k&#x3D;1&#125;^n b\_k^2 \right)</span><br></pre></td></tr></table></figure>
-
+<h3 id="实现">实现</h3>
+<h4 id="行内公式">行内公式 :</h4>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个行内公式:  <span class="formula">$ <span class="tag">\<span class="name">int</span></span> <span class="tag">\<span class="name">frac</span><span class="string">&#123;1&#125;</span><span class="string">&#123;1+x^&#123;2&#125;</span></span>&#125;<span class="tag">\<span class="name">mathrm</span><span class="string">&#123;d&#125;</span></span>x= <span class="tag">\<span class="name">arctan</span></span> x +C $</span></span><br></pre></td></tr></table></figure>
+<p>这是一个行内公式:  $ \int \frac{1}{1+x^{2}}\mathrm{d}x= \arctan x +C $</p>
+<h4 id="行外公式">行外公式 :</h4>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个行外公式举例：<span class="symbol">$</span><span class="symbol">$</span>y = x \<span class="built-in">cos</span> \alpha + \<span class="built-in">cos</span> \<span class="built-in">beta</span> =<span class="number">2</span> \<span class="built-in">cos</span> \<span class="built-in">frac</span>&#123;\alpha + \<span class="built-in">beta</span>&#125;&#123;<span class="number">2</span>&#125;\<span class="built-in">cos</span> \<span class="built-in">frac</span>&#123;\alpha - \<span class="built-in">beta</span>&#125;&#123;<span class="number">2</span>&#125; <span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
+<p>这是一个行外公式举例：$$y = x \cos \alpha + \cos \beta =2 \cos \frac{\alpha + \beta}{2}\cos \frac{\alpha - \beta}{2} $$</p>
+<h4 id="多行公式-使用引用-Latex-代码">多行公式 : 使用引用 Latex 代码</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\displaystyle</span><br><span class="line">\left( \sum\_&#123;k&#x3D;1&#125;^n a\_k b\_k \right)^2</span><br><span class="line">\leq</span><br><span class="line">\left( \sum\_&#123;k&#x3D;1&#125;^n a\_k^2 \right)</span><br><span class="line">\left( \sum\_&#123;k&#x3D;1&#125;^n b\_k^2 \right)</span><br></pre></td></tr></table></figure>
 <figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f(x) = <span class="symbol">\i</span>nt_&#123;-<span class="symbol">\i</span>nfty&#125;^<span class="symbol">\i</span>nfty</span><br><span class="line">    <span class="symbol">\h</span>at f(<span class="symbol">\x</span>i)<span class="symbol">\,</span>e^&#123;2 <span class="symbol">\p</span>i i <span class="symbol">\x</span>i x&#125;</span><br><span class="line">    <span class="symbol">\,</span>d<span class="symbol">\x</span>i</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\displaystyle<br>\left( \sum_{k&#x3D;1}^n a_k b_k \right)^2<br>\leq<br>\left( \sum_{k&#x3D;1}^n a_k^2 \right)<br>\left( \sum_{k&#x3D;1}^n b_k^2 \right)<br>$$</p>
-<p>$$<br>f(x) &#x3D; \int_{-\infty}^\infty<br>    \hat f(\xi),e^{2 \pi i \xi x}<br>    ,d\xi<br>$$</p>
-<h2 id="绘制流程图"><a href="#绘制流程图" class="headerlink" title="绘制流程图"></a>绘制流程图</h2><h3 id="添加支持"><a href="#添加支持" class="headerlink" title="添加支持"></a>添加支持</h3><p>Hexo 默认是不支持流程图的 Markdown 语法的，需要添加支持：</p>
+<p>$$<br>
+\displaystyle<br>
+\left( \sum_{k=1}^n a_k b_k \right)^2<br>
+\leq<br>
+\left( \sum_{k=1}^n a_k^2 \right)<br>
+\left( \sum_{k=1}^n b_k^2 \right)<br>
+$$</p>
+<p>$$<br>
+f(x) = \int_{-\infty}^\infty<br>
+\hat f(\xi),e^{2 \pi i \xi x}<br>
+,d\xi<br>
+$$</p>
+<h2 id="绘制流程图">绘制流程图</h2>
+<h3 id="添加支持">添加支持</h3>
+<p>Hexo 默认是不支持流程图的 Markdown 语法的，需要添加支持：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-filter-flowchart</span><br></pre></td></tr></table></figure>
-
-<h3 id="绘制流程图-1"><a href="#绘制流程图-1" class="headerlink" title="绘制流程图"></a>绘制流程图</h3><div id="flowchart-0" class="flow-chart"></div>
-
-
-<h2 id="复选框列表"><a href="#复选框列表" class="headerlink" title="复选框列表"></a>复选框列表</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">- </span>[<span class="string">x</span>] @mentions, #refs, [<span class="string">links</span>](<span class="link"></span>), <span class="strong">**formatting**</span>, and <span class="xml"><span class="tag">&lt;<span class="name">del</span>&gt;</span></span>tags<span class="xml"><span class="tag">&lt;/<span class="name">del</span>&gt;</span></span> supported;</span><br><span class="line"><span class="bullet">- </span>[x] list syntax required (any unordered or ordered list supported);</span><br><span class="line"><span class="bullet">- </span>[x] this is a complete item;</span><br><span class="line"><span class="bullet">- </span>[<span class="string"> </span>] this is an incomplete item [<span class="string">test link</span>](<span class="link">#</span>);</span><br><span class="line"><span class="bullet">- </span>[ ] this is an incomplete item;</span><br><span class="line"><span class="bullet">    - </span>[<span class="string"> </span>] this is an incomplete item [<span class="string">test link</span>](<span class="link">#</span>);</span><br><span class="line"><span class="bullet">    - </span>[<span class="string"> </span>] this is an incomplete item [<span class="string">test link</span>](<span class="link">#</span>);</span><br><span class="line"><span class="bullet">- </span>[x] list syntax required (any unordered or ordered list supported);</span><br><span class="line"><span class="bullet">- </span>[x] this is a complete item;</span><br><span class="line"><span class="bullet">- </span>[<span class="string"> </span>] this is an incomplete item [<span class="string">test link</span>](<span class="link">#</span>);</span><br><span class="line"><span class="bullet">- </span>[ ] this is an incomplete item;</span><br><span class="line"><span class="bullet">    - </span>[<span class="string"> </span>] this is an incomplete item [<span class="string">test link</span>](<span class="link">#</span>);</span><br></pre></td></tr></table></figure>
-
+<h3 id="绘制流程图-2">绘制流程图</h3>
+<div id="flowchart-0" class="flow-chart"></div>
+<h2 id="复选框列表">复选框列表</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">- </span>[<span class="string">x</span>] @mentions, #refs, [<span class="string">links</span>](<span class="link"></span>), <span class="strong">**formatting**</span>, and <span class="xml"><span class="tag">&lt;<span class="name">del</span>&gt;</span></span>tags<span class="xml"><span class="tag">&lt;/<span class="name">del</span>&gt;</span></span> supported;</span><br><span class="line"><span class="bullet">- </span>[x] list syntax required (any unordered or ordered list supported);</span><br><span class="line"><span class="bullet">- </span>[x] this is a complete item;</span><br><span class="line"><span class="bullet">- </span>[<span class="string"> </span>] this is an incomplete item [<span class="string">test link</span>](<span class="link">#</span>);</span><br><span class="line"><span class="bullet">- </span>[ ] this is an incomplete item;</span><br><span class="line"><span class="bullet">    - </span>[<span class="string"> </span>] this is an incomplete item [<span class="string">test link</span>](<span class="link">#</span>);</span><br><span class="line"><span class="bullet">    - </span>[<span class="string"> </span>] this is an incomplete item [<span class="string">test link</span>](<span class="link">#</span>);</span><br><span class="line"><span class="bullet">- </span>[x] list syntax required (any unordered or ordered list supported);</span><br><span class="line"><span class="bullet">- </span>[x] this is a complete item;</span><br><span class="line"><span class="bullet">- </span>[<span class="string"> </span>] this is an incomplete item [<span class="string">test link</span>](<span class="link">#</span>);</span><br><span class="line"><span class="bullet">- </span>[ ] this is an incomplete item;</span><br><span class="line"><span class="bullet">    - </span>[<span class="string"> </span>] this is an incomplete item [<span class="string">test link</span>](<span class="link">#</span>);</span><br></pre></td></tr></table></figure>
 <ul>
-<li><input checked="" disabled="" type="checkbox"> @mentions, #refs, <a href="">links</a>, <strong>formatting</strong>, and <del>tags</del> supported;</li>
-<li><input checked="" disabled="" type="checkbox"> list syntax required (any unordered or ordered list supported);</li>
-<li><input checked="" disabled="" type="checkbox"> this is a complete item;</li>
-<li><input disabled="" type="checkbox"> this is an incomplete item <a href="#">test link</a>;</li>
-<li><input disabled="" type="checkbox"> this is an incomplete item;<ul>
-<li><input disabled="" type="checkbox"> this is an incomplete item <a href="#">test link</a>;</li>
-<li><input disabled="" type="checkbox"> this is an incomplete item <a href="#">test link</a>;</li>
+<li>[x] @mentions, #refs, <a href="">links</a>, <strong>formatting</strong>, and <del>tags</del> supported;</li>
+<li>[x] list syntax required (any unordered or ordered list supported);</li>
+<li>[x] this is a complete item;</li>
+<li>[ ] this is an incomplete item <a href="#">test link</a>;</li>
+<li>[ ] this is an incomplete item;
+<ul>
+<li>[ ] this is an incomplete item <a href="#">test link</a>;</li>
+<li>[ ] this is an incomplete item <a href="#">test link</a>;</li>
 </ul>
 </li>
-<li><input checked="" disabled="" type="checkbox"> list syntax required (any unordered or ordered list supported);</li>
-<li><input checked="" disabled="" type="checkbox"> this is a complete item;</li>
-<li><input disabled="" type="checkbox"> this is an incomplete item <a href="#">test link</a>;</li>
-<li><input disabled="" type="checkbox"> this is an incomplete item;<ul>
-<li><input disabled="" type="checkbox"> this is an incomplete item <a href="#">test link</a>;</li>
+<li>[x] list syntax required (any unordered or ordered list supported);</li>
+<li>[x] this is a complete item;</li>
+<li>[ ] this is an incomplete item <a href="#">test link</a>;</li>
+<li>[ ] this is an incomplete item;
+<ul>
+<li>[ ] this is an incomplete item <a href="#">test link</a>;</li>
 </ul>
 </li>
 </ul>
@@ -407,14 +421,14 @@ cond(no)->op</textarea><textarea id="flowchart-0-options" style="display: none">
   <!-- 引用链接 -->
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2020/07/09/markdown-studying-notes-2/" title="Markdown学习笔记二 进阶篇">
-      http://yoursite.com/2020/07/09/markdown-studying-notes-2/
+    <a href="http://xujing113221.github.io/2020/07/09/markdown-studying-notes-2/" title="Markdown学习笔记二 进阶篇">
+      http://xujing113221.github.io/2020/07/09/markdown-studying-notes-2/
     </a>
     <span class="copy-path" title="点击复制引用链接">
       <i
         style="cursor: pointer"
         class="fa fa-clipboard"
-        data-clipboard-text="[XuJing's Blog | Markdown学习笔记二 进阶篇](http://yoursite.com/2020/07/09/markdown-studying-notes-2/)"
+        data-clipboard-text="[XuJing's Blog | Markdown学习笔记二 进阶篇](http://xujing113221.github.io/2020/07/09/markdown-studying-notes-2/)"
         aria-label="复制成功">
       </i>
     </span>
@@ -526,7 +540,7 @@ cond(no)->op</textarea><textarea id="flowchart-0-options" style="display: none">
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数学公式的使用"><span class="nav-number">1.</span> <span class="nav-text">数学公式的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">1.1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">1.2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#行内公式"><span class="nav-number">1.2.1.</span> <span class="nav-text">行内公式 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#行外公式"><span class="nav-number">1.2.2.</span> <span class="nav-text">行外公式 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多行公式-使用引用-Latex-代码"><span class="nav-number">1.2.3.</span> <span class="nav-text">多行公式 : 使用引用 Latex 代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制流程图"><span class="nav-number">2.</span> <span class="nav-text">绘制流程图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加支持"><span class="nav-number">2.1.</span> <span class="nav-text">添加支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制流程图-1"><span class="nav-number">2.2.</span> <span class="nav-text">绘制流程图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复选框列表"><span class="nav-number">3.</span> <span class="nav-text">复选框列表</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数学公式的使用"><span class="nav-number">1.</span> <span class="nav-text">数学公式的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">1.1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">1.2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#行内公式"><span class="nav-number">1.2.1.</span> <span class="nav-text">行内公式 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#行外公式"><span class="nav-number">1.2.2.</span> <span class="nav-text">行外公式 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多行公式-使用引用-Latex-代码"><span class="nav-number">1.2.3.</span> <span class="nav-text">多行公式 : 使用引用 Latex 代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制流程图"><span class="nav-number">2.</span> <span class="nav-text">绘制流程图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加支持"><span class="nav-number">2.1.</span> <span class="nav-text">添加支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制流程图-2"><span class="nav-number">2.2.</span> <span class="nav-text">绘制流程图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复选框列表"><span class="nav-number">3.</span> <span class="nav-text">复选框列表</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
