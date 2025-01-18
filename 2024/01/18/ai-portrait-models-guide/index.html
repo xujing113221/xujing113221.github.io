@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Sans SC:300,300italic,400,400italic,700,700italic|Cedarville Cursive:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Courier:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-simple.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"xujing113221.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="写在前面大家好！今天我们来聊一聊目前最火热的AI人像模型。不管你是完全的新手，还是对AI绘画有一点了解，这篇文章都能帮你快速掌握当前主流的人像模型。 什么是AI人像模型？简单来说，AI人像模型就是专门用来生成人物图像的AI模型。你只需要输入文字描述（比如”一个戴着墨镜的年轻女孩”），模型就能帮你生成相应的图像。这些模型经过了大量人物照片的训练，能够理解人物的面部特征、表情、姿势等细节。 2024年">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小白必看：2024年最新AI人像模型完全指南">
+<meta property="og:url" content="http://xujing113221.github.io/2024/01/18/ai-portrait-models-guide/index.html">
+<meta property="og:site_name" content="XuJing&#39;s Blog">
+<meta property="og:description" content="写在前面大家好！今天我们来聊一聊目前最火热的AI人像模型。不管你是完全的新手，还是对AI绘画有一点了解，这篇文章都能帮你快速掌握当前主流的人像模型。 什么是AI人像模型？简单来说，AI人像模型就是专门用来生成人物图像的AI模型。你只需要输入文字描述（比如”一个戴着墨镜的年轻女孩”），模型就能帮你生成相应的图像。这些模型经过了大量人物照片的训练，能够理解人物的面部特征、表情、姿势等细节。 2024年">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c8f1d8c1-4c98-41f4-9cbd-9a4bca4b6500/width=450/00009-1875331405.jpeg">
+<meta property="og:image" content="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/e02b4c1c-e7c0-4ce4-b39c-2c5bca4b6600/width=450/00003-3638604157.jpeg">
+<meta property="og:image" content="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/4cc98f1d-41f4-4c98-9cbd-9a4bca4b6500/width=450/00012-1875331405.jpeg">
+<meta property="og:image" content="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/98f1d8c1-4c98-41f4-9cbd-9a4bca4b6500/width=450/00015-1875331405.jpeg">
+<meta property="og:image" content="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/f1d8c1-4c98-41f4-9cbd-9a4bca4b6500/width=450/00021-1875331405.jpeg">
+<meta property="og:image" content="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/d8c1-4c98-41f4-9cbd-9a4bca4b6500/width=450/00025-1875331405.jpeg">
+<meta property="article:published_time" content="2024-01-18T07:30:00.000Z">
+<meta property="article:modified_time" content="2025-01-18T15:56:36.987Z">
+<meta property="article:author" content="XuJing">
+<meta property="article:tag" content="人像生成">
+<meta property="article:tag" content="Stable Diffusion">
+<meta property="article:tag" content="AI绘画">
+<meta property="article:tag" content="AI教程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c8f1d8c1-4c98-41f4-9cbd-9a4bca4b6500/width=450/00009-1875331405.jpeg">
+
+<link rel="canonical" href="http://xujing113221.github.io/2024/01/18/ai-portrait-models-guide/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>小白必看：2024年最新AI人像模型完全指南 | XuJing's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="XuJing's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">XuJing's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">AI & Technology</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-hot">
+
+    <a href="/hot/" rel="section"><i class="fa fa-signal fa-fw"></i>排行</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://xujing113221.github.io/2024/01/18/ai-portrait-models-guide/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XuJing">
+      <meta itemprop="description" content="记录AI学习与技术探索的心得">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XuJing's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          小白必看：2024年最新AI人像模型完全指南
+        </h1>
+
+        <div class="post-meta">
+
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-01-18 15:30:00" itemprop="dateCreated datePublished" datetime="2024-01-18T15:30:00+08:00">2024-01-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-01-18 23:56:36" itemprop="dateModified" datetime="2025-01-18T23:56:36+08:00">2025-01-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AI%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">AI技术</span></a>
+                </span>
+            </span>
+
+        
+
+          
+            <span id="/2024/01/18/ai-portrait-models-guide/" class="post-meta-item leancloud_visitors" data-flag-title="小白必看：2024年最新AI人像模型完全指南" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+    <i class="far fa-comment"></i>
+    </span> 
+    <span class="post-meta-item-text">评论次数：</span>
+    <a title="valine" href="/2024/01/18/ai-portrait-models-guide/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2024/01/18/ai-portrait-models-guide/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>大家好！今天我们来聊一聊目前最火热的AI人像模型。不管你是完全的新手，还是对AI绘画有一点了解，这篇文章都能帮你快速掌握当前主流的人像模型。</p>
+<h2 id="什么是AI人像模型？"><a href="#什么是AI人像模型？" class="headerlink" title="什么是AI人像模型？"></a>什么是AI人像模型？</h2><p>简单来说，AI人像模型就是专门用来生成人物图像的AI模型。你只需要输入文字描述（比如”一个戴着墨镜的年轻女孩”），模型就能帮你生成相应的图像。这些模型经过了大量人物照片的训练，能够理解人物的面部特征、表情、姿势等细节。</p>
+<h2 id="2024年AI人像模型排行榜"><a href="#2024年AI人像模型排行榜" class="headerlink" title="2024年AI人像模型排行榜"></a>2024年AI人像模型排行榜</h2><p>根据Civitai平台的下载量、评分和用户反馈，以下是当前最受欢迎的人像模型排行：</p>
+<h3 id="写实系列TOP3"><a href="#写实系列TOP3" class="headerlink" title="写实系列TOP3"></a>写实系列TOP3</h3><ol>
+<li><p><strong>Realistic Vision 5.1</strong></p>
+<ul>
+<li>下载量：100万+</li>
+<li>特色：超高清晰度，真实感强</li>
+<li>适合：专业摄影作品、商业人像</li>
+</ul>
+</li>
+<li><p><strong>Photon</strong></p>
+<ul>
+<li>下载量：80万+</li>
+<li>特色：完美的光影效果，质感细腻</li>
+<li>适合：艺术写真、时尚大片</li>
+</ul>
+</li>
+<li><p><strong>AbsoluteReality</strong></p>
+<ul>
+<li>下载量：70万+</li>
+<li>特色：自然真实的肤质表现</li>
+<li>适合：日常写真、生活照</li>
+</ul>
+</li>
+</ol>
+<h4 id="写实系列作品展示"><a href="#写实系列作品展示" class="headerlink" title="写实系列作品展示"></a>写实系列作品展示</h4><p><img src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c8f1d8c1-4c98-41f4-9cbd-9a4bca4b6500/width=450/00009-1875331405.jpeg" alt="Realistic Vision 5.1作品示例"><br><em>Realistic Vision 5.1生成的写实人像，注意其自然的光影和皮肤质感</em></p>
+<p><img src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/e02b4c1c-e7c0-4ce4-b39c-2c5bca4b6600/width=450/00003-3638604157.jpeg" alt="Photon作品示例"><br><em>Photon模型生成的时尚人像，展现出优秀的光影效果</em></p>
+<h3 id="二次元系列TOP3"><a href="#二次元系列TOP3" class="headerlink" title="二次元系列TOP3"></a>二次元系列TOP3</h3><ol>
+<li><p><strong>majicMIX realistic</strong></p>
+<ul>
+<li>下载量：90万+</li>
+<li>特色：真实与动漫的完美融合</li>
+<li>适合：高质量二次元插画</li>
+</ul>
+</li>
+<li><p><strong>Counterfeit</strong></p>
+<ul>
+<li>下载量：75万+</li>
+<li>特色：动漫风格纯粹，线条优美</li>
+<li>适合：动漫角色创作</li>
+</ul>
+</li>
+<li><p><strong>Dark Sushi Mix</strong></p>
+<ul>
+<li>下载量：60万+</li>
+<li>特色：独特的暗系动漫风格</li>
+<li>适合：特殊风格的角色设计</li>
+</ul>
+</li>
+</ol>
+<h4 id="二次元系列作品展示"><a href="#二次元系列作品展示" class="headerlink" title="二次元系列作品展示"></a>二次元系列作品展示</h4><p><img src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/4cc98f1d-41f4-4c98-9cbd-9a4bca4b6500/width=450/00012-1875331405.jpeg" alt="majicMIX realistic作品示例"><br><em>majicMIX realistic生成的动漫风格人像，展现真实与二次元的完美融合</em></p>
+<p><img src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/98f1d8c1-4c98-41f4-9cbd-9a4bca4b6500/width=450/00015-1875331405.jpeg" alt="Counterfeit作品示例"><br><em>Counterfeit生成的纯粹动漫风格作品，线条优美流畅</em></p>
+<h3 id="混合风格TOP3"><a href="#混合风格TOP3" class="headerlink" title="混合风格TOP3"></a>混合风格TOP3</h3><ol>
+<li><p><strong>Deliberate v3</strong></p>
+<ul>
+<li>下载量：85万+</li>
+<li>特色：风格多变，适应性强</li>
+<li>适合：各类创意人像制作</li>
+</ul>
+</li>
+<li><p><strong>DreamShaper</strong></p>
+<ul>
+<li>下载量：65万+</li>
+<li>特色：创意表现力强</li>
+<li>适合：概念艺术、创意合成</li>
+</ul>
+</li>
+<li><p><strong>ReV Animated</strong></p>
+<ul>
+<li>下载量：55万+</li>
+<li>特色：动画风格与真实感结合</li>
+<li>适合：动画风格人像创作</li>
+</ul>
+</li>
+</ol>
+<h4 id="混合风格作品展示"><a href="#混合风格作品展示" class="headerlink" title="混合风格作品展示"></a>混合风格作品展示</h4><p><img src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/f1d8c1-4c98-41f4-9cbd-9a4bca4b6500/width=450/00021-1875331405.jpeg" alt="Deliberate v3作品示例"><br><em>Deliberate v3生成的创意人像，展现出独特的艺术风格</em></p>
+<p><img src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/d8c1-4c98-41f4-9cbd-9a4bca4b6500/width=450/00025-1875331405.jpeg" alt="DreamShaper作品示例"><br><em>DreamShaper生成的概念艺术作品，富有创意的构图和光影</em></p>
+<h4 id="提示词参考"><a href="#提示词参考" class="headerlink" title="提示词参考"></a>提示词参考</h4><p>以下是生成上述示例图片使用的关键提示词：</p>
+<ol>
+<li>Realistic Vision 5.1示例：</li>
+</ol>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a <span class="keyword">beautiful </span>young woman, professional portrait, natural lighting, detailed skin texture, <span class="number">8</span>k uhd, professional photography</span><br><span class="line"><span class="symbol">Negative:</span> deformed, <span class="keyword">bad </span>anatomy, <span class="keyword">disfigured, </span>poorly drawn face, mutation, <span class="keyword">extra </span>limb</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>majicMIX realistic示例：</li>
+</ol>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">masterpiece, <span class="keyword">best </span>quality, <span class="number">1</span>girl, solo, looking <span class="built_in">at</span> viewer, detailed eyes, anime style, casual wear</span><br><span class="line"><span class="symbol">Negative:</span> <span class="keyword">bad </span>anatomy, <span class="keyword">bad </span>hands, missing fingers, <span class="keyword">extra </span><span class="keyword">digit, </span>fewer <span class="keyword">digits</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Deliberate v3示例：</li>
+</ol>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cinematic portrait of a young woman, artistic lighting, moody atmosphere, detailed facial features, high fashion</span><br><span class="line"><span class="symbol">Negative:</span> <span class="keyword">bad </span>quality, <span class="keyword">blurry, </span><span class="keyword">distorted </span>features, <span class="keyword">bad </span>composition</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>DreamShaper示例：</li>
+</ol>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">creative</span> portrait, fantasy elements, ethereal lighting, flowing hair, detailed environment, magical atmosphere</span><br><span class="line"><span class="symbol">Negative</span>: ugly, deformed, low quality, <span class="keyword">blurry, </span><span class="keyword">bad </span>art</span><br></pre></td></tr></table></figure>
+
+<h4 id="进阶提示词技巧"><a href="#进阶提示词技巧" class="headerlink" title="进阶提示词技巧"></a>进阶提示词技巧</h4><ol>
+<li><strong>场景氛围营造</strong>：</li>
+</ol>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">golden</span> hour lighting, soft shadows, <span class="keyword">bokeh </span><span class="keyword">background, </span>depth of <span class="meta">field</span>, atmospheric</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>服装细节强化</strong>：</li>
+</ol>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">detailed clothing, fabric texture, flowing dress, <span class="built_in">int</span>ricate patterns, fashion photography</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><strong>面部细节增强</strong>：</li>
+</ol>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">porcelain skin, <span class="keyword">detailed</span> eyes, <span class="keyword">catch</span> lights, natural makeup, defined features</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><strong>艺术风格定义</strong>：</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oil painting style, watercolor effects, digital art, <span class="keyword">concept</span> art, editorial photography</span><br></pre></td></tr></table></figure>
+
+<p>这些示例图片来自Civitai平台的模型展示页面，你可以访问以下链接查看更多示例：</p>
+<ul>
+<li>Realistic Vision 5.1: <a href="https://civitai.com/models/4201/realistic-vision-v51" target="_blank" rel="noopener">https://civitai.com/models/4201/realistic-vision-v51</a></li>
+<li>majicMIX realistic: <a href="https://civitai.com/models/43331/majicmix-realistic" target="_blank" rel="noopener">https://civitai.com/models/43331/majicmix-realistic</a></li>
+<li>Deliberate v3: <a href="https://civitai.com/models/4823/deliberate-v3" target="_blank" rel="noopener">https://civitai.com/models/4823/deliberate-v3</a></li>
+<li>DreamShaper: <a href="https://civitai.com/models/4384/dreamshaper" target="_blank" rel="noopener">https://civitai.com/models/4384/dreamshaper</a></li>
+</ul>
+<h2 id="目前最受欢迎的人像模型"><a href="#目前最受欢迎的人像模型" class="headerlink" title="目前最受欢迎的人像模型"></a>目前最受欢迎的人像模型</h2><h3 id="1-Realistic-Vision（写实系列）"><a href="#1-Realistic-Vision（写实系列）" class="headerlink" title="1. Realistic Vision（写实系列）"></a>1. Realistic Vision（写实系列）</h3><ul>
+<li><strong>特点</strong>：超强的真实感，适合生成照片级别的人像</li>
+<li><strong>适用场景</strong>：证件照、艺术照、人物写真</li>
+<li><strong>优势</strong>：面部细节精致，皮肤质感自然</li>
+</ul>
+<h3 id="2-majicMIX（魔法系列）"><a href="#2-majicMIX（魔法系列）" class="headerlink" title="2. majicMIX（魔法系列）"></a>2. majicMIX（魔法系列）</h3><ul>
+<li><strong>特点</strong>：动漫风格与现实风格的完美结合</li>
+<li><strong>适用场景</strong>：二次元人像、时尚插画</li>
+<li><strong>优势</strong>：高度还原动漫风格，同时保持真实感</li>
+</ul>
+<h3 id="3-Deliberate（精致系列）"><a href="#3-Deliberate（精致系列）" class="headerlink" title="3. Deliberate（精致系列）"></a>3. Deliberate（精致系列）</h3><ul>
+<li><strong>特点</strong>：细节丰富，画面精致</li>
+<li><strong>适用场景</strong>：各类人像创作，特别适合精修照片</li>
+<li><strong>优势</strong>：画面质感细腻，构图优秀</li>
+</ul>
+<h2 id="如何选择适合自己的模型？"><a href="#如何选择适合自己的模型？" class="headerlink" title="如何选择适合自己的模型？"></a>如何选择适合自己的模型？</h2><ol>
+<li><p><strong>新手入门</strong>：建议从Realistic Vision开始，因为：</p>
+<ul>
+<li>生成效果稳定</li>
+<li>对提示词要求不高</li>
+<li>失败率较低</li>
+</ul>
+</li>
+<li><p><strong>二次元爱好者</strong>：推荐使用majicMIX系列，因为：</p>
+<ul>
+<li>动漫风格优秀</li>
+<li>人物比例协调</li>
+<li>面部细节精致</li>
+</ul>
+</li>
+<li><p><strong>专业创作者</strong>：可以尝试Deliberate，因为：</p>
+<ul>
+<li>可控性强</li>
+<li>支持复杂场景</li>
+<li>细节表现出色</li>
+</ul>
+</li>
+</ol>
+<h2 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h2><ol>
+<li><p><strong>提示词技巧</strong>：</p>
+<ul>
+<li>描述要具体（如：不要只说”漂亮女孩”，要说”穿着白色连衣裙的年轻女孩，长发飘飘”）</li>
+<li>加入场景描述（如：阳光、室内、街道等）</li>
+<li>注明风格（如：电影感、日系、韩系等）</li>
+</ul>
+</li>
+<li><p><strong>常见问题解决</strong>：</p>
+<ul>
+<li>手指变形：添加”perfect hands”等提示词</li>
+<li>面部不自然：使用”beautiful face”、”detailed face”等提示词</li>
+<li>构图问题：指定”portrait photo”、”upper body shot”等构图要求</li>
+</ul>
+</li>
+</ol>
+<h2 id="未来展望"><a href="#未来展望" class="headerlink" title="未来展望"></a>未来展望</h2><p>AI人像技术正在飞速发展，未来我们可能会看到：</p>
+<ul>
+<li>更自然的面部表情</li>
+<li>更准确的人体姿态</li>
+<li>更强的场景互动能力</li>
+<li>更好的细节控制</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>选择合适的人像模型是AI绘画入门的重要一步。建议新手从基础模型开始，慢慢尝试不同风格，找到最适合自己的创作方式。记住，练习和经验积累才是提高出图质量的关键。</p>
+<h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul>
+<li>Civitai模型网站</li>
+<li>Hugging Face社区</li>
+<li>ModelScope魔搭社区</li>
+</ul>
+<hr>
+<p>欢迎在评论区分享你的使用心得！如果这篇文章对你有帮助，别忘了点赞收藏哦～ </p>
+
+    </div>
+
+    
+    
+    
+
+    
+    <div>
+    <div>
+  
+    <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+      <span>-------- 本文结束 </span>
+      <i class="fa fa-paperclip"></i>
+      <span> 感谢阅读 --------</span>
+    </div>
+  
+</div>
+    </div>
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="XuJing 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="XuJing 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<!-- JS库 clipboard 拷贝内容到粘贴板-->
+<script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"></script>
+
+<!-- JS库 sweetalert 显示提示信息-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-title">
+    <strong>本文标题： </strong>
+    小白必看：2024年最新AI人像模型完全指南
+  </li>
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>XuJing
+  </li>
+  <!-- 引用链接 -->
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xujing113221.github.io/2024/01/18/ai-portrait-models-guide/" title="小白必看：2024年最新AI人像模型完全指南">
+      http://xujing113221.github.io/2024/01/18/ai-portrait-models-guide/
+    </a>
+    <span class="copy-path" title="点击复制引用链接">
+      <i
+        style="cursor: pointer"
+        class="fa fa-clipboard"
+        data-clipboard-text="[XuJing's Blog | 小白必看：2024年最新AI人像模型完全指南](http://xujing113221.github.io/2024/01/18/ai-portrait-models-guide/)"
+        aria-label="复制成功">
+      </i>
+    </span>
+  </li>
+
+
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+<script>
+  var clipboard = new ClipboardJS(".fa-clipboard");
+  clipboard.on("success", function(target) {
+    var message = document.createElement("div");
+    message.innerHTML =
+      '<i class="fa fa-check-circle message-icon"></i><span class="message-content">' +
+      target.trigger.getAttribute("aria-label") +
+      "</span>";
+    swal({
+      content: message,
+      className: "copy-success-message",
+      timer: 1000,
+      button: false
+    });
+  });
+</script>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BA%BA%E5%83%8F%E7%94%9F%E6%88%90/" rel="tag"># 人像生成</a>
+              <a href="/tags/Stable-Diffusion/" rel="tag"># Stable Diffusion</a>
+              <a href="/tags/AI%E7%BB%98%E7%94%BB/" rel="tag"># AI绘画</a>
+              <a href="/tags/AI%E6%95%99%E7%A8%8B/" rel="tag"># AI教程</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/03/https:/phoenixnap.com/kb/how-to-install-a-gui-on-ubuntu/" rel="prev" title="How to install desktop on Linux">
+      <i class="fa fa-chevron-left"></i> How to install desktop on Linux
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/03/21/ai-portrait-study/" rel="next" title="AI人像生成模型学习笔记">
+      AI人像生成模型学习笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是AI人像模型？"><span class="nav-number">2.</span> <span class="nav-text">什么是AI人像模型？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2024年AI人像模型排行榜"><span class="nav-number">3.</span> <span class="nav-text">2024年AI人像模型排行榜</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#写实系列TOP3"><span class="nav-number">3.1.</span> <span class="nav-text">写实系列TOP3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#写实系列作品展示"><span class="nav-number">3.1.1.</span> <span class="nav-text">写实系列作品展示</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二次元系列TOP3"><span class="nav-number">3.2.</span> <span class="nav-text">二次元系列TOP3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#二次元系列作品展示"><span class="nav-number">3.2.1.</span> <span class="nav-text">二次元系列作品展示</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混合风格TOP3"><span class="nav-number">3.3.</span> <span class="nav-text">混合风格TOP3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#混合风格作品展示"><span class="nav-number">3.3.1.</span> <span class="nav-text">混合风格作品展示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提示词参考"><span class="nav-number">3.3.2.</span> <span class="nav-text">提示词参考</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进阶提示词技巧"><span class="nav-number">3.3.3.</span> <span class="nav-text">进阶提示词技巧</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目前最受欢迎的人像模型"><span class="nav-number">4.</span> <span class="nav-text">目前最受欢迎的人像模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Realistic-Vision（写实系列）"><span class="nav-number">4.1.</span> <span class="nav-text">1. Realistic Vision（写实系列）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-majicMIX（魔法系列）"><span class="nav-number">4.2.</span> <span class="nav-text">2. majicMIX（魔法系列）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Deliberate（精致系列）"><span class="nav-number">4.3.</span> <span class="nav-text">3. Deliberate（精致系列）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何选择适合自己的模型？"><span class="nav-number">5.</span> <span class="nav-text">如何选择适合自己的模型？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用技巧"><span class="nav-number">6.</span> <span class="nav-text">使用技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未来展望"><span class="nav-number">7.</span> <span class="nav-text">未来展望</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资源"><span class="nav-number">9.</span> <span class="nav-text">参考资源</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">XuJing</p>
+  <div class="site-description" itemprop="description">记录AI学习与技术探索的心得</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xujing113221" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xujing113221" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xujing113221@gmail.com" title="E-Mail → mailto:xujing113221@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+   <div class="feed-link motion-element">
+     <a href="/atom.xml" rel="alternate">
+       <i class="fa fa-rss"></i>
+       RSS
+     </a>
+   </div>
+ 
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.google.com/" title="http:&#x2F;&#x2F;www.google.com" rel="noopener" target="_blank">Google-website</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XuJing</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  
+  <script async src="/js/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: inline;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+
+</div>
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"0HeenH1M6kEofmoCdXFMym4r-MdYXbMMI","app_key":"pLAfLofofkawWDO8zuponHLq","server_url":null,"security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 26189,
+      el    : 'wpac-rating',
+      color : 'fadb14'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '0HeenH1M6kEofmoCdXFMym4r-MdYXbMMI',
+      appKey     : 'pLAfLofofkawWDO8zuponHLq',
+      placeholder: "Write something to me ...",
+      avatar     : 'retro',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/ Relative)","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacityDefault":0.7},"dialog":{"enable":false,"hitokoto":true}});</script></body>
+</html>
