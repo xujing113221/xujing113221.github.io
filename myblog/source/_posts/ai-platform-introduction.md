@@ -11,9 +11,6 @@ categories:
   - AI入门
 permalink: ai-platform-intro
 ---
-
-# 大模型平台全解析：小白入门指南
-
 本文将全面介绍主流AI大模型平台，帮助小白快速了解和选择适合自己的平台，包括HuggingFace、ModelScope、Civitai等平台的特点、使用方法和选择建议。
 
 <!-- more -->
